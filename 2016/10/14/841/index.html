@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Python," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="何为DSL：DSL就是一种特定解决领域问题的的迷你语言。如SQL语言，正则表达式 内部与外部指的是实现DSL的方式是否与宿主语言隔离。 内部DSL(Internal DSL)所谓内部DSL，就是用一种提供语言扩展功能的宿主语言来扩充的。如Django中的Model 外部DSL(External DSL)外部DSL则与源语言无关，重头写词法分析器、语法分析器以及解释执行器。 为何要编写DSL举个例子">
+<meta name="keywords" content="Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="用Python撸DSL(领域特定语言)">
+<meta property="og:url" content="https://wax8280.github.io/2016/10/14/841/index.html">
+<meta property="og:site_name" content="Vin&#39;s Blog">
+<meta property="og:description" content="何为DSL：DSL就是一种特定解决领域问题的的迷你语言。如SQL语言，正则表达式 内部与外部指的是实现DSL的方式是否与宿主语言隔离。 内部DSL(Internal DSL)所谓内部DSL，就是用一种提供语言扩展功能的宿主语言来扩充的。如Django中的Model 外部DSL(External DSL)外部DSL则与源语言无关，重头写词法分析器、语法分析器以及解释执行器。 为何要编写DSL举个例子">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-09-06T04:59:54.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="用Python撸DSL(领域特定语言)">
+<meta name="twitter:description" content="何为DSL：DSL就是一种特定解决领域问题的的迷你语言。如SQL语言，正则表达式 内部与外部指的是实现DSL的方式是否与宿主语言隔离。 内部DSL(Internal DSL)所谓内部DSL，就是用一种提供语言扩展功能的宿主语言来扩充的。如Django中的Model 外部DSL(External DSL)外部DSL则与源语言无关，重头写词法分析器、语法分析器以及解释执行器。 为何要编写DSL举个例子">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://wax8280.github.io/2016/10/14/841/"/>
+
+
+
+
+
+  <title>用Python撸DSL(领域特定语言) | Vin's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Vin's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wax8280.github.io/2016/10/14/841/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Vincent Zhong">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Vin's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">用Python撸DSL(领域特定语言)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-10-14T20:01:26+08:00">
+                2016-10-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Code/" itemprop="url" rel="index">
+                    <span itemprop="name">Code</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="何为DSL："><a href="#何为DSL：" class="headerlink" title="何为DSL："></a>何为DSL：</h3><p>DSL就是一种特定解决领域问题的的迷你语言。如SQL语言，正则表达式</p>
+<h3 id="内部与外部"><a href="#内部与外部" class="headerlink" title="内部与外部"></a>内部与外部</h3><p>指的是实现DSL的方式是否与宿主语言隔离。</p>
+<p><strong>内部DSL(Internal DSL)</strong><br>所谓内部DSL，就是用一种提供语言扩展功能的宿主语言来扩充的。<br>如Django中的Model</p>
+<p><strong>外部DSL(External DSL)</strong><br>外部DSL则与源语言无关，重头写词法分析器、语法分析器以及解释执行器。</p>
+<h3 id="为何要编写DSL"><a href="#为何要编写DSL" class="headerlink" title="为何要编写DSL"></a>为何要编写DSL</h3><p>举个例子，一个HTML表格<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">label</span>&gt;</span>Name:<span class="tag">&lt;/<span class="name">label</span>&gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">”text”</span> <span class="attr">name</span>=<span class="string">”name”/</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">label</span>&gt;</span>Email:<span class="tag">&lt;/<span class="name">label</span>&gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">”text”</span> <span class="attr">name</span>=<span class="string">”email”/</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">label</span>&gt;</span>Password:<span class="tag">&lt;/<span class="name">label</span>&gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">”password”</span> <span class="attr">name</span>=<span class="string">”name”/</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>编写这个HTML文档需要编写者具有HTML的知识<br>我们尝试着编写自己的DSL，将语句简化为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">UserForm</div><div class="line">username:CharField -&gt; label:Username size:25;</div><div class="line">email:EmailField -&gt; size:32;</div><div class="line">password:PasswordField;</div></pre></td></tr></table></figure></p>
+<p>下面我们使用pyparsing库，来制作一款属于自己的DSL语言</p>
+<hr>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> pyparsing <span class="keyword">import</span> Word, OneOrMore, Group, Suppress, alphanums, oneOf, alphas, Optional, lineEnd</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">convert_prop_to_dict</span><span class="params">(tokens)</span>:</span></div><div class="line">    prop_dict = &#123;&#125;</div><div class="line">    <span class="keyword">for</span> token <span class="keyword">in</span> tokens:</div><div class="line">        prop_dict[token[<span class="number">0</span>]] = token[<span class="number">1</span>]</div><div class="line">    <span class="keyword">return</span> prop_dict</div><div class="line"><span class="comment"># Suppress 表示不捕获</span></div><div class="line">newline = Suppress(lineEnd)</div><div class="line">colon = Suppress(<span class="string">":"</span>)</div><div class="line">arrow = Suppress(<span class="string">"-&gt;"</span>)</div><div class="line">semicolon = Suppress(<span class="string">";"</span>)</div><div class="line">word = Word(alphas)</div><div class="line">key = word</div><div class="line">value = Word(alphanums)</div><div class="line">field_type = oneOf(<span class="string">"CharField EmailField PasswordField"</span>)</div><div class="line">field_name = word</div><div class="line">form_name = word.setResultsName(<span class="string">"form_name"</span>)</div><div class="line">field_property = Group(key + colon + value)</div><div class="line">field = Group(field_name + colon + field_type + Optional(arrow + OneOrMore(field_property) + semicolon).setParseAction(</div><div class="line">        convert_prop_to_dict))</div><div class="line">form = form_name + newline + OneOrMore(field).setResultsName(<span class="string">"form_field"</span>)</div><div class="line">input_form = <span class="string">'''</span></div><div class="line"><span class="string">UserForm</span></div><div class="line"><span class="string">username:CharField -&gt; label:Username size:25;</span></div><div class="line"><span class="string">email:EmailField -&gt; size:32;</span></div><div class="line"><span class="string">password:PasswordField;</span></div><div class="line"><span class="string">'''</span></div><div class="line"><span class="string">'''</span></div><div class="line"><span class="string">External DSL</span></div><div class="line"><span class="string">'''</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_field_html</span><span class="params">(field)</span>:</span></div><div class="line">    properties = field[<span class="number">2</span>]</div><div class="line">    label = properties[<span class="string">"label"</span>] <span class="keyword">if</span> <span class="string">"label"</span> <span class="keyword">in</span> properties <span class="keyword">else</span> field[<span class="number">0</span>]</div><div class="line">    label_html = <span class="string">"&lt;label&gt;"</span> + label + <span class="string">"&lt;/label&gt;"</span></div><div class="line">    attributes = &#123;<span class="string">"name"</span>: field[<span class="number">0</span>]&#125;</div><div class="line">    attributes.update(properties)</div><div class="line">    <span class="keyword">if</span> field[<span class="number">1</span>] == <span class="string">"CharField"</span> <span class="keyword">or</span> field[<span class="number">1</span>] == <span class="string">"EmailField"</span>:</div><div class="line">        attributes[<span class="string">"type"</span>] = <span class="string">"text"</span></div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        attributes[<span class="string">"type"</span>] = <span class="string">"password"</span></div><div class="line">    <span class="keyword">if</span> <span class="string">"label"</span> <span class="keyword">in</span> attributes:</div><div class="line">        <span class="keyword">del</span> attributes[<span class="string">"label"</span>]</div><div class="line">    attributes_html = <span class="string">" "</span>.join([name + <span class="string">"='"</span> + value + <span class="string">"'"</span> <span class="keyword">for</span> name, value <span class="keyword">in</span> attributes.items()])</div><div class="line">    field_html = <span class="string">"&lt;input "</span> + attributes_html + <span class="string">"/&gt;"</span></div><div class="line">    <span class="keyword">return</span> label_html + field_html + <span class="string">"&lt;br/&gt;"</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">render</span><span class="params">(form)</span>:</span></div><div class="line">    fields_html = <span class="string">""</span>.join([get_field_html(field) <span class="keyword">for</span> field <span class="keyword">in</span> form.form_field])</div><div class="line">    <span class="keyword">return</span> <span class="string">"&lt;form id='"</span> + form.form_name.lower() + <span class="string">"'&gt;"</span> + fields_html + <span class="string">"&lt;/form&gt;"</span></div><div class="line">print(render(form.parseString(input_form)))</div><div class="line"><span class="string">'''</span></div><div class="line"><span class="string">Internal DSL</span></div><div class="line"><span class="string">'''</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">HtmlElement</span><span class="params">(object)</span>:</span></div><div class="line">    default_attributes = &#123;&#125;</div><div class="line">    tag = <span class="string">"unknown_tag"</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, *args, **kwargs)</span>:</span></div><div class="line">        self.attributes = kwargs</div><div class="line">        self.attributes.update(self.default_attributes)</div><div class="line">        self.children = args</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></div><div class="line">        attribute_html = <span class="string">" "</span>.join([<span class="string">"&#123;&#125;='&#123;&#125;'"</span>.format(name, value)</div><div class="line">                                   <span class="keyword">for</span> name, value <span class="keyword">in</span> self.attributes.items()])</div><div class="line">        <span class="keyword">if</span> <span class="keyword">not</span> self.children:</div><div class="line">            <span class="keyword">return</span> <span class="string">"&lt;&#123;&#125; &#123;&#125;/&gt;"</span>.format(self.tag, attribute_html)</div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            children_html = <span class="string">""</span>.join([str(child) <span class="keyword">for</span> child <span class="keyword">in</span> self.children])</div><div class="line">            <span class="keyword">return</span> <span class="string">"&lt;&#123;&#125; &#123;&#125;&gt;&#123;&#125;&lt;/&#123;&#125;&gt;"</span>.format(self.tag, attribute_html, children_html, self.tag)</div><div class="line"><span class="comment"># print(HtmlElement(id="test"))</span></div><div class="line"><span class="comment"># &lt;unknown_tag id='test'/&gt;</span></div><div class="line"><span class="comment"># print (HtmlElement(HtmlElement(name="test"), id="id"))</span></div><div class="line"><span class="comment"># &lt;unknown_tag id='id'&gt;&lt;unknown_tag name='test'/&gt;&lt;/unknown_tag&gt;</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">InputElement</span><span class="params">(HtmlElement)</span>:</span></div><div class="line">    tag = <span class="string">"input"</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, *args, **kwargs)</span>:</span></div><div class="line">        HtmlElement.__init__(self, *args, **kwargs)</div><div class="line">        self.label = self.attributes[<span class="string">"label"</span>] <span class="keyword">if</span> <span class="string">"label"</span> <span class="keyword">in</span> self.attributes <span class="keyword">else</span> self.attributes[<span class="string">"name"</span>]</div><div class="line">        <span class="keyword">if</span> <span class="string">"label"</span> <span class="keyword">in</span> self.attributes:</div><div class="line">            <span class="keyword">del</span> self.attributes[<span class="string">"label"</span>]</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></div><div class="line">        label_html = <span class="string">"&lt;label&gt;&#123;&#125;&lt;/label&gt;"</span>.format(self.label)</div><div class="line">        <span class="keyword">return</span> label_html + HtmlElement.__str__(self) + <span class="string">"&lt;br/&gt;"</span></div><div class="line"><span class="comment"># print(InputElement(name="username"))</span></div><div class="line"><span class="comment"># &lt;label&gt;username&lt;/label&gt;&lt;input name='username'/&gt;&lt;br/&gt;</span></div><div class="line"><span class="comment"># print(InputElement(name="username", label="User ID"))</span></div><div class="line"><span class="comment"># &lt;label&gt;User ID&lt;/label&gt;&lt;input name='username'/&gt;&lt;br/&gt;</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Form</span><span class="params">(HtmlElement)</span>:</span></div><div class="line">    tag = <span class="string">"form"</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">CharField</span><span class="params">(InputElement)</span>:</span></div><div class="line">    default_attributes = &#123;<span class="string">"type"</span>: <span class="string">"text"</span>&#125;</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">EmailField</span><span class="params">(CharField)</span>:</span></div><div class="line">    <span class="keyword">pass</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">PasswordField</span><span class="params">(InputElement)</span>:</span></div><div class="line">    default_attributes = &#123;<span class="string">"type"</span>: <span class="string">"password"</span>&#125;</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">render</span><span class="params">(form)</span>:</span></div><div class="line">    field_dict = &#123;<span class="string">"CharField"</span>: CharField, <span class="string">"EmailField"</span>:</div><div class="line">        EmailField, <span class="string">"PasswordField"</span>: PasswordField&#125;</div><div class="line">    fields = [field_dict[field[<span class="number">1</span>]](name=field[<span class="number">0</span>], **field[<span class="number">2</span>]) <span class="keyword">for</span> field <span class="keyword">in</span> form.form_field]</div><div class="line">    <span class="keyword">return</span> Form(*fields, id=form.form_name.lower())</div><div class="line">print(render(form.parseString(input_form)))</div></pre></td></tr></table></figure>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" rel="tag"># Python</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/10/13/772/" rel="next" title="Python设计模式——单例模式">
+                <i class="fa fa-chevron-left"></i> Python设计模式——单例模式
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/10/17/844/" rel="prev" title="每天一道编程题——换零钱的方法数">
+                每天一道编程题——换零钱的方法数 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <p class="site-author-name" itemprop="name">Vincent Zhong</p>
+            <p class="site-description motion-element" itemprop="description">Share my favorite</p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives">
+            
+                <span class="site-state-item-count">105</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">35</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#何为DSL："><span class="nav-number">1.</span> <span class="nav-text">何为DSL：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内部与外部"><span class="nav-number">2.</span> <span class="nav-text">内部与外部</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为何要编写DSL"><span class="nav-number">3.</span> <span class="nav-text">为何要编写DSL</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Vincent Zhong</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
