@@ -238,6 +238,310 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wax8280.github.io/2016/08/28/389/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Vincent Zhong">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Vin's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/08/28/389/" itemprop="url">关于Python中的元类(metaclass)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-28T17:10:54+08:00">
+                2016-08-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Code/" itemprop="url" rel="index">
+                    <span itemprop="name">Code</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="类也是对象"><a href="#类也是对象" class="headerlink" title="类也是对象"></a>类也是对象</h2><p>先明确一点，在Python中类（是类Class，不是对象或实例Object）同样也是一种对象。<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="class"><span class="keyword">class</span> <span class="title">ObjectCreator</span><span class="params">()</span>:</span></div><div class="line">    <span class="keyword">pass</span>  </div><div class="line"><span class="meta">&gt;&gt;&gt; </span>ObjectCreator</div><div class="line">&lt;<span class="class"><span class="keyword">class</span> <span class="title">__main__</span>.<span class="title">ObjectCreatorat</span> 0<span class="title">x02D878F0</span>&gt;</span></div><div class="line"><span class="class">&gt;&gt;&gt; <span class="title">ObjectCreator</span><span class="params">()</span></span></div><div class="line"><span class="class">&lt;<span class="title">__main__</span>.<span class="title">ObjectCreator</span> <span class="title">object</span> <span class="title">at</span> 0<span class="title">x02E87EE0</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>只要你使用关键字class，Python解释器在执行的时候就在内存中创建一个对象，名字就是ObjectCreator。<strong>这个对象（类）自身拥有创建对象（类实例）的能力，而这就是为什么它是一个类的原因。</strong><br>类的本质是一个对象，这就意味着你能对它作如下操作：<br>1)   你可以将它赋值给一个变量<br>2)   你可以拷贝它<br>3)   你可以为它增加属性<br>4)   你可以将它作为函数参数进行传递<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> ObjectCreator <span class="comment"># 你可以打印一个类，因为它其实也是一个对象</span></div><div class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">__main__</span>.<span class="title">ObjectCreator</span>'&gt;</span></div><div class="line"><span class="class">&gt;&gt;&gt; <span class="title">def</span> <span class="title">echo</span><span class="params">(o)</span>:</span></div><div class="line">… <span class="keyword">print</span> o</div><div class="line">…</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>echo(ObjectCreator) <span class="comment"># 你可以将类做为参数传给函数</span></div><div class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">__main__</span>.<span class="title">ObjectCreator</span>'&gt;</span></div><div class="line"><span class="class">&gt;&gt;&gt; <span class="title">print</span> <span class="title">hasattr</span><span class="params">(ObjectCreator, <span class="string">'new_attribute'</span>)</span></span></div><div class="line"><span class="class"><span class="title">Fasle</span></span></div><div class="line">&gt;&gt;&gt; ObjectCreator.new_attribute = 'foo' # 你可以为类增加属性</div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> hasattr(ObjectCreator, <span class="string">'new_attribute'</span>)</div><div class="line"><span class="keyword">True</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> ObjectCreator.new_attribute</div><div class="line">foo</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>ObjectCreatorMirror = ObjectCreator <span class="comment"># 你可以将类赋值给一个变量</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> ObjectCreatorMirror()</div><div class="line">&lt;__main__.ObjectCreator object at</div></pre></td></tr></table></figure></p>
+<h2 id="动态创建类"><a href="#动态创建类" class="headerlink" title="动态创建类"></a>动态创建类</h2><p>因为类也是对象，你可以在运行时动态的创建它们，就像其他任何对象一样。<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="function"><span class="keyword">def</span> <span class="title">choose_class</span><span class="params">(name)</span>:</span></div><div class="line">… <span class="keyword">if</span> name == <span class="string">'foo'</span>:</div><div class="line">… <span class="class"><span class="keyword">class</span> <span class="title">Foo</span><span class="params">(object)</span>:</span></div><div class="line">… <span class="keyword">pass</span></div><div class="line">… <span class="keyword">return</span> Foo <span class="comment"># 返回的是类，不是类的实例</span></div><div class="line">… <span class="keyword">else</span>:</div><div class="line">… <span class="class"><span class="keyword">class</span> <span class="title">Bar</span><span class="params">(object)</span>:</span></div><div class="line">… <span class="keyword">pass</span></div><div class="line">… <span class="keyword">return</span> Bar</div><div class="line">…</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>MyClass = choose_class(<span class="string">'foo'</span>)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> MyClass <span class="comment"># 函数返回的是类，不是类的实例</span></div><div class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">__main__</span>'.<span class="title">Foo</span>&gt;</span></div><div class="line"><span class="class">&gt;&gt;&gt; <span class="title">print</span> <span class="title">MyClass</span><span class="params">()</span> # 你可以通过这个类创建类实例，也就是对象</span></div><div class="line"><span class="class">&lt;<span class="title">__main__</span>.<span class="title">Foo</span> <span class="title">object</span> <span class="title">at</span> <span class="title">at</span> 0<span class="title">x89c6d4c</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h3 id="class定义新类的执行过程"><a href="#class定义新类的执行过程" class="headerlink" title="class定义新类的执行过程"></a>class定义新类的执行过程</h3><p>使用class语句定义新类时，将会发生很多事情。首先，类主体将作为其自己的私有字典内的一系列语句来执行。语句的执行与正常代码中的执行过程相同，只是增加了会在私有成员（名称以_开头）上发生的名称变形。最后，类的名称、基类列表和字典将传递给元类的解构函数，以创建相应的类对象。下面的例子演示了这一过程：<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">class_name=<span class="string">"Foo"</span></div><div class="line">class_parents=(object,)</div><div class="line">class_body=<span class="string">"""</span></div><div class="line"><span class="string">def __init__(self,x):</span></div><div class="line"><span class="string">	self.x=x</span></div><div class="line"><span class="string">"""</span></div><div class="line">class_dict=&#123;&#125;</div><div class="line">exec(class_body,globals(),class_dict)</div><div class="line">Foo=type(class_name,class_parents,class_dict)</div></pre></td></tr></table></figure></p>
+<h3 id="强大的type函数"><a href="#强大的type函数" class="headerlink" title="强大的type函数"></a>强大的type函数</h3><p>type函数能够让你知道一个对象的类型是什么。<br>但是type函数还有一种完全不同的能力，它也能动态的创建类。<br>type(类名, 父类的元组（针对继承的情况，可以为空），包含属性的字典（名称和值）)<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="class"><span class="keyword">class</span> <span class="title">MyShinyClass</span><span class="params">(object)</span>:</span></div><div class="line">… <span class="keyword">pass</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>MyShinyClass_new = type(<span class="string">'MyShinyClass'</span>, (), &#123;&#125;) <span class="comment"># 返回一个类对象</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> MyShinyClass_new</div><div class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">__main__</span>.<span class="title">MyShinyClass</span>'&gt;</span></div><div class="line"><span class="class">&gt;&gt;&gt; <span class="title">print</span> <span class="title">MyShinyClass_new</span><span class="params">()</span> # 创建一个该类的实例</span></div><div class="line"><span class="class">&lt;<span class="title">__main__</span>.<span class="title">MyShinyClass</span> <span class="title">object</span> <span class="title">at</span> 0<span class="title">x8997cec</span>&gt;</span></div><div class="line"><span class="class">&gt;&gt;&gt; <span class="title">class</span> <span class="title">Foo</span><span class="params">(object)</span>:</span></div><div class="line">… bar = <span class="keyword">True</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>Foo_new = type(<span class="string">'Foo'</span>, (), &#123;<span class="string">'bar2'</span>:<span class="keyword">False</span>&#125;)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> Foo_new</div><div class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">__main__</span>.<span class="title">Foo</span>'&gt;</span></div><div class="line"><span class="class">&gt;&gt;&gt; <span class="title">print</span> <span class="title">Foo_new</span>.<span class="title">bar</span></span></div><div class="line"><span class="class"><span class="title">True</span></span></div><div class="line"><span class="class">&gt;&gt;&gt; <span class="title">print</span> <span class="title">Foo_new</span>.<span class="title">bar2</span></span></div><div class="line"><span class="class"><span class="title">False</span></span></div><div class="line">&gt;&gt;&gt; f = Foo_new()</div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> f</div><div class="line">&lt;__main__.Foo object at <span class="number">0x8a9b84c</span>&gt;</div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> f.bar</div><div class="line"><span class="keyword">True</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> f.bar2</div><div class="line"><span class="keyword">False</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>FooChild = type(<span class="string">'FooChild'</span>, (Foo,),&#123;&#125;)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> FooChild</div><div class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">__main__</span>.<span class="title">FooChild</span>'&gt;</span></div><div class="line"><span class="class">&gt;&gt;&gt; <span class="title">print</span> <span class="title">FooChild</span>.<span class="title">bar</span> # <span class="title">bar</span>属性是由<span class="title">Foo</span>继承而来</span></div><div class="line"><span class="class"><span class="title">True</span></span></div></pre></td></tr></table></figure></p>
+<h2 id="回到主题，什么是元类"><a href="#回到主题，什么是元类" class="headerlink" title="回到主题，什么是元类"></a>回到主题，什么是元类</h2><p>元类就是用来创建类的“东西”。<br>我们已经学习到了Python中的类也是对象。好吧，元类就是用来创建这些类（对象）的，元类就是类的类。<br>函数type实际上是一个元类<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">MyClass = MetaClass()</div><div class="line">MyObject = MyClass()</div><div class="line">MyClass = type(<span class="string">'MyClass'</span>, (), &#123;&#125;)</div><div class="line">我们知道通过实例的__class__属性，可以知道这个实例是由哪一个类生成的</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>age = <span class="number">35</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>age.__class__</div><div class="line">&lt;type <span class="string">'int'</span>&gt;</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>name = <span class="string">'bob'</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>name.__class__</div><div class="line">&lt;type <span class="string">'str'</span>&gt;</div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="function"><span class="keyword">def</span> <span class="title">foo</span><span class="params">()</span>:</span> <span class="keyword">pass</span></div><div class="line">&gt;&gt;&gt;foo.__class__</div><div class="line">&lt;type <span class="string">'function'</span>&gt;</div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="class"><span class="keyword">class</span> <span class="title">Bar</span><span class="params">(object)</span>:</span> <span class="keyword">pass</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>b = Bar()</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>b.__class__</div><div class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">__main__</span>.<span class="title">Bar</span>'&gt;</span></div><div class="line"><span class="class">但如果是<span class="title">__class__</span>的<span class="title">__class__</span>呢？这下就明白了，<span class="title">type</span>就是<span class="title">Python</span>在背后用来创建所有类的类（元类）。</span></div><div class="line"><span class="class">&gt;&gt;&gt; <span class="title">a</span>.<span class="title">__class__</span>.<span class="title">__class__</span></span></div><div class="line"><span class="class">&lt;<span class="title">type</span> ''&gt;</span></div><div class="line"><span class="class">&gt;&gt;&gt; <span class="title">age</span>.<span class="title">__class__</span>.<span class="title">__class__</span></span></div><div class="line"><span class="class">&lt;<span class="title">type</span> '<span class="title">type</span>'&gt;</span></div><div class="line"><span class="class">&gt;&gt;&gt; <span class="title">foo</span>.<span class="title">__class__</span>.<span class="title">__class__</span></span></div><div class="line"><span class="class">&lt;<span class="title">type</span> '<span class="title">type</span>'&gt;</span></div><div class="line"><span class="class">&gt;&gt;&gt; <span class="title">b</span>.<span class="title">__class__</span>.<span class="title">__class__</span></span></div><div class="line"><span class="class">&lt;<span class="title">type</span> '<span class="title">type</span>'&gt;</span></div></pre></td></tr></table></figure></p>
+<h2 id="metaclass属性"><a href="#metaclass属性" class="headerlink" title="metaclass属性"></a><strong>metaclass</strong>属性</h2><p>那么，怎么样才能让python用元类来生成类呢。<br>你可以在写一个类的时候为其添加<strong>metaclass</strong>属性。<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Foo</span><span class="params">(object)</span>:</span></div><div class="line">    __metaclass__ = something…</div><div class="line">[…]</div></pre></td></tr></table></figure></p>
+<p>在Python中，创建Foo类的时候。Python会找Foo中有<strong>metaclass</strong>这个属性吗？如果是，Python会在内存中通过<strong>metaclass</strong>创建一个名字为Foo的类对象。如果Python没有找到<strong>metaclass</strong>，它会继续在父类中寻找<strong>metaclass</strong>属性，并尝试做和前面同样的操作。如果Python在任何父类中都找不到<strong>metaclass</strong>，它就会在模块层次中去寻找<strong>metaclass</strong>，并尝试做同样的操作。如果还是找不到<strong>metaclass</strong>,Python就会用内置的type来创建这个类对象。</p>
+<h2 id="自定义元类"><a href="#自定义元类" class="headerlink" title="自定义元类"></a>自定义元类</h2><p>问题是，我们可以在<strong>metaclass</strong>中放置些什么代码呢。<br>答案就是：可以创建一个类的东西。那么什么可以用来创建一个类呢？type，或者任何使用到type或者子类化type的东东都可以。<br>假想一个很傻的例子，你决定在你的模块里所有的类的属性都应该是大写形式。</p>
+<h1 id="请记住，’type’实际上是一个类，就像’str’和’int’一样"><a href="#请记住，’type’实际上是一个类，就像’str’和’int’一样" class="headerlink" title="请记住，’type’实际上是一个类，就像’str’和’int’一样"></a>请记住，’type’实际上是一个类，就像’str’和’int’一样</h1><h1 id="所以，你可以从type继承"><a href="#所以，你可以从type继承" class="headerlink" title="所以，你可以从type继承"></a>所以，你可以从type继承</h1><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">UpperAttrMetaclass</span><span class="params">(type)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__new__</span><span class="params">(cls, name, bases, dict)</span>:</span></div><div class="line">        <span class="comment"># __new__ 是在__init__之前被调用的特殊方法</span></div><div class="line">           <span class="comment"># upperattr_metaclass。类方法的第一个参数总是表示当前的实例，就像在普通的类方法中的self参数一样。</span></div><div class="line">          <span class="comment"># __new__是用来创建对象并返回之的方法</span></div><div class="line">         <span class="comment"># 而__init__只是用来将传入的参数初始化给对象</span></div><div class="line">         <span class="comment"># 你很少用到__new__，除非你希望能够控制对象的创建</span></div><div class="line">         <span class="comment"># 这里，创建的对象是类，我们希望能够自定义它，所以我们这里改写__new__</span></div><div class="line">         <span class="comment"># 如果你希望的话，你也可以在__init__中做些事情</span></div><div class="line">         <span class="comment"># 还有一些高级的用法会涉及到改写__call__特殊方法，但是我们这里不用</span></div><div class="line">        attrs = ((name, value) <span class="keyword">for</span> name, value <span class="keyword">in</span> dct.items() <span class="keyword">if</span> <span class="keyword">not</span> name.startswith(<span class="string">'__'</span>))</div><div class="line">        uppercase_attr = dict((name.upper(), value) <span class="keyword">for</span> name, value <span class="keyword">in</span> attrs)</div><div class="line">        <span class="keyword">return</span> super(UpperAttrMetaclass, cls).__new__(cls, name, bases, uppercase_attr)</div><div class="line">__metaclass__ = UpperAttrMetaclass <span class="comment"># 这会作用到这个模块中的所有类</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Foo</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="comment"># 我们也可以只在这里定义__metaclass__，这样就只会作用于这个类中</span></div><div class="line">    bar = <span class="string">'bip'</span></div><div class="line"><span class="keyword">print</span> hasattr(Foo, <span class="string">'bar'</span>)</div><div class="line"><span class="comment"># 输出: False</span></div><div class="line"><span class="keyword">print</span> hasattr(Foo, <span class="string">'BAR'</span>)</div><div class="line">我们也可以</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Upper</span>:</span></div><div class="line">    __metaclass__ = UpperAttrMetaclass</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Foo</span><span class="params">(Upper)</span>:</span></div><div class="line">    <span class="comment"># 我们也可以只在这里定义__metaclass__，这样就只会作用于这个类中</span></div><div class="line">    bar = <span class="string">'bip'</span></div><div class="line"><span class="keyword">print</span> hasattr(Foo, <span class="string">'bar'</span>)</div><div class="line"><span class="comment"># 输出: False</span></div><div class="line"><span class="keyword">print</span> hasattr(Foo, <span class="string">'BAR'</span>)</div></pre></td></tr></table></figure>
+<h2 id="究竟为什么要使用元类？"><a href="#究竟为什么要使用元类？" class="headerlink" title="究竟为什么要使用元类？"></a>究竟为什么要使用元类？</h2><p>现在回到我们的大主题上来，究竟是为什么你会去使用这样一种容易出错且晦涩的特性？好吧，一般来说，你根本就用不上它：<br>元类的主要用途是创建API。一个典型的例子是Django ORM。它允许你像这样定义：<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span><span class="params">(models.Model)</span>:</span></div><div class="line">    name = models.CharField(max_length=<span class="number">30</span>)</div><div class="line">    age = models.IntegerField()</div><div class="line">guy = Person(name=<span class="string">'bob'</span>, age=<span class="string">'35'</span>)</div><div class="line"><span class="keyword">print</span> guy.age</div></pre></td></tr></table></figure></p>
+<p>这并不会返回一个IntegerField对象，而是会返回一个int，甚至可以直接从数据库中取出数据。这是有可能的，因为models.Model定义了<strong>metaclass</strong>， 并且使用了一些魔法能够将你刚刚定义的简单的Person类转变成对数据库的一个复杂hook。Django框架将这些看起来很复杂的东西通过暴露出一个简单的使用元类的API将其化简，通过这个API重新创建代码，在背后完成真正的工作。</p>
+<hr>
+<p>阅读自爆栈网的一篇文章后有感做的笔记<br>原文：<a href="http://stackoverflow.com/questions/100003/what-is-a-metaclass-in-python" target="_blank" rel="external">What is a metaclass in Python</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wax8280.github.io/2016/08/28/385/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Vincent Zhong">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Vin's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/08/28/385/" itemprop="url">Chez Tools</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-28T00:31:24+08:00">
+                2016-08-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Music/" itemprop="url" rel="index">
+                    <span itemprop="name">Music</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>今年夏天真不平静，厄尔尼诺现象带来了令人措手不及的洪涝。电视机上充斥着里约奥运与湖北洪水的消息。更想不到的是，刚回到宿舍就下起了大雨，看着大雨的阵势，仿佛要下一个星期。学校老旧的排水系统，使得暴雨不仅没有起到冲刷大地的作用，反而使得学校水漫金山起来。</p>
+<p>舍友陆续回来，续而就是宵夜。没有长谈，也仅仅是寒暄几句。除了迷茫，还是迷茫。</p>
+<p>儿时心情总是随着上学的到来而变坏，这种“习惯”直到今天还没有消失。雨天由甚。</p>
+<p>我想大概没有比下着暴雨的仲夏夜更适合爵士的时候了。Toots Thielemans的一曲《Old Friend》似乎比欢快的Swing Jazz更适合这个夜晚。《Chez Tools》这张French味专辑里面最不French的曲，《Old Friend》让我好像看到了一年后身边朋友各奔东西的唏嘘场景。</p>
+<p>回忆是美好，但是还没到来便开始起了回忆，似乎就有那么一点讽刺了。</p>
+<p>就在写这篇文章的前几天，Toots Thielemans在家乡布鲁塞尔的一个医院里平静离世。享年94岁。</p>
+<hr>
+<div align="center"><br><img src="http://om4k85ss3.bkt.clouddn.com/static/images/./thumb2.jpg"><br></div>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://wax8280.github.io/2016/08/27/381/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1572,439 +1876,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wax8280.github.io/2016/06/30/191/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Vincent Zhong">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Vin's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/06/30/191/" itemprop="url">一个简单的Web服务器</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-06-30T14:44:47+08:00">
-                2016-06-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Code/" itemprop="url" rel="index">
-                    <span itemprop="name">Code</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="Hello-Web"><a href="#Hello-Web" class="headerlink" title="Hello, Web"></a>Hello, Web</h1><p>现在，我们开始编写一个简单的Web服务器，基本思路如下：</p>
-<ol>
-<li>等到别人连接到我们的服务器并发送HTTP请求</li>
-<li>分析请求</li>
-<li>搞清楚要回复什么</li>
-<li>从数据库中获取数据</li>
-<li>生成HTML文件</li>
-<li>发送回去</li>
-</ol>
-<p>Python有一个叫BaseHTTPServer的内置模块可以完成第1,2,6步的工作。在下面的例子中，我们只需要完成3~5步就可以了<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">RequestHandler</span><span class="params">(BaseHTTPServer.BaseHTTPRequestHandler)</span>:</span></div><div class="line">    Page = <span class="string">'''\</span></div><div class="line"><span class="string">    &lt;html&gt;</span></div><div class="line"><span class="string">    &lt;body&gt;</span></div><div class="line"><span class="string">    &lt;p&gt;Hello, web!&lt;/p&gt;</span></div><div class="line"><span class="string">    &lt;/body&gt;</span></div><div class="line"><span class="string">    &lt;/html&gt;</span></div><div class="line"><span class="string">    '''</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">do_GET</span><span class="params">(self)</span>:</span></div><div class="line">        self.send_response(<span class="number">200</span>)</div><div class="line">        self.send_header(<span class="string">"Content-type"</span>, <span class="string">"text/html"</span>)</div><div class="line">        self.send_header(<span class="string">"Content-Length"</span>, str(len(self.Page)))</div><div class="line">        self.end_headers()</div><div class="line">        self.wfile.write(self.Page)</div></pre></td></tr></table></figure></p>
-<p>BaseHTTPRequestHandler类接收HTTP请求并决定使用什么方法处理请求。如果请求方法是GET，将会调用do_GET方法。我们的类RequestHandler重载了BaseHTTPRequestHandler。字符串变量Page 里面存放着我们回复客户端的HTML文档；方法send_response返回状态码200；方法send_header添加HTML头；方法end_headers插入一空行，分割头部跟页面。<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    serverAddress = (<span class="string">''</span>, <span class="number">8080</span>)</div><div class="line">    server = BaseHTTPServer.HTTPServer(serverAddress, RequestHandler)</div><div class="line">    server.serve_forever()</div></pre></td></tr></table></figure></p>
-<p>serverAddress 是个包含服务器地址跟端口的tuple，服务器地址为空字符串代表“本机”。然后我们创造BaseHTTPServer.HTTPServer的实例，然后运行。<br>运行效果</p>
-<p><div align="center"><br><img src="http://om4k85ss3.bkt.clouddn.com/static/images/./temp.png"><br></div></p>
-<h1 id="更进一步"><a href="#更进一步" class="headerlink" title="更进一步"></a>更进一步</h1><p>我们一般很少用到完全静态的HTML文档。一般来说，都是用模板生成HTML文档。<br>Page就是我们的模板`<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">Page = <span class="string">'''\</span></div><div class="line"><span class="string">	&lt;html&gt;</span></div><div class="line"><span class="string">	&lt;body&gt;</span></div><div class="line"><span class="string">	&lt;table&gt;</span></div><div class="line"><span class="string">	&lt;tr&gt; &lt;td&gt;Header&lt;/td&gt; &lt;td&gt;Value&lt;/td&gt; &lt;/tr&gt;</span></div><div class="line"><span class="string">	&lt;tr&gt; &lt;td&gt;Date and time&lt;/td&gt; &lt;td&gt;&#123;date_time&#125;&lt;/td&gt; &lt;/tr&gt;</span></div><div class="line"><span class="string">	&lt;tr&gt; &lt;td&gt;Client host&lt;/td&gt; &lt;td&gt;&#123;client_host&#125;&lt;/td&gt; &lt;/tr&gt;</span></div><div class="line"><span class="string">	&lt;tr&gt; &lt;td&gt;Client port&lt;/td&gt; &lt;td&gt;&#123;client_port&#125;s&lt;/td&gt; &lt;/tr&gt;</span></div><div class="line"><span class="string">	&lt;tr&gt; &lt;td&gt;Command&lt;/td&gt; &lt;td&gt;&#123;command&#125;&lt;/td&gt; &lt;/tr&gt;</span></div><div class="line"><span class="string">	&lt;tr&gt; &lt;td&gt;Path&lt;/td&gt; &lt;td&gt;&#123;path&#125;&lt;/td&gt; &lt;/tr&gt;</span></div><div class="line"><span class="string">	&lt;/table&gt;</span></div><div class="line"><span class="string">	&lt;/body&gt;</span></div><div class="line"><span class="string">	&lt;/html&gt;</span></div><div class="line"><span class="string">	'''</span></div></pre></td></tr></table></figure></p>
-<p>我们不妨上面的do_GET方法分开，分成生成跟发送两部分。<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">RequestHandler</span><span class="params">(BaseHTTPServer.BaseHTTPRequestHandler)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">do_GET</span><span class="params">(self)</span>:</span></div><div class="line">        page = self.create_page()</div><div class="line">        self.send_page(page)</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">create_page</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="keyword">pass</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">send_page</span><span class="params">(self, page)</span>:</span></div><div class="line">        <span class="keyword">pass</span></div><div class="line"></div><div class="line"><span class="comment">#发送部分，我们直接我们刚刚写的代码复制过来</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">send_page</span><span class="params">(self, page)</span>:</span></div><div class="line">    self.send_response(<span class="number">200</span>)</div><div class="line">    self.send_header(<span class="string">"Content-type"</span>, <span class="string">"text/html"</span>)</div><div class="line">    self.send_header(<span class="string">"Content-Length"</span>, str(len(page)))</div><div class="line">    self.end_headers()</div><div class="line">    self.wfile.write(page)</div><div class="line"></div><div class="line"><span class="comment">#生成部分</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">create_page</span><span class="params">(self)</span>:</span></div><div class="line">    values = &#123;</div><div class="line">        <span class="string">'date_time'</span> : self.date_time_string(),</div><div class="line">        <span class="string">'client_host'</span> : self.client_address[<span class="number">0</span>],</div><div class="line">        <span class="string">'client_port'</span> : self.client_address[<span class="number">1</span>],</div><div class="line">        <span class="string">'command'</span> : self.command,</div><div class="line">        <span class="string">'path'</span> : self.path</div><div class="line">    &#125;</div><div class="line">    page = self.Page.format(**values)</div><div class="line">    <span class="keyword">return</span> page</div><div class="line"></div><div class="line"><span class="comment">## 主题部分依然不变</span></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    serverAddress = (<span class="string">''</span>, <span class="number">8080</span>)</div><div class="line">    server = BaseHTTPServer.HTTPServer(serverAddress, RequestHandler)</div><div class="line">    server.serve_forever()</div></pre></td></tr></table></figure></p>
-<p>运行效果</p>
-<p>注意到，就算我们目录下没有“test.html”这个文件，也不会遇到404错误。</p>
-<p><div align="center"><br><img src="http://om4k85ss3.bkt.clouddn.com/static/images/./temp-1.png"><br></div></p>
-<h1 id="提供静态页面服务"><a href="#提供静态页面服务" class="headerlink" title="提供静态页面服务"></a>提供静态页面服务</h1><p>下一步，我们要编写一个真正能够工作的服务器——它会从我们的运行目录里读取任何静态的HTML文件。</p>
-<h2 id="分类和处理请求"><a href="#分类和处理请求" class="headerlink" title="分类和处理请求"></a>分类和处理请求</h2><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">do_GET</span><span class="params">(self)</span>:</span></div><div class="line">    <span class="keyword">try</span>:</div><div class="line">        <span class="comment"># 搜索当前目录下有无此HTML文档</span></div><div class="line">        full_path = os.getcwd() + self.path</div><div class="line">        <span class="comment"># 如果不存在</span></div><div class="line">        <span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(full_path):</div><div class="line">            <span class="keyword">raise</span> ServerException(<span class="string">"'&#123;0&#125;' not found"</span>.format(self.path))</div><div class="line">        <span class="comment"># 如果存在</span></div><div class="line">        <span class="keyword">elif</span> os.path.isfile(full_path):</div><div class="line">            self.handle_file(full_path)</div><div class="line">        <span class="comment">#无法处理</span></div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            <span class="keyword">raise</span> ServerException(<span class="string">"Unknown object '&#123;0&#125;'"</span>.format(self.path))</div><div class="line">    <span class="keyword">except</span> Exception <span class="keyword">as</span> msg:</div><div class="line">        self.handle_error(msg)</div><div class="line"><span class="comment">#handle_file 方法，读取HTML文件并使用send_content法返回内容</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">handle_file</span><span class="params">(self, full_path)</span>:</span></div><div class="line">    <span class="keyword">try</span>:</div><div class="line">             <span class="comment"># 以二进制模式打开</span></div><div class="line">        <span class="keyword">with</span> open(full_path, <span class="string">'rb'</span>) <span class="keyword">as</span> reader:</div><div class="line">            content = reader.read()</div><div class="line">        self.send_content(content)</div><div class="line">    <span class="keyword">except</span> IOError <span class="keyword">as</span> msg:</div><div class="line">        msg = <span class="string">"'&#123;0&#125;' cannot be read: &#123;1&#125;"</span>.format(self.path, msg)</div><div class="line">        self.handle_error(msg)</div></pre></td></tr></table></figure>
-<p>我们必须还要对错误情况进行处理</p>
-<h2 id="显示错误的页面"><a href="#显示错误的页面" class="headerlink" title="显示错误的页面"></a>显示错误的页面</h2><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">Error_Page = <span class="string">"""\</span></div><div class="line"><span class="string">&lt;html&gt;</span></div><div class="line"><span class="string">&lt;body&gt;</span></div><div class="line"><span class="string">&lt;h1&gt;Error accessing &#123;path&#125;&lt;/h1&gt;</span></div><div class="line"><span class="string">&lt;p&gt;&#123;msg&#125;&lt;/p&gt;</span></div><div class="line"><span class="string">&lt;/body&gt;</span></div><div class="line"><span class="string">&lt;/html&gt;</span></div><div class="line"><span class="string">"""</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">handle_file</span><span class="params">(self, full_path)</span>:</span></div><div class="line">    <span class="keyword">try</span>:</div><div class="line">        <span class="keyword">with</span> open(full_path, <span class="string">'rb'</span>) <span class="keyword">as</span> reader:</div><div class="line">            content = reader.read()</div><div class="line">        self.send_content(content)</div><div class="line">    <span class="keyword">except</span> IOError <span class="keyword">as</span> msg:</div><div class="line">        msg = <span class="string">"'&#123;0&#125;' cannot be read: &#123;1&#125;"</span>.format(self.path, msg)</div><div class="line">        self.handle_error(msg)</div><div class="line"><span class="comment">#错误处理</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">handle_error</span><span class="params">(self, msg)</span>:</span></div><div class="line">    content = self.Error_Page.format(path=self.path, msg=msg)</div><div class="line">    self.send_content(content, <span class="number">404</span>)</div><div class="line"><span class="comment"># 发送</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">send_content</span><span class="params">(self, content, status=<span class="number">200</span>)</span>:</span></div><div class="line">    self.send_response(status)</div><div class="line">    self.send_header(<span class="string">"Content-type"</span>, <span class="string">"text/html"</span>)</div><div class="line">    self.send_header(<span class="string">"Content-Length"</span>, str(len(content)))</div><div class="line">    self.end_headers()</div><div class="line">    self.wfile.write(content)</div></pre></td></tr></table></figure>
-<p>运行效果</p>
-<p><div align="center"><br><img src="http://om4k85ss3.bkt.clouddn.com/static/images/./temp-2-800x262.png"><br></div></p>
-<h1 id="监听目录"><a href="#监听目录" class="headerlink" title="监听目录"></a>监听目录</h1><p>下一步，我们编写一个可以显示文件列表的服务器（当访问的是文件夹的时候）。或者更深一步，访问文件夹的时候首先看目录下有没有index.html文件，若没有显示文件夹文件列表。<br>我们重写了do_GET方法</p>
-<h2 id="分类和处理请求-1"><a href="#分类和处理请求-1" class="headerlink" title="分类和处理请求"></a>分类和处理请求</h2><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">do_GET</span><span class="params">(self)</span>:</span></div><div class="line"><span class="keyword">try</span>:</div><div class="line">    <span class="comment">#计算出物理路径.</span></div><div class="line">    self.full_path = os.getcwd() + self.path</div><div class="line">    <span class="comment"># 找出用来处理请求的case.</span></div><div class="line">    <span class="keyword">for</span> case <span class="keyword">in</span> self.Cases:</div><div class="line">    <span class="keyword">if</span> case.test(self):</div><div class="line">    case.act(self)</div><div class="line">        <span class="keyword">break</span></div><div class="line"><span class="comment"># 错误处理</span></div><div class="line"><span class="keyword">except</span> Exception <span class="keyword">as</span> msg:</div><div class="line">    self.handle_error(msg)</div></pre></td></tr></table></figure>
-<p>首先我们计算请求的物理路径。接下来的代码跟之前有很大不同，通过遍历Cases列表。每一个case都是一个只有两个方法（test，判断是否能处理请求；act，处理请求）的object。我们将self作为参数传进去test和act方法作进一步的处理。这里的self指的是RequestHandler实例（别忘了，我们是在编写RequestHandler的方法do_GET）<br>下面是case类<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">case_no_file</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="string">'''文件或目录不存在'''</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">(self, handler)</span>:</span></div><div class="line">        <span class="keyword">return</span> <span class="keyword">not</span> os.path.exists(handler.full_path)</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">act</span><span class="params">(self, handler)</span>:</span></div><div class="line">        <span class="keyword">raise</span> ServerException(<span class="string">"'&#123;0&#125;' not found"</span>.format(handler.path))</div><div class="line"><span class="comment">#-------------------------------------------------------------------------------</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">case_existing_file</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="string">'''文件存在'''</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">(self, handler)</span>:</span></div><div class="line">        <span class="keyword">return</span> os.path.isfile(handler.full_path)</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">act</span><span class="params">(self, handler)</span>:</span></div><div class="line">        handler.handle_file(handler.full_path)</div><div class="line"><span class="comment">#-------------------------------------------------------------------------------</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">case_directory_index_file</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="string">'''处理目录下的index.html文件'''</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">index_path</span><span class="params">(self, handler)</span>:</span></div><div class="line">        <span class="keyword">return</span> os.path.join(handler.full_path, <span class="string">'index.html'</span>)</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">(self, handler)</span>:</span></div><div class="line">        <span class="keyword">return</span> os.path.isdir(handler.full_path) <span class="keyword">and</span> \</div><div class="line">                  os.path.isfile(self.index_path(handler))</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">act</span><span class="params">(self, handler)</span>:</span></div><div class="line">        handler.handle_file(self.index_path(handler))</div><div class="line"><span class="comment">#-------------------------------------------------------------------------------</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">case_directory_no_index_file</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="string">'''如果没有index.html，列出目录文件列表'''</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">index_path</span><span class="params">(self, handler)</span>:</span></div><div class="line">        <span class="keyword">return</span> os.path.join(handler.full_path, <span class="string">'index.html'</span>)</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">(self, handler)</span>:</span></div><div class="line">        <span class="keyword">return</span> os.path.isdir(handler.full_path) <span class="keyword">and</span> \</div><div class="line">                  <span class="keyword">not</span> os.path.isfile(self.index_path(handler))</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">act</span><span class="params">(self, handler)</span>:</span></div><div class="line">        handler.list_dir(handler.full_path)</div><div class="line"><span class="comment">#-------------------------------------------------------------------------------</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">case_always_fail</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="string">'''最底层的case类，处理其他case不能处理的情况'''</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">(self, handler)</span>:</span></div><div class="line">        <span class="keyword">return</span> <span class="keyword">True</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">act</span><span class="params">(self, handler)</span>:</span></div><div class="line">        <span class="keyword">raise</span> ServerException(<span class="string">"Unknown object '&#123;0&#125;'"</span>.format(handler.path))</div></pre></td></tr></table></figure></p>
-<p>前面提到，在do_GET方法里面，将RequestHandler的实例作为handler参数传进去。在act方法里面调用RequestHandler（在act函数里面，handler就是RequestHandler的实例）的方法（如list_dir，handle_file等）进行处理。<br>然后，我们把RequestHandler类完善一下<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">RequestHandler</span><span class="params">(BaseHTTPServer.BaseHTTPRequestHandler)</span>:</span></div><div class="line">    Cases = [case_no_file(),</div><div class="line">              case_existing_file(),</div><div class="line">              case_directory_index_file(),</div><div class="line">              case_directory_no_index_file(),</div><div class="line">              case_always_fail()]</div><div class="line">    <span class="comment"># 错误页面</span></div><div class="line">    Error_Page = <span class="string">"""\</span></div><div class="line"><span class="string">    &lt;html&gt;</span></div><div class="line"><span class="string">    &lt;body&gt;</span></div><div class="line"><span class="string">    &lt;h1&gt;Error accessing &#123;path&#125;&lt;/h1&gt;</span></div><div class="line"><span class="string">    &lt;p&gt;&#123;msg&#125;&lt;/p&gt;</span></div><div class="line"><span class="string">    &lt;/body&gt;</span></div><div class="line"><span class="string">    &lt;/html&gt;</span></div><div class="line"><span class="string">    """</span></div><div class="line">    <span class="comment"># 目录文件列表</span></div><div class="line">    Listing_Page = <span class="string">'''\</span></div><div class="line"><span class="string">    &lt;html&gt;</span></div><div class="line"><span class="string">    &lt;body&gt;</span></div><div class="line"><span class="string">    &lt;ul&gt;</span></div><div class="line"><span class="string">    &#123;0&#125;</span></div><div class="line"><span class="string">    &lt;/ul&gt;</span></div><div class="line"><span class="string">    &lt;/body&gt;</span></div><div class="line"><span class="string">    &lt;/html&gt;</span></div><div class="line"><span class="string">    '''</span></div><div class="line">    <span class="comment">#分类和处理请求</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">do_GET</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="keyword">try</span>:</div><div class="line">            <span class="comment">#计算出物理路径.</span></div><div class="line">            self.full_path = os.getcwd() + self.path</div><div class="line">            <span class="comment"># 找出用来处理请求的case.</span></div><div class="line">            <span class="keyword">for</span> case <span class="keyword">in</span> self.Cases:</div><div class="line">                <span class="keyword">if</span> case.test(self):</div><div class="line">                    case.act(self)</div><div class="line">                    <span class="keyword">break</span></div><div class="line">        <span class="comment"># 错误处理</span></div><div class="line">        <span class="keyword">except</span> Exception <span class="keyword">as</span> msg:</div><div class="line">            self.handle_error(msg)</div><div class="line">     <span class="comment">#读取HTML文件并使用send_content方法返回内容</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">handle_file</span><span class="params">(self, full_path)</span>:</span></div><div class="line">        <span class="keyword">try</span>:</div><div class="line">            <span class="keyword">with</span> open(full_path, <span class="string">'rb'</span>) <span class="keyword">as</span> reader:</div><div class="line">                content = reader.read()</div><div class="line">            self.send_content(content)</div><div class="line">        <span class="keyword">except</span> IOError <span class="keyword">as</span> msg:</div><div class="line">            msg = <span class="string">"'&#123;0&#125;' cannot be read: &#123;1&#125;"</span>.format(self.path, msg)</div><div class="line">            self.handle_error(msg)</div><div class="line">        <span class="comment"># 列出当前目录下的文件并使用send_content方法返回</span></div><div class="line">         <span class="function"><span class="keyword">def</span> <span class="title">list_dir</span><span class="params">(self, full_path)</span>:</span></div><div class="line">        <span class="keyword">try</span>:</div><div class="line">            entries = os.listdir(full_path)</div><div class="line">            bullets = [<span class="string">'&lt;li&gt;&#123;0&#125;&lt;/li&gt;'</span>.format(e) <span class="keyword">for</span> e <span class="keyword">in</span> entries <span class="keyword">if</span> <span class="keyword">not</span> e.startswith(<span class="string">'.'</span>)]</div><div class="line">            page = self.Listing_Page.format(<span class="string">'\n'</span>.join(bullets))</div><div class="line">            self.send_content(page)</div><div class="line">        <span class="keyword">except</span> OSError <span class="keyword">as</span> msg:</div><div class="line">            msg = <span class="string">"'&#123;0&#125;' cannot be listed: &#123;1&#125;"</span>.format(self.path, msg)</div><div class="line">            self.handle_error(msg)</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">handle_error</span><span class="params">(self, msg)</span>:</span></div><div class="line">        content = self.Error_Page.format(path=self.path, msg=msg)</div><div class="line">        self.send_content(content, <span class="number">404</span>)</div><div class="line">    <span class="comment"># 发送</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">send_content</span><span class="params">(self, content, status=<span class="number">200</span>)</span>:</span></div><div class="line">        self.send_response(status)</div><div class="line">        self.send_header(<span class="string">"Content-type"</span>, <span class="string">"text/html"</span>)</div><div class="line">        self.send_header(<span class="string">"Content-Length"</span>, str(len(content)))</div><div class="line">        self.end_headers()</div><div class="line">        self.wfile.write(content)</div></pre></td></tr></table></figure></p>
-<p>运行结果</p>
-<p><div align="center"><br><img src="http://om4k85ss3.bkt.clouddn.com/static/images/./temp-3-800x324.png"><br></div></p>
-<p><div align="center"><br><img src="http://om4k85ss3.bkt.clouddn.com/static/images/./tempa-800x269.png"><br></div></p>
-<h1 id="CGI协议"><a href="#CGI协议" class="headerlink" title="CGI协议"></a>CGI协议</h1><p>当然，大多数人都不想每次添加新的功能都修改服务器的源代码。一般都服务器都支持一套叫做“通用网关接口”的东西，允许Web服务器执行外部程序，并将它们的输出发送给Web浏览器。</p>
-<blockquote>
-<p>CGI。在物理上是一段程序，运行在服务器上，提供同客户端HTML页面的接口。这样说大概还不好理解。那么我们看一个实际例子：现在的个人主页上大部分都有一个留言本。留言本的工作是这样的：先由用户在客户端输入一些信息，如评论之类的东西。接着用户按一下“发布或提交”（到目前为止工作都在客户端），浏览器把这些信息传送到服务器的CGI目录下特定的CGI程序中，于是CGI程序在服务器上按照预定的方法进行处理。在本例中就是把用户提交的信息存入指定的文件中。然后CGI程序给客户端发送一个信息，表示请求的任务已经结束。此时用户在浏览器里将看到“留言结束”的字样。整个过程结束。</p>
-</blockquote>
-<p>假设我们想要服务器在HTML文档里显示本地时间，将其保存为simple.py<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> datetime <span class="keyword">import</span> datetime</div><div class="line"><span class="keyword">print</span> <span class="string">'''\</span></div><div class="line"><span class="string">&lt;html&gt;</span></div><div class="line"><span class="string">&lt;body&gt;</span></div><div class="line"><span class="string">&lt;p&gt;Generated &#123;0&#125;&lt;/p&gt;</span></div><div class="line"><span class="string">&lt;/body&gt;</span></div><div class="line"><span class="string">&lt;/html&gt;'''</span>.format(datetime.now())</div></pre></td></tr></table></figure></p>
-<p>我们添加一个case handler<br>test方法检查目录下的py文件，如果有就可以用RequestHandler的run_cgi方法执行<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">case_cgi_file</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">(self, handler)</span>:</span></div><div class="line">        <span class="keyword">return</span> os.path.isfile(handler.full_path) <span class="keyword">and</span> \</div><div class="line">                  handler.full_path.endswith(<span class="string">'.py'</span>)</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">act</span><span class="params">(self, handler)</span>:</span></div><div class="line">        handler.run_cgi(handler.full_path)</div></pre></td></tr></table></figure></p>
-<p>run_cgi核心思想很简单：</p>
-<ol>
-<li>在子程序中运行程序</li>
-<li>捕获标准输出</li>
-<li>把数据发送回客户端</li>
-</ol>
-<p>一个完整的CGI协议肯定比这复杂。比如，它要处理URL里面的参数。。。<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">run_cgi</span><span class="params">(self, full_path)</span>:</span></div><div class="line">    cmd = <span class="string">"python "</span> + full_path</div><div class="line">    child_stdin, child_stdout = os.popen2(cmd)</div><div class="line">    child_stdin.close()</div><div class="line">    data = child_stdout.read()</div><div class="line">    child_stdout.close()</div><div class="line">    self.send_content(data)</div></pre></td></tr></table></figure></p>
-<p>最后，我们把case handler类重写。所有case handler都继承base_case这个case handler基类<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">base_case</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">handle_file</span><span class="params">(self, handler, full_path)</span>:</span></div><div class="line">        <span class="keyword">try</span>:</div><div class="line">            <span class="keyword">with</span> open(full_path, <span class="string">'rb'</span>) <span class="keyword">as</span> reader:</div><div class="line">                content = reader.read()</div><div class="line">            handler.send_content(content)</div><div class="line">        <span class="keyword">except</span> IOError <span class="keyword">as</span> msg:</div><div class="line">            msg = <span class="string">"'&#123;0&#125;' cannot be read: &#123;1&#125;"</span>.format(full_path, msg)</div><div class="line">            handler.handle_error(msg)</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">index_path</span><span class="params">(self, handler)</span>:</span></div><div class="line">        <span class="keyword">return</span> os.path.join(handler.full_path, <span class="string">'index.html'</span>)</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">(self, handler)</span>:</span></div><div class="line">        <span class="keyword">assert</span> <span class="keyword">False</span>, <span class="string">'Not implemented.'</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">act</span><span class="params">(self, handler)</span>:</span></div><div class="line">        <span class="keyword">assert</span> <span class="keyword">False</span>, <span class="string">'Not implemented.'</span></div><div class="line">case handler</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">case_no_file</span><span class="params">(base_case)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">(self, handler)</span>:</span></div><div class="line">        <span class="keyword">return</span> <span class="keyword">not</span> os.path.exists(handler.full_path)</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">act</span><span class="params">(self, handler)</span>:</span></div><div class="line">        <span class="keyword">raise</span> ServerException(<span class="string">"'&#123;0&#125;' not found"</span>.format(handler.path))</div><div class="line"><span class="comment">#-------------------------------------------------------------------------------</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">case_cgi_file</span><span class="params">(base_case)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">run_cgi</span><span class="params">(self, handler)</span>:</span></div><div class="line">        cmd = <span class="string">"python "</span> + handler.full_path</div><div class="line">        child_stdin, child_stdout = os.popen2(cmd)</div><div class="line">        child_stdin.close()</div><div class="line">        data = child_stdout.read()</div><div class="line">        child_stdout.close()</div><div class="line">        handler.send_content(data)</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">(self, handler)</span>:</span></div><div class="line">        <span class="keyword">return</span> os.path.isfile(handler.full_path) <span class="keyword">and</span> \</div><div class="line">                  handler.full_path.endswith(<span class="string">'.py'</span>)</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">act</span><span class="params">(self, handler)</span>:</span></div><div class="line">        self.run_cgi(handler)</div><div class="line"><span class="comment">#-------------------------------------------------------------------------------</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">case_existing_file</span><span class="params">(base_case)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">(self, handler)</span>:</span></div><div class="line">        <span class="keyword">return</span> os.path.isfile(handler.full_path)</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">act</span><span class="params">(self, handler)</span>:</span></div><div class="line">        self.handle_file(handler, handler.full_path)</div><div class="line"><span class="comment">#-------------------------------------------------------------------------------</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">case_directory_index_file</span><span class="params">(base_case)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">(self, handler)</span>:</span></div><div class="line">        <span class="keyword">return</span> os.path.isdir(handler.full_path) <span class="keyword">and</span> \</div><div class="line">                  os.path.isfile(self.index_path(handler))</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">act</span><span class="params">(self, handler)</span>:</span></div><div class="line">        self.handle_file(handler, self.index_path(handler))</div><div class="line"><span class="comment">#-------------------------------------------------------------------------------</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">case_directory_no_index_file</span><span class="params">(base_case)</span>:</span></div><div class="line">      Listing_Page = <span class="string">'''\</span></div><div class="line"><span class="string">    &lt;html&gt;</span></div><div class="line"><span class="string">    &lt;body&gt;</span></div><div class="line"><span class="string">    &lt;ul&gt;</span></div><div class="line"><span class="string">    &#123;0&#125;</span></div><div class="line"><span class="string">    &lt;/ul&gt;</span></div><div class="line"><span class="string">    &lt;/body&gt;</span></div><div class="line"><span class="string">    &lt;/html&gt;</span></div><div class="line"><span class="string">    '''</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">list_dir</span><span class="params">(self, handler, full_path)</span>:</span></div><div class="line">        <span class="keyword">try</span>:</div><div class="line">            entries = os.listdir(full_path)</div><div class="line">            bullets = [<span class="string">'&lt;li&gt;&#123;0&#125;&lt;/li&gt;'</span>.format(e) <span class="keyword">for</span> e <span class="keyword">in</span> entries <span class="keyword">if</span> <span class="keyword">not</span> e.startswith(<span class="string">'.'</span>)]</div><div class="line">            page = self.Listing_Page.format(<span class="string">'\n'</span>.join(bullets))</div><div class="line">            handler.send_content(page)</div><div class="line">        <span class="keyword">except</span> OSError <span class="keyword">as</span> msg:</div><div class="line">            msg = <span class="string">"'&#123;0&#125;' cannot be listed: &#123;1&#125;"</span>.format(self.path, msg)</div><div class="line">            handler.handle_error(msg)</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">(self, handler)</span>:</span></div><div class="line">        <span class="keyword">return</span> os.path.isdir(handler.full_path) <span class="keyword">and</span> \</div><div class="line">                  <span class="keyword">not</span> os.path.isfile(self.index_path(handler))</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">act</span><span class="params">(self, handler)</span>:</span></div><div class="line">        self.list_dir(handler, handler.full_path)</div><div class="line"><span class="comment">#-------------------------------------------------------------------------------</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">case_always_fail</span><span class="params">(base_case)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">(self, handler)</span>:</span></div><div class="line">        <span class="keyword">return</span> <span class="keyword">True</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">act</span><span class="params">(self, handler)</span>:</span></div><div class="line">        <span class="keyword">raise</span> ServerException(<span class="string">"Unknown object '&#123;0&#125;'"</span>.format(handler.path))</div></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wax8280.github.io/2016/06/24/165/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Vincent Zhong">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Vin's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/06/24/165/" itemprop="url">编写一个简单的模板引擎</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-06-24T11:24:15+08:00">
-                2016-06-24
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Code/" itemprop="url" rel="index">
-                    <span itemprop="name">Code</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>我们知道，互联网上的HTML页面极少是完全静态的。它们都或多或少掺入一些动态数据（比如，用户名），通常一个网页会含有大量的动态数据：展示的商品，或好友的动态等等。</p>
-<p>怎么用一种简单的方法将动态数据插入到完全静态的页面中？要解决这个问题，我们必须设计出一种前端人员熟悉的类似于HTML标记语言的方式，将动态数据插入到静态的HTML页面中。<br>举个例子<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Welcome, Vincent!<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Products:<span class="tag">&lt;/<span class="name">p</span>&gt;</span> </div><div class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>Apple: $1.00<span class="tag">&lt;/<span class="name">li</span>&gt;</span> </div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>Fig: $1.50<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>Pomegranate: $3.25<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>我们知道，用户名是要动态的，因为页面根据不同的用户呈现出不同的效果；水果的列表也要是动态的，因为水果的价格不能一成不变，它需要从数据库中获取数据，动态改变价格或种类。</p>
-<p>为了让HTML文档在我们代码中以字符串形式显示，我们必须将需要动态处理的数据单独标记出来，以便程序进行处理。<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">PAGE_HTML = <span class="string">"""</span></div><div class="line"><span class="string">    &lt;p&gt;Welcome, &#123;name&#125;!&lt;/p&gt;</span></div><div class="line"><span class="string">    &lt;p&gt;Products:&lt;/p&gt;</span></div><div class="line"><span class="string">    &lt;ul&gt;</span></div><div class="line"><span class="string">    &#123;products&#125;</span></div><div class="line"><span class="string">    &lt;/ul&gt;</span></div><div class="line"><span class="string">"""</span></div><div class="line">PRODUCT_HTML = <span class="string">"&lt;li&gt;&#123;prodname&#125;: &#123;price&#125;&lt;/li&gt;\n"</span></div></pre></td></tr></table></figure></p>
-<p>可以看到，整个页面被放在名为PAGE_HTML的字符串中；而可以用循环显示的数据（如我们的水果清单）可以单独放在用名为PRODUCT_HTML的字符串。<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">make_page</span><span class="params">(username, products)</span>:</span></div><div class="line">    product_html = <span class="string">""</span></div><div class="line">    <span class="keyword">for</span> prodname, price <span class="keyword">in</span> products.iteritems():</div><div class="line">	product_html += PRODUCT_HTML.format(</div><div class="line">	prodname=prodname, price=price)</div><div class="line">	html = PAGE_HTML.format(name=username, product=product_html)</div><div class="line">    <span class="keyword">return</span> html</div></pre></td></tr></table></figure></p>
-<p>在上面的代码中，我们向make_page函数传入一个字符串与一个字典，分别表示用户名与水果。通过字符串的format函数可以将HTML中的标记的动态数据替换成我们想要的数据。可以看出，程序确实可以运行。但是随之而来的一个问题是，这段代码使用Python写的，不懂Python的人就不能使用了。而且，这只是个简单的HTML就已经要写如此复杂的代码。设想一下，当要处理的HTML文档是现在的100倍的时候，工作量是该有多大。</p>
-<h1 id="模板（Templates）"><a href="#模板（Templates）" class="headerlink" title="模板（Templates）"></a>模板（Templates）</h1><p>最好的方法是，前端人员可以直接在HTML文档里面编辑，甚至使用一些简单的语句。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Welcome, &#123;&#123;user_name&#125;&#125;!<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Products:<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">&#123;% for product in product_list %&#125;</div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>&#123;&#123; product.name &#125;&#125;: </div><div class="line">    &#123;&#123; product.price|format_price &#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">&#123;% endfor %&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>我们知道，Python中的字符串是通过双引号或单引号标记起来的。当解释器遇到第一个双引号的时候，它就知道“哦，这里是一个字符串”，一直直到它遇到第二个双引号的时候，表示字符串的结束。</p>
-<p>在我们的模板中也一样，当模板引擎遇到“&#123;&#123;”的时候，它就知道“哦，这里会输出一个表达式”，一直直到遇到“&#125;&#125;”才结束。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Welcome, &#123;&#123;user_name&#125;&#125;!<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>我们从头开始看，“&lt;p&gt;Welcome, ”是静态的HTML内容，一直到遇到“&#123;&#123;”的时候，切换到动态模式，在输出的时候使用变量user_name代替。这让我们想到在Python里面，有类似的格式化函数<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;p&gt;Welcome, &#123;user_name&#125;!&lt;/p&gt;".format(user_name="vincent")</div></pre></td></tr></table></figure></p>
-<p>当然，模板还可以使用条件判断语句跟循环语句。</p>
-<p>这些文件被称为“模板”，是因为他们使用相同的结构却能生成许多内容不同的页面。为了在我们的程序中使用HTML模板，我们需要编写一个模板引擎（template engine）：接受静态的模板，通过把动态数据与其组合起来，生成一个HTML文档。我们把这称为模板的解析（interpret）——把模板动态部分换成真实的数据。</p>
-<h1 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h1><p>模板引擎的语法不尽相同。接下来要编写的模板引擎的语法跟Django的（一个著名的Web框架）差不多。</p>
-<h2 id="表达式"><a href="#表达式" class="headerlink" title="表达式"></a>表达式</h2><p>表达式在我们的模板引擎中用两对大括号括起来。它可是是一个变量，亦或是变量调用的方法。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Welcome, &#123;&#123;user_name&#125;&#125;!<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>在Python中，我们可以用如下方法访问变量的属性或方法。<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">dict[<span class="string">"key"</span>]</div><div class="line">obj.attr</div><div class="line">obj.method()</div></pre></td></tr></table></figure></p>
-<p>在我们编写的模板引擎中，我们统一使用”.”操作符。来获取属性，如果获取的是可执行的方法将会自动执行。<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">dict.key</div><div class="line">obj.attr</div><div class="line">obj.method</div><div class="line">&lt;p&gt;The price is: &#123;&#123;product.price&#125;&#125;, with a &#123;&#123;product.discount&#125;&#125;% discount.&lt;/p&gt;</div></pre></td></tr></table></figure></p>
-<p>我们也能用一个叫做“过滤器（filter）”的函数，过滤我们想要的数据。过滤器通过“|”分割<code> </code><br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Short name: &#123;&#123;story.subject|slugify|lower&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<h2 id="条件判断语句"><a href="#条件判断语句" class="headerlink" title="条件判断语句"></a>条件判断语句</h2><p>条件判断语句，这是必须的。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;% if user.is_logged_in %&#125; </div><div class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>Welcome, &#123;&#123; user.name &#125;&#125;!<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">&#123;% endif %&#125;</div></pre></td></tr></table></figure></p>
-<h2 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h2><p>循环能大大减少了代码量<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Products:<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span> </div><div class="line">&#123;% for product in product_list %&#125; </div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>&#123;&#123; product.name &#125;&#125;: &#123;&#123; product.price|format_price &#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">&#123;% endfor %&#125; </div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><p>注释功能还是挺重要的<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;# This is the best template ever! #&#125;</div></pre></td></tr></table></figure></p>
-<h1 id="开始着手"><a href="#开始着手" class="headerlink" title="开始着手"></a>开始着手</h1><p>模板引擎通常会做两件事：</p>
-<p>分析模板（parsing the template）<br>渲染模板（rendering the template）：</p>
-<ul>
-<li>在模板中找出动态数据</li>
-<li>处理逻辑语句（模板中的条件判断或循环语句）</li>
-<li>执行点操作符和过滤器</li>
-</ul>
-<p>问题的关键是我们如何把分析模板跟渲染模板连接在一起，也就是我们要通过“分析模板”这个步骤得出些什么东西——这些东西能够被渲染到HTML文件中。方法主要有两种：解析（interpretation）和编译（compilation）。</p>
-<p>在解释型模板引擎中：“分析模板”阶段的产物是一些代表模板的数据，然后每次“渲染模板”阶段都要运重复这个过程。著名Web框架Django里面的模板引擎就是其中的代表。<br>在编译型模板引擎中：“分析模板”阶段的产物是一些可直接执行的代码，“渲染模板”阶段执行这些代码并得到静态的HTML文件，无须再次编译。Jinja2与Mako就是其中的代表。</p>
-<p>在速度方面，编译型模板引擎在第一次运行模板的时候速度会比解释型模板引擎要慢，而当第二次第三次…执行的时候，编译型模板引擎会比解释型模板引擎快。这是一个典型的“空间换时间”的例子。</p>
-<p>我们的模板是编译型模板引擎，我们把模板编译成Python代码。每次运行这些Python代码都会渲染得到静态的HTML文件。<br>我们的模板编译器应用到了代码生成（code generation）的技术，代码生成可以产生很多灵活而又功能强大的工具，包括但不限于程序语言编译器（programming language compilers）。代码生成可能比较复杂，但很实用。</p>
-<h1 id="编译成Python代码"><a href="#编译成Python代码" class="headerlink" title="编译成Python代码"></a>编译成Python代码</h1><p>我们看回前面的代码。在分析模板阶段，模板引擎将会把它们转变成Python函数。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Welcome, &#123;&#123;user_name&#125;&#125;!<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Products:<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">    &#123;% for product in product_list %&#125;</div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>&#123;&#123; product.name &#125;&#125;: </div><div class="line">    &#123;&#123; product.price|format_price &#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    &#123;% endfor %&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>模板引擎会把模板转变成Python代码，虽然转换的结果看起来有点奇怪。<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">render_function</span><span class="params">(context, do_dots)</span>:</span> </div><div class="line">    c_user_name = context[<span class="string">'user_name'</span>] </div><div class="line">    c_product_list = context[<span class="string">'product_list'</span>] </div><div class="line">    c_format_price = context[<span class="string">'format_price'</span>]</div><div class="line">    result = [] </div><div class="line">    append_result = result.append</div><div class="line">    extend_result = result.extend</div><div class="line">    to_str = str</div><div class="line">    extend_result([ <span class="string">'&lt;p&gt;Welcome, '</span>,</div><div class="line">        to_str(c_user_name), </div><div class="line">        <span class="string">'!&lt;/p&gt;\n&lt;p&gt;Products:&lt;/p&gt;\n&lt;ul&gt;\n'</span></div><div class="line">        ])</div><div class="line">    <span class="keyword">for</span> c_product <span class="keyword">in</span> c_product_list:</div><div class="line">        extend_result([</div><div class="line">            <span class="string">'\n &lt;li&gt;'</span>,</div><div class="line">            to_str(do_dots(c_product, <span class="string">'name'</span>)), </div><div class="line">            <span class="string">':\n   '</span>,</div><div class="line">        to_str(c_format_price(do_dots(c_product, <span class="string">'price'</span>))),</div><div class="line">             <span class="string">'&lt;/li&gt;\n'</span></div><div class="line">        ])</div><div class="line">    append_result(<span class="string">'\n&lt;/ul&gt;\n'</span>) </div><div class="line">    <span class="keyword">return</span> <span class="string">''</span>.join(result)</div></pre></td></tr></table></figure></p>
-<p>每一个模板都会被转换成一个名为render_function的函数，第一个参数接收一个字典（第二个参数我们后面说）。</p>
-<p>我们看看函数的开始<br>我们把字典解包出来（因为这样会使得二次访问的时候速度更快），赋给带前缀“c_”的变量（加上前缀避免了命名冲突）<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">c_user_name = context[<span class="string">'user_name'</span>] </div><div class="line">c_product_list = context[<span class="string">'product_list'</span>] </div><div class="line">c_format_price = context[<span class="string">'format_price'</span>]</div></pre></td></tr></table></figure></p>
-<p>我们注意到append，extend，str方法赋给了局部变量result_append，result_extend和str。<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">append_result = result.append</div><div class="line">extend_result = result.extend</div><div class="line">to_str = str</div></pre></td></tr></table></figure></p>
-<p>为什么要这样做？我们看得更深一些。</p>
-<p>Python里面对象（Object）的方法（method）（如result.append(“hello”)）虽然看起来好像是一步执行，其实执行分为两步。第一步，获取对象的方法result.append；第二步，传递参数”hello”。所以我们可以将第一步的结果保存起来。这样做我们可以节省一步，这些细小的优化节省了一点点时间。<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#以下语句执行的结果一样</span></div><div class="line">result.append(<span class="string">"hello"</span>)</div><div class="line">append_result = result.append </div><div class="line">append_result(<span class="string">"hello"</span>)</div></pre></td></tr></table></figure></p>
-<p>to_str也是一个细小的优化。Python里面，寻找局部变量比寻找全局变量或内置的对象和函数都要快。str是一个Python内置的对象，虽然无论在那里都可以使用，但是Python每次还是会寻找str。将其赋给一个局部变量，将会节省一点点时间。<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#string1与string2内容一样</span></div><div class="line">string1=str(<span class="string">"hello world"</span>)</div><div class="line">to_str=str</div><div class="line">string2=to_str(<span class="string">"hello world"</span>)</div></pre></td></tr></table></figure></p>
-<p>接下来，我们使用result_append，result_extend把字符串添加到列表中。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&#123;&#123; ... &#125;&#125;：被转换成表达式，的点操作符使用函数do_dots （render_function的第二个参数）执行。</div><div class="line">&#123;% if ... %&#125; 或&#123;% for ... %&#125;：被转换成Python的条件判断和循环语句if与for。&#123;% endif%&#125;或&#123;% end或%&#125;代表语句的结束。</div></pre></td></tr></table></figure></p>
-<p>最后函数返回的是字符串。将多个部分的字符串快速转换拼接为长字符串的方法是，创建一个列表然后把他们join起来。<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">return</span> <span class="string">''</span>.join(result)</div></pre></td></tr></table></figure></p>
-<h1 id="编写引擎"><a href="#编写引擎" class="headerlink" title="编写引擎"></a>编写引擎</h1><h2 id="CodeBuilder类"><a href="#CodeBuilder类" class="headerlink" title="CodeBuilder类"></a>CodeBuilder类</h2><p>在我们编写Template类之前。我们先看看CodeBuilder。</p>
-<p>模板引擎主要的工作就是分析模板并产生大量的Python代码。为了方便生成大量的Python代码，我们编写了CodeBuilder类，它生成代码，管理Python的缩进。为什么要管理缩进？因为我们要生成的Python代码是字符串的形式，然后使用exec函数执行。而Python是基于缩进来定义语法的，所以我们必须有一套办法来管理Python的缩进。</p>
-<p>接来下我们开始编写，我们先看构造函数。构造函数生成一个名为code列表，用来保存最终生产的Python代码，还有一个名为indent_level 整形变量，用来管理Python的缩进。<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, indent=<span class="number">0</span>)</span>:</span></div><div class="line">    self.code = []</div><div class="line">    self.indent_level = indent</div></pre></td></tr></table></figure></p>
-<p>我们重载了__str__方法，__str__返回一个字符串，将列表code里面的代码连接成字符串。<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></div><div class="line">    <span class="keyword">return</span> <span class="string">""</span>.join(str(c) <span class="keyword">for</span> c <span class="keyword">in</span> self.code)</div></pre></td></tr></table></figure></p>
-<p>add_line函数生成一行新的代码，它会根据当前的缩进自动进行代码的缩进和换行。<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">add_line</span><span class="params">(self, line)</span>:</span></div><div class="line">    self.code.extend([<span class="string">" "</span> * self.indent_level, line, <span class="string">"\n"</span>])</div></pre></td></tr></table></figure></p>
-<p>根据Python的PEP8规范，规定一个缩进等于4个空格<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">INDENT_STEP = 4</div></pre></td></tr></table></figure></p>
-<p>indent和dedent方法，分别增加与减少缩进<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">indent</span><span class="params">(self)</span>:</span></div><div class="line">    self.indent_level += self.INDENT_STEP</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">dedent</span><span class="params">(self)</span>:</span></div><div class="line">    self.indent_level -= self.INDENT_STEP</div></pre></td></tr></table></figure></p>
-<p>add_section函数，生成一个新的CodeBuilder类。将当前列表code的代码连接成字符串（自动调用<strong>str</strong>方法），放入新的CodeBuilder类中，返回新的CodeBuilder类。<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">   <span class="function"><span class="keyword">def</span> <span class="title">add_section</span><span class="params">(self)</span>:</span></div><div class="line">       section = CodeBuilder(self.indent_level)</div><div class="line">self.code.append(section)</div><div class="line"><span class="keyword">return</span> section</div></pre></td></tr></table></figure></p>
-<p>get_globals函数，执行code的代码（在我们的模板引擎中，也就是定义一个函数。），返回一个名为global_namespace的字典，里面包含有刚定义的函数。<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_globals</span><span class="params">(self)</span>:</span></div><div class="line">    <span class="keyword">assert</span> self.indent_level == <span class="number">0</span></div><div class="line">    python_source = str(self)</div><div class="line">    global_namespace = &#123;&#125;</div><div class="line">    <span class="keyword">exec</span> (python_source, global_namespace)</div><div class="line">    <span class="keyword">return</span> global_namespace</div></pre></td></tr></table></figure></p>
-<p>如下面的代码中，global_namespace[‘SEVENTEEN’]就是数字17，global_namespace[‘three’]就是刚定义的函数three。<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">python_source = <span class="string">"""</span></div><div class="line"><span class="string">    \ SEVENTEEN = 17</span></div><div class="line"><span class="string">    def three():return 3</span></div><div class="line"><span class="string">"""</span></div><div class="line">global_namespace = &#123;&#125;</div><div class="line">exec(python_source, global_namespace)</div></pre></td></tr></table></figure></p>
-<p>到此为止，我们的CodeBuilder类就已经完成了。CodeBuilder其实跟模板引擎没多大关系，我们仅仅是通过它来生成模板渲染的函数render_function。当然利用CodeBuilder定义的函数，因为不同的命名空间，所以完全避免的名字相同带来的冲突问题。</p>
-<h2 id="Template类"><a href="#Template类" class="headerlink" title="Template类"></a>Template类</h2><p>Template类仅有少数的接口，构造函数接收类型为字符串的模板。它的render方法通过接收一个字典，进行模板的渲染。</p>
-<p>我通过向Template的构造函数传入模板，产生一个实例，我们就完成了编译。之后我们可以多次调用render方法渲染，从而得到不同的结果。</p>
-<p>构造函数还接收一个字典（一般来说，是一些过滤器），把它放在template类中，当我们调用render方法的时候会用到。<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">template= Template(</div><div class="line">	<span class="string">''' &lt;h1&gt;Hello &#123;&#123;name|upper&#125;&#125;!&lt;/h1&gt;</span></div><div class="line"><span class="string">	&#123;% for topic in topics %&#125;</span></div><div class="line"><span class="string">	&lt;p&gt;You are interested in &#123;&#123;topic&#125;&#125;.&lt;/p&gt;</span></div><div class="line"><span class="string">	 &#123;% endfor %&#125; '''</span>, &#123;<span class="string">'upper'</span>: str.upper&#125;,</div><div class="line">	)</div><div class="line">	text = template.render(&#123;</div><div class="line">	    <span class="string">'name'</span>: <span class="string">"Ned"</span>,</div><div class="line">	    <span class="string">'topics'</span>: [<span class="string">'Python'</span>, <span class="string">'Geometry'</span>, <span class="string">'Juggling'</span>],</div><div class="line">	&#125;)</div></pre></td></tr></table></figure></p>
-<h3 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h3><p>Duang！接来下我们开始编写，我们先看构造函数。编译的主要工作都在构造函数里面，构造函数时整个Template类的重中之重。我们一点一点来。</p>
-<p>构造函数接收一个字符串以及多个变量（这些变量可以是函数，也可以是列表，字符串等在模板里面要用到的东西），将多个变量放入内部定义的context字典中。<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, text, *contexts)</span>:</span></div><div class="line">    self.context = &#123;&#125;</div><div class="line">    <span class="keyword">for</span> context <span class="keyword">in</span> contexts:</div><div class="line">        self.context.update(context)</div></pre></td></tr></table></figure></p>
-<p>我们还需要一个集合来存放定义的变量。集合all_vars存放所有模板里面出现的变量，集合loop_vars存放模板循环里面（如for循环）里面出现的变量。你现在可能感到困惑，等会儿你就知道这两个小东西对我们有啥帮助了。<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">self.all_vars = set()</div><div class="line">self.loop_vars = set()</div></pre></td></tr></table></figure></p>
-<p>我们遇到了之前我们写的CodeBuilder类。我们通过add_line方法添加一行Python语句，定义一个名为render_function的函数，之前我们讲过render_function函数的第一个参数接收一个字典参数，第二个参数接收一个点操作符执行函数do_dots。</p>
-<p>注意到CodeBuilder类十分简单，它甚至不知自己在做什么，它只会生成一行行新的代码。</p>
-<p>我们使用了add_section方法生成一个新的CodeBuilder实例，并把之前编写的代码放入其中。这可以方便我们以后插入代码。<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">code = CodeBuilder()</div><div class="line">code.add_line(<span class="string">"def render_function(context, do_dots):"</span>)</div><div class="line">code.indent()</div><div class="line">vars_code = code.add_section()</div><div class="line">code.add_line(<span class="string">"result = []"</span>)</div><div class="line">code.add_line(<span class="string">"append_result = result.append"</span>)</div><div class="line">code.add_line(<span class="string">"extend_result = result.extend"</span>)</div><div class="line">code.add_line(<span class="string">"to_str = str"</span>)</div></pre></td></tr></table></figure></p>
-<p>接下来我们定义一个flush_output函数，帮我们把buffered里面的Python语句通过CodeBuilder的add_line方法把添加到CodeBuilder实例的code列表中。<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">buffered = []</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">flush_output</span><span class="params">()</span>:</span></div><div class="line">    <span class="keyword">if</span> len(buffered) == <span class="number">1</span>:</div><div class="line">        code.add_line(<span class="string">"append_result(%s)"</span> % buffered[<span class="number">0</span>])</div><div class="line">    <span class="keyword">elif</span> len(buffered) &gt; <span class="number">1</span>:</div><div class="line">        code.add_line(<span class="string">"extend_result([%s])"</span> % <span class="string">", "</span>.join(buffered))</div><div class="line">    <span class="keyword">del</span> buffered[:]</div></pre></td></tr></table></figure></p>
-<p>回到我们的模板，当我们处理模板的条件判断语句或循环语句的时候，我们想要确认这些语句是否正确。我们就需要一个栈。例如，当我们遇到一个&#123;% if .. %&#125;标签的时候。我们把“if”push进栈；当我们遇到&#123;% endif %&#125;的时候，我们pop栈，如果没有“if”在栈顶的话，将会报错。<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">    ops_stack = []</div></pre></td></tr></table></figure></p>
-<p>现在，我们正式开始分析模板。通过正则表达式，我们把模板分成各个部分，然后放入列表tokens中。</p>
-<p>re.split是一个用正则表达式把一个长字符串分割成几个短字符串的函数；r表示raw_string；?s说明“.”匹配任何东西，包括换行符；&#123;&#123;.<em>?&#125;&#125;，&#123;%.</em>?%&#125;，&#123;#.*?#&#125;分别匹配表达式，条件判断与循环语句，注释。<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">    tokens = re.split(<span class="string">r"(?s)(&#123;&#123;.*?&#125;&#125;|&#123;%.*?%&#125;|&#123;#.*?#&#125;)"</span>, text)</div></pre></td></tr></table></figure></p>
-<p>如果，有如下模板：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Topics for &#123;&#123;name&#125;&#125;: &#123;% for t in topics %&#125;&#123;&#123;t&#125;&#125;, &#123;% endfor %&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>我们把它分割成：<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">[</div><div class="line"><span class="string">'&lt;p&gt;Topics for '</span>, </div><div class="line"><span class="string">'&#123;&#123;name&#125;&#125;'</span>, </div><div class="line"><span class="string">': '</span>,</div><div class="line"><span class="string">'&#123;% for t in topics %&#125;'</span>, </div><div class="line"><span class="string">''</span>,</div><div class="line"><span class="string">'&#123;&#123;t&#125;&#125;'</span>, </div><div class="line"><span class="string">', '</span>,</div><div class="line"><span class="string">'&#123;% endfor %&#125;'</span>, </div><div class="line"><span class="string">'&lt;/p&gt;'</span></div><div class="line">]</div></pre></td></tr></table></figure></p>
-<p>一件将模板分割成上面这样的列表，我们就可以遍历tokens列表并做下一步处理了。</p>
-<p>每个token都被检测，看符合四种情况的哪一种。我们只需要检查前两个字符就可以。第一种情况是注释，我们直接忽略。<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">    <span class="keyword">for</span> token <span class="keyword">in</span> tokens:</div><div class="line">        <span class="keyword">if</span> token.startswith(<span class="string">'&#123;#'</span>):</div><div class="line">            <span class="keyword">continue</span></div></pre></td></tr></table></figure></p>
-<p>对于&#123;&#123;…&#125;&#125;，我们砍掉两对大括号，忽略前后的空格，把里面的语句提取出来。然后把它传递给_expr_code方法。<br>_expr_code方法会把我们模板的表达式转化成Python的表达式。我们会在后面详细说_expr_code这个方法。<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">        <span class="keyword">elif</span> token.startswith(<span class="string">'&#123;&#123;'</span>):</div><div class="line">            expr = self._expr_code(token[<span class="number">2</span>:<span class="number">-2</span>].strip())</div><div class="line">            buffered.append(<span class="string">"to_str(%s)"</span> % expr)</div></pre></td></tr></table></figure></p>
-<p>第三种情况就是&#123;% … %&#125;，首先我们运行flush_output函数通过CodeBuilder的add_line方法把buffered里面的Python语句添加到CodeBuilder实例的code列表中。<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">         <span class="keyword">elif</span> token.startswith(<span class="string">'&#123;%'</span>):</div><div class="line">                flush_output()</div><div class="line">                words = token[<span class="number">2</span>:<span class="number">-2</span>].strip().split()</div></pre></td></tr></table></figure></p>
-<p>现在我们对于if，for或者end这三种情况分别作出不同的处理。</p>
-<p>对于if的情况。if标签通常只有一个表达式，所以对于长度不符的情况，我们使用_syntax_error方法抛出一个错误。我们把“if”压进栈 ops_stack，以便我们检查endif标签。然后通过_expr_code方法，把if标签里面的表达式编译成Python可识别的代码。<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> words[<span class="number">0</span>] == <span class="string">'if'</span>:</div><div class="line">    <span class="keyword">if</span> len(words) != <span class="number">2</span>:</div><div class="line">        self._syntax_error(<span class="string">"Don't understand if"</span>, token)</div><div class="line">    ops_stack.append(<span class="string">'if'</span>)</div><div class="line">    code.add_line(<span class="string">"if %s:"</span> % self._expr_code(words[<span class="number">1</span>]))</div><div class="line">    code.indent()</div></pre></td></tr></table></figure></p>
-<p>第二种情况就是for，这里出现了一个新的方法_variable。还记得我们之前说过的两个用来放变量的集合吗？方法_variable的作用除了检查变量是否有非法字符外，还会将变量添加到集合中。为了避免命名冲突，我们还把变量的名字加上了“c_”的前缀。注意，for..in的in后面可能跟的是一个变量，亦或是一个可迭代的表达式（如 for i in range(10)）。所以我们要使用_expr_code方法。<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">elif</span> words[<span class="number">0</span>] == <span class="string">'for'</span>:</div><div class="line">    <span class="keyword">if</span> len(words) != <span class="number">4</span> <span class="keyword">or</span> words[<span class="number">2</span>] != <span class="string">'in'</span>:</div><div class="line">        self._syntax_error(<span class="string">"Don't understand for"</span>, token)</div><div class="line">    ops_stack.append(<span class="string">'for'</span>)</div><div class="line">    self._variable(words[<span class="number">1</span>], self.loop_vars)</div><div class="line">    code.add_line(</div><div class="line">        <span class="string">"for c_%s in %s:"</span> % (</div><div class="line">            words[<span class="number">1</span>],</div><div class="line">            self._expr_code(words[<span class="number">3</span>])</div><div class="line">        )</div><div class="line">    )</div><div class="line">    code.indent()</div></pre></td></tr></table></figure></p>
-<p>最后一种情况就是end，通过字符串的切片提取，与ops_stack栈顶的元素作比较，判断语句是否正确。最后注意到有一个反缩进。<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">elif</span> words[<span class="number">0</span>].startswith(<span class="string">'end'</span>):</div><div class="line">    <span class="keyword">if</span> len(words) != <span class="number">1</span>:</div><div class="line">        self._syntax_error(<span class="string">"Don't understand end"</span>, token)</div><div class="line">    end_what = words[<span class="number">0</span>][<span class="number">3</span>:]</div><div class="line">    <span class="keyword">if</span> <span class="keyword">not</span> ops_stack:</div><div class="line">        self._syntax_error(<span class="string">"Too many ends"</span>, token)</div><div class="line">    start_what = ops_stack.pop()</div><div class="line">    <span class="keyword">if</span> start_what != end_what:</div><div class="line">        self._syntax_error(<span class="string">"Mismatched end tag"</span>, end_what)</div><div class="line">    code.dedent()</div></pre></td></tr></table></figure></p>
-<p>对于不可识别的，我们通过_syntax_error方法抛出错误<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">else</span>:</div><div class="line">    self._syntax_error(<span class="string">"Don't understand tag"</span>, words[<span class="number">0</span>])</div></pre></td></tr></table></figure></p>
-<p>这样我们就完成了模板里面的三种不同的语法&#123;&#123;…&#125;&#125; ， &#123;#…#&#125; 和 &#123;%…%&#125; 的处理了。最后剩下普通的字符串。我们把它添加到buffered里面以便输出。repr函数与str函数类似，但是它是将对象转换成Python内部的字符串，而str是将对象转换成用户可读的友好的字符串。注意到我们的条件判断语句，主要就检测空的字符串，因为我们必须防止append_result(“”)这样无用的操作。<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">        <span class="keyword">else</span>:</div><div class="line">            <span class="keyword">if</span> token:</div><div class="line">                buffered.append(repr(token))</div></pre></td></tr></table></figure></p>
-<p>最后，我们还需要检查一下ops_stack是否为空。当我们的语句都是合法的，有始有终的时候，ops_stack的值应为空的。如果不为空，我们已经在某处丢掉了end标签了。检查完之后，我们将调用flush_output函数，通过CodeBuilder的add_line方法把buffered里面的Python语句添加到CodeBuilder实例的code列表中<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">    <span class="keyword">if</span> ops_stack:</div><div class="line">        self._syntax_error(<span class="string">"Unmatched action tag"</span>, ops_stack[<span class="number">-1</span>])</div><div class="line">    flush_output()</div></pre></td></tr></table></figure></p>
-<p>我们来看看一个模板<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Welcome, &#123;&#123;user_name&#125;&#125;!<span class="tag">&lt;/<span class="name">p</span>&gt;</span> </div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Products:<span class="tag">&lt;/<span class="name">p</span>&gt;</span> </div><div class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span> </div><div class="line">    &#123;% for product in product_list %&#125; </div><div class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span>&#123;&#123; product.name &#125;&#125;: &#123;&#123; product.price|format_price &#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    &#123;% endfor %&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>在模板中user_name与product是两个变量，因为他们在两对大括号之间。集合all_vars里面也有他们的名字，因为方法_expr_code将它们添加到集合all<em>vars里面。但只有user</em></p>
-<p>name需要从模板中提取出来，因为product是在循环里面定义的变量。<br>在模板里面的所有变量，都会保存在名为all<em>vars的集合里面；而所有在模板的语句里面定义的变量，都会保存在名为loop</em></p>
-<p>vars的集合里面。所以我们需要把在all_vars集合 而不在loop<em>vars集合里面的变量找出来。把context里面的变量解包出来，放入加上“c</em>”前缀的同名变量中。<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">    <span class="keyword">for</span> var_name <span class="keyword">in</span> self.all_vars - self.loop_vars:</div><div class="line">        vars_code.add_line(<span class="string">"c_%s = context[%r]"</span> % (var_name, var_name))</div></pre></td></tr></table></figure></p>
-<p>最后。我们把CodeBuilder的属性code代码都连接起来。使用get_globals方法，执行code的代码（在我们的模板引擎中，也就是定义一个函数。（def render_function(..):）），返回一个名为global_namespace的字典，里面包含有刚定义的函数。</p>
-<p>现在self._render_function就是一个Python函数了，我们将会在模板的渲染阶段用到这个函数。<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">    code.add_line(<span class="string">"return ''.join(result)"</span>)</div><div class="line">    code.dedent()</div><div class="line">    self._render_function = code.get_globals()[<span class="string">'render_function'</span>]</div></pre></td></tr></table></figure></p>
-<h2 id="编译表达式"><a href="#编译表达式" class="headerlink" title="编译表达式"></a>编译表达式</h2><p>上面我们只介绍了模板中的变量与语句，还有一个很重要的方法_expr_code。_expr_code将模板中的表达式编译成Python中的表达式。接下来我们来编写上面一直提到的_expr_code方法。<br>在我们编写的模板中，表达式可以是单独一个变量。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;&#123;user_name&#125;&#125;</div></pre></td></tr></table></figure></p>
-<p>也可是包含属性方法和过滤器的复杂形式。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;&#123;user.name.localized|upper|escape&#125;&#125;</div></pre></td></tr></table></figure></p>
-<p>_expr_code方法必须能处理所有的情况。<br>第一考虑的是我们的表达式中是否存在“|”，如果存在，我们把它分隔开来，放在列表pipes 中。把“|”分离之后，pipes[0]即为变量与”.“操作符，我们对其继续用_expr_code方法。pipes的其他项为过滤器函数的名字，我们把它逐个放入all_vars集合中。然后生成一条“函数链”</p>
-<p>如&#123;&#123;user.name.localized|upper|escape&#125;&#125;，运行之后就得到code=c_escape(c_upper(user.name.localized))<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">_expr_code</span><span class="params">(self, expr)</span>:</span></div><div class="line">    <span class="keyword">if</span> <span class="string">"|"</span> <span class="keyword">in</span> expr:</div><div class="line">        pipes = expr.split(<span class="string">"|"</span>)</div><div class="line">        code = self._expr_code(pipes[<span class="number">0</span>])</div><div class="line">        <span class="keyword">for</span> func <span class="keyword">in</span> pipes[<span class="number">1</span>:]:</div><div class="line">            self._variable(func, self.all_vars)</div><div class="line">            code = <span class="string">"c_%s(%s)"</span> % (func, code)</div></pre></td></tr></table></figure></p>
-<p>对于表达式中存在的“.”。首先我们要理解“.”操作符是如何操作的，在模板中x.y在Python中有两种意思：x[‘y’]或者x.y（表示哪种意思取决于x[‘y’]或者x.y哪种是可行的）。如果结果是可执行的，自动执行。这种不确定性表明了，我们只能在运行的时候尝试这些可能性，而不是在编译的时候。所以我们把x.y.z编译成一个调用的函数do_dots(x, ‘y’, ‘z’)</p>
-<p>do_dots 函数会在编译完成的Python代码运行的时候传递进去。我们后面会详细讲述如何编写这个函数。<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">elif</span> <span class="string">"."</span> <span class="keyword">in</span> expr:</div><div class="line">    dots = expr.split(<span class="string">"."</span>)</div><div class="line">    code = self._expr_code(dots[<span class="number">0</span>])</div><div class="line">    args = <span class="string">", "</span>.join(repr(d) <span class="keyword">for</span> d <span class="keyword">in</span> dots[<span class="number">1</span>:])</div><div class="line">    code = <span class="string">"do_dots(%s, %s)"</span> % (code, args)</div></pre></td></tr></table></figure></p>
-<p>_expr_code方法的最后一部分，没有“|”，没有“.”的表达式。注意的是，传进all_vars集合的只是名字而已。<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">else</span>:</div><div class="line">    self._variable(expr, self.all_vars)</div><div class="line">    code = <span class="string">"c_%s"</span> % expr</div><div class="line"><span class="keyword">return</span> code</div></pre></td></tr></table></figure></p>
-<h3 id="辅助方法"><a href="#辅助方法" class="headerlink" title="辅助方法"></a>辅助方法</h3><p>抛出一个异常<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">_syntax_error</span><span class="params">(self, msg, thing)</span>:</span></div><div class="line">    <span class="keyword">raise</span> TempliteSyntaxError(<span class="string">"%s: %r"</span> % (msg, thing))</div></pre></td></tr></table></figure></p>
-<p>检查变量是否有非法字符，将变量添加到集合中。<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">_variable</span><span class="params">(self, name, vars_set)</span>:</span></div><div class="line">    <span class="keyword">if</span> <span class="keyword">not</span> re.match(<span class="string">r"[_a-zA-Z][_a-zA-Z0-9]*$"</span>, name):</div><div class="line">        self._syntax_error(<span class="string">"Not a valid name"</span>, name)</div><div class="line">    vars_set.add(name)</div></pre></td></tr></table></figure></p>
-<h3 id="渲染"><a href="#渲染" class="headerlink" title="渲染"></a>渲染</h3><p>当我们把模板编译成Python函数之后。渲染函数要做的是，处理动态的数据，然后调用生成的Python函数。注意到，这里的self.context是一个包含需要用来渲染模板的动态数据和过滤器函数的字典。我们在Template类的构造函数里面已经update过，一般来说我们在Template类的构造函数里update的是过滤器的函数；在方法render里面update的是用来渲染模板的动态数据。因为创建了一个Template实例出来就说明编译完成。调用render，通过传入不同的context实现不同的渲染。<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">render</span><span class="params">(self, context=None)</span>:</span></div><div class="line">    render_context = dict(self.context)</div><div class="line">    <span class="keyword">if</span> context:</div><div class="line">        render_context.update(context)</div><div class="line">    <span class="keyword">return</span> self._render_function(render_context, self._do_dots)</div></pre></td></tr></table></figure></p>
-<p>接下来是最后一个方法_do_dots。在编译阶段，模板表达式如x.y.z被编译成do_dots(x, ‘y’, ‘z’) 。首先把dot当做attribute，如果失败，当做key；如果可以被调用，调用它。<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">_do_dots</span><span class="params">(self, value, *dots)</span>:</span> </div><div class="line">    <span class="keyword">for</span> dot <span class="keyword">in</span> dots: </div><div class="line">        <span class="keyword">try</span>:</div><div class="line">            value = getattr(value, dot)</div><div class="line">        <span class="keyword">except</span> AttributeError: </div><div class="line">            value = value[dot]</div><div class="line">        <span class="keyword">if</span> callable(value):</div><div class="line">            value = value()</div><div class="line">    <span class="keyword">return</span> value</div></pre></td></tr></table></figure></p>
-<p>注意到每次调用self._render_function方法的时候，我们都传进去一个函数用来执行点表达式。但是很多时候我们传进去的函数都一样，我们还可以把这部分代码变成编译模板的一部分。当然，这是后面要讨论的东西了。</p>
-<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p>到此为止，我们的简单模板引擎就已经完工了。如果有兴趣的话你还可以为这个模板添加如下功能。</p>
-<ul>
-<li>模板继承与包含</li>
-<li>自定义标签</li>
-<li>自动转义</li>
-<li>带参数的过滤器</li>
-<li>更加复杂的条件语句，如else和elif</li>
-<li>多个循环嵌套</li>
-<li>空格控制</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2054,7 +1925,7 @@
             
               <a href="/archives">
             
-                <span class="site-state-item-count">106</span>
+                <span class="site-state-item-count">108</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -2076,7 +1947,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">35</span>
+                <span class="site-state-item-count">38</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

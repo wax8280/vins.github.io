@@ -238,6 +238,302 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wax8280.github.io/2016/09/26/653/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Vincent Zhong">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Vin's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/09/26/653/" itemprop="url">Python中的弱引用</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-09-26T22:37:54+08:00">
+                2016-09-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Code/" itemprop="url" rel="index">
+                    <span itemprop="name">Code</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="weakref模块具有的方法"><a href="#weakref模块具有的方法" class="headerlink" title="weakref模块具有的方法"></a>weakref模块具有的方法</h3><p><strong>class weakref.ref(object[, callback])</strong><br>创建一个弱引用对象，object是被引用的对象，callback是回调函数（当被引用对象被删除时的，会调用改函数）。</p>
+<p><strong>weakref.proxy(object[, callback])</strong><br>创建一个用弱引用实现的代理对象，参数同上。</p>
+<p><strong>weakref.getweakrefcount(object)</strong><br>获取对象object关联的弱引用对象数</p>
+<p><strong>weakref.getweakrefs(object)</strong><br>获取object关联的弱引用对象列表</p>
+<p><strong>class weakref.WeakKeyDictionary([dict])</strong><br>创建key为弱引用对象的字典</p>
+<p><strong>class weakref.WeakValueDictionary([dict])</strong><br>创建value为弱引用对象的字典</p>
+<p><strong>class weakref.WeakSet([elements])</strong><br>创建成员为弱引用对象的集合对象</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="comment">### 创建弱引用</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">from</span> socket <span class="keyword">import</span> *</div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> weakref</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>s=socket(AF_INET,SOCK_STREAM)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>ref=weakref.ref(s)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>s</div><div class="line">&lt;socket._socketobject instance at <span class="number">007</span>B4A94&gt;</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>ref</div><div class="line">&lt;weakref at <span class="number">0x81195c</span>; to <span class="string">'instance'</span> at <span class="number">0x7b4a94</span>&gt; </div><div class="line"><span class="meta">&gt;&gt;&gt; </span>ref()    <span class="comment">#调用它来访问被引用的对象</span></div><div class="line">&lt;socket.socketobject instance at <span class="number">007</span>B4A94&gt;</div><div class="line">一旦没有了对这个对象的其它的引用，调用弱引用将返回<span class="keyword">None</span>，因为Python已经销毁了这个对象。 注意：大部分的对象不能通过弱引用来访问。</div><div class="line"><span class="comment">### 创建代理对象</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">from</span> socket <span class="keyword">import</span>*</div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> weakref</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>s=socket(AF_INET,SOCK_STREAM)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>ref=weakref.proxy(s)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>s</div><div class="line">&lt;socket._socketobject instance at <span class="number">007E4874</span>&gt;</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>ref </div><div class="line">&lt;socket._socketobject instance at <span class="number">007E4874</span>&gt;</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>ref.close() <span class="comment">#对象的方法同样工作</span></div></pre></td></tr></table></figure>
+<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><p>创建缓存实例<br>当创建类实例时，我们想反悔一个缓存引用，让其指向上一个用同样参数（如果有的话）创建出的类实例<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> sys</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Spam</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name)</span>:</span></div><div class="line">        self.name = name</div><div class="line"><span class="keyword">import</span> weakref</div><div class="line">_spam_cache = weakref.WeakValueDictionary()</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_spam</span><span class="params">(name)</span>:</span></div><div class="line">    <span class="keyword">if</span> name <span class="keyword">not</span> <span class="keyword">in</span> _spam_cache:</div><div class="line">        s = Spam(name)</div><div class="line">        _spam_cache[name] = s</div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        s = _spam_cache[name]</div><div class="line">    <span class="keyword">return</span> s</div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    a = get_spam(<span class="string">'foo'</span>)</div><div class="line">    b = get_spam(<span class="string">'bar'</span>)</div><div class="line">    print(sys.getrefcount(a))</div><div class="line">    print(<span class="string">'a is b:'</span>, a <span class="keyword">is</span> b)</div><div class="line">    c = get_spam(<span class="string">'foo'</span>)</div><div class="line">    print(sys.getrefcount(a))</div><div class="line">    print(<span class="string">'a is c:'</span>, a <span class="keyword">is</span> c)</div><div class="line">    <span class="comment"># 2</span></div><div class="line">    <span class="comment"># a is b: False</span></div><div class="line">    <span class="comment"># 3</span></div><div class="line">    <span class="comment"># a is c: True</span></div><div class="line">    print(list(_spam_cache))</div><div class="line">    <span class="keyword">del</span> a</div><div class="line">    print(list(_spam_cache))</div><div class="line">    <span class="keyword">del</span> c</div><div class="line">    print(list(_spam_cache))</div><div class="line">    <span class="comment"># ['foo', 'bar']</span></div><div class="line">    <span class="comment"># ['foo', 'bar']</span></div><div class="line">    <span class="comment"># ['bar']</span></div></pre></td></tr></table></figure></p>
+<h3 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> weakref</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">CachedSpamManager</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></div><div class="line">        self._cache = weakref.WeakValueDictionary()</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_spam</span><span class="params">(self, name)</span>:</span></div><div class="line">        <span class="keyword">if</span> name <span class="keyword">not</span> <span class="keyword">in</span> self._cache:</div><div class="line">            s = Spam(name)</div><div class="line">            self._cache[name] = s</div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            s = self._cache[name]</div><div class="line">        <span class="keyword">return</span> s</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Spam</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name)</span>:</span></div><div class="line">        self.name = name</div><div class="line">Spam.manager = CachedSpamManager()</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_spam</span><span class="params">(name)</span>:</span></div><div class="line">    <span class="keyword">return</span> Spam.manager.get_spam(name)</div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    a = get_spam(<span class="string">'foo'</span>)</div><div class="line">    b = get_spam(<span class="string">'bar'</span>)</div><div class="line">    print(<span class="string">'a is b:'</span>, a <span class="keyword">is</span> b)</div><div class="line">    c = get_spam(<span class="string">'foo'</span>)</div><div class="line">    print(<span class="string">'a is c:'</span>, a <span class="keyword">is</span> c)</div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wax8280.github.io/2016/09/24/649/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Vincent Zhong">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Vin's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/09/24/649/" itemprop="url">实现带有状态的对象</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-09-24T15:48:21+08:00">
+                2016-09-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Code/" itemprop="url" rel="index">
+                    <span itemprop="name">Code</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <hr>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 一个naive的例子</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Connection</span>:</span></div><div class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></div><div class="line">		self.state = <span class="string">'CLOSED'</span></div><div class="line">	<span class="function"><span class="keyword">def</span> <span class="title">read</span><span class="params">(self)</span>:</span></div><div class="line">		<span class="keyword">if</span> self.state != <span class="string">'OPEN'</span>:</div><div class="line">			<span class="keyword">raise</span> RuntimeError(<span class="string">'Not open'</span>)</div><div class="line">		print(<span class="string">'reading'</span>)</div><div class="line">	<span class="function"><span class="keyword">def</span> <span class="title">write</span><span class="params">(self)</span>:</span></div><div class="line">		<span class="keyword">if</span> self.state != <span class="string">'OPEN'</span>:</div><div class="line">			<span class="keyword">raise</span> RuntimeError(<span class="string">'Not open'</span>)</div><div class="line">		print(<span class="string">'writing'</span>)</div><div class="line">	<span class="function"><span class="keyword">def</span> <span class="title">open</span><span class="params">(self)</span>:</span></div><div class="line">		<span class="keyword">if</span> self.state == <span class="string">'OPEN'</span>:</div><div class="line">			<span class="keyword">raise</span> RuntimeError(<span class="string">'Already open'</span>)</div><div class="line">		self.state = <span class="string">'OPEN'</span></div><div class="line">	<span class="function"><span class="keyword">def</span> <span class="title">close</span><span class="params">(self)</span>:</span></div><div class="line">		<span class="keyword">if</span> self.state == <span class="string">'CLOSED'</span>:</div><div class="line">			<span class="keyword">raise</span> RuntimeError(<span class="string">'Already CLOSED'</span>)</div><div class="line">self.state = <span class="string">'CLOSED'</span></div></pre></td></tr></table></figure>
+<p>这样很不优雅，而且包含了大量重复的代码。<br>我们的目的是进行状态判断，那么我们本就可以把OPEN跟CLOSE状态各自封装成一个类。<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Connection state 的基类</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">ConnectionState</span>:</span></div><div class="line"><span class="meta">    @staticmethod</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">read</span><span class="params">(conn)</span>:</span></div><div class="line">        <span class="keyword">raise</span> NotImplementedError()</div><div class="line"><span class="meta">    @staticmethod</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">write</span><span class="params">(conn, data)</span>:</span></div><div class="line">        <span class="keyword">raise</span> NotImplementedError()</div><div class="line"><span class="meta">    @staticmethod</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">open</span><span class="params">(conn)</span>:</span></div><div class="line">        <span class="keyword">raise</span> NotImplementedError()</div><div class="line"><span class="meta">    @staticmethod</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">close</span><span class="params">(conn)</span>:</span></div><div class="line">        <span class="keyword">raise</span> NotImplementedError()</div><div class="line"><span class="comment"># 不同状态</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">ClosedConnectionState</span><span class="params">(ConnectionState)</span>:</span></div><div class="line"><span class="meta">    @staticmethod</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">read</span><span class="params">(conn)</span>:</span></div><div class="line">        <span class="keyword">raise</span> RuntimeError(<span class="string">'Not open'</span>)</div><div class="line"><span class="meta">    @staticmethod</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">write</span><span class="params">(conn, data)</span>:</span></div><div class="line">        <span class="keyword">raise</span> RuntimeError(<span class="string">'Not open'</span>)</div><div class="line"><span class="meta">    @staticmethod</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">open</span><span class="params">(conn)</span>:</span></div><div class="line">        conn.new_state(OpenConnectionState)</div><div class="line"><span class="meta">    @staticmethod</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">close</span><span class="params">(conn)</span>:</span></div><div class="line">        <span class="keyword">raise</span> RuntimeError(<span class="string">'Already closed'</span>)</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">OpenConnectionState</span><span class="params">(ConnectionState)</span>:</span></div><div class="line"><span class="meta">    @staticmethod</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">read</span><span class="params">(conn)</span>:</span></div><div class="line">        print(<span class="string">'reading'</span>)</div><div class="line"><span class="meta">    @staticmethod</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">write</span><span class="params">(conn, data)</span>:</span></div><div class="line">        print(<span class="string">'writing'</span>)</div><div class="line"><span class="meta">    @staticmethod</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">open</span><span class="params">(conn)</span>:</span></div><div class="line">        <span class="keyword">raise</span> RuntimeError(<span class="string">'Already open'</span>)</div><div class="line"><span class="meta">    @staticmethod</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">close</span><span class="params">(conn)</span>:</span></div><div class="line">        conn.new_state(ClosedConnectionState)</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Connection</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></div><div class="line">        self.new_state(ClosedConnectionState)</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">new_state</span><span class="params">(self, newstate)</span>:</span></div><div class="line">        self._state = newstate</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">read</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="keyword">return</span> self._state.read(self)</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">write</span><span class="params">(self, data)</span>:</span></div><div class="line">        <span class="keyword">return</span> self._state.write(self, data)</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">open</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="keyword">return</span> self._state.open(self)</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">close</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="keyword">return</span> self._state.close(self)</div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    c = Connection()</div><div class="line">    print(c)</div><div class="line">    <span class="keyword">try</span>:</div><div class="line">        c.read()</div><div class="line">    <span class="keyword">except</span> RuntimeError <span class="keyword">as</span> e:</div><div class="line">        print(e)</div><div class="line">    c.open()</div><div class="line">    print(c)</div><div class="line">    c.read()</div><div class="line">    c.close()</div><div class="line">    print(c)</div></pre></td></tr></table></figure></p>
+<p>这里的每种状态都用类和静态方法来实现，在每个静态方法中都把Connection类的实例作为第一个参数。这是因为我们在不同的状态类中不保存任何实例数据，所有的实例数据都应该保存在Connection实例中。<br>再看看第二种方法，直接修改实例的<strong>class</strong>属性<br>这里不再将Connection和COnnectionState作为单独的类来实现，现在我们将他们合并在一起。随着状态的改变，实例也会修改自己的类型。<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Connection</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></div><div class="line">        self.new_state(ClosedConnection)</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">new_state</span><span class="params">(self, state)</span>:</span></div><div class="line">        self.__class__ = state</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">read</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="keyword">raise</span> NotImplementedError()</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">write</span><span class="params">(self, data)</span>:</span></div><div class="line">        <span class="keyword">raise</span> NotImplementedError()</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">open</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="keyword">raise</span> NotImplementedError()</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">close</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="keyword">raise</span> NotImplementedError()</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">ClosedConnection</span><span class="params">(Connection)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">read</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="keyword">raise</span> RuntimeError(<span class="string">'Not open'</span>)</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">write</span><span class="params">(self, data)</span>:</span></div><div class="line">        <span class="keyword">raise</span> RuntimeError(<span class="string">'Not open'</span>)</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">open</span><span class="params">(self)</span>:</span></div><div class="line">        self.new_state(OpenConnection)</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">close</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="keyword">raise</span> RuntimeError(<span class="string">'Already closed'</span>)</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">OpenConnection</span><span class="params">(Connection)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">read</span><span class="params">(self)</span>:</span></div><div class="line">        print(<span class="string">'reading'</span>)</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">write</span><span class="params">(self, data)</span>:</span></div><div class="line">        print(<span class="string">'writing'</span>)</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">open</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="keyword">raise</span> RuntimeError(<span class="string">'Already open'</span>)</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">close</span><span class="params">(self)</span>:</span></div><div class="line">        self.new_state(ClosedConnection)</div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    c = Connection()</div><div class="line">    print(c)</div><div class="line">    <span class="keyword">try</span>:</div><div class="line">        c.read()</div><div class="line">    <span class="keyword">except</span> RuntimeError <span class="keyword">as</span> e:</div><div class="line">        print(e)</div><div class="line">    c.open()</div><div class="line">    print(c)</div><div class="line">    c.read()</div><div class="line">    c.close()</div><div class="line">    print(c)</div></pre></td></tr></table></figure></p>
+<p>聪明的同学可能会看出，这TM就是设计模式中的状态模式嘛。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://wax8280.github.io/2016/09/23/637/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1404,294 +1700,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wax8280.github.io/2016/09/14/582/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Vincent Zhong">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Vin's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/09/14/582/" itemprop="url">同步 异步 阻塞与非阻塞</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-09-14T22:06:20+08:00">
-                2016-09-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Code/" itemprop="url" rel="index">
-                    <span itemprop="name">Code</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="同步"><a href="#同步" class="headerlink" title="同步"></a>同步</h3><p><strong>所谓同步，就是在发出一个功能调用时，在没有得到结果之前，该调用就不返回。</strong>按照这个定义，其实绝大多数函数都是同步调用（例如sin, isdigit 等）。但是一般而言，我们在说同步、异步的时候，特指那些需要其他部件协作或者需要一定时间完成的任务。最常见的例子就是 SendMessage。该函数发送一个消息给某个窗口，在对方处理完消息之前，这个函数不返回。当对方处理完毕以后，该函数才把消息处理函数所返回的 LRESULT值返回给调用者。</p>
-<h3 id="异步"><a href="#异步" class="headerlink" title="异步"></a>异步</h3><p>异步的概念和同步相对。<strong>当一个异步过程调用发出后，调用者不能立刻得到结果。</strong>实际处理这个调用的部件在完成后，通过状态、通知和回调来通知调用者。以 CAsycSocket类为例（注意，CSocket从CAsyncSocket派生，但是起功能已经由异步转化为同步），当一个客户端通过调用 Connect函数发出一个连接请求后，调用者线程立刻可以朝下运行。当连接真正建立起来以后，socket底层会发送一个消息通知该对象。这里提到执行部件和调用者通过三种途径返回结果：状态、通知和回调。可以使用哪一种依赖于执行部件的实现，除非执行部件提供多种选择，否则不受调用者控制。如果执行部件用状态来通知，那么调用者就需要每隔一定时间检查一次，效率就很低（有些初学多线程编程的人，总喜欢用一个循环去检查某个变量的值，这其实是一种很严重的错误）。如果是使用通知的方式，效率则很高，因为执行部件几乎不需要做额外的操作。至于回调函数，其实和通知没太多区别。</p>
-<h3 id="阻塞"><a href="#阻塞" class="headerlink" title="阻塞"></a>阻塞</h3><p>阻塞调用是指<strong>调用结果返回之前，当前线程会被挂起。</strong>函数只有在得到结果之后才会返回。有人也许会把阻塞调用和同步调用等同起来，实际上他是不同的。对于同步调用来说，很多时候当前线程还是激活的，只是从逻辑上当前函数没有返回而已。例如，我们在CSocket中调用Receive函数，如果缓冲区中没有数据，这个函数就会一直等待，直到有数据才返回。而此时，当前线程还会继续处理各种各样的消息。如果主窗口和调用函数在同一个线程中，除非你在特殊的界面操作函数中调用，其实主界面还是应该可以刷新。socket接收数据的另外一个函数recv则是一个阻塞调用的例子。当socket工作在阻塞模式的时候，如果没有数据的情况下调用该函数，则当前线程就会被挂起，直到有数据为止。</p>
-<h3 id="非阻塞"><a href="#非阻塞" class="headerlink" title="非阻塞"></a>非阻塞</h3><p>非阻塞和阻塞的概念相对应，指在<strong>不能立刻得到结果之前，该函数不会阻塞当前线程，而会立刻返回。</strong><br>对象的阻塞模式和阻塞函数调用<br>对象是否处于阻塞模式和函数是不是阻塞调用有很强的相关性，但是并不是一一对应的。阻塞对象上可以有非阻塞的调用方式，我们可以通过一定的API去轮询状态，在适当的时候调用阻塞函数，就可以避免阻塞。而对于非阻塞对象，调用特殊的函数也可以进入阻塞调用。函数select就是这样的一个例子。</p>
-<hr>
-<p>转自互联网</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wax8280.github.io/2016/09/13/568/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Vincent Zhong">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Vin's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/09/13/568/" itemprop="url">Mysql备份与恢复</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-09-13T21:30:44+08:00">
-                2016-09-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Code/" itemprop="url" rel="index">
-                    <span itemprop="name">Code</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">备份一个数据库</div><div class="line">mysqldump -u username -p dbname table1 table2 ...-&gt; BackupName.sql</div><div class="line">备份多个数据库</div><div class="line">mysqldump -u username -p --databases dbname2 dbname2 &gt; Backup.sql</div><div class="line">备份所有数据库</div><div class="line">mysqldump -u username -p -all-databases &gt; BackupName.sql</div><div class="line">还原使用mysqldump命令备份的数据库</div><div class="line">mysql -u root -p [dbname] &lt; backup.sq</div></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1741,7 +1749,7 @@
             
               <a href="/archives">
             
-                <span class="site-state-item-count">106</span>
+                <span class="site-state-item-count">108</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1763,7 +1771,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">35</span>
+                <span class="site-state-item-count">38</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

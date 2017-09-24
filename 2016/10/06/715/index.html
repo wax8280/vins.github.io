@@ -95,18 +95,18 @@
 
 
 
-<meta name="description" content="wordpress某天后台突然不行，查看nginx的log，发现一个error：upstream sent too big header while reading response header from upstream。大意是上游发送的头部太大了。  解决办法：在nginx的conf里面，关于php的部分加上如下两句，然后reload即可fastcgi_buffer_size 128k;fa">
+<meta name="description" content="wordpress某天后台突然不行，查看nginx的log，发现一个error：upstream sent too big header while reading response header from upstream。大意是上游发送的头部太大了。  解决办法： 在nginx的conf里面，关于php的部分加上如下两句，然后reload即可 fastcgi_buffer_size 128k;">
 <meta name="keywords" content="WordPress,Nginx">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Nginx 502 upstream sent too big header while reading response header from upstream">
 <meta property="og:url" content="https://wax8280.github.io/2016/10/06/715/index.html">
 <meta property="og:site_name" content="Vin&#39;s Blog">
-<meta property="og:description" content="wordpress某天后台突然不行，查看nginx的log，发现一个error：upstream sent too big header while reading response header from upstream。大意是上游发送的头部太大了。  解决办法：在nginx的conf里面，关于php的部分加上如下两句，然后reload即可fastcgi_buffer_size 128k;fa">
+<meta property="og:description" content="wordpress某天后台突然不行，查看nginx的log，发现一个error：upstream sent too big header while reading response header from upstream。大意是上游发送的头部太大了。  解决办法： 在nginx的conf里面，关于php的部分加上如下两句，然后reload即可 fastcgi_buffer_size 128k;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-06T04:59:54.000Z">
+<meta property="og:updated_time" content="2017-09-24T03:22:08.132Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Nginx 502 upstream sent too big header while reading response header from upstream">
-<meta name="twitter:description" content="wordpress某天后台突然不行，查看nginx的log，发现一个error：upstream sent too big header while reading response header from upstream。大意是上游发送的头部太大了。  解决办法：在nginx的conf里面，关于php的部分加上如下两句，然后reload即可fastcgi_buffer_size 128k;fa">
+<meta name="twitter:description" content="wordpress某天后台突然不行，查看nginx的log，发现一个error：upstream sent too big header while reading response header from upstream。大意是上游发送的头部太大了。  解决办法： 在nginx的conf里面，关于php的部分加上如下两句，然后reload即可 fastcgi_buffer_size 128k;">
 
 
 
@@ -330,8 +330,11 @@
       
         <p>wordpress某天后台突然不行，查看nginx的log，发现一个error：upstream sent too big header while reading response header from upstream。大意是上游发送的头部太大了。</p>
 <hr>
-<p>解决办法：<br>在nginx的conf里面，关于php的部分加上如下两句，然后reload即可<br>fastcgi_buffer_size 128k;<br>fastcgi_buffers 32 32k;</p>
-
+<pre><code>解决办法：
+在nginx的conf里面，关于php的部分加上如下两句，然后reload即可
+fastcgi_buffer_size 128k;
+fastcgi_buffers 32 32k;
+</code></pre>
       
     </div>
     
@@ -442,7 +445,7 @@
             
               <a href="/archives">
             
-                <span class="site-state-item-count">106</span>
+                <span class="site-state-item-count">108</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -464,7 +467,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">35</span>
+                <span class="site-state-item-count">38</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
