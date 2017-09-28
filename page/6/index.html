@@ -238,6 +238,148 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wax8280.github.io/2016/09/27/655/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Vincent Zhong">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Vin's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/09/27/655/" itemprop="url">利用Python中的元类实现单例模式</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-09-27T12:23:14+08:00">
+                2016-09-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Code/" itemprop="url" rel="index">
+                    <span itemprop="name">Code</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <hr>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Singleton</span><span class="params">(type)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, *args, **kwargs)</span>:</span></div><div class="line">        self.__instance = <span class="keyword">None</span></div><div class="line">        <span class="comment"># 如果是Python2</span></div><div class="line">        <span class="comment"># super(Singleton,self).__init__(*args, **kwargs)</span></div><div class="line">        super().__init__(*args, **kwargs)</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__call__</span><span class="params">(self, *args, **kwargs)</span>:</span></div><div class="line">        <span class="keyword">if</span> self.__instance <span class="keyword">is</span> <span class="keyword">None</span>:</div><div class="line">            self.__instance = super().__call__(*args, **kwargs)</div><div class="line">            <span class="keyword">return</span> self.__instance</div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            <span class="keyword">return</span> self.__instance</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Spam</span><span class="params">(metaclass=Singleton)</span>:</span></div><div class="line">    <span class="comment"># 如果是Python2</span></div><div class="line">    <span class="comment"># __metaclass__=Singleton</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></div><div class="line">        print(<span class="string">'Creating Spam'</span>)</div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    a = Spam()</div><div class="line">    b = Spam()</div><div class="line">    print(a <span class="keyword">is</span> b)</div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://wax8280.github.io/2016/09/26/653/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1555,151 +1697,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wax8280.github.io/2016/09/17/587/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Vincent Zhong">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Vin's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/09/17/587/" itemprop="url">2014年索尼世界摄影奖 公开组获奖作品</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-09-17T07:57:57+08:00">
-                2016-09-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Photograph/" itemprop="url" rel="index">
-                    <span itemprop="name">Photograph</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>索尼世界摄影奖，现在已经成为世界最顶级的摄影活动之一。该比赛由索尼赞助，分为公开组、专业组、青少年组以及专业学生组4个组别，摄影题材涉及方方面面，是专业摄影人士以及摄影爱好者用自己的镜头记录这个世界的盛会。</p>
-<h4 id="索尼世界摄影奖比赛内容包括"><a href="#索尼世界摄影奖比赛内容包括" class="headerlink" title="索尼世界摄影奖比赛内容包括"></a>索尼世界摄影奖比赛内容包括</h4><p>专业组：15个类别，组图作品进行评奖<br>公开组：10个类别，单幅作品进行评奖<br>青少年组：3个类别，单幅作品进行评奖（针对20岁以下年轻摄影师）<br>专学生业组：针对18到30岁接受高等摄影教育的在校学生</p>
-<h4 id="公开组获奖名单"><a href="#公开组获奖名单" class="headerlink" title="公开组获奖名单"></a>公开组获奖名单</h4><p>建筑：Holger Schmidtke，德国<br>艺术与人文：Valerie Prudon，澳大利亚<br>后期制作：Kylli Sparre，爱沙尼亚<br>弱光：Vlad Eftenie，罗马尼亚<br>自然与动物：Gert van den Bosch，荷兰<br>全景拍摄：Ivan Pedretti，意大利<br>人物拍摄：Arup Ghosh，印度<br>笑容：Alpay Erdem，土耳其<br>瞬间影像：Hairul Azizi Harun，马来西亚<br>旅游：陈利，中国</p>
-<hr>
-<div align="center"><br><img alt="公开组人像题材冠军 Arup Ghosh，印度" src="http://om4k85ss3.bkt.clouddn.com/static/images/./pic1-1.jpg"><br></div><br><div align="center"><br><img alt="印尼国家奖亚军 Adhi Prayoga" src="http://om4k85ss3.bkt.clouddn.com/static/images/./pic6-1.jpg"><br></div><br><div align="center"><br><img alt="厄瓜多尔国家奖冠军 Luis Chandi Páez，厄瓜多尔" src="http://om4k85ss3.bkt.clouddn.com/static/images/./pic7-1.jpg"><br></div><br><div align="center"><br><img alt="公开组全幅冠军 Ivan Pedretti，意大利" src="http://om4k85ss3.bkt.clouddn.com/static/images/./pic5-1.jpg"><br></div><br><div align="center"><br><img alt="公开组笑容冠军 Alpay Erdem，土耳其" src="http://om4k85ss3.bkt.clouddn.com/static/images/./pic4-1.jpg"><br></div><br><div align="center"><br><img alt="公开组建筑题材冠军 Holger Schmidtke，德国" src="http://om4k85ss3.bkt.clouddn.com/static/images/./pic3-1.jpg"><br></div><br><div align="center"><br><img alt="公开组旅游题材冠军 陈利，中国" src="http://om4k85ss3.bkt.clouddn.com/static/images/./pic2-1.jpg"><br></div><br><div align="center"><br><img alt="公开组后期冠军 Kylli Sparre，爱沙尼亚" src="http://om4k85ss3.bkt.clouddn.com/static/images/./pic8-1.jpg"><br></div>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1749,7 +1746,7 @@
             
               <a href="/archives">
             
-                <span class="site-state-item-count">108</span>
+                <span class="site-state-item-count">109</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
