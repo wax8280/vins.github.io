@@ -257,7 +257,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/10/13/web2kindle安装/" itemprop="url">web2kindle��װ</a></h1>
+                <a class="post-title-link" href="/2017/10/13/web2kindle安装/" itemprop="url">web2kindle安装</a></h1>
         
 
         <div class="post-meta">
@@ -331,33 +331,33 @@
       
         
           
-            <h1 id="��װPython"><a href="#��װPython" class="headerlink" title="��װPython"></a>��װPython</h1><p>����Python���°棬Windows�û�������<a href="https://www.python.org/ftp/python/3.6.3/python-3.6.3.exe" target="_blank" rel="external">Python3.6.3</a>��mac��linux�û��Լ�ȥ�������ء�</p>
-<p>��װ��ѡ����ͼ��<br><img src="http://om4k85ss3.bkt.clouddn.com/static/images/./web2kindle��װ1.JPG"><br><img src="http://om4k85ss3.bkt.clouddn.com/static/images/./web2kindle��װ1.JPG"></p>
-<h1 id="����Դ����"><a href="#����Դ����" class="headerlink" title="����Դ����"></a>����Դ����</h1><p>����<a href="https://github.com/wax8280/web2kindle" target="_blank" rel="external">web2kindle</a>GitHub��ҳ��ѡ��<code>Clone or downlaod</code>–<code>Downlaod ZIP</code>���ز��ҽ�ѹ��</p>
-<h1 id="��װ����"><a href="#��װ����" class="headerlink" title="��װ����"></a>��װ����</h1><p><code>win+r</code>�������У�����<code>cmd</code>����������ʾ����</p>
-<p>��������</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">//�л�����ѹ��Դ��·��������Դ������D:\downloads\Compressed\web2kindle-master\web2kindle-mast��</div><div class="line"></div><div class="line">D:</div><div class="line">cd D:\downloads\Compressed\web2kindle-master\web2kindle-master </div><div class="line"></div><div class="line">//��װ����</div><div class="line">pip install -r requirement</div></pre></td></tr></table></figure>
-<h1 id="����"><a href="#����" class="headerlink" title="����"></a>����</h1><p>�����ļ���<code>web2kindle\config</code>Ŀ¼�¡������ļ���ʵ��һ��<code>py</code>�ļ�������ÿ�������Ľű����в�ͬ�������ļ�������һ��<code>config.py</code>ͨ�������ļ���</p>
-<p>�½�һ��<code>config.py</code>�ı��ļ��������Լ�ʵ��������д</p>
+            <h1 id="安装Python"><a href="#安装Python" class="headerlink" title="安装Python"></a>安装Python</h1><p>下载Python最新版，Windows用户请点击<a href="https://www.python.org/ftp/python/3.6.3/python-3.6.3.exe" target="_blank" rel="external">Python3.6.3</a>，mac或linux用户自己去官网下载。</p>
+<p>安装的选项如图：<br><img src="http://om4k85ss3.bkt.clouddn.com/static/images/./web2kindle安装1.JPG"><br><img src="http://om4k85ss3.bkt.clouddn.com/static/images/./web2kindle安装1.JPG"></p>
+<h1 id="下载源代码"><a href="#下载源代码" class="headerlink" title="下载源代码"></a>下载源代码</h1><p>访问<a href="https://github.com/wax8280/web2kindle" target="_blank" rel="external">web2kindle</a>GitHub首页。选择<code>Clone or downlaod</code>–<code>Downlaod ZIP</code>下载并且解压。</p>
+<h1 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h1><p><code>win+r</code>打开运行，输入<code>cmd</code>打开命令提示符。</p>
+<p>输入命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">//切换到解压后源码路径，如我源码放在D:\downloads\Compressed\web2kindle-master\web2kindle-mast：</div><div class="line"></div><div class="line">D:</div><div class="line">cd D:\downloads\Compressed\web2kindle-master\web2kindle-master </div><div class="line"></div><div class="line">//安装依赖</div><div class="line">pip install -r requirement</div></pre></td></tr></table></figure>
+<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><p>配置文件在<code>web2kindle\config</code>目录下。配置文件其实是一个<code>py</code>文件。对于每个单独的脚本都有不同的配置文件，另有一个<code>config.py</code>通用配置文件。</p>
+<p>新建一个<code>config.py</code>文本文件，根据自己实际情况填写</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"># config.py</div><div class="line"></div><div class="line">KINDLEGEN_PATH = r&apos;C:\Users\web2kinle_save\kindlegen.exe&apos;</div><div class="line">LOG_PATH = r&apos;C:\Users\web2kinle_save\log&apos;</div><div class="line">LOG_LEVEL = &apos;DEBUG&apos;</div></pre></td></tr></table></figure>
 <ul>
-<li>KINDLEGEN_PATH��KindleGen.exe��������·��</li>
-<li>LOG_PATH����־�ļ�</li>
-<li>LOG_LEVEL����־�ȼ�</li>
+<li>KINDLEGEN_PATH：KindleGen.exe程序所在路径</li>
+<li>LOG_PATH：日志文件</li>
+<li>LOG_LEVEL：日志等级</li>
 </ul>
-<p>���ڲ�ͬ�Ľű������½���ͬ�������ļ���������Ҫ���е�<code>zhihu_collection</code>�ű�������Ҫ��<code>config</code>Ŀ¼���½�һ��<code>zhihu_collection_config.py</code>�ļ���</p>
+<p>对于不同的脚本，需新建不同的配置文件。如下面要运行的<code>zhihu_collection</code>脚本。我们要在<code>config</code>目录下新建一个<code>zhihu_collection_config.py</code>文件。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"># zhihu_collection_config.py</div><div class="line"></div><div class="line">DEFAULT_HEADERS = &#123;</div><div class="line">    &apos;User-Agent&apos;: &apos;Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36&apos;</div><div class="line">&#125;</div><div class="line"></div><div class="line">SAVE_PATH = r&apos;C:\Users\web2kinle_save&apos;</div></pre></td></tr></table></figure>
 <ul>
-<li>DEFAULT_HEADERS������ͷ��Ĭ�ϼ��ɡ�</li>
-<li>SVAE_PATH������·���������Զ��ڴ�Ŀ¼��<code>collection_num</code>����һ����Ŀ¼��Ԫ���ݼ������ڴ���Ŀ¼�С�</li>
+<li>DEFAULT_HEADERS：请求头，默认即可。</li>
+<li>SVAE_PATH：保存路径名。会自动在此目录以<code>collection_num</code>生产一个子目录，元数据即保存在此子目录中。</li>
 </ul>
-<h1 id="����-1"><a href="#����-1" class="headerlink" title="����"></a>����</h1><p>����Ҫ����֪���ղؼ�(<a href="https://www.zhihu.com/collection/59744917" target="_blank" rel="external">https://www.zhihu.com/collection/59744917</a>)</p>
+<h1 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h1><p>如我要下载知乎收藏夹(<a href="https://www.zhihu.com/collection/59744917" target="_blank" rel="external">https://www.zhihu.com/collection/59744917</a>)</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">python main.py zhihu_collection --i=59744917</div></pre></td></tr></table></figure>
-<p>���н������£����֣���</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">����������Q������</div><div class="line">[2017-10-11 21:44:31,579][Crawler] ���� Downloader 0</div><div class="line">[2017-10-11 21:44:31,580][Crawler] ���� Parser 0</div><div class="line">[2017-10-11 21:44:31,580][Downloader 0] ���� https://www.zhihu.com/collection/67258836?page=1</div><div class="line">[2017-10-11 21:44:32,459][zhihu_collection] ��ȡ�ղؼ�[֪���ҳ�ϵ�� ��1ҳ]</div><div class="line">[2017-10-11 21:44:32,528][Parser 0] ��ȡ������5����</div><div class="line">.....</div><div class="line">[2017-10-11 21:44:36,601][Downloader 0] ���� https://pic4.zhimg.com/1688f4754c030827305f0afe99d9d023_b.png</div><div class="line">[2017-10-11 21:44:36,685][Downloader 0] Scheduler to Downloader����Ϊ�գ�Downloader 0�ȴ��С�</div><div class="line">[2017-10-11 21:44:36,685][Downloader 0] Downloader to Parser���в�Ϊ�ա�Downloader 0�����ѡ�</div><div class="line">[2017-10-11 21:44:36,701][Downloader 0] Scheduler to Downloader����Ϊ�գ�Downloader 0�ȴ��С�</div><div class="line">Q</div><div class="line"></div><div class="line">*************************************************************</div><div class="line"> Amazon kindlegen(Windows) V2.9 build 1029-0897292</div><div class="line"> �����е�������������</div><div class="line"> Copyright Amazon.com and its Affiliates 2014</div><div class="line">*************************************************************</div><div class="line"></div><div class="line">��Ϣ(prcgen):I1047: �����ӵ�Ԫ����dc:Title        &quot;Read it later ��1ҳ&quot;</div><div class="line">.....</div><div class="line">��Ϣ(prcgen):I1037: ���� Mobi �����ļ����־��棡</div></pre></td></tr></table></figure>
-<p>����KindleGen���������鲿��Ϊ�����̣����Բ�����ʾ��������</p>
-<p>��������ûʵ���Զ��ж��������ɣ����ܾ���������֮����˵������Ϊ�գ����������ɡ���ʱ�ֶ����롰Q������ʼ���������顣</p>
-<h1 id="PS"><a href="#PS" class="headerlink" title="PS"></a>PS</h1><p>����ϸ���ĵ����뿴<a href="https://github.com/wax8280/web2kindle" target="_blank" rel="external">web2kindle</a>��GitHub��ҳ��</p>
+<p>运行结果如下（部分）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">启动。输入Q结束。</div><div class="line">[2017-10-11 21:44:31,579][Crawler] 启动 Downloader 0</div><div class="line">[2017-10-11 21:44:31,580][Crawler] 启动 Parser 0</div><div class="line">[2017-10-11 21:44:31,580][Downloader 0] 请求 https://www.zhihu.com/collection/67258836?page=1</div><div class="line">[2017-10-11 21:44:32,459][zhihu_collection] 获取收藏夹[知乎找抽系列 第1页]</div><div class="line">[2017-10-11 21:44:32,528][Parser 0] 获取新任务5个。</div><div class="line">.....</div><div class="line">[2017-10-11 21:44:36,601][Downloader 0] 请求 https://pic4.zhimg.com/1688f4754c030827305f0afe99d9d023_b.png</div><div class="line">[2017-10-11 21:44:36,685][Downloader 0] Scheduler to Downloader队列为空，Downloader 0等待中。</div><div class="line">[2017-10-11 21:44:36,685][Downloader 0] Downloader to Parser队列不为空。Downloader 0被唤醒。</div><div class="line">[2017-10-11 21:44:36,701][Downloader 0] Scheduler to Downloader队列为空，Downloader 0等待中。</div><div class="line">Q</div><div class="line"></div><div class="line">*************************************************************</div><div class="line"> Amazon kindlegen(Windows) V2.9 build 1029-0897292</div><div class="line"> 命令行电子书制作软件</div><div class="line"> Copyright Amazon.com and its Affiliates 2014</div><div class="line">*************************************************************</div><div class="line"></div><div class="line">信息(prcgen):I1047: 已添加的元数据dc:Title        &quot;Read it later 第1页&quot;</div><div class="line">.....</div><div class="line">信息(prcgen):I1037: 创建 Mobi 域名文件出现警告！</div></pre></td></tr></table></figure>
+<p>调用KindleGen制作电子书部分为多进程，所以部分显示不正常。</p>
+<p>本程序还没实现自动判断下载完成，当很久无请求的之后，说明队列为空，请求已完成。此时手动输入“Q”来开始制作电子书。</p>
+<h1 id="PS"><a href="#PS" class="headerlink" title="PS"></a>PS</h1><p>更详细的文档，请看<a href="https://github.com/wax8280/web2kindle" target="_blank" rel="external">web2kindle</a>的GitHub首页。</p>
 
           
         
