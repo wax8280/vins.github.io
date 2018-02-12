@@ -238,151 +238,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wax8280.github.io/2016/09/27/660/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Vincent Zhong">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Vin's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/09/27/660/" itemprop="url">浅谈Python中的描述符(Descriptor)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-09-27T18:46:13+08:00">
-                2016-09-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Code/" itemprop="url" rel="index">
-                    <span itemprop="name">Code</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="简单点"><a href="#简单点" class="headerlink" title="简单点"></a>简单点</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Descriptor</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__get__</span><span class="params">(self, instance, owner)</span>:</span></div><div class="line">        print(<span class="string">'__get__ called. '</span>）</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">foo</span>:</span></div><div class="line">    t = Descriptor()</div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    c = foo()</div><div class="line">    c.t    <span class="comment">#print  __get__ called.</span></div></pre></td></tr></table></figure>
-<h3 id="详细点"><a href="#详细点" class="headerlink" title="详细点"></a>详细点</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> types</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Descriptor</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__call__</span><span class="params">(self, *args, **kwargs)</span>:</span></div><div class="line">        print(<span class="string">'Descriptor called'</span>)</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__get__</span><span class="params">(self, instance, owner)</span>:</span></div><div class="line">        <span class="keyword">if</span> instance <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">None</span>:</div><div class="line">            print(<span class="string">'__get__ called. '</span> + <span class="string">'instance is '</span> + str(instance) + <span class="string">'; owner is '</span> + str(owner))</div><div class="line">            <span class="keyword">return</span> types.MethodType(self, instance)</div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            print(<span class="string">'__get__ called. '</span> + <span class="string">'instance is '</span> + str(instance) + <span class="string">'; owner is '</span> + str(owner))</div><div class="line">            <span class="keyword">return</span> self</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__set__</span><span class="params">(self, instance, value)</span>:</span></div><div class="line">        print(<span class="string">'set '</span> + str(instance) + <span class="string">';value: '</span> + str(value))</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">foo</span>:</span></div><div class="line">    t = Descriptor()</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">bar</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></div><div class="line">        self.t=Descriptor()</div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    c = foo()</div><div class="line">    print(<span class="string">'test 1'</span>)</div><div class="line">    <span class="comment"># 相当于foo.__dict__['t'].__get__(None, foo)</span></div><div class="line">    foo.t</div><div class="line">    print(<span class="string">'test 2'</span>)</div><div class="line">    <span class="comment"># 相当于foo.__dict__['t'].__get__(t, foo)</span></div><div class="line">    c.t</div><div class="line">    print(<span class="string">'test 3'</span>)</div><div class="line">    c.t()</div><div class="line">    print(<span class="string">'test 4'</span>)</div><div class="line">    c.t = <span class="number">1</span></div><div class="line">    print(<span class="string">'test 5'</span>)</div><div class="line">    d=bar()</div><div class="line">    d.t</div><div class="line"><span class="string">'''</span></div><div class="line"><span class="string">test 1</span></div><div class="line"><span class="string">__get__ called. instance is None; owner is &lt;class '__main__.foo'&gt;</span></div><div class="line"><span class="string">test 2</span></div><div class="line"><span class="string">__get__ called. instance is &lt;__main__.foo object at 0x00000273839F4320&gt;; owner is &lt;class '__main__.foo'&gt;</span></div><div class="line"><span class="string">test 3</span></div><div class="line"><span class="string">__get__ called. instance is &lt;__main__.foo object at 0x00000273839F4320&gt;; owner is &lt;class '__main__.foo'&gt;</span></div><div class="line"><span class="string">Descriptor called</span></div><div class="line"><span class="string">test 4</span></div><div class="line"><span class="string">set &lt;__main__.foo object at 0x00000273839F4320&gt;;value: 1</span></div><div class="line"><span class="string">test 5</span></div><div class="line"><span class="string">'''</span></div></pre></td></tr></table></figure>
-<h3 id="有什么用"><a href="#有什么用" class="headerlink" title="有什么用"></a>有什么用</h3><p>如果想创建一个新形式的实例属性，可以以描述符类的形式定义其功能<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Integer</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name)</span>:</span></div><div class="line">        self.name = name</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__get__</span><span class="params">(self, instance, cls)</span>:</span></div><div class="line">        <span class="keyword">if</span> instance <span class="keyword">is</span> <span class="keyword">None</span>:</div><div class="line">            <span class="keyword">return</span> self</div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            <span class="keyword">return</span> instance.__dict__[self.name]</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__set__</span><span class="params">(self, instance, value)</span>:</span></div><div class="line">        <span class="keyword">if</span> <span class="keyword">not</span> isinstance(value, int):</div><div class="line">            <span class="keyword">raise</span> TypeError(<span class="string">'Expected an int'</span>)</div><div class="line">        instance.__dict__[self.name] = value</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__delete__</span><span class="params">(self, instance)</span>:</span></div><div class="line">        <span class="keyword">del</span> instance.__dict__[self.name]</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Point</span>:</span></div><div class="line">    x = Integer(<span class="string">'x'</span>)</div><div class="line">    y = Integer(<span class="string">'y'</span>)</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, x, y)</span>:</span></div><div class="line">        self.x = x</div><div class="line">        self.y = y</div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    p = Point(<span class="number">2</span>, <span class="number">3</span>)</div><div class="line">    print(p.x) <span class="comment"># calls Point.x.__get__(p,Point)</span></div><div class="line">    p.y = <span class="number">5</span> </div><div class="line">    <span class="keyword">try</span>:</div><div class="line">        p.x = <span class="number">2.3</span></div><div class="line">    <span class="keyword">except</span> TypeError <span class="keyword">as</span> e:</div><div class="line">        print(e)</div></pre></td></tr></table></figure></p>
-<p>如果仅仅是像访问某个特定类中的一个属性，并对此做定制化处理，直接用property更加简单。<br>在需要大量重用代码的情况下，描述符更加有用。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://wax8280.github.io/2016/09/27/657/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1684,11 +1539,157 @@
 
 
     
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wax8280.github.io/2016/09/21/614/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Vincent Zhong">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Vin's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/09/21/614/" itemprop="url">《Secret Symphony》</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-09-21T19:17:47+08:00">
+                2016-09-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Music/" itemprop="url" rel="index">
+                    <span itemprop="name">Music</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <div align="center"><br><img src="http://om4k85ss3.bkt.clouddn.com/static/images/./s22707347.jpg"><br></div>
+
+<p>爱尔兰的民谣风再加点爵士味的编曲。对比前几张专辑，感觉有些逊色。但曲风蛮适合秋日午后的。舒适而慵懒的感觉。</p>
+<p>Katie Melua 8岁时移居到北爱尔兰的贝尔法斯特（BELFAST），5年前又举家迁移到英国，1年前在表演艺术学校BRIT SCHOOL上课的KATIE被知名制作人MIKE BATT挖掘（这位资深制作人近期的作品包括棒辣妹和陈美的专辑），于是和独立厂牌/经纪公司DRAMATICO签下5张唱片合约。小时梦想从政或是朝历史学家方向发展的KATIE，原先并没对写歌和音乐怀有远大志向。她15岁那年参加电视歌唱比赛，演唱MARIAH CAREY的《WHITOUT YOU》，获得冠军；在这之前，她只想象自己是能带给世界和平的人。2年前，KATIE开始写歌，她自称在音乐方面受到皇后合唱团（QUEEN）、琼妮·米歇尔（JONI MITCHELL）、鲍勃·迪伦（BOB DYLAN）、埃拉·菲茨杰拉德（ELLA FITZGERALD）和印度音乐以及爱尔兰民谣等多类乐风的影响。在这锋芒初露的实力派新人KATIE MELUA身上，我们可以看到即将燃烧的无限可能。</p>
+<hr>
+<iframe src="http://music.163.com/outchain/player?type=2&id=19038312&auto=0&height=66" width="330" height="86" frameborder="no" marginwidth="0" marginheight="0"></iframe>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1733,7 +1734,7 @@
             
               <a href="/archives">
             
-                <span class="site-state-item-count">111</span>
+                <span class="site-state-item-count">110</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1797,7 +1798,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

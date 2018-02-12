@@ -238,154 +238,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wax8280.github.io/2016/09/08/480/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Vincent Zhong">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Vin's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/09/08/480/" itemprop="url">每天一道编程题——洗牌</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-09-08T16:26:32+08:00">
-                2016-09-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Code/" itemprop="url" rel="index">
-                    <span itemprop="name">Code</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>洗牌在生活中十分常见，现在需要写一个程序模拟洗牌的过程。 现在需要洗2n张牌，从上到下依次是第1张，第2张，第3张一直到第2n张。首先，我们把这2n张牌分成两堆，左手拿着第1张到第n张（上半堆），右手拿着第n+1张到第2n张（下半堆）。接着就开始洗牌的过程，先放下右手的最后一张牌，再放下左手的最后一张牌，接着放下右手的倒数第二张牌，再放下左手的倒数第二张牌，直到最后放下左手的第一张牌。接着把牌合并起来就可以了。 例如有6张牌，最开始牌的序列是1,2,3,4,5,6。首先分成两组，左手拿着1,2,3；右手拿着4,5,6。在洗牌过程中按顺序放下了6,3,5,2,4,1。把这六张牌再次合成一组牌之后，我们按照从上往下的顺序看这组牌，就变成了序列1,4,2,5,3,6。 现在给出一个原始牌组，请输出这副牌洗牌k次之后从上往下的序列。</p>
-<p>输入描述:<br>第一行一个数T(T ≤ 100)，表示数据组数。对于每组数据，第一行两个数n,k(1 ≤ n,k ≤ 100)，接下来一行有2n个数a1,a2,…,a2n(1 ≤ ai ≤ 1000000000)。表示原始牌组从上到下的序列。<br>输出描述:<br>对于每组数据，输出一行，最终的序列。数字之间用空格隔开，不要在行末输出多余的空格。</p>
-<p>输入例子:<br>3<br>3 1<br>1 2 3 4 5 6<br>3 2<br>1 2 3 4 5 6<br>2 2<br>1 1 1 1<br>输出例子:<br>1 4 2 5 3 6<br>1 5 4 3 2 6<br>1 1 1 1</p>
-<hr>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">wash_card</span><span class="params">(card_list, repeat, length)</span>:</span></div><div class="line">    <span class="keyword">if</span> repeat &lt; <span class="number">1</span>:</div><div class="line">        <span class="keyword">return</span> card_list</div><div class="line">    left = card_list[:length]</div><div class="line">    right = card_list[length:]</div><div class="line">    new_card_list = []</div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(length - <span class="number">1</span>, <span class="number">-1</span>, <span class="number">-1</span>):</div><div class="line">        new_card_list.append(right[i])</div><div class="line">        new_card_list.append(left[i])</div><div class="line">    new_card_list.reverse()</div><div class="line">    <span class="keyword">return</span> wash_card(new_card_list, repeat - <span class="number">1</span>, length)</div></pre></td></tr></table></figure>
-<hr>
-<p>来自   <em>网易有道2017内推编程题</em></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://wax8280.github.io/2016/09/07/475/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1729,11 +1581,154 @@
 
 
     
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wax8280.github.io/2016/08/30/398/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Vincent Zhong">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Vin's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/08/30/398/" itemprop="url">Python中的闭包</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-30T00:37:08+08:00">
+                2016-08-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Code/" itemprop="url" rel="index">
+                    <span itemprop="name">Code</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>将组成函数的语句和这些语句的执行环境打包在一起时，得到的对象就是闭包。<br>我们看一个例子<br>foo.py<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">x=<span class="number">44</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">callf</span><span class="params">(func)</span>:</span></div><div class="line">    <span class="keyword">return</span> func()</div><div class="line"><span class="keyword">import</span> foo</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">bar</span><span class="params">()</span>:</span></div><div class="line">    x=<span class="number">13</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">hello</span><span class="params">()</span>:</span></div><div class="line">        <span class="keyword">return</span> <span class="string">"hello %s"</span> %x</div><div class="line">    foo.callf(hello)</div><div class="line">得到结果为 hello <span class="number">13</span></div><div class="line">在编写惰性求值的代码的时候，闭包是一个很好的选择</div><div class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> urlopen </div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">page</span> <span class="params">(url)</span> :</span> </div><div class="line">        <span class="function"><span class="keyword">def</span> <span class="title">get</span><span class="params">()</span> :</span> </div><div class="line">            <span class="keyword">return</span> urlopen (url).read()</div><div class="line">        <span class="keyword">return</span> get </div><div class="line">&gt;&gt;&gt;python=page(<span class="string">"http://www.python.org"</span>) </div><div class="line">&gt;&gt;&gt;jython=page( <span class="string">"http://www.jython.org"</span>) </div><div class="line">&gt;&gt;&gt;python </div><div class="line">&lt;function get at <span class="number">0x9735f0</span>&gt;</div><div class="line">&gt;&gt;&gt;jython </div><div class="line">&lt;function get at <span class="number">0x9737f0</span>&gt;</div><div class="line">&gt;&gt;&gt;pydata=python() </div><div class="line">&gt;&gt;&gt;jydata=jython() </div><div class="line">page()</div></pre></td></tr></table></figure></p>
+<p>函数实际上是不执行任何有意义的计算，它只是创建和返回函数get()<br>如果需要在一个函数中保持某个状态，使用闭包是一种非常高效的行为。<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">countdown</span><span class="params">(n)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">next</span><span class="params">()</span>:</span></div><div class="line">        <span class="keyword">nonlocal</span> n</div><div class="line">        r=n</div><div class="line">        n-=<span class="number">1</span></div><div class="line">        <span class="keyword">return</span> r</div><div class="line">    <span class="keyword">return</span> next</div><div class="line">next=countdown(<span class="number">10</span>)</div><div class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</div><div class="line">    v=next()</div><div class="line">    <span class="keyword">if</span> <span class="keyword">not</span> v:<span class="keyword">break</span></div></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/7/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/9/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/7/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/9/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1778,7 +1773,7 @@
             
               <a href="/archives">
             
-                <span class="site-state-item-count">111</span>
+                <span class="site-state-item-count">110</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1842,7 +1837,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
