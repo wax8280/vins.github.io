@@ -292,6 +292,149 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wax8280.github.io/2016/08/30/398/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Vincent Zhong">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Vin's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/08/30/398/" itemprop="url">Python中的闭包</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-08-30T00:37:08+08:00">2016-08-30</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Code/" itemprop="url" rel="index"><span itemprop="name">Code</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>将组成函数的语句和这些语句的执行环境打包在一起时，得到的对象就是闭包。<br>我们看一个例子<br>foo.py<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">x=<span class="number">44</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">callf</span><span class="params">(func)</span>:</span></div><div class="line">    <span class="keyword">return</span> func()</div><div class="line"><span class="keyword">import</span> foo</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">bar</span><span class="params">()</span>:</span></div><div class="line">    x=<span class="number">13</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">hello</span><span class="params">()</span>:</span></div><div class="line">        <span class="keyword">return</span> <span class="string">"hello %s"</span> %x</div><div class="line">    foo.callf(hello)</div><div class="line">得到结果为 hello <span class="number">13</span></div><div class="line">在编写惰性求值的代码的时候，闭包是一个很好的选择</div><div class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> urlopen </div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">page</span> <span class="params">(url)</span> :</span> </div><div class="line">        <span class="function"><span class="keyword">def</span> <span class="title">get</span><span class="params">()</span> :</span> </div><div class="line">            <span class="keyword">return</span> urlopen (url).read()</div><div class="line">        <span class="keyword">return</span> get </div><div class="line">&gt;&gt;&gt;python=page(<span class="string">"http://www.python.org"</span>) </div><div class="line">&gt;&gt;&gt;jython=page( <span class="string">"http://www.jython.org"</span>) </div><div class="line">&gt;&gt;&gt;python </div><div class="line">&lt;function get at <span class="number">0x9735f0</span>&gt;</div><div class="line">&gt;&gt;&gt;jython </div><div class="line">&lt;function get at <span class="number">0x9737f0</span>&gt;</div><div class="line">&gt;&gt;&gt;pydata=python() </div><div class="line">&gt;&gt;&gt;jydata=jython() </div><div class="line">page()</div></pre></td></tr></table></figure></p>
+<p>函数实际上是不执行任何有意义的计算，它只是创建和返回函数get()<br>如果需要在一个函数中保持某个状态，使用闭包是一种非常高效的行为。<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">countdown</span><span class="params">(n)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">next</span><span class="params">()</span>:</span></div><div class="line">        <span class="keyword">nonlocal</span> n</div><div class="line">        r=n</div><div class="line">        n-=<span class="number">1</span></div><div class="line">        <span class="keyword">return</span> r</div><div class="line">    <span class="keyword">return</span> next</div><div class="line">next=countdown(<span class="number">10</span>)</div><div class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</div><div class="line">    v=next()</div><div class="line">    <span class="keyword">if</span> <span class="keyword">not</span> v:<span class="keyword">break</span></div></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://wax8280.github.io/2016/08/30/394/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1633,223 +1776,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wax8280.github.io/2016/08/16/328/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Vincent Zhong">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Vin's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/08/16/328/" itemprop="url">关于最短路径的几个算法</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-08-16T12:25:36+08:00">2016-08-16</time>
-            
-
-            
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Code/" itemprop="url" rel="index"><span itemprop="name">Code</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="Flody-Warshall算法"><a href="#Flody-Warshall算法" class="headerlink" title="Flody-Warshall算法"></a>Flody-Warshall算法</h1><div align="center"><br><img src="http://om4k85ss3.bkt.clouddn.com/static/images/./1.png"><br></div><br>求任意两点之间的最短路径。称为“多源最短路径”<br>## 分析<br>如果要让任意两点（a到b）之间的路径变短，只能引入第三个点（k），有时候甚至不止一个k<br>若只允许经过1号顶点。只需判断e[i][1]+e[1][j]是否比e[i][j]要小即可。e[i][j]表示从i号顶点到j号顶点之间的路程。<br>只允许经过<strong>1号</strong>顶点<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</div><div class="line">    <span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=n;j++)</div><div class="line">        <span class="keyword">if</span>(e[i][j]&gt;e[i][<span class="number">1</span>]+e[<span class="number">1</span>][j])</div><div class="line">            e[i][j]=e[i][<span class="number">1</span>]+e[<span class="number">1</span>][j];</div></pre></td></tr></table></figure><br><br><div align="center"><br><img src="http://om4k85ss3.bkt.clouddn.com/static/images/./2.png"><br></div><br>只允许经过<strong>1号和2号</strong>顶点<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</div><div class="line">    <span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=n;j++)</div><div class="line">        <span class="keyword">if</span>(e[i][j]&gt;e[i][<span class="number">1</span>]+e[<span class="number">1</span>][j])</div><div class="line">            e[i][j]=e[i][<span class="number">1</span>]+e[<span class="number">1</span>][j];</div><div class="line"><span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</div><div class="line">    <span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=n;j++)</div><div class="line">        <span class="keyword">if</span>(e[i][j]&gt;e[i][<span class="number">2</span>]+e[<span class="number">2</span>][j])</div><div class="line">            e[i][j]=e[i][<span class="number">2</span>]+e[<span class="number">2</span>][j];</div></pre></td></tr></table></figure><br><br><div align="center"><br><img src="http://om4k85ss3.bkt.clouddn.com/static/images/./3.png"><br></div><br>只允许经过<strong>1号2号3号</strong>顶点<br><div align="center"><br><img src="http://om4k85ss3.bkt.clouddn.com/static/images/./4.png"><br></div><br>最终<br><div align="center"><br><img src="http://om4k85ss3.bkt.clouddn.com/static/images/./5.png"><br></div>
-
-<h2 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(k=<span class="number">1</span>;k&lt;=n;k++)</div><div class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</div><div class="line">        <span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=n;j++)</div><div class="line">            <span class="keyword">if</span>(e[i][j]&gt;e[i][K]+e[K][j])</div><div class="line">                e[i][j]=e[i][K]+e[K][j];</div></pre></td></tr></table></figure>
-<h2 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h2><p>时间复杂度：O(N^3)<br>空间复杂度：O(N^2)</p>
-<h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><p>适用于稠密图和顶点关系密切的图<br>不能解决负权回路</p>
-<h1 id="Dijkstra算法"><a href="#Dijkstra算法" class="headerlink" title="Dijkstra算法"></a>Dijkstra算法</h1><div align="center"><br><img src="http://om4k85ss3.bkt.clouddn.com/static/images/./6.png"><br></div>
-
-<p>求1到23456最短路径。“单源最短路径”问题</p>
-<h2 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h2><p>我们建立一个数组dis。用于存放1号顶点到其余各个顶点的距离。</p>
-<div align="center"><br><img src="http://om4k85ss3.bkt.clouddn.com/static/images/./7.png"><br></div>
-
-<p>先找出一个离1号顶点最近的顶点。<br>找出的是2号顶点。<br>讨论2-3这条路径能否让1到3的路径变短，也就是比较dis[3]和dis[2]+e[2][3]的大小。<br>可知dis[3]&gt;dis[2]+e[2][3]。我们称为“松弛”<br>同理2-4，将dis[4]松弛为4<br>都松弛完毕之后，将2号顶点在book数组中标记起来</p>
-<div align="center"><br><img src="http://om4k85ss3.bkt.clouddn.com/static/images/./8.png"><br></div>
-
-<p>接下来在剩下的3456顶点中，选出离1号顶点最短的顶点。<br>当前离1号顶点最近的是4号顶点。因此dis[4]从“估计值”变为“确定值”<br>接下来对4号顶点的所有相邻点进行松弛（4-5，4-6，4-3）<br>都松弛完毕之后，将4号顶点在book数组中标记起来</p>
-<div align="center"><br><img src="http://om4k85ss3.bkt.clouddn.com/static/images/./9.png"><br></div>
-
-<p>接下来在剩下的356顶点中，选出离1号顶点最短的顶点。<br>当前离1号顶点最近的是3号顶点。因此dis[3]从“估计值”变为“确定值”<br>接下来对3号顶点的所有相邻点进行松弛（3-5）<br>都松弛完毕之后，将3号顶点在book数组中标记起来</p>
-<div align="center"><br><img src="http://om4k85ss3.bkt.clouddn.com/static/images/./10.png"><br></div>
-
-<p>接下来在剩下的56顶点中，选出离1号顶点最短的顶点。<br>当前离1号顶点最近的是5号顶点。因此dis[5]从“估计值”变为“确定值”<br>接下来对5号顶点的所有相邻点进行松弛（5-6）<br>都松弛完毕之后，将5号顶点在book数组中标记起来</p>
-<div align="center"><br><img src="http://om4k85ss3.bkt.clouddn.com/static/images/./11.png"><br></div>
-
-<p>最后对6号顶点进行松弛</p>
-<div align="center"><br><img src="http://om4k85ss3.bkt.clouddn.com/static/images/./12.png"><br></div>
-
-<p>Dijkstra算法的主要思想：通过”边“来松弛1号顶点到其他顶点的距离。</p>
-<h2 id="实现代码-1"><a href="#实现代码-1" class="headerlink" title="实现代码"></a>实现代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 初始化dis数组</span></div><div class="line"><span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</div><div class="line">    dis[i]=e[<span class="number">1</span>][i];</div><div class="line"><span class="comment">// 初始化book数组</span></div><div class="line"><span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</div><div class="line">    book[i]=<span class="number">0</span>;</div><div class="line">book[<span class="number">1</span>]=<span class="number">1</span>;</div><div class="line"><span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</div><div class="line">&#123;</div><div class="line">    min=inf;<span class="comment">//inf假设为无限</span></div><div class="line">    <span class="comment">// 找出离1号顶点最近的顶点</span></div><div class="line">    <span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=n;j++)</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">if</span>(book[j]==<span class="number">0</span>&amp;&amp;dis[j]&lt;min)</div><div class="line">        &#123;</div><div class="line">            min=dis[j];</div><div class="line">            u=j;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    book[u]=<span class="number">1</span>;</div><div class="line">    <span class="keyword">for</span>(v=<span class="number">1</span>;v&lt;=n;v++)</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">if</span>(e[u][v]&lt;inf)</div><div class="line">        &#123;</div><div class="line">            <span class="keyword">if</span>(dis[v]&gt;dis[u]+e[u][v])</div><div class="line">                dis[v]=dis[u]+e[u][v];</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="复杂度-1"><a href="#复杂度-1" class="headerlink" title="复杂度"></a>复杂度</h2><p>时间复杂度：O(N^2)<br>空间复杂度：O(M)</p>
-<h3 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h3><ol>
-<li>可用堆降低至O(logN)</li>
-<li>可用邻接表降至O(M+N)logN</li>
-</ol>
-<h4 id="邻接表"><a href="#邻接表" class="headerlink" title="邻接表"></a>邻接表</h4><p>对于边数M少于N^2的系数图，可以使用相邻接表代替邻接矩阵。使得事件复杂度降至O(M+N)logN<br>对于M=N^2，O(M+N)logN是要大于O(N^2)的</p>
-<p><strong>存入</strong></p>
-<div align="center"><br><img src="http://om4k85ss3.bkt.clouddn.com/static/images/./13.png"><br></div>
-
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// n为顶点数，m为边数</span></div><div class="line"><span class="keyword">int</span> n,m,i;</div><div class="line"><span class="comment">// u为开始点，v为结束点，w为权值</span></div><div class="line"><span class="keyword">int</span> u[<span class="number">6</span>],v[<span class="number">6</span>],w[<span class="number">6</span>];</div><div class="line"><span class="keyword">int</span> first[<span class="number">5</span>],next[<span class="number">5</span>];</div><div class="line"><span class="comment">// 初始化first</span></div><div class="line"><span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= n; i++)</div><div class="line">&#123;</div><div class="line">    first[i]=<span class="number">-1</span></div><div class="line">&#125;</div><div class="line"><span class="comment">// 输入</span></div><div class="line"><span class="comment">// 1 4 9</span></div><div class="line"><span class="comment">// 2 4 6</span></div><div class="line"><span class="comment">// 1 2 5</span></div><div class="line"><span class="comment">// 4 3 8</span></div><div class="line"><span class="comment">// 1 3 7</span></div><div class="line"><span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=m;i++)</div><div class="line">&#123;</div><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%d %d %d"</span>,&amp;u[i],&amp;v[i],&amp;w[i]);</div><div class="line">    next[i]=first[u[i]];</div><div class="line">    first[u[i]]=i;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<div align="center"><br><img src="http://om4k85ss3.bkt.clouddn.com/static/images/./14.png"><br></div>
-
-<p>first是存放顶点对应的边数的数组，如果一个顶点有多条边，可以使用next遍历。<br>如：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 1 4 9</span></div><div class="line"><span class="comment">// 2 4 6</span></div><div class="line"><span class="comment">// 1 2 5</span></div><div class="line"><span class="comment">// 4 3 8</span></div><div class="line"><span class="comment">// 1 3 7</span></div></pre></td></tr></table></figure></p>
-<p>顶点1对应有3条边；2，4有1条，3无。<br><strong>遍历</strong></p>
-<div align="center"><br><img src="http://om4k85ss3.bkt.clouddn.com/static/images/./15.png"><br></div>
-
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i)</div><div class="line">&#123;</div><div class="line">    k=first[i];</div><div class="line">    <span class="keyword">while</span>(k!=<span class="number">-1</span>)</div><div class="line">    &#123;</div><div class="line">        <span class="comment">// do somethings</span></div><div class="line">        k=next[k];</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h1 id="Bellman-Ford算法"><a href="#Bellman-Ford算法" class="headerlink" title="Bellman-Ford算法"></a>Bellman-Ford算法</h1><p>解决负权边问题</p>
-<div align="center"><br><img src="http://om4k85ss3.bkt.clouddn.com/static/images/./16.png"><br></div>
-
-<h2 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h2><p>v,u,w数组分别一一对应给出的边<br>n为顶点数，m为边数<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">1</span>; k &lt;= n<span class="number">-1</span>; ++k) </div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; ++i)   <span class="comment">//枚举每一条边</span></div><div class="line">        <span class="keyword">if</span>(dis[v[i]]&gt;dis[u[i]]+w[i])   <span class="comment">//对每一条边进行松弛</span></div><div class="line">            dis[v[i]]=dis[u[i]]+w[i]</div></pre></td></tr></table></figure></p>
-<h2 id="分析-1"><a href="#分析-1" class="headerlink" title="分析"></a>分析</h2><div align="center"><br><img src="http://om4k85ss3.bkt.clouddn.com/static/images/./17-1.jpg"><br></div>
-
-<p>第一轮在对所有的边进行松弛之后，得到的是从1号顶点<strong>“只能经过一条边”</strong>到达其余各顶点的最短路径长度。<br>第二轮在对所有的边进行松弛之后，得到的是从1号顶点<strong>“最多经过两条边”</strong>到达其余各顶点的最短路径长度。<br>只需进行n-1轮。因为在一个含有n个顶点的图中，任意两点之间的最短路径最多包含n-1边<br>最短路径肯定是一个不包含回路的简单路径。<br>回路分为正权回路与负权回路<br>正权回路：回路权值为正。去掉这个回路会得到更短的路径。<br>负权回路：回路权值为负。每走一次会得到更短的路径。<br>Bellman-Ford算法还可以检测一个图是否存在负权回路<br>如果在进行n-1轮松弛之后，依然存在：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(dis[v[i]]&gt;dis[u[i]]+w[i])</div><div class="line">    dis[v[i]]=dis[u[i]]+w[i]</div></pre></td></tr></table></figure></p>
-<h2 id="复杂度-2"><a href="#复杂度-2" class="headerlink" title="复杂度"></a>复杂度</h2><p>时间复杂度：O(NM)，比Dijkstra还要高<br>空间复杂度：O(M)</p>
-<h3 id="优化-1"><a href="#优化-1" class="headerlink" title="优化"></a>优化</h3><ol>
-<li>Bellman-Ford算法经常会在未到达n-1轮松弛前就已经计算出最短路径。如果在新一轮的松弛中数组dis没有发生变化。就可以跳出循环。</li>
-<li>Bellman-Ford的队列优化每次选取队首顶点u，对顶点u的所有出边进行松弛操作。如，有一条u-v，如果通过u-v这条边使得源点到顶点v的最短路径变短。(dis[u]+e[u][v]&lt;dis[v])，且顶点v不在当前的队列中，就将顶点v放入队尾。我们还需要对队列中的顶点去重对顶点u的所有出边松弛完毕之后，将顶点v出队。<br>接下来不断从队列中取出新的队首顶点再进行如上操作直至队列为空。<br>实例分析</li>
-</ol>
-<div align="center"><br><img src="http://om4k85ss3.bkt.clouddn.com/static/images/./18.png"><br></div>
-
-<div align="center"><br><img src="http://om4k85ss3.bkt.clouddn.com/static/images/./19.png"><br></div>
-
-<p>取1-2，dis[1]+e[1][2]&lt;dis[2]。入队</p>
-<div align="center"><img src="http://om4k85ss3.bkt.clouddn.com/static/images/./20.png"></div>
-
-<p>取1-5</p>
-<div align="center"><br><img src="http://om4k85ss3.bkt.clouddn.com/static/images/./21.png"><br></div>
-
-<p>1号顶点处理完毕。出队<br>取2-3,2-5。处理2-5的时候，由于5号顶点已经在队列中，所以不能再次入队。</p>
-<p><div align="center"><br><img src="http://om4k85ss3.bkt.clouddn.com/static/images/./22.png"><br></div><br>如此类推。最终处理结果</p>
-<p><div align="center"><br><img src="http://om4k85ss3.bkt.clouddn.com/static/images/./23.png"><br></div><br>实现代码<br>本例使用邻接表存储<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// n为顶点数，m为边数</span></div><div class="line"><span class="keyword">int</span> n,m,i;</div><div class="line"><span class="comment">// u为开始点，v为结束点，w为权值</span></div><div class="line"><span class="keyword">int</span> u[<span class="number">6</span>],v[<span class="number">6</span>],w[<span class="number">6</span>];</div><div class="line"><span class="keyword">int</span> first[<span class="number">5</span>],next[<span class="number">5</span>];</div><div class="line"><span class="comment">// book数组用于记录那些顶点已经在队列中</span></div><div class="line"><span class="keyword">int</span> dis[<span class="number">6</span>],book[<span class="number">6</span>]=&#123;<span class="number">0</span>&#125;;</div><div class="line"><span class="keyword">int</span> que[<span class="number">101</span>]=&#123;<span class="number">0</span>&#125;,head=<span class="number">1</span>,tail=<span class="number">1</span>;</div><div class="line"><span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;=n; i++)</div><div class="line">&#123;</div><div class="line">    dis[i]=inf;</div><div class="line">&#125;</div><div class="line">dis[<span class="number">1</span>]=<span class="number">0</span>;</div><div class="line"><span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= n; i++) book[i]=<span class="number">0</span>;</div><div class="line"><span class="comment">// 初始化first</span></div><div class="line"><span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= n; i++)</div><div class="line">&#123;</div><div class="line">    first[i]=<span class="number">-1</span></div><div class="line">&#125;</div><div class="line"><span class="comment">// 输入</span></div><div class="line"><span class="comment">// 1 4 9</span></div><div class="line"><span class="comment">// 2 4 6</span></div><div class="line"><span class="comment">// 1 2 5</span></div><div class="line"><span class="comment">// 4 3 8</span></div><div class="line"><span class="comment">// 1 3 7</span></div><div class="line"><span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=m;i++)</div><div class="line">&#123;</div><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%d %d %d"</span>,&amp;u[i],&amp;v[i],&amp;w[i]);</div><div class="line">    next[i]=first[u[i]];</div><div class="line">    first[u[i]]=i;</div><div class="line">&#125;</div><div class="line">que[tail]=<span class="number">1</span>;tail++;        <span class="comment">//入队</span></div><div class="line">book[<span class="number">1</span>]=<span class="number">1</span>;                <span class="comment">//标记</span></div><div class="line"><span class="keyword">while</span>(head&lt;tail)</div><div class="line">&#123;</div><div class="line">    k=first[que[head]];</div><div class="line">    <span class="keyword">while</span>(k!=<span class="number">-1</span>)        <span class="comment">//扫描当前顶点所有的边</span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">if</span>(dis[v[k]]&gt;dis[u[k]]+w[k])</div><div class="line">        &#123;</div><div class="line">            dis[v[k]]=dis[u[k]]+w[k];</div><div class="line">            <span class="comment">// 去重</span></div><div class="line">            <span class="keyword">if</span>(book[v[k]]==<span class="number">0</span>)</div><div class="line">            &#123;</div><div class="line">                que[tail]=v[k];</div><div class="line">                tail++;</div><div class="line">                book[v[k]]=<span class="number">1</span>;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        k=next[k];</div><div class="line">    &#125;</div><div class="line">    <span class="comment">// 出队</span></div><div class="line">    book[que[head]]=<span class="number">0</span>;</div><div class="line">     head++;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>队列优化的Bellman-Ford算法：其实上就是只处理那些在前一遍松弛中改变了最短路径估计值的顶点（因为只有这样才可能引起它们的邻接点最短路径估计值发生改变。）<br>使用队列优化的Bellman-Ford算法在形式上和广度优先搜索非常类似，不同的是在广度优先搜索的时候一个顶点出队后通常就不会再重新进入队列。<br>当一个顶点的最短路径估值变小后，需要重新进行松弛。<br>如果某个点进入队列的次数超过n次，则这个图有负环。<br>复杂度<br>最坏的情况下为O(NM)</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/8/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/10/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/8/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/10/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1892,7 +1823,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">110</span>
+                    <span class="site-state-item-count">111</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -2006,7 +1937,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">38</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">40</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
