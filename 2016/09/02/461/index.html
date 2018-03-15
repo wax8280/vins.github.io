@@ -5,12 +5,15 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<html class="theme-next muse use-motion" lang="zh">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
+
+
+
 
 
 
@@ -38,36 +41,6 @@
 
 
 
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-  
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
 
 
 
@@ -76,23 +49,58 @@
 
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=6.0.4" rel="stylesheet" type="text/css" />
 
 
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.0.4" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '6.0.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  
   <meta name="keywords" content="Python,数据结构与算法," />
-
-
-
-
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
-
-
-
-
 
 
 <meta name="description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101">
@@ -102,7 +110,7 @@
 <meta property="og:url" content="https://wax8280.github.io/2016/09/02/461/index.html">
 <meta property="og:site_name" content="Vin&#39;s Blog">
 <meta property="og:description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101">
-<meta property="og:locale" content="zh-Hans">
+<meta property="og:locale" content="zh">
 <meta property="og:image" content="http://om4k85ss3.bkt.clouddn.com/static/images/./sort3.png">
 <meta property="og:image" content="http://om4k85ss3.bkt.clouddn.com/static/images/./sort4.png">
 <meta property="og:image" content="http://om4k85ss3.bkt.clouddn.com/static/images/./sort2.png">
@@ -115,29 +123,6 @@
 
 
 
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Muse',
-    version: '5.1.2',
-    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
 
 
 
@@ -145,8 +130,11 @@
 
 
 
-
-
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
   <title>八大排序算法及其性能（Python实现） | Vin's Blog</title>
   
 
@@ -155,11 +143,49 @@
 
 
 
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?696e48752c03b0066c07d25947ac5dff";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh">
 
   
   
@@ -170,7 +196,7 @@
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
+      <div class="header-inner"> <div class="site-brand-wrapper">
   <div class="site-meta ">
     
 
@@ -204,11 +230,31 @@
         
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            首页
-          </a>
+            <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-user"></i> <br />About</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />Tags</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-th"></i> <br />Categories</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
         </li>
       
 
@@ -220,9 +266,15 @@
 </nav>
 
 
+  
+
+
 
  </div>
     </header>
+
+    
+
 
     <main id="main" class="main">
       <div class="main-inner">
@@ -237,6 +289,8 @@
 
   
   
+  
+
   
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
@@ -271,13 +325,12 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Posted on</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-09-02T21:13:33+08:00">
-                2016-09-02
-              </time>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-09-02T21:13:33+08:00">2016-09-02</time>
             
 
+            
             
 
             
@@ -292,14 +345,10 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">分类于</span>
+                <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Code/" itemprop="url" rel="index">
-                    <span itemprop="name">Code</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Code/" itemprop="url" rel="index"><span itemprop="name">Code</span></a></span>
 
                 
                 
@@ -341,6 +390,9 @@
 <figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> time</div><div class="line"><span class="keyword">import</span> random</div><div class="line"><span class="keyword">import</span> copy</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">bubble_sort</span><span class="params">(list)</span>:</span></div><div class="line">    <span class="string">'''</span></div><div class="line"><span class="string">    冒泡排序</span></div><div class="line"><span class="string">    '''</span></div><div class="line">    length = len(list)</div><div class="line">    <span class="comment"># 第一级遍历</span></div><div class="line">    <span class="keyword">for</span> index <span class="keyword">in</span> range(<span class="number">1</span>, length):</div><div class="line">        <span class="comment"># 第二级遍历</span></div><div class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">1</span>, length - index):</div><div class="line">            <span class="keyword">if</span> list[j] &gt; list[j + <span class="number">1</span>]:</div><div class="line">                <span class="comment"># 交换两者数据，这里没用temp是因为python 特性元组。</span></div><div class="line">                list[j + <span class="number">1</span>], list[j] = list[j], list[j + <span class="number">1</span>]</div><div class="line">    <span class="keyword">return</span> list</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">bubble_sort_flag</span><span class="params">(list)</span>:</span></div><div class="line">    <span class="string">'''</span></div><div class="line"><span class="string">    带标记的冒泡排序</span></div><div class="line"><span class="string">    '''</span></div><div class="line">    length = len(list)</div><div class="line">    flag = <span class="keyword">True</span></div><div class="line">    <span class="keyword">for</span> index <span class="keyword">in</span> range(<span class="number">1</span>, length):</div><div class="line">        <span class="keyword">if</span> <span class="keyword">not</span> flag:  <span class="comment"># 没有发生交换，直接返回list</span></div><div class="line">            <span class="keyword">return</span> list</div><div class="line">        flag = <span class="keyword">False</span></div><div class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">1</span>, length - index):</div><div class="line">            <span class="keyword">if</span> list[j] &gt; list[j + <span class="number">1</span>]:</div><div class="line">                list[j + <span class="number">1</span>], list[j] = list[j], list[j + <span class="number">1</span>]</div><div class="line">                flag = <span class="keyword">True</span></div><div class="line">    <span class="keyword">return</span> list</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">selection_sort</span><span class="params">(list)</span>:</span></div><div class="line">    <span class="string">'''</span></div><div class="line"><span class="string">    选择排序</span></div><div class="line"><span class="string">    '''</span></div><div class="line">    n = len(list)</div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, n):</div><div class="line">        min = i</div><div class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(i + <span class="number">1</span>, n):</div><div class="line">            <span class="keyword">if</span> list[j] &lt; list[min]:</div><div class="line">                min = j</div><div class="line">        <span class="keyword">if</span> i != min:</div><div class="line">            list[min], list[i] = list[i], list[min]</div><div class="line">    <span class="keyword">return</span> list</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">insert_sort</span><span class="params">(list)</span>:</span></div><div class="line">    <span class="string">'''</span></div><div class="line"><span class="string">    插入排序</span></div><div class="line"><span class="string">    '''</span></div><div class="line">    n = len(list)</div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">2</span>, n):</div><div class="line">        <span class="comment"># 后一个元素和前一个元素比较</span></div><div class="line">        <span class="comment"># 如果比前一个小</span></div><div class="line">        <span class="keyword">if</span> list[i] &lt; list[i - <span class="number">1</span>]:</div><div class="line">            list[<span class="number">0</span>] = list[i]</div><div class="line">            j = i - <span class="number">1</span></div><div class="line">            <span class="keyword">while</span> list[j] &gt; list[<span class="number">0</span>]:</div><div class="line">                list[j + <span class="number">1</span>] = list[j]</div><div class="line">                j -= <span class="number">1</span></div><div class="line">            list[j + <span class="number">1</span>] = list[<span class="number">0</span>]</div><div class="line">    <span class="keyword">return</span> list</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">shell_sort</span><span class="params">(list)</span>:</span></div><div class="line">    <span class="string">'''</span></div><div class="line"><span class="string">    希尔排序</span></div><div class="line"><span class="string">    '''</span></div><div class="line">    length = len(list)</div><div class="line">    <span class="comment"># 初始步长</span></div><div class="line">    increment = length</div><div class="line">    <span class="keyword">while</span> increment &gt; <span class="number">1</span>:</div><div class="line">        increment = increment // <span class="number">3</span> + <span class="number">1</span>;</div><div class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(increment + <span class="number">1</span>, length):</div><div class="line">            <span class="keyword">if</span> list[i] &lt; list[i - increment]:</div><div class="line">                list[<span class="number">0</span>] = list[i]</div><div class="line">                j = i</div><div class="line">                <span class="keyword">while</span> j &gt;= increment <span class="keyword">and</span> list[j - increment] &gt; list[<span class="number">0</span>]:</div><div class="line">                    list[j] = list[j - increment]</div><div class="line">                    j -= increment</div><div class="line">                list[j] = list[<span class="number">0</span>]</div><div class="line">    <span class="keyword">return</span> list</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">merge_sort</span><span class="params">(list)</span>:</span></div><div class="line">    <span class="string">'''</span></div><div class="line"><span class="string">    归并排序</span></div><div class="line"><span class="string">    '''</span></div><div class="line">    <span class="comment"># 认为长度不大于1的数列是有序的</span></div><div class="line">    <span class="keyword">if</span> len(list) &lt;= <span class="number">1</span>:</div><div class="line">        <span class="keyword">return</span> list</div><div class="line">    <span class="comment"># 二分列表</span></div><div class="line">    middle = len(list) // <span class="number">2</span></div><div class="line">    left = merge_sort(list[:middle])</div><div class="line">    right = merge_sort(list[middle:])</div><div class="line">    <span class="comment"># 最后一次合并</span></div><div class="line">    <span class="keyword">return</span> merge(left, right)</div><div class="line"><span class="comment"># 合并</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">merge</span><span class="params">(left, right)</span>:</span></div><div class="line">    l, r = <span class="number">0</span>, <span class="number">0</span></div><div class="line">    result = []</div><div class="line">    <span class="keyword">while</span> l &lt; len(left) <span class="keyword">and</span> r &lt; len(right):</div><div class="line">        <span class="keyword">if</span> left[l] &lt; right[r]:</div><div class="line">            result.append(left[l])</div><div class="line">            l += <span class="number">1</span></div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            result.append(right[r])</div><div class="line">            r += <span class="number">1</span></div><div class="line">    result += left[l:]</div><div class="line">    result += right[r:]</div><div class="line">    <span class="keyword">return</span> result</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">quick_sort</span><span class="params">(list)</span>:</span></div><div class="line">    <span class="string">'''</span></div><div class="line"><span class="string">    快速排序</span></div><div class="line"><span class="string">    '''</span></div><div class="line">    <span class="keyword">if</span> len(list) &lt;= <span class="number">1</span>:</div><div class="line">        <span class="keyword">return</span> list</div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        pivot = list[<span class="number">0</span>]</div><div class="line">        <span class="keyword">return</span> quick_sort([x <span class="keyword">for</span> x <span class="keyword">in</span> list[<span class="number">1</span>:] <span class="keyword">if</span> x &lt; pivot]) + [pivot] + quick_sort([x <span class="keyword">for</span> x <span class="keyword">in</span> list[<span class="number">1</span>:] <span class="keyword">if</span> x &gt;= pivot])</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">shiftDown</span><span class="params">(arr, index, length)</span>:</span>  <span class="comment"># 自顶向下堆化，从k开始堆化</span></div><div class="line">    N = length - <span class="number">1</span></div><div class="line">    <span class="keyword">while</span> <span class="number">2</span> * index &lt;= N:</div><div class="line">        j = <span class="number">2</span> * index</div><div class="line">        <span class="keyword">if</span> j &lt; N <span class="keyword">and</span> arr[j] &lt; arr[j + <span class="number">1</span>]:  <span class="comment"># 选出左右孩子节点中更大的那个</span></div><div class="line">            j += <span class="number">1</span></div><div class="line">        <span class="keyword">if</span> arr[index] &lt; arr[j]:</div><div class="line">            arr[index], arr[j] = arr[j], arr[index]</div><div class="line">            index = j</div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            <span class="keyword">break</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">heap_Sort</span><span class="params">(l)</span>:</span></div><div class="line">    <span class="string">'''</span></div><div class="line"><span class="string">    堆排序</span></div><div class="line"><span class="string">    '''</span></div><div class="line">    n = len(l) - <span class="number">1</span></div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(n // <span class="number">2</span>, <span class="number">0</span>, <span class="number">-1</span>):</div><div class="line">        shiftDown(l, i, len(l))</div><div class="line">    <span class="keyword">while</span> n &gt; <span class="number">1</span>:</div><div class="line">        l[<span class="number">1</span>], l[n] = l[n], l[<span class="number">1</span>]</div><div class="line">        shiftDown(l, <span class="number">1</span>, n)</div><div class="line">        n -= <span class="number">1</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">count_sort</span><span class="params">(list)</span>:</span></div><div class="line">    <span class="string">'''</span></div><div class="line"><span class="string">    计数排序</span></div><div class="line"><span class="string">    '''</span></div><div class="line">    <span class="comment"># 取得最大值和最小值</span></div><div class="line">    max_ = max(list)</div><div class="line">    min_ = min(list)</div><div class="line">    <span class="comment"># 创建数组C</span></div><div class="line">    length = max_ - min_ + <span class="number">1</span></div><div class="line">    count = [<span class="number">0</span>] * length</div><div class="line">    <span class="comment"># 统计每项出现的次数</span></div><div class="line">    <span class="keyword">for</span> index <span class="keyword">in</span> list:</div><div class="line">        <span class="keyword">if</span> index &gt; <span class="number">0</span>:</div><div class="line">            count[index] += <span class="number">1</span></div><div class="line">        <span class="comment"># 负数放在最大数后面</span></div><div class="line">        <span class="keyword">if</span> index &lt; <span class="number">0</span>:</div><div class="line">            count[max_ + abs(index)] += <span class="number">1</span></div><div class="line">    index = <span class="number">1</span></div><div class="line">    <span class="comment"># 填值</span></div><div class="line">    <span class="keyword">for</span> a <span class="keyword">in</span> range(length - <span class="number">1</span>, max_, <span class="number">-1</span>):</div><div class="line">        <span class="keyword">for</span> c <span class="keyword">in</span> range(<span class="number">1</span>, count[a] + <span class="number">1</span>):</div><div class="line">            list[index] = -a + max_</div><div class="line">            index += <span class="number">1</span></div><div class="line">    <span class="keyword">for</span> a <span class="keyword">in</span> range(max_ + <span class="number">1</span>):</div><div class="line">        <span class="keyword">for</span> c <span class="keyword">in</span> range(<span class="number">1</span>, count[a] + <span class="number">1</span>):</div><div class="line">            list[index] = a</div><div class="line">            index += <span class="number">1</span></div><div class="line">    <span class="keyword">return</span> list</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">(func, random_list)</span>:</span></div><div class="line">    l = copy.deepcopy(random_list)</div><div class="line">    print(func.__doc__)</div><div class="line">    s = time.time()</div><div class="line">    func(l)</div><div class="line">    print(time.time() - s)</div><div class="line">func = [bubble_sort, bubble_sort_flag, selection_sort, insert_sort, merge_sort, shell_sort, quick_sort, count_sort,</div><div class="line">        heap_Sort]</div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">3</span>):</div><div class="line">    print(<span class="string">'-----------------'</span>)</div><div class="line">    random_list = [random.randint(<span class="number">1</span>, <span class="number">10000</span>) <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">40</span>)]</div><div class="line">    random_list[<span class="number">0</span>] = <span class="number">0</span></div><div class="line">    last = []</div><div class="line">    <span class="keyword">for</span> each_func <span class="keyword">in</span> func:</div><div class="line">        test(each_func, random_list)</div></pre></td></tr></table></figure>
       
     </div>
+
+    
+
     
     
     
@@ -408,11 +460,8 @@
           </div>
           
 
+  
 
-          
-  <div class="comments" id="comments">
-    
-  </div>
 
 
         </div>
@@ -435,65 +484,168 @@
 
       
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Vincent Zhong</p>
+              <p class="site-description motion-element" itemprop="description">Share my favorite</p>
+          </div>
+
           
-            <p class="site-author-name" itemprop="name">Vincent Zhong</p>
-            <p class="site-description motion-element" itemprop="description">Share my favorite</p>
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">110</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">38</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/wax8280" target="_blank" title="GitHub"><i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
         </div>
-
-        <nav class="site-state motion-element">
-
-          
-            <div class="site-state-item site-state-posts">
-            
-              <a href="/archives">
-            
-                <span class="site-state-item-count">110</span>
-                <span class="site-state-item-name">日志</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-categories">
-              <a href="/categories/index.html">
-                <span class="site-state-item-count">6</span>
-                <span class="site-state-item-name">分类</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-tags">
-              <a href="/tags/index.html">
-                <span class="site-state-item-count">38</span>
-                <span class="site-state-item-name">标签</span>
-              </a>
-            </div>
-          
-
-        </nav>
-
-        
-
-        <div class="links-of-author motion-element">
-          
-        </div>
-
-        
-        
-
-        
-        
-
-        
-
-
       </section>
 
       
@@ -510,27 +662,35 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
-  
-  &copy; 
-  <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
-    <i class="fa fa-heart"></i>
+    <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Vincent Zhong</span>
+
+  
 
   
 </div>
 
 
-  <div class="powered-by">由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
 
   <span class="post-meta-divider">|</span>
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Muse</a> v6.0.4</div>
+
+
 
 
         
+
 
 
 
@@ -547,6 +707,8 @@
         <i class="fa fa-arrow-up"></i>
         
       </div>
+    
+
     
 
   </div>
@@ -567,7 +729,6 @@
 
 
 
-  
 
 
 
@@ -580,59 +741,53 @@
 
 
 
-  
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 
 
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
 
 
 
   
   
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
 
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
 
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.4"></script>
 
 
 
   
+  
 
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.4"></script>
 
 
 
   
 
 
-  
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.4"></script>
 
+
+
+  
 
 
 
@@ -657,14 +812,23 @@
 
 
 
-  
-
-
-
 
 
   
 
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
   
 
   

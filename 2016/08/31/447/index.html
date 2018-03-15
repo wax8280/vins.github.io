@@ -5,12 +5,15 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<html class="theme-next muse use-motion" lang="zh">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
+
+
+
 
 
 
@@ -38,36 +41,6 @@
 
 
 
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-  
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
 
 
 
@@ -76,40 +49,25 @@
 
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=6.0.4" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="数据结构与算法," />
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.4">
 
 
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.4">
 
 
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.4">
 
 
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
-
-
-
+  <link rel="mask-icon" href="/images/logo.svg?v=6.0.4" color="#222">
 
 
 
-<meta name="description" content="顺序查找123456789101112131415161718192021int Sequential_search(int* a,int n,int key)&amp;#123;    int i;    for (i = 1; i &amp;lt;=n; i++)    &amp;#123;        if(a[i]==key)            return i;    &amp;#125;    return 0">
-<meta name="keywords" content="数据结构与算法">
-<meta property="og:type" content="article">
-<meta property="og:title" content="顺序表的几种查找">
-<meta property="og:url" content="https://wax8280.github.io/2016/08/31/447/index.html">
-<meta property="og:site_name" content="Vin&#39;s Blog">
-<meta property="og:description" content="顺序查找123456789101112131415161718192021int Sequential_search(int* a,int n,int key)&amp;#123;    int i;    for (i = 1; i &amp;lt;=n; i++)    &amp;#123;        if(a[i]==key)            return i;    &amp;#125;    return 0">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://om4k85ss3.bkt.clouddn.com/static/images/./insert.png">
-<meta property="og:image" content="http://om4k85ss3.bkt.clouddn.com/static/images/./Fibonacci.jpg">
-<meta property="og:updated_time" content="2017-09-06T04:59:54.000Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="顺序表的几种查找">
-<meta name="twitter:description" content="顺序查找123456789101112131415161718192021int Sequential_search(int* a,int n,int key)&amp;#123;    int i;    for (i = 1; i &amp;lt;=n; i++)    &amp;#123;        if(a[i]==key)            return i;    &amp;#125;    return 0">
-<meta name="twitter:image" content="http://om4k85ss3.bkt.clouddn.com/static/images/./insert.png">
+
+
+
 
 
 
@@ -118,15 +76,13 @@
   var CONFIG = {
     root: '/',
     scheme: 'Muse',
-    version: '5.1.2',
-    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
+    version: '6.0.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
     tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     algolia: {
       applicationID: '',
       apiKey: '',
@@ -138,13 +94,45 @@
 </script>
 
 
+  
+
+
+
+
+  
+  <meta name="keywords" content="数据结构与算法," />
+
+
+<meta name="description" content="顺序查找123456789101112131415161718192021int Sequential_search(int* a,int n,int key)&amp;#123;    int i;    for (i = 1; i &amp;lt;=n; i++)    &amp;#123;        if(a[i]==key)            return i;    &amp;#125;    return 0">
+<meta name="keywords" content="数据结构与算法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="顺序表的几种查找">
+<meta property="og:url" content="https://wax8280.github.io/2016/08/31/447/index.html">
+<meta property="og:site_name" content="Vin&#39;s Blog">
+<meta property="og:description" content="顺序查找123456789101112131415161718192021int Sequential_search(int* a,int n,int key)&amp;#123;    int i;    for (i = 1; i &amp;lt;=n; i++)    &amp;#123;        if(a[i]==key)            return i;    &amp;#125;    return 0">
+<meta property="og:locale" content="zh">
+<meta property="og:image" content="http://om4k85ss3.bkt.clouddn.com/static/images/./insert.png">
+<meta property="og:image" content="http://om4k85ss3.bkt.clouddn.com/static/images/./Fibonacci.jpg">
+<meta property="og:updated_time" content="2017-09-06T04:59:54.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="顺序表的几种查找">
+<meta name="twitter:description" content="顺序查找123456789101112131415161718192021int Sequential_search(int* a,int n,int key)&amp;#123;    int i;    for (i = 1; i &amp;lt;=n; i++)    &amp;#123;        if(a[i]==key)            return i;    &amp;#125;    return 0">
+<meta name="twitter:image" content="http://om4k85ss3.bkt.clouddn.com/static/images/./insert.png">
+
+
+
+
+
 
   <link rel="canonical" href="https://wax8280.github.io/2016/08/31/447/"/>
 
 
 
-
-
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
   <title>顺序表的几种查找 | Vin's Blog</title>
   
 
@@ -153,11 +141,49 @@
 
 
 
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?696e48752c03b0066c07d25947ac5dff";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh">
 
   
   
@@ -168,7 +194,7 @@
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
+      <div class="header-inner"> <div class="site-brand-wrapper">
   <div class="site-meta ">
     
 
@@ -202,11 +228,31 @@
         
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            首页
-          </a>
+            <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-user"></i> <br />About</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />Tags</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-th"></i> <br />Categories</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
         </li>
       
 
@@ -218,9 +264,15 @@
 </nav>
 
 
+  
+
+
 
  </div>
     </header>
+
+    
+
 
     <main id="main" class="main">
       <div class="main-inner">
@@ -235,6 +287,8 @@
 
   
   
+  
+
   
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
@@ -269,13 +323,12 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Posted on</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-31T23:32:10+08:00">
-                2016-08-31
-              </time>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-08-31T23:32:10+08:00">2016-08-31</time>
             
 
+            
             
 
             
@@ -290,14 +343,10 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">分类于</span>
+                <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Code/" itemprop="url" rel="index">
-                    <span itemprop="name">Code</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Code/" itemprop="url" rel="index"><span itemprop="name">Code</span></a></span>
 
                 
                 
@@ -337,6 +386,9 @@
 <div align="center"><br><img src="http://om4k85ss3.bkt.clouddn.com/static/images/./insert.png"><br></div><br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">// 插值查找</div><div class="line">int Insert_Search(int* a,int n,int key)</div><div class="line">&#123;</div><div class="line">    int low,high,mid;</div><div class="line">    low=<span class="number">1</span>;</div><div class="line">    high=n;</div><div class="line">    <span class="keyword">while</span>(low&lt;=high)</div><div class="line">    &#123;</div><div class="line">        mid=low+(high-low)*(key-a[low])/(a[high]-a[low]);            //插值</div><div class="line">        <span class="keyword">if</span>(a[mid]&gt;key)</div><div class="line">            high=mid<span class="number">-1</span>;</div><div class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(a[mid]&lt;key)</div><div class="line">            low=mid+<span class="number">1</span>;</div><div class="line">        <span class="keyword">else</span>                        //a[mid]==key</div><div class="line">            <span class="keyword">return</span> mid;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br><br># 斐波那契查找<br>在数学上，斐波那契被递归方法如下定义：F(1)=1，F(2)=1，F(n)=f(n-1)+F(n-2) （n&gt;=2）。该数列越往后相邻的两个数的比值越趋向于黄金比例值（0.618）。<br>波那契查找就是在二分查找的基础上根据斐波那契数列进行分割的。<br>斐波那契查找的时间复杂度还是O(log2n)，但是 与折半查找相比，斐波那契查找的优点是它只涉及加法和减法运算，而不用除法，而除法比加减法要占用更多的时间，因此，斐波那契查找的运行时间理论上比折半查找小，但是还是得视具体情况而定。<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line">// 斐波那契查找</div><div class="line">// 斐波那契数列：</div><div class="line">// <span class="number">0</span>    <span class="number">1</span>     <span class="number">2</span>     <span class="number">3</span>     <span class="number">4</span>     <span class="number">5</span>     <span class="number">6</span>    ....</div><div class="line">// <span class="number">0</span>    <span class="number">1</span>     <span class="number">1</span>     <span class="number">2</span>     <span class="number">3</span>     <span class="number">5</span>     <span class="number">8</span>    ....</div><div class="line">int Fibonacci_Search(int* a,int n,int key)</div><div class="line">&#123;</div><div class="line">    int low,hgih,mid,i,k;</div><div class="line">    low=<span class="number">1</span>;</div><div class="line">    high=n;</div><div class="line">    k=<span class="number">0</span>;</div><div class="line">    <span class="keyword">while</span>(n&lt;F[k]<span class="number">-1</span>)            //计算n位于斐波那契数列的位置</div><div class="line">        k++;</div><div class="line">    <span class="keyword">for</span>(i=n;i&lt;F[k]<span class="number">-1</span>;i++)    //对不满的数值补全，防止数组越界</div><div class="line">        a[i]=a[n];</div><div class="line">    <span class="keyword">while</span>(low&lt;=high)</div><div class="line">    &#123;</div><div class="line">        mid=low+F[k<span class="number">-1</span>]<span class="number">-1</span>;</div><div class="line">        <span class="keyword">if</span>(a[mid]&gt;key)</div><div class="line">        &#123;</div><div class="line">            high=mid<span class="number">-1</span>;</div><div class="line">            k=k<span class="number">-1</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(a[mid]&lt;key)</div><div class="line">        &#123;</div><div class="line">            low=mid+<span class="number">1</span>;</div><div class="line">            k=k<span class="number">-2</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">else</span></div><div class="line">        &#123;</div><div class="line">            <span class="keyword">if</span>(mid&lt;n)</div><div class="line">                <span class="keyword">return</span> mid;</div><div class="line">            <span class="keyword">else</span></div><div class="line">                <span class="keyword">return</span> n;        //mid&gt;n说明是最后一个，返回n</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br><br>要点：<br>1.  当key=a[mid]时，查找成功<br>2.  当key<a[mid]时，新范围是第low个到第mid-1个，此时范围个数为f[k-1]-1个 3.="" 当key="">a[mid]时，新范围是第mid+1个到第high个，此时范围个数为F[k-2]-1个<br><div align="center"><br><img src="http://om4k85ss3.bkt.clouddn.com/static/images/./Fibonacci.jpg"><br></div></a[mid]时，新范围是第low个到第mid-1个，此时范围个数为f[k-1]-1个>
       
     </div>
+
+    
+
     
     
     
@@ -402,11 +454,8 @@
           </div>
           
 
+  
 
-          
-  <div class="comments" id="comments">
-    
-  </div>
 
 
         </div>
@@ -429,74 +478,177 @@
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
           </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
           </li>
         </ul>
       
 
-      <section class="site-overview sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Vincent Zhong</p>
+              <p class="site-description motion-element" itemprop="description">Share my favorite</p>
+          </div>
+
           
-            <p class="site-author-name" itemprop="name">Vincent Zhong</p>
-            <p class="site-description motion-element" itemprop="description">Share my favorite</p>
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">110</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">38</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/wax8280" target="_blank" title="GitHub"><i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
         </div>
-
-        <nav class="site-state motion-element">
-
-          
-            <div class="site-state-item site-state-posts">
-            
-              <a href="/archives">
-            
-                <span class="site-state-item-count">110</span>
-                <span class="site-state-item-name">日志</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-categories">
-              <a href="/categories/index.html">
-                <span class="site-state-item-count">6</span>
-                <span class="site-state-item-name">分类</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-tags">
-              <a href="/tags/index.html">
-                <span class="site-state-item-count">38</span>
-                <span class="site-state-item-name">标签</span>
-              </a>
-            </div>
-          
-
-        </nav>
-
-        
-
-        <div class="links-of-author motion-element">
-          
-        </div>
-
-        
-        
-
-        
-        
-
-        
-
-
       </section>
 
       
@@ -529,27 +681,35 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
-  
-  &copy; 
-  <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
-    <i class="fa fa-heart"></i>
+    <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Vincent Zhong</span>
+
+  
 
   
 </div>
 
 
-  <div class="powered-by">由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
 
   <span class="post-meta-divider">|</span>
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Muse</a> v6.0.4</div>
+
+
 
 
         
+
 
 
 
@@ -566,6 +726,8 @@
         <i class="fa fa-arrow-up"></i>
         
       </div>
+    
+
     
 
   </div>
@@ -586,7 +748,6 @@
 
 
 
-  
 
 
 
@@ -599,59 +760,53 @@
 
 
 
-  
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 
 
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
 
 
 
   
   
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
 
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
 
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.4"></script>
 
 
 
   
+  
 
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.4"></script>
 
 
 
   
 
 
-  
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.4"></script>
 
+
+
+  
 
 
 
@@ -676,14 +831,23 @@
 
 
 
-  
-
-
-
 
 
   
 
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
   
 
   
