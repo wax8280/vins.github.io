@@ -292,6 +292,167 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wax8280.github.io/2016/10/06/712/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Vincent Zhong">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Vin's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/10/06/712/" itemprop="url">学习OpenCV——Python：人脸检测</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-10-06T23:19:20+08:00">2016-10-06</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Code/" itemprop="url" rel="index"><span itemprop="name">Code</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>人脸检测一种主流的方法就是类haar+adaboosting，opencv中也是用的这种方法。这种方法可以推广到刚性物体的检测，前提是要训练好级联分类器(比如说用类haar特征)，一旦训练数据弄好了，直接调用opencv中的类CascadeClassifier，用它的几个简单的成员函数就可以完成检测功能。</p>
+<h3 id="Haar分类器的概念"><a href="#Haar分类器的概念" class="headerlink" title="Haar分类器的概念"></a>Haar分类器的概念</h3><p>以 Haar 特征分类器为基础的对象检测技术是一种非常有效的对象检测技术（2001 年 Paul_Viola 和 Michael_Jones 提出）。它是基于机器学习的， 通过使用大量的正负样本图像训练得到一个 cascade_function，最后再用它 来做对象检测。 现在我们来学习面部检测。开始时，算法需要大量的正样本图像（面部图像）和负样本图像（不含面部的图像）来训练分类器。我们需要从其中提取特 征。下图中的 Haar 特征会被使用。它们就像我们的卷积核。每一个特征是一 个值，这个值等于黑色矩形中的像素值之后减去白色矩形中的像素值之和。</p>
+<p><div align="center"><br><img src="http://om4k85ss3.bkt.clouddn.com/static/images/./detcet_face1.png"><br></div><br>使用所有可能的核来计算足够多的特征。（想象一下这需要多少计算量？仅仅是一个 24x24 的窗口就有 160000 个特征）。对于每一个特征的计算我们 好需要计算白色和黑色矩形内的像素和。为了解决这个问题，作者引入了积分 图像，这可以大大的简化求和运算，对于任何一个区域的像素和只需要对积分 图像上的四个像素操作即可。非常漂亮，它可以使运算速度飞快<br>但是在我们计算得到的所有的这些特征中，大多数是不相关的。如下图所示。上边一行显示了两个好的特征，第一个特征看上去是对眼部周围区域的描述，因为眼睛总是比鼻子黑一些。第二个特征是描述的是眼睛比鼻梁要黑一些。但是如果把这两个窗口放到脸颊的话，就一点都不相关。那么我们怎样从超过 160000+ 个特征中选出最好的特征呢？使用 Adaboost。</p>
+<p><div align="center"><br><img src="http://om4k85ss3.bkt.clouddn.com/static/images/./detcet_face2.png"><br></div><br>为了达到这个目的，我们将每一个特征应用于所有的训练图像。对于每一个特征，我们要找到它能够区分出正样本和负样本的最佳阈值。但是很明显， 这会产生错误或者错误分类。我们要选取错误率最低的特征，这说明它们是检测面部和非面部图像最好的特征。（这个过程其实不像我们说的这么简单。在开始时每一张图像都具有相同的权重，每一次分类之后，被错分的图像的权重会增大。同样的过程会被再做一遍。然后我们又得到新的错误率和新的权重。重复执行这个过程知道到达要求的准确率或者错误率或者要求数目的特征找到）。 最终的分类器是这些弱分类器的加权和。之所以成为弱分类器是应为只是用这些分类器不足以对图像进行分类，但是与其他的分类器联合起来就是一个 很强的分类器了。文章中说 200 个特征就能够提供 95% 的准确度了。他们最 后使用 6000 个特征。（从 160000 减到 6000，效果显著呀！）。 现在你有一幅图像，对每一个 24x24 的窗口使用这 6000 个特征来做检查，看它是不是面部。这是不是很低效很耗时呢？的确如此，但作者有更好的 解决方法。 在一副图像中大多数区域是非面部区域。所以最好有一个简单的方法来证明这个窗口不是面部区域，如果不是就直接抛弃，不用对它再做处理。而不是 集中在研究这个区域是不是面部。按照这种方法我们可以在可能是面部的区域多花点时间。 为了达到这个目的作者提出了级联分类器的概念。不是在一开始就对窗口进行这 6000 个特征测试，将这些特征分成不同组。在不同的分类阶段逐个使 用。（通常前面很少的几个阶段使用较少的特征检测）。如果一个窗口第一阶段 的检测都过不了就可以直接放弃后面的测试了，如果它通过了就进入第二阶段 的检测。如果一个窗口经过了所有的测试，那么这个窗口就被认为是面部区域。 这个计划是不是很帅！！！ 作者将 6000 多个特征分为 38 个阶段，前五个阶段的特征数分别为 1，10，25，25 和 50。（上图中的两个特征其实就是从 Adaboost 获得的最好 特征）。</p>
+<h3 id="Haar级联器的数据"><a href="#Haar级联器的数据" class="headerlink" title="Haar级联器的数据"></a>Haar级联器的数据</h3><p>OpenCV的源码<br>sources\data\haarcascades<br>复制到你的工程</p>
+<h3 id="静态图像人脸检测"><a href="#静态图像人脸检测" class="headerlink" title="静态图像人脸检测"></a>静态图像人脸检测</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># coding:utf-8</span></div><div class="line"><span class="keyword">import</span> cv2</div><div class="line">filename = <span class="string">'./img/face.jpg'</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">detect</span><span class="params">(filename)</span>:</span></div><div class="line">    <span class="comment"># 级联分类器</span></div><div class="line">    face_cascade = cv2.CascadeClassifier(</div><div class="line">            <span class="string">'./cascades/haarcascade_frontalface_default.xml'</span>)</div><div class="line">    img = cv2.imread(filename)</div><div class="line">    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)</div><div class="line">    faces = face_cascade.detectMultiScale(gray, <span class="number">1.3</span>, <span class="number">5</span>)</div><div class="line">    <span class="comment"># 绘制矩形</span></div><div class="line">    <span class="keyword">for</span> (x, y, w, h) <span class="keyword">in</span> faces:</div><div class="line">        img = cv2.rectangle(img, (x, y), (x + w, y + h), (<span class="number">255</span>, <span class="number">0</span>, <span class="number">0</span>), <span class="number">2</span>)</div><div class="line">    cv2.namedWindow(<span class="string">'Vikings Detected!!'</span>)</div><div class="line">    cv2.imshow(<span class="string">'Vikings Detected!!'</span>, img)</div><div class="line">    cv2.imwrite(<span class="string">'./img/detect_face.jpg'</span>, img)</div><div class="line">    cv2.waitKey(<span class="number">0</span>)</div></pre></td></tr></table></figure>
+<p><div align="center"><br><img src="http://om4k85ss3.bkt.clouddn.com/static/images/./detcet_face3-800x482.png"><br></div><br>scaleFactor:每次图像尺寸减小的比例;minNeighbors每一个目标至少要被检测到n次才算是真的目标(因为周围的像素和不同的窗口大小都可以检测到人脸)</p>
+<p>Python: cv2.CascadeClassifier.detectMultiScale(image[, scaleFactor[, minNeighbors[, flags[, minSize[, maxSize]]]]]) → objects<br>Parameters:</p>
+<ul>
+<li>cascade – Haar classifier cascade (OpenCV 1.x API only). It can be loaded from XML or YAML file using Load(). When the cascade is not needed anymore, release it using cvReleaseHaarClassifierCascade(&amp;cascade).</li>
+<li>image – Matrix of the type CV_8U containing an image where objects are detected.</li>
+<li>objects – Vector of rectangles where each rectangle contains the detected object.</li>
+<li>scaleFactor – Parameter specifying how much the image size is reduced at each image scale.</li>
+<li>minNeighbors – Parameter specifying how many neighbors each candidate rectangle should have to retain it.</li>
+<li>flags – Parameter with the same meaning for an old cascade as in the function cvHaarDetectObjects. It is not used for a new cascade.</li>
+<li>minSize – Minimum possible object size. Objects smaller than that are ignored.</li>
+<li>maxSize – Maximum possible object size. Objects larger than that are ignored.<h3 id="视频中的人脸检测"><a href="#视频中的人脸检测" class="headerlink" title="视频中的人脸检测"></a>视频中的人脸检测</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># coding:utf-8</span></div><div class="line"><span class="keyword">import</span> cv2</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">detect</span><span class="params">()</span>:</span></div><div class="line">    face_cascade = cv2.CascadeClassifier(<span class="string">'./cascades/haarcascade_frontalface_default.xml'</span>)</div><div class="line">    eye_cascade = cv2.CascadeClassifier(<span class="string">'./cascades/haarcascade_eye.xml'</span>)</div><div class="line">    camera = cv2.VideoCapture(<span class="number">1</span>)</div><div class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</div><div class="line">        ret, frame = camera.read()</div><div class="line">        gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)</div><div class="line">        faces = face_cascade.detectMultiScale(gray, <span class="number">1.1</span>, <span class="number">5</span>)</div><div class="line">        <span class="keyword">for</span> (x, y, w, h) <span class="keyword">in</span> faces:</div><div class="line">            img = cv2.rectangle(frame, (x, y), (x + w, y + h), (<span class="number">255</span>, <span class="number">0</span>, <span class="number">0</span>), <span class="number">2</span>)</div><div class="line">            roi_gray = gray[y:y + h, x:x + w]</div><div class="line">            roi_color = img[y:y + h, x:x + w]</div><div class="line">            eyes = eye_cascade.detectMultiScale(roi_gray, <span class="number">1.3</span>, <span class="number">6</span>, <span class="number">0</span>, (<span class="number">40</span>, <span class="number">40</span>))</div><div class="line">            <span class="keyword">for</span> (ex, ey, ew, eh) <span class="keyword">in</span> eyes:</div><div class="line">                cv2.rectangle(roi_color, (ex, ey), (ex + ew, ey + eh), (<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>), <span class="number">2</span>)</div><div class="line">        cv2.imshow(<span class="string">"camera"</span>, frame)</div><div class="line">        <span class="keyword">if</span> cv2.waitKey(<span class="number">1000</span> / <span class="number">12</span>) &amp; <span class="number">0xff</span> == ord(<span class="string">"q"</span>):</div><div class="line">            <span class="keyword">break</span></div><div class="line">    camera.release()</div><div class="line">    cv2.destroyAllWindows()</div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</div><div class="line">    detect()</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>不上图</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://wax8280.github.io/2016/10/06/715/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1659,152 +1820,6 @@ fastcgi_buffers 32 32k;
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wax8280.github.io/2016/09/28/662/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Vincent Zhong">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Vin's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/09/28/662/" itemprop="url">每天一道编程题——优雅的点</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-09-28T20:59:56+08:00">2016-09-28</time>
-            
-
-            
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Code/" itemprop="url" rel="index"><span itemprop="name">Code</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>小易有一个圆心在坐标原点的圆，小易知道圆的半径的平方。小易认为在圆上的点而且横纵坐标都是整数的点是优雅的，小易现在想寻找一个算法计算出优雅的点的个数，请你来帮帮他。<br>例如：半径的平方如果为25<br>优雅的点就有：(+/-3, +/-4), (+/-4, +/-3), (0, +/-5) (+/-5, 0)，一共12个点。</p>
-<p>输入描述:<br>输入为一个整数，即为圆半径的平方,范围在32位int范围内。<br>输出描述:<br>输出为一个整数，即为优雅的点的个数</p>
-<p>输入例子:<br>25<br>输出例子:<br>12<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> math <span class="keyword">import</span> sqrt</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(r2)</span>:</span></div><div class="line">    count,r=<span class="number">0</span>,sqrt(r2)</div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(int(r)+<span class="number">1</span>):</div><div class="line">        t_=sqrt(r2-i**<span class="number">2</span>)</div><div class="line">        <span class="keyword">if</span> round(t_)==t_:</div><div class="line">            count+=<span class="number">2</span> <span class="keyword">if</span> i==<span class="number">0</span> <span class="keyword">or</span> i==r <span class="keyword">else</span> <span class="number">4</span></div><div class="line">    <span class="keyword">return</span> count</div></pre></td></tr></table></figure></p>
-<hr>
-<p>来自<em>网易2017秋招</em></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1852,7 +1867,7 @@ fastcgi_buffers 32 32k;
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">111</span>
+                    <span class="site-state-item-count">112</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -1970,7 +1985,9 @@ fastcgi_buffers 32 32k;
                     
                       
                     
-                    <span class="site-state-item-count">40</span>
+                      
+                    
+                    <span class="site-state-item-count">41</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>

@@ -292,6 +292,178 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wax8280.github.io/2016/10/13/772/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Vincent Zhong">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Vin's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/10/13/772/" itemprop="url">Python设计模式——单例模式</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-10-13T18:40:13+08:00">2016-10-13</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Code/" itemprop="url" rel="index"><span itemprop="name">Code</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>Singleton provides you with a mechanism to have one, and only one, object of a given type and provides a global point of access.<br>单例模式常用与logging或者database operations等。他们都只需要一个实例来操作从而避免冲突</p>
+<h3 id="UML"><a href="#UML" class="headerlink" title="UML"></a>UML</h3><div align="center"><br><img src="http://om4k85ss3.bkt.clouddn.com/static/images/./Singleton-800x513.png"><br></div>
+
+<h3 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h3><h4 id="普通版"><a href="#普通版" class="headerlink" title="普通版"></a>普通版</h4><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># coding:utf-8</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Singleton</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__new__</span><span class="params">(cls)</span>:</span></div><div class="line">        <span class="keyword">if</span> <span class="keyword">not</span> hasattr(cls, <span class="string">'instance'</span>):</div><div class="line">            cls.instance = super(Singleton, cls).__new__(cls)</div><div class="line">        <span class="keyword">return</span> cls.instance</div><div class="line">s = Singleton()</div><div class="line">print(<span class="string">"Object created"</span>, s)</div><div class="line">s1 = Singleton()</div><div class="line">print(<span class="string">"Object created"</span>, s1)</div><div class="line">Object created &lt;__main__.Singleton object at <span class="number">0x000001B2A199A630</span>&gt;</div><div class="line">Object created &lt;__main__.Singleton object at <span class="number">0x000001B2A199A630</span>&gt;</div><div class="line"><span class="comment">#### Lazy instantiation版</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Singleton</span>:</span></div><div class="line">    __instance = <span class="keyword">None</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="keyword">if</span> <span class="keyword">not</span> Singleton.__instance:</div><div class="line">            print(<span class="string">" __init__ method called.."</span>)</div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            print(<span class="string">"Instance already created:"</span>, self.getInstance())</div><div class="line"><span class="meta">    @classmethod</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">getInstance</span><span class="params">(cls)</span>:</span></div><div class="line">        <span class="keyword">if</span> <span class="keyword">not</span> cls.__instance:</div><div class="line">            cls.__instance = Singleton()</div><div class="line">        <span class="keyword">return</span> cls.__instance</div><div class="line"><span class="comment"># s = Singleton.getInstance()</span></div><div class="line"><span class="comment"># print("Object created", s)</span></div><div class="line"><span class="comment"># s1 = Singleton.getInstance()</span></div><div class="line"><span class="comment"># print("Object created", s1)</span></div></pre></td></tr></table></figure>
+<h4 id="The-Monostate-Singleton-pattern"><a href="#The-Monostate-Singleton-pattern" class="headerlink" title="The Monostate Singleton pattern"></a>The Monostate Singleton pattern</h4><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="string">'''</span></div><div class="line"><span class="string">单例模式要求每一个类只有一个实例，通常来说，我们更需要的是所有实例都共享同一个状态</span></div><div class="line"><span class="string">Python中使用__dict__去存储对象的所有状态</span></div><div class="line"><span class="string">'''</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Borg</span>:</span></div><div class="line">    __shared_state = &#123;<span class="string">"1"</span>: <span class="string">"2"</span>&#125;</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></div><div class="line">        self.x = <span class="number">1</span></div><div class="line">        self.__dict__ = self.__shared_state</div><div class="line">        <span class="keyword">pass</span></div><div class="line"><span class="comment"># 我们也可以在__new__中调整</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Borg</span><span class="params">(object)</span>:</span></div><div class="line">    _shared_state = &#123;&#125;</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__new__</span><span class="params">(cls, *args, **kwargs)</span>:</span></div><div class="line">        obj = super(Borg, cls).__new__(cls, *args, **kwargs)</div><div class="line">        obj.__dict__ = cls._shared_state</div><div class="line">        <span class="keyword">return</span> obj</div><div class="line"><span class="comment"># b = Borg()</span></div><div class="line"><span class="comment"># b1 = Borg()</span></div><div class="line"><span class="comment"># b.x = 4</span></div><div class="line"><span class="comment"># print("Borg Object 'b': ", b) ## b and b1 are distinct objects</span></div><div class="line"><span class="comment"># print("Borg Object 'b1': ", b1)</span></div><div class="line"><span class="comment"># print("Object State 'b':", b.__dict__) ## b and b1 share same state</span></div><div class="line"><span class="comment"># print("Object State 'b1':", b1.__dict__)</span></div></pre></td></tr></table></figure>
+<h4 id="单例模式与元类"><a href="#单例模式与元类" class="headerlink" title="单例模式与元类"></a>单例模式与元类</h4><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="string">'''</span></div><div class="line"><span class="string">元类是类的类(a class of a class)，这意味着类是元类的实例</span></div><div class="line"><span class="string">Python里面万物皆对象。</span></div><div class="line"><span class="string">a=5,type(a) 返回 &lt;type 'int'&gt; 意味着 a 是int类型</span></div><div class="line"><span class="string">type(int) 返回 &lt;type 'type'&gt; 意味着 int 是type类型</span></div><div class="line"><span class="string">我们可以用type生成一个类</span></div><div class="line"><span class="string">A = type(name, bases, dict)</span></div><div class="line"><span class="string">name：生成的类名</span></div><div class="line"><span class="string">bases：基类</span></div><div class="line"><span class="string">dict：类的字典，各种属性等</span></div><div class="line"><span class="string">'''</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MetaSingleton</span><span class="params">(type)</span>:</span></div><div class="line">    _instances = &#123;&#125;</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__call__</span><span class="params">(cls, *args, **kwargs)</span>:</span></div><div class="line">        <span class="keyword">if</span> cls <span class="keyword">not</span> <span class="keyword">in</span> cls._instances:</div><div class="line">            cls._instances[cls] = super(MetaSingleton, cls).__call__(*args, **kwargs)</div><div class="line">        <span class="keyword">return</span> cls._instances[cls]</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Logger</span><span class="params">(metaclass=MetaSingleton)</span>:</span></div><div class="line">    <span class="keyword">pass</span></div><div class="line"><span class="comment"># logger1 = Logger()</span></div><div class="line"><span class="comment"># logger2 = Logger()</span></div><div class="line"><span class="comment"># print(logger1, logger2)</span></div></pre></td></tr></table></figure>
+<p>关于元类，可以参考<a href="http://blog.vincentzhong.cn/index.php/archives/389" target="_blank" rel="external">关于Python中的元类(metaclass)</a></p>
+<h3 id="实战"><a href="#实战" class="headerlink" title="实战"></a>实战</h3><p>服务器应用就是一个很好的例子<br>大量的连接只需要一个实例，节省内存<br>防止冲突<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> sqlite3</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MetaSingleton</span><span class="params">(type)</span>:</span></div><div class="line">    _instances = &#123;&#125;</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__call__</span><span class="params">(cls, *args, **kwargs)</span>:</span></div><div class="line">        <span class="keyword">if</span> cls <span class="keyword">not</span> <span class="keyword">in</span> cls._instances:</div><div class="line">            cls._instances[cls] = super(MetaSingleton, cls).__call__(*args, **kwargs)</div><div class="line">        <span class="keyword">return</span> cls._instances[cls]</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Database</span><span class="params">(metaclass=MetaSingleton)</span>:</span></div><div class="line">    connection = <span class="keyword">None</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">connect</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="keyword">if</span> self.connection <span class="keyword">is</span> <span class="keyword">None</span>:</div><div class="line">            self.connection = sqlite3.connect(<span class="string">"db.sqlite3"</span>)</div><div class="line">            self.cursorobj = self.connection.cursor()</div><div class="line">        <span class="keyword">return</span> self.cursorobj</div><div class="line">db1 = Database().connect()</div><div class="line">db2 = Database().connect()</div><div class="line">print(<span class="string">"Database Objects DB1"</span>, db1)</div><div class="line">print(<span class="string">"Database Objects DB2"</span>, db2)</div></pre></td></tr></table></figure></p>
+<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><ul>
+<li>内存中只有一个实例，减少内存开支（Ensuring that one and only one object of the class gets created）</li>
+<li>避免资源的多重占用（Controlling concurrent access to resources that are shared）</li>
+<li>可以在系统设置全局的访问点（Providing an access point for an object that is global to the program）</li>
+</ul>
+<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><ul>
+<li>单例模式一般没有接口，扩展很困难。</li>
+<li>所有类都依赖于一个实例耦合紧。</li>
+<li>与单一性职责原则冲突。</li>
+</ul>
+<h3 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h3><ul>
+<li>要求生成唯一序列号的环境</li>
+<li>在整个项目中需要一个共享访问点或共享数据</li>
+<li>创建一个对象需要消耗的资源过多</li>
+<li>需要定义大量的静态常量和静态方法的环境</li>
+<li>在多线程的情况下，单例模式是线程不安全的。必须进行改进。</li>
+<li>在Python中所有的模块都是单例的。</li>
+<li>Python中导入import步骤如下<ul>
+<li>检查是否已经导入</li>
+<li>如果已经导入，返回该模块的实例(object for the module)。如果没有，导入并实例化它(imports and instantiates it)</li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://wax8280.github.io/2016/10/12/758/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1682,167 +1854,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wax8280.github.io/2016/10/06/712/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Vincent Zhong">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Vin's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/10/06/712/" itemprop="url">学习OpenCV——Python：人脸检测</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-10-06T23:19:20+08:00">2016-10-06</time>
-            
-
-            
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Code/" itemprop="url" rel="index"><span itemprop="name">Code</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>人脸检测一种主流的方法就是类haar+adaboosting，opencv中也是用的这种方法。这种方法可以推广到刚性物体的检测，前提是要训练好级联分类器(比如说用类haar特征)，一旦训练数据弄好了，直接调用opencv中的类CascadeClassifier，用它的几个简单的成员函数就可以完成检测功能。</p>
-<h3 id="Haar分类器的概念"><a href="#Haar分类器的概念" class="headerlink" title="Haar分类器的概念"></a>Haar分类器的概念</h3><p>以 Haar 特征分类器为基础的对象检测技术是一种非常有效的对象检测技术（2001 年 Paul_Viola 和 Michael_Jones 提出）。它是基于机器学习的， 通过使用大量的正负样本图像训练得到一个 cascade_function，最后再用它 来做对象检测。 现在我们来学习面部检测。开始时，算法需要大量的正样本图像（面部图像）和负样本图像（不含面部的图像）来训练分类器。我们需要从其中提取特 征。下图中的 Haar 特征会被使用。它们就像我们的卷积核。每一个特征是一 个值，这个值等于黑色矩形中的像素值之后减去白色矩形中的像素值之和。</p>
-<p><div align="center"><br><img src="http://om4k85ss3.bkt.clouddn.com/static/images/./detcet_face1.png"><br></div><br>使用所有可能的核来计算足够多的特征。（想象一下这需要多少计算量？仅仅是一个 24x24 的窗口就有 160000 个特征）。对于每一个特征的计算我们 好需要计算白色和黑色矩形内的像素和。为了解决这个问题，作者引入了积分 图像，这可以大大的简化求和运算，对于任何一个区域的像素和只需要对积分 图像上的四个像素操作即可。非常漂亮，它可以使运算速度飞快<br>但是在我们计算得到的所有的这些特征中，大多数是不相关的。如下图所示。上边一行显示了两个好的特征，第一个特征看上去是对眼部周围区域的描述，因为眼睛总是比鼻子黑一些。第二个特征是描述的是眼睛比鼻梁要黑一些。但是如果把这两个窗口放到脸颊的话，就一点都不相关。那么我们怎样从超过 160000+ 个特征中选出最好的特征呢？使用 Adaboost。</p>
-<p><div align="center"><br><img src="http://om4k85ss3.bkt.clouddn.com/static/images/./detcet_face2.png"><br></div><br>为了达到这个目的，我们将每一个特征应用于所有的训练图像。对于每一个特征，我们要找到它能够区分出正样本和负样本的最佳阈值。但是很明显， 这会产生错误或者错误分类。我们要选取错误率最低的特征，这说明它们是检测面部和非面部图像最好的特征。（这个过程其实不像我们说的这么简单。在开始时每一张图像都具有相同的权重，每一次分类之后，被错分的图像的权重会增大。同样的过程会被再做一遍。然后我们又得到新的错误率和新的权重。重复执行这个过程知道到达要求的准确率或者错误率或者要求数目的特征找到）。 最终的分类器是这些弱分类器的加权和。之所以成为弱分类器是应为只是用这些分类器不足以对图像进行分类，但是与其他的分类器联合起来就是一个 很强的分类器了。文章中说 200 个特征就能够提供 95% 的准确度了。他们最 后使用 6000 个特征。（从 160000 减到 6000，效果显著呀！）。 现在你有一幅图像，对每一个 24x24 的窗口使用这 6000 个特征来做检查，看它是不是面部。这是不是很低效很耗时呢？的确如此，但作者有更好的 解决方法。 在一副图像中大多数区域是非面部区域。所以最好有一个简单的方法来证明这个窗口不是面部区域，如果不是就直接抛弃，不用对它再做处理。而不是 集中在研究这个区域是不是面部。按照这种方法我们可以在可能是面部的区域多花点时间。 为了达到这个目的作者提出了级联分类器的概念。不是在一开始就对窗口进行这 6000 个特征测试，将这些特征分成不同组。在不同的分类阶段逐个使 用。（通常前面很少的几个阶段使用较少的特征检测）。如果一个窗口第一阶段 的检测都过不了就可以直接放弃后面的测试了，如果它通过了就进入第二阶段 的检测。如果一个窗口经过了所有的测试，那么这个窗口就被认为是面部区域。 这个计划是不是很帅！！！ 作者将 6000 多个特征分为 38 个阶段，前五个阶段的特征数分别为 1，10，25，25 和 50。（上图中的两个特征其实就是从 Adaboost 获得的最好 特征）。</p>
-<h3 id="Haar级联器的数据"><a href="#Haar级联器的数据" class="headerlink" title="Haar级联器的数据"></a>Haar级联器的数据</h3><p>OpenCV的源码<br>sources\data\haarcascades<br>复制到你的工程</p>
-<h3 id="静态图像人脸检测"><a href="#静态图像人脸检测" class="headerlink" title="静态图像人脸检测"></a>静态图像人脸检测</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># coding:utf-8</span></div><div class="line"><span class="keyword">import</span> cv2</div><div class="line">filename = <span class="string">'./img/face.jpg'</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">detect</span><span class="params">(filename)</span>:</span></div><div class="line">    <span class="comment"># 级联分类器</span></div><div class="line">    face_cascade = cv2.CascadeClassifier(</div><div class="line">            <span class="string">'./cascades/haarcascade_frontalface_default.xml'</span>)</div><div class="line">    img = cv2.imread(filename)</div><div class="line">    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)</div><div class="line">    faces = face_cascade.detectMultiScale(gray, <span class="number">1.3</span>, <span class="number">5</span>)</div><div class="line">    <span class="comment"># 绘制矩形</span></div><div class="line">    <span class="keyword">for</span> (x, y, w, h) <span class="keyword">in</span> faces:</div><div class="line">        img = cv2.rectangle(img, (x, y), (x + w, y + h), (<span class="number">255</span>, <span class="number">0</span>, <span class="number">0</span>), <span class="number">2</span>)</div><div class="line">    cv2.namedWindow(<span class="string">'Vikings Detected!!'</span>)</div><div class="line">    cv2.imshow(<span class="string">'Vikings Detected!!'</span>, img)</div><div class="line">    cv2.imwrite(<span class="string">'./img/detect_face.jpg'</span>, img)</div><div class="line">    cv2.waitKey(<span class="number">0</span>)</div></pre></td></tr></table></figure>
-<p><div align="center"><br><img src="http://om4k85ss3.bkt.clouddn.com/static/images/./detcet_face3-800x482.png"><br></div><br>scaleFactor:每次图像尺寸减小的比例;minNeighbors每一个目标至少要被检测到n次才算是真的目标(因为周围的像素和不同的窗口大小都可以检测到人脸)</p>
-<p>Python: cv2.CascadeClassifier.detectMultiScale(image[, scaleFactor[, minNeighbors[, flags[, minSize[, maxSize]]]]]) → objects<br>Parameters:</p>
-<ul>
-<li>cascade – Haar classifier cascade (OpenCV 1.x API only). It can be loaded from XML or YAML file using Load(). When the cascade is not needed anymore, release it using cvReleaseHaarClassifierCascade(&amp;cascade).</li>
-<li>image – Matrix of the type CV_8U containing an image where objects are detected.</li>
-<li>objects – Vector of rectangles where each rectangle contains the detected object.</li>
-<li>scaleFactor – Parameter specifying how much the image size is reduced at each image scale.</li>
-<li>minNeighbors – Parameter specifying how many neighbors each candidate rectangle should have to retain it.</li>
-<li>flags – Parameter with the same meaning for an old cascade as in the function cvHaarDetectObjects. It is not used for a new cascade.</li>
-<li>minSize – Minimum possible object size. Objects smaller than that are ignored.</li>
-<li>maxSize – Maximum possible object size. Objects larger than that are ignored.<h3 id="视频中的人脸检测"><a href="#视频中的人脸检测" class="headerlink" title="视频中的人脸检测"></a>视频中的人脸检测</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># coding:utf-8</span></div><div class="line"><span class="keyword">import</span> cv2</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">detect</span><span class="params">()</span>:</span></div><div class="line">    face_cascade = cv2.CascadeClassifier(<span class="string">'./cascades/haarcascade_frontalface_default.xml'</span>)</div><div class="line">    eye_cascade = cv2.CascadeClassifier(<span class="string">'./cascades/haarcascade_eye.xml'</span>)</div><div class="line">    camera = cv2.VideoCapture(<span class="number">1</span>)</div><div class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</div><div class="line">        ret, frame = camera.read()</div><div class="line">        gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)</div><div class="line">        faces = face_cascade.detectMultiScale(gray, <span class="number">1.1</span>, <span class="number">5</span>)</div><div class="line">        <span class="keyword">for</span> (x, y, w, h) <span class="keyword">in</span> faces:</div><div class="line">            img = cv2.rectangle(frame, (x, y), (x + w, y + h), (<span class="number">255</span>, <span class="number">0</span>, <span class="number">0</span>), <span class="number">2</span>)</div><div class="line">            roi_gray = gray[y:y + h, x:x + w]</div><div class="line">            roi_color = img[y:y + h, x:x + w]</div><div class="line">            eyes = eye_cascade.detectMultiScale(roi_gray, <span class="number">1.3</span>, <span class="number">6</span>, <span class="number">0</span>, (<span class="number">40</span>, <span class="number">40</span>))</div><div class="line">            <span class="keyword">for</span> (ex, ey, ew, eh) <span class="keyword">in</span> eyes:</div><div class="line">                cv2.rectangle(roi_color, (ex, ey), (ex + ew, ey + eh), (<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>), <span class="number">2</span>)</div><div class="line">        cv2.imshow(<span class="string">"camera"</span>, frame)</div><div class="line">        <span class="keyword">if</span> cv2.waitKey(<span class="number">1000</span> / <span class="number">12</span>) &amp; <span class="number">0xff</span> == ord(<span class="string">"q"</span>):</div><div class="line">            <span class="keyword">break</span></div><div class="line">    camera.release()</div><div class="line">    cv2.destroyAllWindows()</div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</div><div class="line">    detect()</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>不上图</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1890,7 +1901,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">111</span>
+                    <span class="site-state-item-count">112</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -2008,7 +2019,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">40</span>
+                      
+                    
+                    <span class="site-state-item-count">41</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
