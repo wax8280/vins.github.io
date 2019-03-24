@@ -111,7 +111,7 @@
 <meta property="og:site_name" content="Vin&#39;s Blog">
 <meta property="og:description" content="前提i++不是原子操作，也就是说，它不是单独一条指令，而是3条指令：1、从内存中把i的值取出来放到CPU的寄存器中2、CPU寄存器的值+13、把CPU寄存器的值写回内存 分析 假设两个线程的执行步骤如下：1234567线程A执行第一次i++，取出内存中的i，值为0，存放到寄存器后执行加1，此时CPU1的寄存器中值为1，内存中为0；线程B执行第一次i++，取出内存中的i，值为0，存放到寄存器后执行加">
 <meta property="og:locale" content="zh">
-<meta property="og:updated_time" content="2017-09-06T04:59:54.000Z">
+<meta property="og:updated_time" content="2019-03-24T03:43:48.213Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="i++在两个线程里边分别执行100次，能得到的最大值和最小值分别是多少？">
 <meta name="twitter:description" content="前提i++不是原子操作，也就是说，它不是单独一条指令，而是3条指令：1、从内存中把i的值取出来放到CPU的寄存器中2、CPU寄存器的值+13、把CPU寄存器的值写回内存 分析 假设两个线程的执行步骤如下：1234567线程A执行第一次i++，取出内存中的i，值为0，存放到寄存器后执行加1，此时CPU1的寄存器中值为1，内存中为0；线程B执行第一次i++，取出内存中的i，值为0，存放到寄存器后执行加">
@@ -684,7 +684,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>

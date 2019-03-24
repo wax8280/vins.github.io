@@ -111,14 +111,14 @@
 <meta property="og:site_name" content="Vin&#39;s Blog">
 <meta property="og:description" content="今天WordPress不知出现什么毛病，上传的图片都没有访问的权限。跑去服务器看下刚上传的文件。妈蛋居然没有权限。   奇怪的是，自动生成的缩略图居然有权限。   Uploads文件夹我是赋予写入跟修改权限的，图片可以上传，可是上传上去的图片IIS没有读取的权限。这是什么鬼。注意到，新上传的图片虽然IIS_IUSRS没有读取权限。但是just_somethings这个组有很高的权限。just_so">
 <meta property="og:locale" content="zh">
-<meta property="og:image" content="http://om4k85ss3.bkt.clouddn.com/static/images/./a0001.jpg">
-<meta property="og:image" content="http://om4k85ss3.bkt.clouddn.com/static/images/./b0001.jpg">
-<meta property="og:image" content="http://om4k85ss3.bkt.clouddn.com/static/images/./c0001.jpg">
-<meta property="og:updated_time" content="2017-09-06T04:59:54.000Z">
+<meta property="og:image" content="https://wax8280.github.io/2016/06/10/95/a0001.jpg">
+<meta property="og:image" content="https://wax8280.github.io/2016/06/10/95/b0001.jpg">
+<meta property="og:image" content="https://wax8280.github.io/2016/06/10/95/c0001.jpg">
+<meta property="og:updated_time" content="2019-03-24T03:43:48.276Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于WordPress上传图片权限问题">
 <meta name="twitter:description" content="今天WordPress不知出现什么毛病，上传的图片都没有访问的权限。跑去服务器看下刚上传的文件。妈蛋居然没有权限。   奇怪的是，自动生成的缩略图居然有权限。   Uploads文件夹我是赋予写入跟修改权限的，图片可以上传，可是上传上去的图片IIS没有读取的权限。这是什么鬼。注意到，新上传的图片虽然IIS_IUSRS没有读取权限。但是just_somethings这个组有很高的权限。just_so">
-<meta name="twitter:image" content="http://om4k85ss3.bkt.clouddn.com/static/images/./a0001.jpg">
+<meta name="twitter:image" content="https://wax8280.github.io/2016/06/10/95/a0001.jpg">
 
 
 
@@ -382,16 +382,16 @@
 
       
         <p>今天WordPress不知出现什么毛病，上传的图片都没有访问的权限。<br>跑去服务器看下刚上传的文件。妈蛋居然没有权限。</p>
-<div align="center"><br><img src="http://om4k85ss3.bkt.clouddn.com/static/images/./a0001.jpg"><br></div>
+<div align="center"><br><img src="./a0001.jpg" alt=""><br></div>
 
 <p>奇怪的是，自动生成的缩略图居然有权限。</p>
-<div align="center"><br><img src="http://om4k85ss3.bkt.clouddn.com/static/images/./b0001.jpg"><br></div>
+<div align="center"><br><img src="./b0001.jpg" alt=""><br></div>
 
 <p>Uploads文件夹我是赋予写入跟修改权限的，图片可以上传，可是上传上去的图片IIS没有读取的权限。这是什么鬼。<br>注意到，新上传的图片虽然IIS_IUSRS没有读取权限。但是just_somethings这个组有很高的权限。just_somethings这个是什么鬼？这要涉及到“应用程序池标识”了。<br>查看巨硬的文档，找到如下信息：</p>
 <blockquote>
 <p>应用程序池的标识是运行应用程序池的工作进程所使用的服务帐户名称。 默认情况下，应用程序池以 Network Service 用户帐户运行，该帐户拥有低级别的用户权限。 您可以将应用程序池配置为以 Windows Server® 2008 操作系统中的内置用户帐户之一运行。 例如，您可以指定 Local System 用户帐户，此帐户与 Network Service 或 Local Service 内置用户帐户相比，具有更高级别的用户权限。 但请注意，以具有高级别用户权限的帐户运行应用程序池存在严重的安全风险。<br>这么说来，just_somethings这个组就是“运行应用程序池的工作进程所使用的服务帐户名称”<br>OK解决方法来了，到Uploads目录下，把匿名身份验证改为“应用程序池标识”。<br>搞定</p>
 </blockquote>
-<div align="center"><br><img src="http://om4k85ss3.bkt.clouddn.com/static/images/./c0001.jpg"><br></div>
+<div align="center"><br><img src="./c0001.jpg" alt=""><br></div>
       
     </div>
 
@@ -670,7 +670,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>

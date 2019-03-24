@@ -111,13 +111,13 @@
 <meta property="og:site_name" content="Vin&#39;s Blog">
 <meta property="og:description" content="我们先看一个斐波那契数列12345678910111213141516171819def fib(i):    if i&amp;lt;2:return 1    return fib(i-1)+fib(i-2)print(fib(10)) #没问题print(fib(100)) #似乎挂掉了我们再看看加了记忆体化的装饰器的版本from functools import wrapsdef memo(fun">
 <meta property="og:locale" content="zh">
-<meta property="og:image" content="http://om4k85ss3.bkt.clouddn.com/static/images/./memo.png">
-<meta property="og:image" content="http://om4k85ss3.bkt.clouddn.com/static/images/./memo2.png">
-<meta property="og:updated_time" content="2017-09-06T04:59:54.000Z">
+<meta property="og:image" content="https://wax8280.github.io/2016/09/12/498/memo.png">
+<meta property="og:image" content="https://wax8280.github.io/2016/09/12/498/memo2.png">
+<meta property="og:updated_time" content="2019-03-24T03:43:48.167Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="记忆体化的装饰器">
 <meta name="twitter:description" content="我们先看一个斐波那契数列12345678910111213141516171819def fib(i):    if i&amp;lt;2:return 1    return fib(i-1)+fib(i-2)print(fib(10)) #没问题print(fib(100)) #似乎挂掉了我们再看看加了记忆体化的装饰器的版本from functools import wrapsdef memo(fun">
-<meta name="twitter:image" content="http://om4k85ss3.bkt.clouddn.com/static/images/./memo.png">
+<meta name="twitter:image" content="https://wax8280.github.io/2016/09/12/498/memo.png">
 
 
 
@@ -382,7 +382,7 @@
       
         <p>我们先看一个斐波那契数列<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">fib</span><span class="params">(i)</span>:</span></div><div class="line">    <span class="keyword">if</span> i&lt;<span class="number">2</span>:<span class="keyword">return</span> <span class="number">1</span></div><div class="line">    <span class="keyword">return</span> fib(i<span class="number">-1</span>)+fib(i<span class="number">-2</span>)</div><div class="line">print(fib(<span class="number">10</span>)) <span class="comment">#没问题</span></div><div class="line">print(fib(<span class="number">100</span>)) <span class="comment">#似乎挂掉了</span></div><div class="line">我们再看看加了记忆体化的装饰器的版本</div><div class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> wraps</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">memo</span><span class="params">(func)</span>:</span></div><div class="line">    cache=&#123;&#125;</div><div class="line"><span class="meta">    @wraps(func)</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wrap</span><span class="params">(*args)</span>:</span></div><div class="line">        <span class="keyword">if</span> args <span class="keyword">not</span> <span class="keyword">in</span> cache:</div><div class="line">            cache[args]=func(*args)</div><div class="line">        <span class="keyword">return</span> cache[args]</div><div class="line">    <span class="keyword">return</span> wrap</div><div class="line"><span class="meta">@memo</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">fib</span><span class="params">(i)</span>:</span></div><div class="line">    <span class="keyword">if</span> i&lt;<span class="number">2</span>:<span class="keyword">return</span> <span class="number">1</span></div><div class="line">    <span class="keyword">return</span> fib(i<span class="number">-1</span>)+fib(i<span class="number">-2</span>)</div></pre></td></tr></table></figure></p>
 <p>试着再运行一次？没问题了吧？<br>那么这个装饰器函数有什么用？<br>我们举个例子，我们执行fib(6)的时候，普通情况下函数的调用是这样的</p>
-<div align="center"><br><img src="http://om4k85ss3.bkt.clouddn.com/static/images/./memo.png"><br></div><br>其实思路很简单，就是把递归调用的函数用一个空间存储起来。从而函数的调用变成了如下：<br><div align="center"><br><img src="http://om4k85ss3.bkt.clouddn.com/static/images/./memo2.png"><br></div>
+<div align="center"><br><img src="./memo.png" alt=""><br></div><br>其实思路很简单，就是把递归调用的函数用一个空间存储起来。从而函数的调用变成了如下：<br><div align="center"><br><img src="./memo2.png" alt=""><br></div>
       
     </div>
 
@@ -661,7 +661,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
