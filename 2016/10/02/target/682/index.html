@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.0.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.0.4" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '6.0.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  
+  <meta name="keywords" content="Python,OpenCV," />
+
+
+<meta name="description" content="用Canny进行边缘检测Canny 边缘检测是一种非常流行的边缘检测算法，是 John F.Canny 在1986 年提出的。1234567import cv2import numpy as npimg = cv2.imread(&quot;../lena.bmp&quot;, 0)cv2.imwrite(&quot;canny.jpg&quot;, cv2.Canny(img, 200, 300))cv2.imshow(&quot;canny&quot;">
+<meta name="keywords" content="Python,OpenCV">
+<meta property="og:type" content="article">
+<meta property="og:title" content="学习OpenCV-Python——检测">
+<meta property="og:url" content="https://wax8280.github.io/2016/10/02/target/682/index.html">
+<meta property="og:site_name" content="Vin&#39;s Blog">
+<meta property="og:description" content="用Canny进行边缘检测Canny 边缘检测是一种非常流行的边缘检测算法，是 John F.Canny 在1986 年提出的。1234567import cv2import numpy as npimg = cv2.imread(&quot;../lena.bmp&quot;, 0)cv2.imwrite(&quot;canny.jpg&quot;, cv2.Canny(img, 200, 300))cv2.imshow(&quot;canny&quot;">
+<meta property="og:locale" content="zh">
+<meta property="og:image" content="https://wax8280.github.io/2016/10/02/target/682/detect.png">
+<meta property="og:image" content="https://wax8280.github.io/2016/10/02/target/682/detect2.png">
+<meta property="og:image" content="https://wax8280.github.io/2016/10/02/target/682/detect3-800x325.png">
+<meta property="og:image" content="https://wax8280.github.io/2016/10/02/target/682/detect4-800x452.png">
+<meta property="og:image" content="https://wax8280.github.io/2016/10/02/target/682/detect5-800x342.png">
+<meta property="og:image" content="https://wax8280.github.io/2016/10/02/target/682/detect6.png">
+<meta property="og:image" content="https://wax8280.github.io/2016/10/02/target/682/detect7.png">
+<meta property="og:image" content="https://wax8280.github.io/2016/10/02/target/682/detect8.png">
+<meta property="og:image" content="https://wax8280.github.io/2016/10/02/target/682/detect9.png">
+<meta property="og:image" content="https://wax8280.github.io/2016/10/02/target/682/detect11-780x800.png">
+<meta property="og:image" content="https://wax8280.github.io/2016/10/02/target/682/detect12-739x800.png">
+<meta property="og:image" content="https://wax8280.github.io/2016/10/02/target/682/detect13-743x800.png">
+<meta property="og:image" content="https://wax8280.github.io/2016/10/02/target/682/detect14.png">
+<meta property="og:image" content="https://wax8280.github.io/2016/10/02/target/682/detect16-800x387.png">
+<meta property="og:updated_time" content="2019-07-07T02:52:16.540Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="学习OpenCV-Python——检测">
+<meta name="twitter:description" content="用Canny进行边缘检测Canny 边缘检测是一种非常流行的边缘检测算法，是 John F.Canny 在1986 年提出的。1234567import cv2import numpy as npimg = cv2.imread(&quot;../lena.bmp&quot;, 0)cv2.imwrite(&quot;canny.jpg&quot;, cv2.Canny(img, 200, 300))cv2.imshow(&quot;canny&quot;">
+<meta name="twitter:image" content="https://wax8280.github.io/2016/10/02/target/682/detect.png">
+
+
+
+
+
+
+  <link rel="canonical" href="https://wax8280.github.io/2016/10/02/target/682/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+  <title>学习OpenCV-Python——检测 | Vin's Blog</title>
+  
+
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?696e48752c03b0066c07d25947ac5dff";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Vin's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-user"></i> <br />About</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />Tags</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-th"></i> <br />Categories</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+  
+
+
+
+ </div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wax8280.github.io/2016/10/02/target/682/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Vincent Zhong">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Vin's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">学习OpenCV-Python——检测</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-10-02T22:27:08+08:00">2016-10-02</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Code/" itemprop="url" rel="index"><span itemprop="name">Code</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="用Canny进行边缘检测"><a href="#用Canny进行边缘检测" class="headerlink" title="用Canny进行边缘检测"></a>用Canny进行边缘检测</h3><p>Canny 边缘检测是一种非常流行的边缘检测算法，是 John F.Canny 在1986 年提出的。<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> cv2</div><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line">img = cv2.imread(<span class="string">"../lena.bmp"</span>, <span class="number">0</span>)</div><div class="line">cv2.imwrite(<span class="string">"canny.jpg"</span>, cv2.Canny(img, <span class="number">200</span>, <span class="number">300</span>))</div><div class="line">cv2.imshow(<span class="string">"canny"</span>, cv2.imread(<span class="string">"canny.jpg"</span>))</div><div class="line">cv2.waitKey()</div><div class="line">cv2.destroyAllWindows()</div></pre></td></tr></table></figure></p>
+<div align="center"><br><img src="./detect.png" alt=""><br></div><br>可见边缘检测的结果非常棒<br>Canny的工作原理略复杂，这里简单述说<br>- 高斯滤波器降噪（Gaussian filter）<br>由于边缘检测很容易受到噪声影响，所以第一步是使用 5x5 的高斯滤波器 去除噪声，这个前面我们已经学过了。<br>- 计算梯度（calculates gradients）<br>对平滑后的图像使用 Sobel 算子计算水平方向和竖直方向的一阶导数（图像梯度）（Gx 和 Gy）。根据得到的这两幅梯度图（Gx 和 Gy）找到边界的梯 度和方向，公式如下<br><div align="center"><br><img src="./detect2.png" alt=""><br></div>
+
+<p>梯度的方向一般总是与边界垂直。梯度方向被归为四类：垂直，水平，和两个对角线。</p>
+<ul>
+<li>非极大值抑制（Non-maximum suppression）<br>在获得梯度的方向和大小之后，应该对整幅图像做一个扫描，去除那些非边界上的点。对每一个像素进行检查，看这个点的梯度是不是周围具有相同梯 度方向的点中最大的。如下图所示：<br><div align="center"><br><img src="./detect3-800x325.png" alt=""><br></div><br>现在你得到的是一个包含“窄边界”的二值图像。</li>
+<li>双阀值的边缘检测防止误判（ a double threshold on all the detected edges to eliminate false positives）<br>现在要确定那些边界才是真正的边界。这时我们需要设置两个阈值：<br>minVal 和 maxVal。当图像的灰度梯度高于 maxVal 时被认为是真的边界， 那些低于 minVal 的边界会被抛弃。如果介于两者之间的话，就要看这个点是 否与某个被确定为真正的边界点相连，如果是就认为它也是边界点，如果不是 就抛弃。如下图：<div align="center"><br><img src="./detect4-800x452.png" alt=""><br></div></li>
+<li>分析所有边和和他们相连的边，去掉虚边，保留实边<h3 id="轮廓检测"><a href="#轮廓检测" class="headerlink" title="轮廓检测"></a>轮廓检测</h3></li>
+</ul>
+<p>轮廓可以简单认为成将连续的点（连着边界）连在一起的曲线，具有相同的颜色或者灰度。轮廓在形状分析和物体的检测和识别中很有用。</p>
+<ul>
+<li>为了更加准确，要使用二值化图像。在寻找轮廓之前，要进行阈值化处理或者 Canny 边界检测。</li>
+<li>查找轮廓的函数会修改原始图像。如果你在找到轮廓之后还想使用原始图像的话，你应该将原始图像存储到其他变量中。</li>
+<li>在 OpenCV 中，查找轮廓就像在黑色背景中超白色物体。你应该记住，要找的物体应该是白色而背景应该是黑色。<figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># coding:utf-8</span></div><div class="line"><span class="keyword">import</span> cv2</div><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line">img = np.zeros((<span class="number">200</span>, <span class="number">200</span>), dtype=np.uint8)</div><div class="line"><span class="comment"># 一个白色正方形</span></div><div class="line">img[<span class="number">50</span>:<span class="number">150</span>, <span class="number">50</span>:<span class="number">150</span>] = <span class="number">255</span></div><div class="line"><span class="comment"># 阀值过滤</span></div><div class="line">ret, thresh = cv2.threshold(img, <span class="number">127</span>, <span class="number">255</span>, <span class="number">0</span>)</div><div class="line">cv2.imshow(<span class="string">"img"</span>, img)</div><div class="line">image, contours, hierarchy = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)</div><div class="line"><span class="comment"># 转换色彩空间</span></div><div class="line">color = cv2.cvtColor(img, cv2.COLOR_GRAY2BGR)</div><div class="line">img = cv2.drawContours(color, contours, <span class="number">-1</span>, (<span class="number">0</span>, <span class="number">255</span>, <span class="number">0</span>), <span class="number">2</span>)</div><div class="line">cv2.imshow(<span class="string">"contours"</span>, color)</div><div class="line">cv2.waitKey()</div><div class="line">cv2.destroyAllWindows()</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<div align="center"><br><img src="./detect5-800x342.png" alt=""><br></div>
+
+<h4 id="cv2-threshold："><a href="#cv2-threshold：" class="headerlink" title="cv2.threshold："></a>cv2.threshold：</h4><p>作用：阀值处理；<br>参数：<br>输入<br>1.图像；<br>2.用来对像素值进行分类的阈值；<br>3.当像素值高于（有时是小于）阈值时应该被赋予的新的像素值；<br>4.阀值方法</p>
+<ul>
+<li>cv2.THRESH_BINARY</li>
+<li>cv2.THRESH_BINARY_INV</li>
+<li>cv2.THRESH_TRUNC</li>
+<li>cv2.THRESH_TOZERO</li>
+<li>cv2.THRESH_TOZERO_INV<br><div align="center"><br><img src="./detect6.png" alt=""><br></div><br>输出：<br>retVal<br>结果图像</li>
+</ul>
+<h4 id="cv2-findContours"><a href="#cv2-findContours" class="headerlink" title="cv2.findContours"></a>cv2.findContours</h4><p>作用：寻找轮廓<br>参数：<br>输入：<br>输入图像（会修改图像，可以使用img.copy()拷贝）<br>层次结构类型（hierarchy type）<br>轮廓近似方法（contour approximation method）<br>输出：<br>修改后的图像<br>轮廓（contours）<br>轮廓的层次结构<br>轮廓（第二个返回值）是一个 Python 列表，其中存储这图像中的所有轮廓。每一个轮廓都是一个 Numpy 数组，包含对象边界点（x，y）的坐标。<br>层次结构类型hierarchy type</p>
+<ul>
+<li>cv2.RETR_TREE 检索整个层次结构图像的轮廓,使您能够建立轮廓之间的“关系”。在你想完全消除两个相同轮廓的时候很有用。（在绝大多数情况下,你不需要检测一个物体在另一个具有相同类型的对象的里面）</li>
+<li>CV_RETR_EXTERNAL 只检测出最外轮廓即c0。</li>
+<li>CV_RETR_LIST 检测出所有的轮廓并将他们保存到表(list)中</li>
+<li>CV_RETR_COMP 检测出所有的轮廓并将他们组织成双层的结构</li>
+<li>CV_RETR_TREE 检测出所有轮廓并且重新建立网状的轮廓结构<br><div align="center"><br><img src="./detect7.png" alt=""><br></div><h4 id="轮廓近似方法（contour-approximation-method）"><a href="#轮廓近似方法（contour-approximation-method）" class="headerlink" title="轮廓近似方法（contour approximation method）"></a>轮廓近似方法（contour approximation method）</h4></li>
+<li>CHAIN_CODE 用freeman链码输出轮廓，其他方法输出多边形(顶点的序列)。</li>
+<li>CHAIN_APPROX_NONE将链码编码中的所有点转换为点。也就是参数contours中的每个轮廓是用构成该轮廓的所有像素点表示的。</li>
+<li>CHAIN_APPROX_SIMPLE压缩水平，垂直或斜的部分，只保存最后一个点。也就是说参数contours中的每个轮廓是用该轮廓的所有顶点表示的。</li>
+<li>CHAIN_APPROX_TC89_L1，CV_CHAIN_QPPROX_TC89_KCOS使用Teh-Chin链逼近算法中的一个。</li>
+<li>LINK_RUNS与上述的算法完全不同，连接所有的水平层次的轮廓。<br><div align="center"><br><img src="./detect8.png" alt=""><br></div><h5 id="cv2-drawContours"><a href="#cv2-drawContours" class="headerlink" title="cv2.drawContours"></a>cv2.drawContours</h5></li>
+<li>image,//要绘制轮廓的图像</li>
+<li>contours,//所有输入的轮廓，每个轮廓被保存成一个point向量</li>
+<li>ontourIdx,//指定要绘制轮廓的编号，如果是负数，则绘制所有的轮廓</li>
+<li>color,//绘制轮廓所用的颜色</li>
+<li>thickness=None //绘制轮廓的线的粗细，如果是负数，则轮廓内部被填充</li>
+<li>lineType=None, /绘制轮廓的线的连通性</li>
+<li>hierarchy=None,//关于层级的可选参数，只有绘制部分轮廓时才会用到</li>
+<li>maxLevel=None//绘制轮廓的最高级别，这个参数只有hierarchy有效的时候才有效</li>
+<li>//maxLevel=0，绘制与输入轮廓属于同一等级的所有轮廓即输入轮廓和与其相邻的轮廓</li>
+<li>//maxLevel=1, 绘制与输入轮廓同一等级的所有轮廓与其子节点。</li>
+<li>//maxLevel=2，绘制与输入轮廓同一等级的所有轮廓与其子节点以及子节点的子节点</li>
+<li>offset=None</li>
+</ul>
+<h3 id="轮廓-–边界框-最小矩形区域和最小封闭圆"><a href="#轮廓-–边界框-最小矩形区域和最小封闭圆" class="headerlink" title="轮廓 –边界框,最小矩形区域和最小封闭圆"></a>轮廓 –边界框,最小矩形区域和最小封闭圆</h3><div align="center"><br><img src="./detect9.png" alt=""><br></div><br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 我们先把图像转换成灰度图，然后使用cv2.threshold将图像二值化，处理完毕之后，绘制在原图上。</span></div><div class="line"><span class="comment"># coding:utf-8</span></div><div class="line"><span class="keyword">import</span> cv2</div><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"><span class="comment"># 读取图像，降低分辨率</span></div><div class="line">img = cv2.pyrDown(cv2.imread(<span class="string">"hammer.jpg"</span>, cv2.IMREAD_UNCHANGED))</div><div class="line"><span class="comment"># 转换成灰度图，进行简单阀值处理</span></div><div class="line"><span class="comment"># 这个本来不是80，而是127的，不过考虑到实际。还是将阀值降低，不然效果不好。</span></div><div class="line">ret, thresh = cv2.threshold(cv2.cvtColor(img.copy(), cv2.COLOR_BGR2GRAY) ,</div><div class="line">                            <span class="number">80</span>, <span class="number">255</span>, cv2.THRESH_BINARY)</div><div class="line"><span class="comment"># 识别轮廓</span></div><div class="line">image, contours, hier = cv2.findContours(thresh, cv2.RETR_EXTERNAL,</div><div class="line">                                          cv2.CHAIN_APPROX_SIMPLE)</div><div class="line"><span class="keyword">for</span> c <span class="keyword">in</span> contours:</div><div class="line">    <span class="comment"># 边界框坐标</span></div><div class="line">    <span class="comment"># 坐标x,y；宽度高度w,h</span></div><div class="line">    x,y,w,h = cv2.boundingRect(c)</div><div class="line">    <span class="comment"># 绘制矩形（绿色</span></div><div class="line">    cv2.rectangle(img, (x,y), (x+w, y+h), (<span class="number">0</span>, <span class="number">255</span>, <span class="number">0</span>), <span class="number">2</span>)</div><div class="line">    <span class="comment"># 找出最小区域（OpenCV没有直接求出最小区域坐标的函数，我们需要转换）</span></div><div class="line">    rect = cv2.minAreaRect(c)</div><div class="line">    <span class="comment"># 计算最小矩形区域的坐标（结果为float）</span></div><div class="line">    box = cv2.boxPoints(rect)</div><div class="line">    <span class="comment"># 正常化坐标。将其化成整数</span></div><div class="line">    box = np.int0(box)</div><div class="line">    <span class="comment"># 绘制轮廓（红色；第三个参数，数组索引0开始</span></div><div class="line">    cv2.drawContours(img, [box], <span class="number">0</span>, (<span class="number">0</span>,<span class="number">0</span>, <span class="number">255</span>), <span class="number">3</span>)</div><div class="line">    <span class="comment"># 计算最小封闭圆的中心与半径（绿</span></div><div class="line">    (x,y),radius = cv2.minEnclosingCircle(c)</div><div class="line">    <span class="comment"># 转换成int</span></div><div class="line">    center = (int(x),int(y))</div><div class="line">    radius = int(radius)</div><div class="line">    <span class="comment"># 绘制圆形</span></div><div class="line">    img = cv2.circle(img,center,radius,(<span class="number">0</span>,<span class="number">255</span>,<span class="number">0</span>),<span class="number">2</span>)</div><div class="line">cv2.drawContours(img, contours, <span class="number">-1</span>, (<span class="number">255</span>, <span class="number">0</span>, <span class="number">0</span>), <span class="number">1</span>)</div><div class="line">cv2.imshow(<span class="string">"contours"</span>, img)</div><div class="line">cv2.waitKey()</div><div class="line">cv2.destroyAllWindows()</div></pre></td></tr></table></figure><br><br><div align="center"><br><img src="./detect11-780x800.png" alt=""><br></div>
+
+<h3 id="轮廓——凸轮廓线（convex-contours）和道格拉斯·皮克雷算法（Douglas-Peucker-algorithm）"><a href="#轮廓——凸轮廓线（convex-contours）和道格拉斯·皮克雷算法（Douglas-Peucker-algorithm）" class="headerlink" title="轮廓——凸轮廓线（convex contours）和道格拉斯·皮克雷算法（Douglas-Peucker algorithm）"></a>轮廓——凸轮廓线（convex contours）和道格拉斯·皮克雷算法（Douglas-Peucker algorithm）</h3><p>将轮廓形状近似到另外一种由更少点组成的轮廓形状，新轮廓的点的数目 由我们设定的准确度来决定。使用的Douglas-Peucker算法。<br>OpenCV里面检测近似边界多边形（approximate bounding polygon of a shape）的函数<br>cv2.approxPolyDP<br>参数：<br>输入：<br>轮廓<br>一个ε值，代表原图跟近似多边形的最大差值（值越低，近似的值就约接近原来的轮廓）<br>一个布尔值，表示多边形是否是封闭的<br>为什么需要一个近似边界多边形，特别是当我们有一个精确的轮廓的时候。<br>答案是，多边是是一组直线的集合，多边形在计算机视觉处理里面十分重要<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># coding:utf-8</span></div><div class="line"><span class="keyword">import</span> cv2</div><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"><span class="comment"># 读取图像，降低分辨率</span></div><div class="line">img = cv2.pyrDown(cv2.imread(<span class="string">"hammer.jpg"</span>, cv2.IMREAD_UNCHANGED))</div><div class="line"><span class="comment"># 转换成灰度图，进行简单阀值处理</span></div><div class="line"><span class="comment"># 这个本来不是80，而是127的，不过考虑到实际。还是将阀值降低，不然效果不好。</span></div><div class="line">ret, thresh = cv2.threshold(cv2.cvtColor(img.copy(), cv2.COLOR_BGR2GRAY) ,</div><div class="line">                            <span class="number">80</span>, <span class="number">255</span>, cv2.THRESH_BINARY)</div><div class="line"><span class="comment"># 识别轮廓</span></div><div class="line">image, contours, hier = cv2.findContours(thresh, cv2.RETR_EXTERNAL,</div><div class="line">                                          cv2.CHAIN_APPROX_SIMPLE)</div><div class="line">cnt = contours[<span class="number">0</span>]</div><div class="line">img = np.zeros((img.shape[<span class="number">0</span>], img.shape[<span class="number">1</span>],<span class="number">3</span>), dtype=np.uint8)</div><div class="line"><span class="comment"># 求周长，True表示闭合</span></div><div class="line">epsilon = <span class="number">0.01</span> * cv2.arcLength(cnt, <span class="keyword">True</span>)</div><div class="line"><span class="comment"># 近似多边形，True表示闭合</span></div><div class="line">approx = cv2.approxPolyDP(cnt, epsilon, <span class="keyword">True</span>)</div><div class="line"><span class="comment"># 直接使用轮廓，制作凸型（convex shapes）</span></div><div class="line">hull = cv2.convexHull(cnt)</div><div class="line">cv2.drawContours(img, [approx], <span class="number">0</span>, (<span class="number">0</span>,<span class="number">0</span>, <span class="number">255</span>), <span class="number">2</span>)</div><div class="line">cv2.drawContours(img, [hull], <span class="number">0</span>, (<span class="number">0</span>,<span class="number">255</span>, <span class="number">0</span>), <span class="number">2</span>)</div><div class="line">cv2.drawContours(img, contours, <span class="number">-1</span>, (<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>), <span class="number">1</span>)</div><div class="line">cv2.imshow(<span class="string">"done"</span>, img)</div><div class="line">cv2.waitKey()</div></pre></td></tr></table></figure></p>
+<div align="center"><br><img src="./detect12-739x800.png" alt=""><br></div>
+
+<h3 id="线与圆形检测"><a href="#线与圆形检测" class="headerlink" title="线与圆形检测"></a>线与圆形检测</h3><p>线条和形状检测有其背后的理论基础在一种叫做Hough变换的技术，由Richard Duda 和 Peter Hart发明。</p>
+<h3 id="线段检测"><a href="#线段检测" class="headerlink" title="线段检测"></a>线段检测</h3><p>HoughLines和HoughLinesP一个使用标准霍夫变换，另一个使用概率霍夫变换。通常，后者速度更快<br><strong>原理</strong><br>霍夫变换在检测各种形状的的技术中非常流行，如果你要检测的形状可以 用数学表达式写出，你就可以是使用霍夫变换检测它。及时要检测的形状存在<br>一点破坏或者扭曲也可以使用。我们下面就看看如何使用霍夫变换检测直线。 一条直线可以用数学表达式 y = mx + c 或者 ρ = xcos θ + y sin θ 表示。<br>ρ 是从原点到直线的垂直距离，θ 是直线的垂线与横轴顺时针方向的夹角（如 果你使用的坐标系不同方向也可能不同，我是按 OpenCV 使用的坐标系描述 的）。如下图所</p>
+<div align="center"><br><img src="./detect13-743x800.png" alt=""><br></div>
+
+<p>所以如果一条线在原点下方经过，ρ 的值就应该大于 0，角度小于 180。 但是如果从原点上方经过的话，角度不是大于 180，也是小于 180，但 ρ 的值 小于 0。垂直的线角度为 0 度，水平线的角度为 90 度。 让我们来看看霍夫变换是如何工作的。每一条直线都可以用 (ρ, θ) 表示。 所以首先创建一个 2D 数组（累加器），初始化累加器，所有的值都为 0。行表 示 ρ，列表示 θ。这个数组的大小决定了最后结果的准确性。如果你希望角度精 确到 1 度，你就需要 180 列。对于 ρ，最大值为图片对角线的距离。所以如果 精确度要达到一个像素的级别，行数就应该与图像对角线的距离相等。 想象一下我们有一个大小为 100x100 的直线位于图像的中央。取直线上</p>
+<p>的第一个点，我们知道此处的（x，y）值。把 x 和 y 带入上边的方程组，然后 遍历 θ 的取值：0，1，2，3，. . .，180。分别求出与其对应的 ρ 的值，这样我 们就得到一系列（ρ, θ）的数值对，如果这个数值对在累加器中也存在相应的位 置，就在这个位置上加 1。所以现在累加器中的（50，90）=1。（一个点可能 存在与多条直线中，所以对于直线上的每一个点可能是累加器中的多个值同时 加 1）。 </p>
+<p>现在取直线上的第二个点。重复上边的过程。更新累加器中的值。现在累加器中（50,90）的值为 2。你每次做的就是更新累加器中的值。对直线上的 每个点都执行上边的操作，每次操作完成之后，累加器中的值就加 1，但其他地方有时会加 1, 有时不会。按照这种方式下去，到最后累加器中（50,90）的 值肯定是最大的。如果你搜索累加器中的最大值，并找到其位置（50,90），这 就说明图像中有一条直线，这条直线到原点的距离为 50，它的垂线与横轴的 夹角为 90 度。<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># coding:utf-8</span></div><div class="line"><span class="keyword">import</span> cv2</div><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line">img = cv2.imread(<span class="string">'line.jpg'</span>)</div><div class="line">gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)</div><div class="line">edges = cv2.Canny(gray, <span class="number">50</span>, <span class="number">150</span>, apertureSize=<span class="number">3</span>)</div><div class="line">minLineLength = <span class="number">3</span></div><div class="line">maxLineGap = <span class="number">200</span></div><div class="line"><span class="comment"># lines = cv2.HoughLinesP(edges, 1, np.pi / 180, 200)</span></div><div class="line"><span class="comment"># for line in lines:</span></div><div class="line"><span class="comment"># for x1, y1, x2, y2 in line:</span></div><div class="line"><span class="comment"># cv2.line(img, (x1, y1), (x2, y2), (0, 255, 0), 2)</span></div><div class="line"><span class="comment"># 第一个参数是一个二值化图像（所以在进行霍夫变换之前要首先进行二值化，或者进行 Canny 边缘检测。）</span></div><div class="line"><span class="comment"># 第二三个参数分别代表 ρ 和 θ 的精确度</span></div><div class="line"><span class="comment"># 第四个参数是阈值，只有累加其中的值高于阈值时才被认为是一条直</span></div><div class="line">lines = cv2.HoughLines(edges, <span class="number">1</span>, np.pi / <span class="number">180</span>, <span class="number">200</span>)</div><div class="line"><span class="keyword">for</span> line <span class="keyword">in</span> lines:</div><div class="line">    <span class="keyword">for</span> rho, theta <span class="keyword">in</span> line:</div><div class="line">        a = np.cos(theta)</div><div class="line">        b = np.sin(theta)</div><div class="line">        x0 = a * rho</div><div class="line">        y0 = b * rho</div><div class="line">        x1 = int(x0 + <span class="number">1000</span> * (-b))</div><div class="line">        y1 = int(y0 + <span class="number">1000</span> * (a))</div><div class="line">        x2 = int(x0 - <span class="number">1000</span> * (-b))</div><div class="line">        y2 = int(y0 - <span class="number">1000</span> * (a))</div><div class="line">        cv2.line(img, (x1, y1), (x2, y2), (<span class="number">0</span>, <span class="number">0</span>, <span class="number">255</span>), <span class="number">2</span>)</div><div class="line">cv2.imshow(<span class="string">"edges"</span>, edges)</div><div class="line">cv2.imshow(<span class="string">"lines"</span>, img)</div><div class="line">cv2.waitKey()</div><div class="line">cv2.destroyAllWindows()</div></pre></td></tr></table></figure></p>
+<div align="center"><br><img src="./detect14.png" alt=""><br></div>
+
+<h3 id="圆形检测"><a href="#圆形检测" class="headerlink" title="圆形检测"></a>圆形检测</h3><p>使用霍夫变换在图像中找圆形（环）。<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># coding:utf-8</span></div><div class="line"><span class="keyword">import</span> cv2</div><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line">planets = cv2.imread(<span class="string">'planet_glow.jpg'</span>)</div><div class="line">gray_img = cv2.cvtColor(planets, cv2.COLOR_BGR2GRAY)</div><div class="line"><span class="comment"># 模糊</span></div><div class="line">img = cv2.medianBlur(gray_img, <span class="number">5</span>)</div><div class="line">cimg = cv2.cvtColor(img,cv2.COLOR_GRAY2BGR)</div><div class="line"><span class="string">'''</span></div><div class="line"><span class="string">cv2.HoughCircles(image, method, dp, minDist, circles, param1, param2, minRadius, maxRadius)</span></div><div class="line"><span class="string">method:用于检测的方法，现在只有HOUGH_GRADIENT</span></div><div class="line"><span class="string">dp:累加器分辨率：dp=1跟原图有同样的分辨率，dp=2分辨率是原图的一般</span></div><div class="line"><span class="string">minDist：圆心到圆的最短距离</span></div><div class="line"><span class="string">param1:First method-specific parameter。在HOUGH_GRADIENT里面，是Canny边缘检测较大的那个参数</span></div><div class="line"><span class="string">param2:累加器在检测时候圆心的阀值。约小约容易检测到假圆</span></div><div class="line"><span class="string">'''</span></div><div class="line">cv2.imshow(<span class="string">"Blur"</span>, img)</div><div class="line">circles = cv2.HoughCircles(img,cv2.HOUGH_GRADIENT,<span class="number">1</span>,<span class="number">60</span>, param1=<span class="number">130</span>,</div><div class="line">                              param2=<span class="number">30</span>,minRadius=<span class="number">0</span>,maxRadius=<span class="number">0</span>)</div><div class="line">circles = np.uint16(np.around(circles))</div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> circles[<span class="number">0</span>,:]:</div><div class="line">    <span class="comment"># 圆</span></div><div class="line">    cv2.circle(planets,(i[<span class="number">0</span>],i[<span class="number">1</span>]),i[<span class="number">2</span>],(<span class="number">0</span>,<span class="number">255</span>,<span class="number">0</span>),<span class="number">2</span>)</div><div class="line">    <span class="comment"># 中心点</span></div><div class="line">    cv2.circle(planets,(i[<span class="number">0</span>],i[<span class="number">1</span>]),<span class="number">2</span>,(<span class="number">0</span>,<span class="number">0</span>,<span class="number">255</span>),<span class="number">3</span>)</div><div class="line">cv2.imwrite(<span class="string">"planets_circles.jpg"</span>, planets)</div><div class="line">cv2.imshow(<span class="string">"HoughCirlces"</span>, planets)</div><div class="line">cv2.waitKey</div></pre></td></tr></table></figure></p>
+<div align="center"><br><img src="./detect16-800x387.png" alt=""><br></div>
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" rel="tag"># Python</a>
+          
+            <a href="/tags/OpenCV/" rel="tag"># OpenCV</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/10/02/682/" rel="next" title="学习OpenCV-Python——检测">
+                <i class="fa fa-chevron-left"></i> 学习OpenCV-Python——检测
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/10/04/706/" rel="prev" title="每天一道编程题——最大映射">
+                每天一道编程题——最大映射 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Vincent Zhong</p>
+              <p class="site-description motion-element" itemprop="description">Share my favorite</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">224</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">41</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/wax8280" target="_blank" title="GitHub"><i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#用Canny进行边缘检测"><span class="nav-number">1.</span> <span class="nav-text">用Canny进行边缘检测</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#轮廓检测"><span class="nav-number">2.</span> <span class="nav-text">轮廓检测</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#cv2-threshold："><span class="nav-number">2.1.</span> <span class="nav-text">cv2.threshold：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cv2-findContours"><span class="nav-number">2.2.</span> <span class="nav-text">cv2.findContours</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#轮廓近似方法（contour-approximation-method）"><span class="nav-number">2.3.</span> <span class="nav-text">轮廓近似方法（contour approximation method）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#cv2-drawContours"><span class="nav-number">2.3.1.</span> <span class="nav-text">cv2.drawContours</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#轮廓-–边界框-最小矩形区域和最小封闭圆"><span class="nav-number">3.</span> <span class="nav-text">轮廓 –边界框,最小矩形区域和最小封闭圆</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#轮廓——凸轮廓线（convex-contours）和道格拉斯·皮克雷算法（Douglas-Peucker-algorithm）"><span class="nav-number">4.</span> <span class="nav-text">轮廓——凸轮廓线（convex contours）和道格拉斯·皮克雷算法（Douglas-Peucker algorithm）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#线与圆形检测"><span class="nav-number">5.</span> <span class="nav-text">线与圆形检测</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#线段检测"><span class="nav-number">6.</span> <span class="nav-text">线段检测</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#圆形检测"><span class="nav-number">7.</span> <span class="nav-text">圆形检测</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Vincent Zhong</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Muse</a> v6.0.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.4"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.0.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.0.4" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '6.0.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  
+  <meta name="keywords" content="Linux," />
+
+
+<meta name="description" content="使用PuTTY远程连接到终端到 官网 下载PuTTY，打开Putty，并输入主机名或IP，点击Open。之后会切换到另一个窗口，显示提示login as:，这时输入用户名（如管理员用户名root),按下回车键出现输入密码提示，直接键入密码按下回车键就登录成功了。 CentOS6.5安装vncserver实现图形化访问安装gnome图形化桌面123#yum groupinstall -y &amp;quot">
+<meta name="keywords" content="Linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CentOS服务器图形化界面安装及XAMPP部署">
+<meta property="og:url" content="https://wax8280.github.io/2016/06/11/target/107/index.html">
+<meta property="og:site_name" content="Vin&#39;s Blog">
+<meta property="og:description" content="使用PuTTY远程连接到终端到 官网 下载PuTTY，打开Putty，并输入主机名或IP，点击Open。之后会切换到另一个窗口，显示提示login as:，这时输入用户名（如管理员用户名root),按下回车键出现输入密码提示，直接键入密码按下回车键就登录成功了。 CentOS6.5安装vncserver实现图形化访问安装gnome图形化桌面123#yum groupinstall -y &amp;quot">
+<meta property="og:locale" content="zh">
+<meta property="og:updated_time" content="2019-07-07T02:52:16.366Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CentOS服务器图形化界面安装及XAMPP部署">
+<meta name="twitter:description" content="使用PuTTY远程连接到终端到 官网 下载PuTTY，打开Putty，并输入主机名或IP，点击Open。之后会切换到另一个窗口，显示提示login as:，这时输入用户名（如管理员用户名root),按下回车键出现输入密码提示，直接键入密码按下回车键就登录成功了。 CentOS6.5安装vncserver实现图形化访问安装gnome图形化桌面123#yum groupinstall -y &amp;quot">
+
+
+
+
+
+
+  <link rel="canonical" href="https://wax8280.github.io/2016/06/11/target/107/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+  <title>CentOS服务器图形化界面安装及XAMPP部署 | Vin's Blog</title>
+  
+
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?696e48752c03b0066c07d25947ac5dff";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Vin's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-user"></i> <br />About</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />Tags</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-th"></i> <br />Categories</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+  
+
+
+
+ </div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wax8280.github.io/2016/06/11/target/107/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Vincent Zhong">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Vin's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">CentOS服务器图形化界面安装及XAMPP部署</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-06-11T18:28:44+08:00">2016-06-11</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Code/" itemprop="url" rel="index"><span itemprop="name">Code</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="使用PuTTY远程连接到终端"><a href="#使用PuTTY远程连接到终端" class="headerlink" title="使用PuTTY远程连接到终端"></a>使用PuTTY远程连接到终端</h2><p>到 <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html" target="_blank" rel="external">官网</a> 下载<strong>PuTTY</strong>，打开Putty，并输入主机名或IP，点击Open。<br>之后会切换到另一个窗口，显示提示login as:，这时输入用户名（如管理员用户名root),按下回车键出现输入密码提示，直接键入密码按下回车键就登录成功了。</p>
+<h2 id="CentOS6-5安装vncserver实现图形化访问"><a href="#CentOS6-5安装vncserver实现图形化访问" class="headerlink" title="CentOS6.5安装vncserver实现图形化访问"></a>CentOS6.5安装vncserver实现图形化访问</h2><h2 id="安装gnome图形化桌面"><a href="#安装gnome图形化桌面" class="headerlink" title="安装gnome图形化桌面"></a>安装gnome图形化桌面</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">#yum groupinstall -y &quot;X Window System&quot;</div><div class="line">#yum groupinstall -y &quot;Desktop&quot;</div><div class="line">#yum groupinstall -y &quot;Chinese Support&quot;</div></pre></td></tr></table></figure>
+<h2 id="安装vncserver并配置"><a href="#安装vncserver并配置" class="headerlink" title="安装vncserver并配置"></a>安装vncserver并配置</h2><h3 id="安装vncserver"><a href="#安装vncserver" class="headerlink" title="安装vncserver"></a>安装vncserver</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#yum install -y tigervnc-server</div></pre></td></tr></table></figure>
+<h3 id="配置vncserver"><a href="#配置vncserver" class="headerlink" title="配置vncserver"></a>配置vncserver</h3><h4 id="配置为开机自启动"><a href="#配置为开机自启动" class="headerlink" title="配置为开机自启动"></a>配置为开机自启动</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#chkconfig --level 345 vncserver on</div></pre></td></tr></table></figure>
+<h4 id="配置vnc密码"><a href="#配置vnc密码" class="headerlink" title="配置vnc密码"></a>配置vnc密码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">[root@sunth ~]# vncserver</div><div class="line">You will require a password to access your desktops.</div><div class="line">Password:</div><div class="line">Verify:</div><div class="line">xauth:  creating new authority file /root/.Xauthority</div><div class="line">xauth: (stdin):1:  bad display name &quot;sunth.localdomain:1&quot; in &quot;add&quot; command</div><div class="line">New &apos;sunth.localdomain:1 (root)&apos; desktop is sunth.localdomain:1</div><div class="line">Creating default startup script /root/.vnc/xstartup</div><div class="line">Starting applications specified in /root/.vnc/xstartup</div><div class="line">Log file is /root/.vnc/sunth.localdomain:1.log</div></pre></td></tr></table></figure>
+<h4 id="配置为使用gnome桌面"><a href="#配置为使用gnome桌面" class="headerlink" title="配置为使用gnome桌面"></a>配置为使用gnome桌面</h4><p>修改 /root/.vnc/xstartup文件，把最后的 twm &amp; 删掉 加上 gnome-session &amp;。<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/sh</span></div><div class="line">[ -r /etc/sysconfig/i18n ] &amp;&amp; . /etc/sysconfig/i18n</div><div class="line"><span class="built_in">export</span> LANG</div><div class="line"><span class="built_in">export</span> SYSFONT</div><div class="line">vncconfig -iconic &amp;</div><div class="line"><span class="built_in">unset</span> SESSION_MANAGER</div><div class="line"><span class="built_in">unset</span> DBUS_SESSION_BUS_ADDRESS</div><div class="line">OS=`uname -s`</div><div class="line"><span class="keyword">if</span> [ <span class="variable">$OS</span> = <span class="string">'Linux'</span> ]; <span class="keyword">then</span></div><div class="line">  <span class="keyword">case</span> <span class="string">"<span class="variable">$WINDOWMANAGER</span>"</span> <span class="keyword">in</span></div><div class="line">    *gnome*)</div><div class="line">      <span class="keyword">if</span> [ -e /etc/SuSE-release ]; <span class="keyword">then</span></div><div class="line">        PATH=<span class="variable">$PATH</span>:/opt/gnome/bin</div><div class="line">        <span class="built_in">export</span> PATH</div><div class="line">      <span class="keyword">fi</span></div><div class="line">      ;;</div><div class="line">  <span class="keyword">esac</span></div><div class="line"><span class="keyword">fi</span></div><div class="line"><span class="keyword">if</span> [ -x /etc/X11/xinit/xinitrc ]; <span class="keyword">then</span></div><div class="line">  <span class="built_in">exec</span> /etc/X11/xinit/xinitrc</div><div class="line"><span class="keyword">fi</span></div><div class="line"><span class="keyword">if</span> [ -f /etc/X11/xinit/xinitrc ]; <span class="keyword">then</span></div><div class="line">  <span class="built_in">exec</span> sh /etc/X11/xinit/xinitrc</div><div class="line"><span class="keyword">fi</span></div><div class="line">[ -r <span class="variable">$HOME</span>/.Xresources ] &amp;&amp; xrdb <span class="variable">$HOME</span>/.Xresources</div><div class="line">xsetroot -solid grey</div><div class="line">xterm -geometry 80x24+10+10 -ls -title <span class="string">"<span class="variable">$VNCDESKTOP</span> Desktop"</span> &amp;</div><div class="line">gnome-session &amp;</div></pre></td></tr></table></figure></p>
+<h4 id="配置vncserver启动后监听端口和环境参数"><a href="#配置vncserver启动后监听端口和环境参数" class="headerlink" title="配置vncserver启动后监听端口和环境参数"></a>配置vncserver启动后监听端口和环境参数</h4><p>修改/etc/sysconfig/vncservers 文件添加以下内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">VNCSERVERS=&quot;1:root&quot;</div><div class="line">VNCSERVERARGS[1]=&quot;-geometry 1200x800&quot;</div></pre></td></tr></table></figure></p>
+<h4 id="重启vncserver服务"><a href="#重启vncserver服务" class="headerlink" title="重启vncserver服务"></a>重启vncserver服务</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#service vncserver restart</div></pre></td></tr></table></figure>
+<h3 id="允许root访问图形界面和生成新的machine-id"><a href="#允许root访问图形界面和生成新的machine-id" class="headerlink" title="允许root访问图形界面和生成新的machine-id"></a>允许root访问图形界面和生成新的machine-id</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">#sed -i &apos;s/.*!= root.*/#&amp;/&apos; /etc/pam.d/gdm</div><div class="line">#dbus-uuidgen &gt;/var/lib/dbus/machine-id</div></pre></td></tr></table></figure>
+<h3 id="关闭selinux和NetworkManager服务"><a href="#关闭selinux和NetworkManager服务" class="headerlink" title="关闭selinux和NetworkManager服务"></a>关闭selinux和NetworkManager服务</h3><h4 id="检查selinux服务并关闭"><a href="#检查selinux服务并关闭" class="headerlink" title="检查selinux服务并关闭"></a>检查selinux服务并关闭</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#vi /etc/selinux/config</div></pre></td></tr></table></figure>
+<p>确认里面的SELINUX字段的值是disabled，如果不是则改为disabled。</p>
+<h4 id="关闭NetworkManager服务"><a href="#关闭NetworkManager服务" class="headerlink" title="关闭NetworkManager服务"></a>关闭NetworkManager服务</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#chkconfig --del NetworkManager</div></pre></td></tr></table></figure>
+<h3 id="测试登录："><a href="#测试登录：" class="headerlink" title="测试登录："></a>测试登录：</h3><p>在官网可以下载客户端VNC Viewer<br>VNC Server写上服务器的IP+编号（第二步，第四小步VNCSERVERS后面的数字）</p>
+<h2 id="部署安装XAMPP"><a href="#部署安装XAMPP" class="headerlink" title="部署安装XAMPP"></a>部署安装XAMPP</h2><h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">yum update</div><div class="line">yum remove httpd*</div></pre></td></tr></table></figure>
+<p>升级系统，然后清理已有的环境以免出现安装冲突。</p>
+<h3 id="下载XAMPP"><a href="#下载XAMPP" class="headerlink" title="下载XAMPP"></a>下载XAMPP</h3><p>在 <a href="https://sourceforge.net/projects/xampp/files/XAMPP%20Linux/" target="_blank" rel="external">sourceforge </a>寻找合适的版本。下载。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd /tmp</div><div class="line">wget http://downloads.sourceforge.net/project/xampp/XAMPP%20Linux/1.8.3/xampp-linux-x64-1.8.3-4-installer.run</div></pre></td></tr></table></figure></p>
+<p>提权，安装<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">chmod 755 xampp-linux*</div><div class="line">./xampp-linux*</div></pre></td></tr></table></figure></p>
+<p>安装完毕，启动XAMPP<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/opt/lampp/lampp start</div></pre></td></tr></table></figure></p>
+<h3 id="设置XAMPP"><a href="#设置XAMPP" class="headerlink" title="设置XAMPP"></a>设置XAMPP</h3><p>打开/opt/lampp/etc/httpd.conf文件，按需设置</p>
+<h2 id="P-S"><a href="#P-S" class="headerlink" title="P.S"></a>P.S</h2><ol>
+<li>yum -y install firefox，使用firefox而不使用chrome是因为chrome用root开不了。</li>
+<li>可以改一下putty的配色，原配色好难看。<a href="http://www.cnblogs.com/xianghang123/archive/2012/12/05/2802647.html" target="_blank" rel="external">附连接</a></li>
+</ol>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Linux/" rel="tag"># Linux</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/06/11/107/" rel="next" title="CentOS服务器图形化界面安装及XAMPP部署">
+                <i class="fa fa-chevron-left"></i> CentOS服务器图形化界面安装及XAMPP部署
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/06/11/109/" rel="prev" title="Linux下使用vsftpd搭建ftp">
+                Linux下使用vsftpd搭建ftp <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Vincent Zhong</p>
+              <p class="site-description motion-element" itemprop="description">Share my favorite</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">224</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">41</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/wax8280" target="_blank" title="GitHub"><i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用PuTTY远程连接到终端"><span class="nav-number">1.</span> <span class="nav-text">使用PuTTY远程连接到终端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CentOS6-5安装vncserver实现图形化访问"><span class="nav-number">2.</span> <span class="nav-text">CentOS6.5安装vncserver实现图形化访问</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装gnome图形化桌面"><span class="nav-number">3.</span> <span class="nav-text">安装gnome图形化桌面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装vncserver并配置"><span class="nav-number">4.</span> <span class="nav-text">安装vncserver并配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装vncserver"><span class="nav-number">4.1.</span> <span class="nav-text">安装vncserver</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置vncserver"><span class="nav-number">4.2.</span> <span class="nav-text">配置vncserver</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#配置为开机自启动"><span class="nav-number">4.2.1.</span> <span class="nav-text">配置为开机自启动</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置vnc密码"><span class="nav-number">4.2.2.</span> <span class="nav-text">配置vnc密码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置为使用gnome桌面"><span class="nav-number">4.2.3.</span> <span class="nav-text">配置为使用gnome桌面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置vncserver启动后监听端口和环境参数"><span class="nav-number">4.2.4.</span> <span class="nav-text">配置vncserver启动后监听端口和环境参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#重启vncserver服务"><span class="nav-number">4.2.5.</span> <span class="nav-text">重启vncserver服务</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#允许root访问图形界面和生成新的machine-id"><span class="nav-number">4.3.</span> <span class="nav-text">允许root访问图形界面和生成新的machine-id</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关闭selinux和NetworkManager服务"><span class="nav-number">4.4.</span> <span class="nav-text">关闭selinux和NetworkManager服务</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#检查selinux服务并关闭"><span class="nav-number">4.4.1.</span> <span class="nav-text">检查selinux服务并关闭</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关闭NetworkManager服务"><span class="nav-number">4.4.2.</span> <span class="nav-text">关闭NetworkManager服务</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#测试登录："><span class="nav-number">4.5.</span> <span class="nav-text">测试登录：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#部署安装XAMPP"><span class="nav-number">5.</span> <span class="nav-text">部署安装XAMPP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#准备工作"><span class="nav-number">5.1.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下载XAMPP"><span class="nav-number">5.2.</span> <span class="nav-text">下载XAMPP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置XAMPP"><span class="nav-number">5.3.</span> <span class="nav-text">设置XAMPP</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#P-S"><span class="nav-number">6.</span> <span class="nav-text">P.S</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Vincent Zhong</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Muse</a> v6.0.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.4"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

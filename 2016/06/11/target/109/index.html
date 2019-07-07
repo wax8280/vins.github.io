@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.0.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.0.4" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '6.0.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  
+  <meta name="keywords" content="Linux," />
+
+
+<meta name="description" content="查看是否安装vsftp123rpm -qa | grep vsftpd# 若未安装，安装yum -y install vsftpd 启动vsftpd服务1service vsftpd start 若无法启动，查看21端口是否被其他进程占用。若被占用，杀掉。1netstat -ntulp |grep 21 kill PID号 配置vsftpd查看vsftpd位置12 # whereis vsftpd">
+<meta name="keywords" content="Linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux下使用vsftpd搭建ftp">
+<meta property="og:url" content="https://wax8280.github.io/2016/06/11/target/109/index.html">
+<meta property="og:site_name" content="Vin&#39;s Blog">
+<meta property="og:description" content="查看是否安装vsftp123rpm -qa | grep vsftpd# 若未安装，安装yum -y install vsftpd 启动vsftpd服务1service vsftpd start 若无法启动，查看21端口是否被其他进程占用。若被占用，杀掉。1netstat -ntulp |grep 21 kill PID号 配置vsftpd查看vsftpd位置12 # whereis vsftpd">
+<meta property="og:locale" content="zh">
+<meta property="og:updated_time" content="2019-07-07T02:52:16.369Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Linux下使用vsftpd搭建ftp">
+<meta name="twitter:description" content="查看是否安装vsftp123rpm -qa | grep vsftpd# 若未安装，安装yum -y install vsftpd 启动vsftpd服务1service vsftpd start 若无法启动，查看21端口是否被其他进程占用。若被占用，杀掉。1netstat -ntulp |grep 21 kill PID号 配置vsftpd查看vsftpd位置12 # whereis vsftpd">
+
+
+
+
+
+
+  <link rel="canonical" href="https://wax8280.github.io/2016/06/11/target/109/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+  <title>Linux下使用vsftpd搭建ftp | Vin's Blog</title>
+  
+
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?696e48752c03b0066c07d25947ac5dff";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Vin's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-user"></i> <br />About</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />Tags</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-th"></i> <br />Categories</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+  
+
+
+
+ </div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wax8280.github.io/2016/06/11/target/109/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Vincent Zhong">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Vin's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Linux下使用vsftpd搭建ftp</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-06-11T18:45:10+08:00">2016-06-11</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Code/" itemprop="url" rel="index"><span itemprop="name">Code</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="查看是否安装vsftp"><a href="#查看是否安装vsftp" class="headerlink" title="查看是否安装vsftp"></a>查看是否安装vsftp</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">rpm -qa | grep vsftpd</div><div class="line"># 若未安装，安装</div><div class="line">yum -y install vsftpd</div></pre></td></tr></table></figure>
+<h2 id="启动vsftpd服务"><a href="#启动vsftpd服务" class="headerlink" title="启动vsftpd服务"></a>启动vsftpd服务</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">service vsftpd start</div></pre></td></tr></table></figure>
+<p>若无法启动，查看21端口是否被其他进程占用。若被占用，杀掉。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">netstat -ntulp |grep 21</div></pre></td></tr></table></figure></p>
+<p>kill <em>PID号</em></p>
+<h2 id="配置vsftpd"><a href="#配置vsftpd" class="headerlink" title="配置vsftpd"></a>配置vsftpd</h2><p>查看vsftpd位置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"> # whereis vsftpd</div><div class="line">vsftpd: /usr/sbin/vsftpd /etc/vsftpd /usr/share/man/man8/vsftpd.8.gz</div></pre></td></tr></table></figure></p>
+<h2 id="默认配置文件-etc-vsftpd-conf"><a href="#默认配置文件-etc-vsftpd-conf" class="headerlink" title="默认配置文件: /etc/vsftpd.conf"></a>默认配置文件: /etc/vsftpd.conf</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div></pre></td><td class="code"><pre><div class="line">#     下面是配置的选项及说明</div><div class="line"></div><div class="line"> ######### 核心设置 ###########</div><div class="line"></div><div class="line"> # 允许本地用户登录</div><div class="line">local_enable=YES</div><div class="line"></div><div class="line"> # 本地用户的写权限</div><div class="line">write_enable=YES</div><div class="line"></div><div class="line"> # 使用FTP的本地文件权限,默认为077</div><div class="line"># 一般设置为022</div><div class="line">local_umask=022</div><div class="line"></div><div class="line"> # 切换目录时</div><div class="line"># 是否显示目录下.message的内容</div><div class="line">dirmessage_enable=YES</div><div class="line">dirlist_enable = NO</div><div class="line"></div><div class="line"> #验证方式</div><div class="line">#pam_service_name=vsftpd</div><div class="line"></div><div class="line"> # 启用FTP数据端口的数据连接</div><div class="line">connect_from_port_20=YES</div><div class="line"></div><div class="line"> # 以独立的FTP服务运行</div><div class="line">listen=yes</div><div class="line"></div><div class="line"> # 修改连接端口</div><div class="line">#listen_port=2121</div><div class="line"></div><div class="line"> ######### 匿名登录设置 ###########</div><div class="line"></div><div class="line"> # 允许匿名登录</div><div class="line">anonymous_enable=NO</div><div class="line"></div><div class="line"> # 如果允许匿名登录</div><div class="line"># 是否开启匿名上传权限</div><div class="line">#anon_upload_enable=YES</div><div class="line"></div><div class="line"> # 如果允许匿名登录</div><div class="line"># 是否允许匿名建立文件夹并在文件夹内上传文件</div><div class="line">#anon_mkdir_write_enable=YES</div><div class="line"></div><div class="line"> # 如果允许匿名登录</div><div class="line"># 匿名帐号可以有删除的权限</div><div class="line">#anon_other_write_enable=yes</div><div class="line"></div><div class="line"> # 如果允许匿名登录</div><div class="line"># 匿名的下载权限</div><div class="line"># 匿名为Other,可设置目录/文件属性控制</div><div class="line">#anon_world_readable_only=no</div><div class="line"></div><div class="line"> # 如果允许匿名登录</div><div class="line"># 限制匿名用户传输速率,单位bite</div><div class="line">#anon_max_rate=30000</div><div class="line"></div><div class="line"> ######### 用户限制设置 ###########</div><div class="line">#### 限制登录</div><div class="line"></div><div class="line"> # 用userlist来限制用户访问</div><div class="line">#userlist_enable=yes</div><div class="line"></div><div class="line"> # 名单中的人不允许访问</div><div class="line">#userlist_deny=no</div><div class="line"></div><div class="line"> # 限制名单文件放置的路径</div><div class="line">#userlist_file=/etc/vsftpd/userlist_deny.chroot</div><div class="line"></div><div class="line"> #### 限制目录</div><div class="line"></div><div class="line"> # 限制所有用户都在家目录</div><div class="line">#chroot_local_user=yes</div><div class="line"></div><div class="line"># 调用限制在家目录的用户名单</div><div class="line">chroot_list_enable=YES</div><div class="line"></div><div class="line"># 限制在家目录的用户名单所在路径</div><div class="line">chroot_list_file=/etc/vsftpd/chroot_list</div><div class="line"></div><div class="line"> ######### 日志设置 ###########</div><div class="line"></div><div class="line"> # 日志文件路径设置</div><div class="line">xferlog_file=/var/log/vsftpd.log</div><div class="line"></div><div class="line"> # 激活上传/下载的日志</div><div class="line">xferlog_enable=YES</div><div class="line"></div><div class="line"> # 使用标准的日志格式</div><div class="line">#xferlog_std_format=YES</div><div class="line"></div><div class="line">######### 安全设置 ###########</div><div class="line"></div><div class="line"> # 用户空闲超时,单位秒</div><div class="line">#idle_session_timeout=600</div><div class="line"></div><div class="line"> # 数据连接空闲超时,单位秒</div><div class="line">#data_connection_timeout=120</div><div class="line"></div><div class="line"> # 将客户端空闲1分钟后断开</div><div class="line">#accept_timeout=60</div><div class="line"></div><div class="line"> # 中断1分钟后重新连接</div><div class="line">#connect_timeout=60</div><div class="line"></div><div class="line"> # 本地用户传输速率,单位bite</div><div class="line">#local_max_rate=50000</div><div class="line"></div><div class="line"> # FTP的最大连接数</div><div class="line">#max_clients=200</div><div class="line"></div><div class="line"> # 每IP的最大连接数</div><div class="line">#max_per_ip=5</div><div class="line"></div><div class="line">######### 被动模式设置 ###########</div><div class="line"></div><div class="line"># 是否开户被动模式</div><div class="line">pasv_enable=yes</div><div class="line"></div><div class="line"> # 被动模式最小端口</div><div class="line">pasv_min_port=5000</div><div class="line"></div><div class="line"> # 被动模式最大端口</div><div class="line">pasv_max_port=6000</div><div class="line"></div><div class="line">######### 其他设置 ###########</div><div class="line"></div><div class="line"> # 欢迎信息</div><div class="line">ftpd_banner=Welcome to Ftp Server!</div></pre></td></tr></table></figure>
+<h2 id="添加ftp防火墙规则"><a href="#添加ftp防火墙规则" class="headerlink" title="添加ftp防火墙规则"></a>添加ftp防火墙规则</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">/sbin/iptables -I INPUT -p tcp --dport 21 -j ACCEPT</div><div class="line">/etc/rc.d/init.d/iptables save</div><div class="line">/etc/init.d/iptables restart</div></pre></td></tr></table></figure>
+<h2 id="添加用户"><a href="#添加用户" class="headerlink" title="添加用户"></a>添加用户</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">useradd -d /home/ftp -s /sbin/nologin ftpuser</div></pre></td></tr></table></figure>
+<h3 id="PS"><a href="#PS" class="headerlink" title="PS"></a>PS</h3><p>不能用root用户登录，因为/etc/vsftpd/ftpusers ，/etc/vsftpd/user_list 两个列表中有root的名字，如需要用root的名字登录，请注释掉。（一般不建议这样做因为vsftpd密码是以明文方式传输的）</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Linux/" rel="tag"># Linux</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/06/11/109/" rel="next" title="Linux下使用vsftpd搭建ftp">
+                <i class="fa fa-chevron-left"></i> Linux下使用vsftpd搭建ftp
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/06/11/target/116/" rel="prev" title="WordPress 中文tab出现404的解决办法">
+                WordPress 中文tab出现404的解决办法 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Vincent Zhong</p>
+              <p class="site-description motion-element" itemprop="description">Share my favorite</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">224</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">41</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/wax8280" target="_blank" title="GitHub"><i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#查看是否安装vsftp"><span class="nav-number">1.</span> <span class="nav-text">查看是否安装vsftp</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动vsftpd服务"><span class="nav-number">2.</span> <span class="nav-text">启动vsftpd服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置vsftpd"><span class="nav-number">3.</span> <span class="nav-text">配置vsftpd</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#默认配置文件-etc-vsftpd-conf"><span class="nav-number">4.</span> <span class="nav-text">默认配置文件: /etc/vsftpd.conf</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加ftp防火墙规则"><span class="nav-number">5.</span> <span class="nav-text">添加ftp防火墙规则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加用户"><span class="nav-number">6.</span> <span class="nav-text">添加用户</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#PS"><span class="nav-number">6.1.</span> <span class="nav-text">PS</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Vincent Zhong</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Muse</a> v6.0.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.4"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
