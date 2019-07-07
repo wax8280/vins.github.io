@@ -111,7 +111,7 @@
 <meta property="og:site_name" content="Vin&#39;s Blog">
 <meta property="og:description" content="在GIthub是看到这样一个aiospilte的库，具体是将sqlite改成异步的。发现源码体积挺小的，遂看一下，看完后发现作者脑路新奇。作者主要使用了代理模式，代理了Connection和Cursor这两个sqlite3的类。但是作者新奇就在于，其实这是一个披着异步外衣的多线程。作者对于每一个连接都新建一个独立线程。仅仅使用异步作为询问，而实际费IO的操作是在独立的线程中。 作者的Connect">
 <meta property="og:locale" content="zh">
-<meta property="og:updated_time" content="2019-07-07T05:04:26.279Z">
+<meta property="og:updated_time" content="2019-07-07T05:13:10.561Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="阅读aiosplite源码笔记">
 <meta name="twitter:description" content="在GIthub是看到这样一个aiospilte的库，具体是将sqlite改成异步的。发现源码体积挺小的，遂看一下，看完后发现作者脑路新奇。作者主要使用了代理模式，代理了Connection和Cursor这两个sqlite3的类。但是作者新奇就在于，其实这是一个披着异步外衣的多线程。作者对于每一个连接都新建一个独立线程。仅仅使用异步作为询问，而实际费IO的操作是在独立的线程中。 作者的Connect">
@@ -533,8 +533,6 @@
                 <div class="site-state-item site-state-tags">
                   <a href="/tags/index.html">
                     
-                    
-                      
                     
                       
                     
