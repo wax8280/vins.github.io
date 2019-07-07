@@ -1,106 +1,21 @@
 <!DOCTYPE html>
-
-
-
-  
-
-
-<html class="theme-next muse use-motion" lang="zh">
+<html lang="zh">
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-<meta name="theme-color" content="#222">
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="Vincent Zhong" />
 
 
-
-
-
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=6.0.4" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.4">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.4">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.4">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=6.0.4" color="#222">
-
-
-
-
-
-
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Muse',
-    version: '6.0.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: false,
-    fastclick: false,
-    lazyload: false,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-  
-
-
-
-
-  
-  <meta name="keywords" content="Hexo, NexT" />
+    
+    
 
 
 <meta name="description" content="Share my favorite">
@@ -114,416 +29,344 @@
 <meta name="twitter:title" content="Vin&#39;s Blog">
 <meta name="twitter:description" content="Share my favorite">
 
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="Vin&#39;s Blog" type="application/atom+xml">
 
 
 
-
-
-  <link rel="canonical" href="https://wax8280.github.io/page/9/"/>
+    <link rel="shortcut icon" href="/favicon.png">
 
 
 
-<script type="text/javascript" id="page.configurations">
-  CONFIG.page = {
-    sidebar: "",
-  };
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <style> .article { opacity: 0;} </style>
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>Vin&#39;s Blog</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: true,
+        isPost: false,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: false
+    }
 </script>
-  <title>Vin's Blog</title>
-  
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
 
 
 
 
 
-
-  <script type="text/javascript">
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?696e48752c03b0066c07d25947ac5dff";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-  </script>
-
-
-
-
-  <noscript>
-  <style type="text/css">
-    .use-motion .motion-element,
-    .use-motion .brand,
-    .use-motion .menu-item,
-    .sidebar-inner,
-    .use-motion .post-block,
-    .use-motion .pagination,
-    .use-motion .comments,
-    .use-motion .post-header,
-    .use-motion .post-body,
-    .use-motion .collection-title { opacity: initial; }
-
-    .use-motion .logo,
-    .use-motion .site-title,
-    .use-motion .site-subtitle {
-      opacity: initial;
-      top: initial;
-    }
-
-    .use-motion {
-      .logo-line-before i { left: initial; }
-      .logo-line-after i { right: initial; }
-    }
-  </style>
-</noscript>
 
 </head>
-
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left 
-  page-home">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"> <div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Vin's Blog</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
-      
-        <p class="site-subtitle"></p>
-      
-  </div>
-
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
-</div>
-
-<nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
-        
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-user"></i> <br />About</a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />Tags</a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-th"></i> <br />Categories</a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
-        </li>
-      
-
-      
-    </ul>
-  
-
-  
-</nav>
-
-
-  
-
-
-
- </div>
-    </header>
-
-    
-
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-  <section id="posts" class="posts-expand">
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wax8280.github.io/2016/08/30/Python中的闭包/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Vincent Zhong">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Vin's Blog">
-    </span>
-
-    
-      <header class="post-header">
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/avatar.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">Vincent Zhong</a></h1>
+        </hgroup>
 
         
+
         
-          <h1 class="post-title" itemprop="name headline">
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="Vincent:wax8280@163.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" href="https://github.com/wax8280" title="GitHub"></a>
+                            
+                                <a class="fa RSS" href="/atom.xml" title="RSS"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
                 
-                <a class="post-title-link" href="/2016/08/30/Python中的闭包/" itemprop="url">Python中的闭包</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-08-30T00:37:08+08:00">2016-08-30</time>
-            
-
-            
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Code/" itemprop="url" rel="index"><span itemprop="name">Code</span></a></span>
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/70s/">70s</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/80s/">80s</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/90s/">90s</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blues/">Blues</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Bossa-Nova/">Bossa Nova</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Django/">Django</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IIS/">IIS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jazz/">Jazz</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nginx/">Nginx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OpenCV/">OpenCV</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP/">PHP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Pop/">Pop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Pyspider/">Pyspider</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Rock/">Rock</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Swing/">Swing</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vocal/">Vocal</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/">Web</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WordPress/">WordPress</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/推理/">推理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/摄影/">摄影</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构与算法/">数据结构与算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/旅游/">旅游</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/每天一道编程题/">每天一道编程题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/爬虫/">爬虫</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/纪实摄影-摄影/">纪实摄影 - 摄影</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/纸媒/">纸媒</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/胶卷/">胶卷</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/胶片/">胶片</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机基础/">计算机基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机网络/">计算机网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
 
                 
                 
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">专注于前端</div>
+                </section>
+                
+            </div>
         </div>
-      </header>
-    
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Vincent Zhong</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/avatar.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">Vincent Zhong</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="Vincent:wax8280@163.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/wax8280" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap">
+  
+    <article id="post-Python中的闭包" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/08/30/Python中的闭包/" class="article-date">
+      <time datetime="2016-08-29T16:37:08.000Z" itemprop="datePublished">2016-08-30</time>
+</a>
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
 
-      
-      
-
-      
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
         
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/30/Python中的闭包/">Python中的闭包</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
           
-            <p>将组成函数的语句和这些语句的执行环境打包在一起时，得到的对象就是闭包。<br>我们看一个例子<br>foo.py<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">x=<span class="number">44</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">callf</span><span class="params">(func)</span>:</span></div><div class="line">    <span class="keyword">return</span> func()</div><div class="line"><span class="keyword">import</span> foo</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">bar</span><span class="params">()</span>:</span></div><div class="line">    x=<span class="number">13</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">hello</span><span class="params">()</span>:</span></div><div class="line">        <span class="keyword">return</span> <span class="string">"hello %s"</span> %x</div><div class="line">    foo.callf(hello)</div><div class="line">得到结果为 hello <span class="number">13</span></div><div class="line">在编写惰性求值的代码的时候，闭包是一个很好的选择</div><div class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> urlopen </div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">page</span> <span class="params">(url)</span> :</span> </div><div class="line">        <span class="function"><span class="keyword">def</span> <span class="title">get</span><span class="params">()</span> :</span> </div><div class="line">            <span class="keyword">return</span> urlopen (url).read()</div><div class="line">        <span class="keyword">return</span> get </div><div class="line">&gt;&gt;&gt;python=page(<span class="string">"http://www.python.org"</span>) </div><div class="line">&gt;&gt;&gt;jython=page( <span class="string">"http://www.jython.org"</span>) </div><div class="line">&gt;&gt;&gt;python </div><div class="line">&lt;function get at <span class="number">0x9735f0</span>&gt;</div><div class="line">&gt;&gt;&gt;jython </div><div class="line">&lt;function get at <span class="number">0x9737f0</span>&gt;</div><div class="line">&gt;&gt;&gt;pydata=python() </div><div class="line">&gt;&gt;&gt;jydata=jython() </div><div class="line">page()</div></pre></td></tr></table></figure></p>
+        <p>将组成函数的语句和这些语句的执行环境打包在一起时，得到的对象就是闭包。<br>我们看一个例子<br>foo.py<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">x=<span class="number">44</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">callf</span><span class="params">(func)</span>:</span></div><div class="line">    <span class="keyword">return</span> func()</div><div class="line"><span class="keyword">import</span> foo</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">bar</span><span class="params">()</span>:</span></div><div class="line">    x=<span class="number">13</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">hello</span><span class="params">()</span>:</span></div><div class="line">        <span class="keyword">return</span> <span class="string">"hello %s"</span> %x</div><div class="line">    foo.callf(hello)</div><div class="line">得到结果为 hello <span class="number">13</span></div><div class="line">在编写惰性求值的代码的时候，闭包是一个很好的选择</div><div class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> urlopen </div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">page</span> <span class="params">(url)</span> :</span> </div><div class="line">        <span class="function"><span class="keyword">def</span> <span class="title">get</span><span class="params">()</span> :</span> </div><div class="line">            <span class="keyword">return</span> urlopen (url).read()</div><div class="line">        <span class="keyword">return</span> get </div><div class="line">&gt;&gt;&gt;python=page(<span class="string">"http://www.python.org"</span>) </div><div class="line">&gt;&gt;&gt;jython=page( <span class="string">"http://www.jython.org"</span>) </div><div class="line">&gt;&gt;&gt;python </div><div class="line">&lt;function get at <span class="number">0x9735f0</span>&gt;</div><div class="line">&gt;&gt;&gt;jython </div><div class="line">&lt;function get at <span class="number">0x9737f0</span>&gt;</div><div class="line">&gt;&gt;&gt;pydata=python() </div><div class="line">&gt;&gt;&gt;jydata=jython() </div><div class="line">page()</div></pre></td></tr></table></figure></p>
 <p>函数实际上是不执行任何有意义的计算，它只是创建和返回函数get()<br>如果需要在一个函数中保持某个状态，使用闭包是一种非常高效的行为。<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">countdown</span><span class="params">(n)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">next</span><span class="params">()</span>:</span></div><div class="line">        <span class="keyword">nonlocal</span> n</div><div class="line">        r=n</div><div class="line">        n-=<span class="number">1</span></div><div class="line">        <span class="keyword">return</span> r</div><div class="line">    <span class="keyword">return</span> next</div><div class="line">next=countdown(<span class="number">10</span>)</div><div class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</div><div class="line">    v=next()</div><div class="line">    <span class="keyword">if</span> <span class="keyword">not</span> v:<span class="keyword">break</span></div></pre></td></tr></table></figure></p>
 
-          
-        
       
     </div>
-
     
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
+    <div class="article-info article-info-index">
       
       
-        <div class="post-eof"></div>
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Code/">Code</a>
+    </div>
+
+
       
-    </footer>
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
   </div>
   
-  
-  
-  </article>
+</article>
 
 
+
+
+
+
+
+
+
+  
+    <article id="post-Python中的生成器，协程与yield" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/08/30/Python中的生成器，协程与yield/" class="article-date">
+      <time datetime="2016-08-29T16:30:26.000Z" itemprop="datePublished">2016-08-30</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wax8280.github.io/2016/08/30/Python中的生成器，协程与yield/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Vincent Zhong">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Vin's Blog">
-    </span>
-
+      <input type="hidden" class="isFancy" />
     
-      <header class="post-header">
-
+    
+      <header class="article-header">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/08/30/Python中的生成器，协程与yield/" itemprop="url">Python中的生成器，协程与yield</a></h1>
-        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/30/Python中的生成器，协程与yield/">Python中的生成器，协程与yield</a>
+    </h1>
+  
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-08-30T00:30:26+08:00">2016-08-30</time>
-            
-
-            
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Code/" itemprop="url" rel="index"><span itemprop="name">Code</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
       </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
       
+    
+    <div class="article-entry" itemprop="articleBody">
       
-
-      
-        
           
-            <h1 id="生成器与yield"><a href="#生成器与yield" class="headerlink" title="生成器与yield"></a>生成器与yield</h1><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">countdown</span><span class="params">(n)</span>:</span></div><div class="line">    print(<span class="string">"Counting down from %d"</span>%n)</div><div class="line">    <span class="keyword">while</span> n&gt;<span class="number">0</span>:</div><div class="line">        <span class="keyword">yield</span> n</div><div class="line">        n-=<span class="number">1</span></div><div class="line">    <span class="keyword">return</span></div></pre></td></tr></table></figure>
+        <h1 id="生成器与yield"><a href="#生成器与yield" class="headerlink" title="生成器与yield"></a>生成器与yield</h1><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">countdown</span><span class="params">(n)</span>:</span></div><div class="line">    print(<span class="string">"Counting down from %d"</span>%n)</div><div class="line">    <span class="keyword">while</span> n&gt;<span class="number">0</span>:</div><div class="line">        <span class="keyword">yield</span> n</div><div class="line">        n-=<span class="number">1</span></div><div class="line">    <span class="keyword">return</span></div></pre></td></tr></table></figure>
 <p>语句yield使得函数返回一个生成器，每次调用next()时。生成器函数将不断执行语句，直至遇到yield语句。<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt;c=countdown(<span class="number">10</span>)</div><div class="line">&gt;&gt;&gt;c.next()</div><div class="line">Counting down <span class="keyword">from</span> <span class="number">10</span></div><div class="line">&gt;&gt;&gt;c.next()</div><div class="line">Counting down <span class="keyword">from</span> <span class="number">9</span></div><div class="line"><span class="comment"># 协程与yield</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">receiver</span><span class="params">()</span>:</span></div><div class="line">    print(<span class="string">"Ready to receive"</span>)</div><div class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</div><div class="line">        n=(<span class="keyword">yield</span>)</div><div class="line">        print(<span class="string">"got %s"</span>%n)</div><div class="line">&gt;&gt;&gt;r=receiver()</div><div class="line">&gt;&gt;&gt;r.next()</div><div class="line">Ready to receive</div><div class="line">&gt;&gt;&gt;r.send(<span class="number">1</span>)</div><div class="line">got <span class="number">1</span></div><div class="line">&gt;&gt;&gt;r.send(<span class="number">2</span>)</div><div class="line">got <span class="number">2</span></div><div class="line">&gt;&gt;&gt;r.send(<span class="string">"Hello"</span>)</div><div class="line">got Hello</div></pre></td></tr></table></figure></p>
 <p>这种使用yield语句的函数成为协程，它的执行是为了响应发送给它的值。<br>每次开始的next()函数时必不可少的<br>可以编写一个装饰器<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">coroutine</span><span class="params">(func)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">start</span><span class="params">(*args,**kwargs)</span>:</span></div><div class="line">        g=func(*args,**kwargs)</div><div class="line">        g.next()</div><div class="line">        <span class="keyword">return</span> g</div><div class="line">    <span class="keyword">return</span> start</div><div class="line"><span class="meta">@coroutine</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">receiver</span><span class="params">()</span>:</span></div><div class="line">    print(<span class="string">"Ready to receive"</span>)</div><div class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</div><div class="line">        n=(<span class="keyword">yield</span>)</div><div class="line">        print(<span class="string">"got %s"</span>%n)</div></pre></td></tr></table></figure></p>
 <p>可用.close()关闭。关闭后如果继续调用.send()就会引发StopIteration异常<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt;r.close()</div></pre></td></tr></table></figure></p>
@@ -532,290 +375,134 @@
 <p>在这个例子中，程序要处理的是顶级目录“www”的所有子目录中的所有“access-log”文件中的所有行。程序将测试每个”access-log”文件的文件压缩情况，然后使用正确的文件打开器打开它们。程序将各行连接在一起，并通过查找子字符串”python”的过滤器进行处理。整个程序是由位于最后的for语句驱动的。该循环的每次迭代都会通过管道获得一个新值并使用之。此外，这种实现占用内存极少，因为它无需创建任何临时列表或其他大型的数据结构<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> os </div><div class="line"><span class="keyword">import</span> fnmatch </div><div class="line"><span class="meta">@coroutine </span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">find_files</span><span class="params">(target)</span>:</span> </div><div class="line">    <span class="keyword">while</span> <span class="keyword">True</span>: </div><div class="line">        topdir, pattern=(<span class="keyword">yield</span>) </div><div class="line">        <span class="keyword">for</span> path, dirname, filelist <span class="keyword">in</span> os.walk(topdir): </div><div class="line">            <span class="keyword">for</span> name <span class="keyword">in</span> filelist: </div><div class="line">                <span class="keyword">if</span> fn.rnatch. fn.match (name, pattern):</div><div class="line">                    target.send(os.path.join(path, name)) </div><div class="line"><span class="keyword">import</span> gzip, bz2 </div><div class="line"><span class="meta">@coroutine </span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">opener</span><span class="params">(target)</span>:</span></div><div class="line">    <span class="keyword">while</span> <span class="keyword">True</span>: </div><div class="line">        name=(<span class="keyword">yield</span>) </div><div class="line">        <span class="keyword">if</span> name.endswith(<span class="string">".gz"</span>):f=gzip.open(name)</div><div class="line">        <span class="keyword">elif</span> name.endswith(<span class="string">".bz2"</span>):f=bz2.BZ2File(name) </div><div class="line">        <span class="keyword">else</span>:f=open(name)</div><div class="line">        target.send( f) </div><div class="line"><span class="meta">@coroutine </span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">cat</span><span class="params">(target)</span> :</span> </div><div class="line">    <span class="keyword">while</span> <span class="keyword">True</span> : </div><div class="line">        f=(<span class="keyword">yield</span>) </div><div class="line">        <span class="keyword">for</span> line <span class="keyword">in</span> f: </div><div class="line">            target.send(line) </div><div class="line"><span class="meta">@coroutine </span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">grep</span><span class="params">(pattern, target)</span>:</span></div><div class="line">    <span class="keyword">while</span> <span class="keyword">True</span>: </div><div class="line">    line=(<span class="keyword">yield</span>) </div><div class="line">    <span class="keyword">if</span> pattern <span class="keyword">in</span> line: </div><div class="line">        target.send(line) </div><div class="line"><span class="meta">@coroutine </span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">printer</span><span class="params">()</span>:</span> </div><div class="line">    <span class="keyword">while</span> <span class="keyword">True</span>: </div><div class="line">    line=(<span class="keyword">yield</span>) </div><div class="line">    print(line)</div><div class="line">finder=find_files(opener(cat(grep(<span class="string">"python"</span>,printer()))))</div><div class="line">finder.send((<span class="string">"www"</span>,<span class="string">"access-log"</span>))</div></pre></td></tr></table></figure></p>
 <p>在这个例子中每个协程都发送数据给在它们的target参数中指定的另一个协程。和生成器的例子不同，执行完全由將数据发送到第一个协程find_files()中来驱动。接下来，这个协程将数据转人下一阶段。这个例子有一个关键的地方，即协程管道永远保持活动状态，直到它显式调用close()方法为止。为此，只要需要，程序可以不断地给协程中注人数据。</p>
 
-          
-        
       
     </div>
-
     
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
+    <div class="article-info article-info-index">
       
       
-        <div class="post-eof"></div>
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Code/">Code</a>
+    </div>
+
+
       
-    </footer>
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
   </div>
   
-  
-  
-  </article>
+</article>
 
 
+
+
+
+
+
+
+
+  
+    <article id="post-Supervisor：监控服务进程的工具" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/08/28/Supervisor：监控服务进程的工具/" class="article-date">
+      <time datetime="2016-08-28T09:26:41.000Z" itemprop="datePublished">2016-08-28</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wax8280.github.io/2016/08/28/Supervisor：监控服务进程的工具/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Vincent Zhong">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Vin's Blog">
-    </span>
-
+      <input type="hidden" class="isFancy" />
     
-      <header class="post-header">
-
+    
+      <header class="article-header">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/08/28/Supervisor：监控服务进程的工具/" itemprop="url">Supervisor：监控服务进程的工具</a></h1>
-        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/28/Supervisor：监控服务进程的工具/">Supervisor：监控服务进程的工具</a>
+    </h1>
+  
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-08-28T17:26:41+08:00">2016-08-28</time>
-            
-
-            
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Code/" itemprop="url" rel="index"><span itemprop="name">Code</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
       </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
       
+    
+    <div class="article-entry" itemprop="articleBody">
       
-
-      
-        
           
-            <h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip install supervisor</div></pre></td></tr></table></figure>
+        <h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip install supervisor</div></pre></td></tr></table></figure>
 <h4 id="conf文件"><a href="#conf文件" class="headerlink" title="conf文件"></a>conf文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">[inet_http_server]         ; inet (TCP) server disabled by default</div><div class="line">port=127.0.0.1:9001        ; (ip_address:port specifier, *:port for all iface)</div><div class="line">[supervisord]</div><div class="line">logfile=/tmp/supervisord.log ; (main log file;default $CWD/supervisord.log)</div><div class="line">logfile_maxbytes=50MB        ; (max main logfile bytes b4 rotation;default 50MB)</div><div class="line">logfile_backups=10           ; (num of main logfile rotation backups;default 10)</div><div class="line">loglevel=info                ; (log level;default info; others: debug,warn,trace)</div><div class="line">pidfile=/tmp/supervisord.pid ; (supervisord pidfile;default supervisord.pid)</div><div class="line">nodaemon=false               ; (start in foreground if true;default false)</div><div class="line">minfds=1024                  ; (min. avail startup file descriptors;default 1024)</div><div class="line">minprocs=200                 ; (min. avail process descriptors;default 200)</div><div class="line">[rpcinterface:supervisor]</div><div class="line">supervisor.rpcinterface_factory = supervisor.rpcinterface:make_main_rpcinterface</div><div class="line">[supervisorctl]</div><div class="line">serverurl=http://127.0.0.1:9001 ; use an http:// url to specify an inet socket</div><div class="line">;[include]</div><div class="line">;files = relative/directory/*.ini</div><div class="line">[program:superlist]</div><div class="line">**command=/home/vincent/sites/superlists-localhost/virtualenv/bin/gunicorn --pythonpath  /home/vincent/sites/superlists-localhost/source/superlists superlists.wsgi:application**</div><div class="line">startsecs=3</div><div class="line">redirect_stderr         = true</div><div class="line">stdout_logfile_maxbytes = 50MB</div><div class="line">stdout_logfile_backups  = 10</div><div class="line">stdout_logfile          = /home/vincent/sites/superlists-localhost/log/supervisor.log</div></pre></td></tr></table></figure>
 <h4 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">supervisord -c /etc/supervisor/supervisord.conf</div><div class="line">supervisorctl -c /etc/supervisor/supervisord.conf shutdown superlist</div></pre></td></tr></table></figure>
-          
-        
       
     </div>
-
     
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
+    <div class="article-info article-info-index">
       
       
-        <div class="post-eof"></div>
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Code/">Code</a>
+    </div>
+
+
       
-    </footer>
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
   </div>
   
-  
-  
-  </article>
+</article>
 
 
+
+
+
+
+
+
+
+  
+    <article id="post-关于Python中的元类(metaclass)" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/08/28/关于Python中的元类(metaclass)/" class="article-date">
+      <time datetime="2016-08-28T09:10:54.000Z" itemprop="datePublished">2016-08-28</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wax8280.github.io/2016/08/28/关于Python中的元类(metaclass)/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Vincent Zhong">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Vin's Blog">
-    </span>
-
+      <input type="hidden" class="isFancy" />
     
-      <header class="post-header">
-
+    
+      <header class="article-header">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/08/28/关于Python中的元类(metaclass)/" itemprop="url">关于Python中的元类(metaclass)</a></h1>
-        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/28/关于Python中的元类(metaclass)/">关于Python中的元类(metaclass)</a>
+    </h1>
+  
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-08-28T17:10:54+08:00">2016-08-28</time>
-            
-
-            
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Code/" itemprop="url" rel="index"><span itemprop="name">Code</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
       </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
       
+    
+    <div class="article-entry" itemprop="articleBody">
       
-
-      
-        
           
-            <h2 id="类也是对象"><a href="#类也是对象" class="headerlink" title="类也是对象"></a>类也是对象</h2><p>先明确一点，在Python中类（是类Class，不是对象或实例Object）同样也是一种对象。<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="class"><span class="keyword">class</span> <span class="title">ObjectCreator</span><span class="params">()</span>:</span></div><div class="line">    <span class="keyword">pass</span>  </div><div class="line"><span class="meta">&gt;&gt;&gt; </span>ObjectCreator</div><div class="line">&lt;<span class="class"><span class="keyword">class</span> <span class="title">__main__</span>.<span class="title">ObjectCreatorat</span> 0<span class="title">x02D878F0</span>&gt;</span></div><div class="line"><span class="class">&gt;&gt;&gt; <span class="title">ObjectCreator</span><span class="params">()</span></span></div><div class="line"><span class="class">&lt;<span class="title">__main__</span>.<span class="title">ObjectCreator</span> <span class="title">object</span> <span class="title">at</span> 0<span class="title">x02E87EE0</span>&gt;</span></div></pre></td></tr></table></figure></p>
+        <h2 id="类也是对象"><a href="#类也是对象" class="headerlink" title="类也是对象"></a>类也是对象</h2><p>先明确一点，在Python中类（是类Class，不是对象或实例Object）同样也是一种对象。<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="class"><span class="keyword">class</span> <span class="title">ObjectCreator</span><span class="params">()</span>:</span></div><div class="line">    <span class="keyword">pass</span>  </div><div class="line"><span class="meta">&gt;&gt;&gt; </span>ObjectCreator</div><div class="line">&lt;<span class="class"><span class="keyword">class</span> <span class="title">__main__</span>.<span class="title">ObjectCreatorat</span> 0<span class="title">x02D878F0</span>&gt;</span></div><div class="line"><span class="class">&gt;&gt;&gt; <span class="title">ObjectCreator</span><span class="params">()</span></span></div><div class="line"><span class="class">&lt;<span class="title">__main__</span>.<span class="title">ObjectCreator</span> <span class="title">object</span> <span class="title">at</span> 0<span class="title">x02E87EE0</span>&gt;</span></div></pre></td></tr></table></figure></p>
 <p>只要你使用关键字class，Python解释器在执行的时候就在内存中创建一个对象，名字就是ObjectCreator。<strong>这个对象（类）自身拥有创建对象（类实例）的能力，而这就是为什么它是一个类的原因。</strong><br>类的本质是一个对象，这就意味着你能对它作如下操作：<br>1)   你可以将它赋值给一个变量<br>2)   你可以拷贝它<br>3)   你可以为它增加属性<br>4)   你可以将它作为函数参数进行传递<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> ObjectCreator <span class="comment"># 你可以打印一个类，因为它其实也是一个对象</span></div><div class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">__main__</span>.<span class="title">ObjectCreator</span>'&gt;</span></div><div class="line"><span class="class">&gt;&gt;&gt; <span class="title">def</span> <span class="title">echo</span><span class="params">(o)</span>:</span></div><div class="line">… <span class="keyword">print</span> o</div><div class="line">…</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>echo(ObjectCreator) <span class="comment"># 你可以将类做为参数传给函数</span></div><div class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">__main__</span>.<span class="title">ObjectCreator</span>'&gt;</span></div><div class="line"><span class="class">&gt;&gt;&gt; <span class="title">print</span> <span class="title">hasattr</span><span class="params">(ObjectCreator, <span class="string">'new_attribute'</span>)</span></span></div><div class="line"><span class="class"><span class="title">Fasle</span></span></div><div class="line">&gt;&gt;&gt; ObjectCreator.new_attribute = 'foo' # 你可以为类增加属性</div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> hasattr(ObjectCreator, <span class="string">'new_attribute'</span>)</div><div class="line"><span class="keyword">True</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> ObjectCreator.new_attribute</div><div class="line">foo</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>ObjectCreatorMirror = ObjectCreator <span class="comment"># 你可以将类赋值给一个变量</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> ObjectCreatorMirror()</div><div class="line">&lt;__main__.ObjectCreator object at</div></pre></td></tr></table></figure></p>
 <h2 id="动态创建类"><a href="#动态创建类" class="headerlink" title="动态创建类"></a>动态创建类</h2><p>因为类也是对象，你可以在运行时动态的创建它们，就像其他任何对象一样。<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="function"><span class="keyword">def</span> <span class="title">choose_class</span><span class="params">(name)</span>:</span></div><div class="line">… <span class="keyword">if</span> name == <span class="string">'foo'</span>:</div><div class="line">… <span class="class"><span class="keyword">class</span> <span class="title">Foo</span><span class="params">(object)</span>:</span></div><div class="line">… <span class="keyword">pass</span></div><div class="line">… <span class="keyword">return</span> Foo <span class="comment"># 返回的是类，不是类的实例</span></div><div class="line">… <span class="keyword">else</span>:</div><div class="line">… <span class="class"><span class="keyword">class</span> <span class="title">Bar</span><span class="params">(object)</span>:</span></div><div class="line">… <span class="keyword">pass</span></div><div class="line">… <span class="keyword">return</span> Bar</div><div class="line">…</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>MyClass = choose_class(<span class="string">'foo'</span>)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> MyClass <span class="comment"># 函数返回的是类，不是类的实例</span></div><div class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">__main__</span>'.<span class="title">Foo</span>&gt;</span></div><div class="line"><span class="class">&gt;&gt;&gt; <span class="title">print</span> <span class="title">MyClass</span><span class="params">()</span> # 你可以通过这个类创建类实例，也就是对象</span></div><div class="line"><span class="class">&lt;<span class="title">__main__</span>.<span class="title">Foo</span> <span class="title">object</span> <span class="title">at</span> <span class="title">at</span> 0<span class="title">x89c6d4c</span>&gt;</span></div></pre></td></tr></table></figure></p>
 <h3 id="class定义新类的执行过程"><a href="#class定义新类的执行过程" class="headerlink" title="class定义新类的执行过程"></a>class定义新类的执行过程</h3><p>使用class语句定义新类时，将会发生很多事情。首先，类主体将作为其自己的私有字典内的一系列语句来执行。语句的执行与正常代码中的执行过程相同，只是增加了会在私有成员（名称以_开头）上发生的名称变形。最后，类的名称、基类列表和字典将传递给元类的解构函数，以创建相应的类对象。下面的例子演示了这一过程：<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">class_name=<span class="string">"Foo"</span></div><div class="line">class_parents=(object,)</div><div class="line">class_body=<span class="string">"""</span></div><div class="line"><span class="string">def __init__(self,x):</span></div><div class="line"><span class="string">	self.x=x</span></div><div class="line"><span class="string">"""</span></div><div class="line">class_dict=&#123;&#125;</div><div class="line">exec(class_body,globals(),class_dict)</div><div class="line">Foo=type(class_name,class_parents,class_dict)</div></pre></td></tr></table></figure></p>
@@ -830,147 +517,69 @@
 <hr>
 <p>阅读自爆栈网的一篇文章后有感做的笔记<br>原文：<a href="http://stackoverflow.com/questions/100003/what-is-a-metaclass-in-python" target="_blank" rel="external">What is a metaclass in Python</a></p>
 
-          
-        
       
     </div>
-
     
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
+    <div class="article-info article-info-index">
       
       
-        <div class="post-eof"></div>
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Code/">Code</a>
+    </div>
+
+
       
-    </footer>
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
   </div>
   
-  
-  
-  </article>
+</article>
 
 
+
+
+
+
+
+
+
+  
+    <article id="post-Chez Tools" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/08/28/Chez Tools/" class="article-date">
+      <time datetime="2016-08-27T16:31:24.000Z" itemprop="datePublished">2016-08-28</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wax8280.github.io/2016/08/28/Chez Tools/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Vincent Zhong">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Vin's Blog">
-    </span>
-
+      <input type="hidden" class="isFancy" />
     
-      <header class="post-header">
-
+    
+      <header class="article-header">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/08/28/Chez Tools/" itemprop="url">Chez Tools</a></h1>
-        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/28/Chez Tools/">Chez Tools</a>
+    </h1>
+  
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-08-28T00:31:24+08:00">2016-08-28</time>
-            
-
-            
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Music/" itemprop="url" rel="index"><span itemprop="name">Music</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
       </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
       
+    
+    <div class="article-entry" itemprop="articleBody">
       
-
-      
-        
           
-            <p>今年夏天真不平静，厄尔尼诺现象带来了令人措手不及的洪涝。电视机上充斥着里约奥运与湖北洪水的消息。更想不到的是，刚回到宿舍就下起了大雨，看着大雨的阵势，仿佛要下一个星期。学校老旧的排水系统，使得暴雨不仅没有起到冲刷大地的作用，反而使得学校水漫金山起来。</p>
+        <p>今年夏天真不平静，厄尔尼诺现象带来了令人措手不及的洪涝。电视机上充斥着里约奥运与湖北洪水的消息。更想不到的是，刚回到宿舍就下起了大雨，看着大雨的阵势，仿佛要下一个星期。学校老旧的排水系统，使得暴雨不仅没有起到冲刷大地的作用，反而使得学校水漫金山起来。</p>
 <p>舍友陆续回来，续而就是宵夜。没有长谈，也仅仅是寒暄几句。除了迷茫，还是迷茫。</p>
 <p>儿时心情总是随着上学的到来而变坏，这种“习惯”直到今天还没有消失。雨天由甚。</p>
 <p>我想大概没有比下着暴雨的仲夏夜更适合爵士的时候了。Toots Thielemans的一曲《Old Friend》似乎比欢快的Swing Jazz更适合这个夜晚。《Chez Tools》这张French味专辑里面最不French的曲，《Old Friend》让我好像看到了一年后身边朋友各奔东西的唏嘘场景。</p>
@@ -979,291 +588,135 @@
 <hr>
 <div align="center"><br><img src="/2016/08/28/Chez Tools/thumb2.jpg" alt=""><br></div>
 
-          
-        
       
     </div>
-
     
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
+    <div class="article-info article-info-index">
       
       
-        <div class="post-eof"></div>
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Music/">Music</a>
+    </div>
+
+
       
-    </footer>
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/90s/">90s</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Jazz/">Jazz</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
   </div>
   
-  
-  
-  </article>
+</article>
 
 
+
+
+
+
+
+
+
+  
+    <article id="post-Putty配色" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/08/27/Putty配色/" class="article-date">
+      <time datetime="2016-08-27T04:39:28.000Z" itemprop="datePublished">2016-08-27</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wax8280.github.io/2016/08/27/Putty配色/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Vincent Zhong">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Vin's Blog">
-    </span>
-
+      <input type="hidden" class="isFancy" />
     
-      <header class="post-header">
-
+    
+      <header class="article-header">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/08/27/Putty配色/" itemprop="url">Putty配色</a></h1>
-        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/27/Putty配色/">Putty配色</a>
+    </h1>
+  
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-08-27T12:39:28+08:00">2016-08-27</time>
-            
-
-            
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Code/" itemprop="url" rel="index"><span itemprop="name">Code</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
       </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
       
+    
+    <div class="article-entry" itemprop="articleBody">
       
-
-      
-        
           
-            <p><div align="center"><br><img src="/2016/08/27/Putty配色/2012120510573338.png" alt=""><br></div></p>
+        <p><div align="center"><br><img src="/2016/08/27/Putty配色/2012120510573338.png" alt=""><br></div></p>
 <p><div align="center"><br><img src="/2016/08/27/Putty配色/2012120510574896.png" alt=""><br></div></p>
 <hr>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">Windows Registry Editor Version 5.00</div><div class="line">[HKEY_CURRENT_USER\SOFTWARE\SimonTatham\PuTTY\Sessions\Default%20Settings]</div><div class="line">&quot;Colour0&quot;=&quot;255,255,255&quot;</div><div class="line">&quot;Colour1&quot;=&quot;255,255,255&quot;</div><div class="line">&quot;Colour2&quot;=&quot;51,51,51&quot;</div><div class="line">&quot;Colour3&quot;=&quot;85,85,85&quot;</div><div class="line">&quot;Colour4&quot;=&quot;0,0,0&quot;</div><div class="line">&quot;Colour5&quot;=&quot;0,255,0&quot;</div><div class="line">&quot;Colour6&quot;=&quot;77,77,77&quot;</div><div class="line">&quot;Colour7&quot;=&quot;85,85,85&quot;</div><div class="line">&quot;Colour8&quot;=&quot;187,0,0&quot;</div><div class="line">&quot;Colour9&quot;=&quot;255,85,85&quot;</div><div class="line">&quot;Colour10&quot;=&quot;152,251,152&quot;</div><div class="line">&quot;Colour11&quot;=&quot;85,255,85&quot;</div><div class="line">&quot;Colour12&quot;=&quot;240,230,140&quot;</div><div class="line">&quot;Colour13&quot;=&quot;255,255,85&quot;</div><div class="line">&quot;Colour14&quot;=&quot;205,133,63&quot;</div><div class="line">&quot;Colour15&quot;=&quot;135,206,235&quot;</div><div class="line">&quot;Colour16&quot;=&quot;255,222,173&quot;</div><div class="line">&quot;Colour17&quot;=&quot;255,85,255&quot;</div><div class="line">&quot;Colour18&quot;=&quot;255,160,160&quot;</div><div class="line">&quot;Colour19&quot;=&quot;255,215,0&quot;</div><div class="line">&quot;Colour20&quot;=&quot;245,222,179&quot;</div><div class="line">&quot;Colour21&quot;=&quot;255,255,255&quot;</div></pre></td></tr></table></figure>
-          
-        
       
     </div>
-
     
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
+    <div class="article-info article-info-index">
       
       
-        <div class="post-eof"></div>
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Code/">Code</a>
+    </div>
+
+
       
-    </footer>
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
   </div>
   
-  
-  
-  </article>
+</article>
 
 
+
+
+
+
+
+
+
+  
+    <article id="post-Nigux PHP7 安装与配置" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/08/27/Nigux PHP7 安装与配置/" class="article-date">
+      <time datetime="2016-08-27T03:17:51.000Z" itemprop="datePublished">2016-08-27</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wax8280.github.io/2016/08/27/Nigux PHP7 安装与配置/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Vincent Zhong">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Vin's Blog">
-    </span>
-
+      <input type="hidden" class="isFancy" />
     
-      <header class="post-header">
-
+    
+      <header class="article-header">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/08/27/Nigux PHP7 安装与配置/" itemprop="url">Nigux PHP7 安装与配置</a></h1>
-        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/27/Nigux PHP7 安装与配置/">Nigux PHP7 安装与配置</a>
+    </h1>
+  
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-08-27T11:17:51+08:00">2016-08-27</time>
-            
-
-            
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Code/" itemprop="url" rel="index"><span itemprop="name">Code</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
       </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
       
+    
+    <div class="article-entry" itemprop="articleBody">
       
-
-      
-        
           
-            <h1 id="PHP7编译安装与配置"><a href="#PHP7编译安装与配置" class="headerlink" title="PHP7编译安装与配置"></a>PHP7编译安装与配置</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ yum -y install gcc gcc-c++ autoconf automake libtool make cmake </div><div class="line">$ yum -y install zlib zlib-devel openssl openssl-devel pcre-devel libxml2-devel curl-devel libmcrypt-devel</div><div class="line">$wget  http://cn2.php.net/get/php-7.0.10.tar.gz/from/this/mirror</div></pre></td></tr></table></figure>
+        <h1 id="PHP7编译安装与配置"><a href="#PHP7编译安装与配置" class="headerlink" title="PHP7编译安装与配置"></a>PHP7编译安装与配置</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ yum -y install gcc gcc-c++ autoconf automake libtool make cmake </div><div class="line">$ yum -y install zlib zlib-devel openssl openssl-devel pcre-devel libxml2-devel curl-devel libmcrypt-devel</div><div class="line">$wget  http://cn2.php.net/get/php-7.0.10.tar.gz/from/this/mirror</div></pre></td></tr></table></figure>
 <p>解压后<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ ./configure --prefix=/usr/local/php7 \ --with-config-file-path=/usr/local/php7/etc \ --with-config-file-scan-dir=/usr/local/php7/etc/php.d \ --with-mcrypt=/usr/include \ --enable-mysqlnd \ --with-mysqli \ --with-pdo-mysql \ --enable-fpm \ --with-fpm-user=nginx \ --with-fpm-group=nginx \ --with-gd \ --with-iconv \ --with-zlib \ --enable-xml \ --enable-shmop \ --enable-sysvsem \ --enable-inline-optimization \ --enable-mbregex \ --enable-mbstring \ --enable-ftp \ --enable-gd-native-ttf \ --with-openssl \ --enable-pcntl \ --enable-sockets \ --with-xmlrpc \ --enable-zip \ --enable-soap \ --without-pear \ --with-gettext \ --enable-session \ --with-curl \ --with-jpeg-dir \ --with-freetype-dir \ --enable-opcache</div><div class="line">make</div><div class="line">make install</div></pre></td></tr></table></figure></p>
 <p>查看ini的位置。然后看看是否存在ini。如果没有去编译好的源码里面复制一个<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cd /usr/local/php7/bin/php --ini</div></pre></td></tr></table></figure></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">php.ini</div><div class="line">    pid = run/php-fpm.pid</div><div class="line">    error_log = log/php-fpm.log</div><div class="line">    log_level = notice</div></pre></td></tr></table></figure>
@@ -1273,147 +726,69 @@
 <h1 id="Nginx安装与配置"><a href="#Nginx安装与配置" class="headerlink" title="Nginx安装与配置"></a>Nginx安装与配置</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">yum install libbz2</div><div class="line">yum install readline-devel</div><div class="line">yum install sqlite-devel</div><div class="line">yum install zlib-devel</div><div class="line">yum install openssl-devel</div><div class="line">yum install nginx</div></pre></td></tr></table></figure>
 <p>nginx.conf配置文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line">nginx.conf</div><div class="line"># For more information on configuration, see:</div><div class="line">#   * Official English Documentation: http://nginx.org/en/docs/</div><div class="line">#   * Official Russian Documentation: http://nginx.org/ru/docs/</div><div class="line">user              nginx;</div><div class="line">worker_processes  1;</div><div class="line">error_log  /var/log/nginx/error.log;</div><div class="line">#error_log  /var/log/nginx/error.log  notice;</div><div class="line">#error_log  /var/log/nginx/error.log  info;</div><div class="line">pid        /var/run/nginx.pid;</div><div class="line">events &#123;</div><div class="line">    worker_connections  1024;</div><div class="line">&#125;</div><div class="line">http &#123;</div><div class="line">    include       /etc/nginx/mime.types;</div><div class="line">    default_type  application/octet-stream;</div><div class="line">    log_format  main  &apos;$remote_addr - $remote_user [$time_local] &quot;$request&quot; &apos;</div><div class="line">                      &apos;$status $body_bytes_sent &quot;$http_referer&quot; &apos;</div><div class="line">                      &apos;&quot;$http_user_agent&quot; &quot;$http_x_forwarded_for&quot;&apos;;</div><div class="line">    access_log  /var/log/nginx/access.log  main;</div><div class="line">    sendfile        on;</div><div class="line">    #tcp_nopush     on;</div><div class="line">    #keepalive_timeout  0;</div><div class="line">    keepalive_timeout  65;</div><div class="line">    #gzip  on;</div><div class="line">    # Load config files from the /etc/nginx/conf.d directory</div><div class="line">    # The default server is in conf.d/default.conf</div><div class="line">    #include /etc/nginx/conf.d/*.conf;</div><div class="line">	server &#123;</div><div class="line">	    listen       80;</div><div class="line">		root  html/wordpress;</div><div class="line">	location /&#123;</div><div class="line">		index index.php;</div><div class="line">	&#125;</div><div class="line">	    location ~\.php.*$ &#123;</div><div class="line">		fastcgi_pass 127.0.0.1:9000;</div><div class="line">		fastcgi_index index.php;</div><div class="line">		fastcgi_param SCRIPT_FILENAME /$document_root$fastcgi_script_name;</div><div class="line">		include fastcgi_params;</div><div class="line">	    &#125;</div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 
-          
-        
       
     </div>
-
     
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
+    <div class="article-info article-info-index">
       
       
-        <div class="post-eof"></div>
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Code/">Code</a>
+    </div>
+
+
       
-    </footer>
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Nginx/">Nginx</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/">PHP</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
   </div>
   
-  
-  
-  </article>
+</article>
 
 
+
+
+
+
+
+
+
+  
+    <article id="post-Nginx 下对Wordpress的权限管理" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/08/27/Nginx 下对Wordpress的权限管理/" class="article-date">
+      <time datetime="2016-08-27T03:08:23.000Z" itemprop="datePublished">2016-08-27</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wax8280.github.io/2016/08/27/Nginx 下对Wordpress的权限管理/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Vincent Zhong">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Vin's Blog">
-    </span>
-
+      <input type="hidden" class="isFancy" />
     
-      <header class="post-header">
-
+    
+      <header class="article-header">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/08/27/Nginx 下对Wordpress的权限管理/" itemprop="url">Nginx 下对Wordpress的权限管理</a></h1>
-        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/27/Nginx 下对Wordpress的权限管理/">Nginx 下对Wordpress的权限管理</a>
+    </h1>
+  
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-08-27T11:08:23+08:00">2016-08-27</time>
-            
-
-            
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Code/" itemprop="url" rel="index"><span itemprop="name">Code</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
       </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
       
+    
+    <div class="article-entry" itemprop="articleBody">
       
-
-      
-        
           
-            <p>查看进程的权限<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">ps -ef | grep nginx </div><div class="line">nginx    15095 15094  0 14:00 ?        00:00:01 php-fpm: pool www</div><div class="line">nginx    15096 15094  0 14:00 ?        00:00:01 php-fpm: pool www</div><div class="line">nginx    15097 15094  0 14:00 ?        00:00:01 php-fpm: pool www</div><div class="line">nginx    15098 15094  0 14:00 ?        00:00:01 php-fpm: pool www</div><div class="line">nginx    15099 15094  0 14:00 ?        00:00:01 php-fpm: pool www</div><div class="line">root     22719     1  0 17:22 ?        00:00:00 gedit /etc/nginx/nginx.conf</div><div class="line">root     22811     1  0 17:25 ?        00:00:00 nginx: master process /usr/sbin/nginx -c /etc/nginx/nginx.conf</div><div class="line">nginx    22813 22811  0 17:25 ?        00:00:00 nginx: worker process           </div><div class="line">root     22845 22824  0 18:05 pts/1    00:00:00 grep nginx</div></pre></td></tr></table></figure></p>
+        <p>查看进程的权限<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">ps -ef | grep nginx </div><div class="line">nginx    15095 15094  0 14:00 ?        00:00:01 php-fpm: pool www</div><div class="line">nginx    15096 15094  0 14:00 ?        00:00:01 php-fpm: pool www</div><div class="line">nginx    15097 15094  0 14:00 ?        00:00:01 php-fpm: pool www</div><div class="line">nginx    15098 15094  0 14:00 ?        00:00:01 php-fpm: pool www</div><div class="line">nginx    15099 15094  0 14:00 ?        00:00:01 php-fpm: pool www</div><div class="line">root     22719     1  0 17:22 ?        00:00:00 gedit /etc/nginx/nginx.conf</div><div class="line">root     22811     1  0 17:25 ?        00:00:00 nginx: master process /usr/sbin/nginx -c /etc/nginx/nginx.conf</div><div class="line">nginx    22813 22811  0 17:25 ?        00:00:00 nginx: worker process           </div><div class="line">root     22845 22824  0 18:05 pts/1    00:00:00 grep nginx</div></pre></td></tr></table></figure></p>
 <p>可以看到 使用nginx用户。<br>下面我们来设置nginx用户各个文件夹的具体权限<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[root@VM_94_158_centos html]# ll</div><div class="line">total 4</div><div class="line">drwxr-xr-x 5 root root 4096 Aug 21 12:16 wordpress</div></pre></td></tr></table></figure></p>
 <p>可见文件owner是root<br>我们把文件owner改为nginx<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[root@VM_94_158_centos html]# chown -R  nginx ./wordpress/</div></pre></td></tr></table></figure></p>
 <p>对于linux中的权限</p>
@@ -1446,289 +821,133 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[root@VM_94_158_centos html]# chmod -R 555 ./wordpress/</div></pre></td></tr></table></figure>
 <p>对于以下目录，要具有7的权限<br>多媒体上传的目录：/wp-content/uploads/<br>缓存目录：/.htaccess<br>/wp-content/cache/<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[root@VM_94_158_centos html]# chmod -R 755 ./wordpress/wp-content/uploads/</div></pre></td></tr></table></figure></p>
 
-          
-        
       
     </div>
-
     
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
+    <div class="article-info article-info-index">
       
       
-        <div class="post-eof"></div>
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Code/">Code</a>
+    </div>
+
+
       
-    </footer>
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Nginx/">Nginx</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WordPress/">WordPress</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
   </div>
   
-  
-  
-  </article>
+</article>
 
 
+
+
+
+
+
+
+
+  
+    <article id="post-Linux 下的Python升级" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/08/27/Linux 下的Python升级/" class="article-date">
+      <time datetime="2016-08-27T03:03:00.000Z" itemprop="datePublished">2016-08-27</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wax8280.github.io/2016/08/27/Linux 下的Python升级/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Vincent Zhong">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Vin's Blog">
-    </span>
-
+      <input type="hidden" class="isFancy" />
     
-      <header class="post-header">
-
+    
+      <header class="article-header">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/08/27/Linux 下的Python升级/" itemprop="url">Linux 下的Python升级</a></h1>
-        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/27/Linux 下的Python升级/">Linux 下的Python升级</a>
+    </h1>
+  
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-08-27T11:03:00+08:00">2016-08-27</time>
-            
-
-            
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Code/" itemprop="url" rel="index"><span itemprop="name">Code</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
       </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
       
+    
+    <div class="article-entry" itemprop="articleBody">
       
-
-      
-        
           
-            <hr>
+        <hr>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">wget http://www.python.org/ftp/python/2.7.3/Python-2.7.3.tgz</div><div class="line">tar -xf Python-2.7.3.tgz</div><div class="line">cd Python-2.7.3</div><div class="line">mkdir /usr/local/python27</div><div class="line">./configure --prefix=/usr/local/python27</div><div class="line">make</div><div class="line">make install</div><div class="line">//备份旧的python</div><div class="line">mv /usr/bin/python /usr/bin/python_old</div><div class="line">//新建link</div><div class="line">ln -s /usr/local/python27/bin/python2.7 /usr/bin/python</div></pre></td></tr></table></figure>
-          
-        
       
     </div>
-
     
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
+    <div class="article-info article-info-index">
       
       
-        <div class="post-eof"></div>
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Code/">Code</a>
+    </div>
+
+
       
-    </footer>
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
   </div>
   
-  
-  
-  </article>
+</article>
 
 
+
+
+
+
+
+
+
+  
+    <article id="post-Dijkstra算法的最小堆优化" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/08/17/Dijkstra算法的最小堆优化/" class="article-date">
+      <time datetime="2016-08-17T01:28:13.000Z" itemprop="datePublished">2016-08-17</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wax8280.github.io/2016/08/17/Dijkstra算法的最小堆优化/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Vincent Zhong">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Vin's Blog">
-    </span>
-
+      <input type="hidden" class="isFancy" />
     
-      <header class="post-header">
-
+    
+      <header class="article-header">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/08/17/Dijkstra算法的最小堆优化/" itemprop="url">Dijkstra算法的最小堆优化</a></h1>
-        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/17/Dijkstra算法的最小堆优化/">Dijkstra算法的最小堆优化</a>
+    </h1>
+  
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-08-17T09:28:13+08:00">2016-08-17</time>
-            
-
-            
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Code/" itemprop="url" rel="index"><span itemprop="name">Code</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
       </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
       
+    
+    <div class="article-entry" itemprop="articleBody">
       
-
-      
-        
           
-            <p>关于Dijkstra算法的具体步骤可以参考<a href="http://blog.vincentzhong.cn/index.php/archives/328" target="_blank" rel="external">关于最短路径的几个算法</a><br>Dijkstra算法里面每次找出离源点最近之点，使用了两个嵌套的循环语句。导致时间复杂度为O(N^2)。<br>本例通过最小堆，优化这两个嵌套的循环语句。令算法整体复杂度降为O(NlogN)。</p>
+        <p>关于Dijkstra算法的具体步骤可以参考<a href="http://blog.vincentzhong.cn/index.php/archives/328" target="_blank" rel="external">关于最短路径的几个算法</a><br>Dijkstra算法里面每次找出离源点最近之点，使用了两个嵌套的循环语句。导致时间复杂度为O(N^2)。<br>本例通过最小堆，优化这两个嵌套的循环语句。令算法整体复杂度降为O(NlogN)。</p>
 <h1 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="comment">// book记录那些顶点已经放入生成树中</span></div><div class="line"><span class="keyword">int</span> dis[<span class="number">8</span>];</div><div class="line"><span class="comment">// h用来保存堆，pos用来存储每个顶点再堆中的位置，size为堆的大小</span></div><div class="line"><span class="keyword">int</span> h[<span class="number">7</span>], pos[<span class="number">7</span>], size;</div><div class="line"><span class="keyword">int</span> n=<span class="number">6</span>, m=<span class="number">9</span>,k;</div><div class="line"><span class="keyword">int</span> inf = <span class="number">99999999</span>;</div><div class="line"><span class="keyword">int</span> i, j;</div><div class="line"><span class="keyword">int</span> u[<span class="number">10</span>], v[<span class="number">10</span>], w[<span class="number">10</span>];</div><div class="line"><span class="keyword">int</span> first[<span class="number">7</span>], next[<span class="number">10</span>];</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    <span class="keyword">int</span> t;</div><div class="line">    t = h[x];</div><div class="line">    h[x] = h[y];</div><div class="line">    h[y] = t;</div><div class="line">    t = pos[h[x]];</div><div class="line">    pos[h[x]] = pos[h[y]];</div><div class="line">    pos[h[y]] = t;</div><div class="line">&#125;</div><div class="line"><span class="comment">//传入一个需要向下调整的顶点编号</span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">siftdown</span><span class="params">(<span class="keyword">int</span> i)</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    <span class="keyword">int</span> t, flag = <span class="number">0</span>;</div><div class="line">    <span class="keyword">while</span> (i * <span class="number">2</span> &lt;= size&amp;&amp;flag == <span class="number">0</span>)</div><div class="line">    &#123;</div><div class="line">        <span class="comment">// 首先判断左儿子</span></div><div class="line">        <span class="keyword">if</span> (dis[h[i]] &gt; dis[h[i * <span class="number">2</span>]])</div><div class="line">            t = i * <span class="number">2</span>;</div><div class="line">        <span class="keyword">else</span></div><div class="line">            t = i;</div><div class="line">        <span class="comment">// 判断右儿子</span></div><div class="line">        <span class="keyword">if</span> (i * <span class="number">2</span> + <span class="number">1</span> &lt;= size)</div><div class="line">        &#123;</div><div class="line">            <span class="comment">// 如果右儿子的值更小</span></div><div class="line">            <span class="keyword">if</span> (dis[h[t]]&gt;dis[h[i * <span class="number">2</span> + <span class="number">1</span>]])</div><div class="line">                t = i * <span class="number">2</span> + <span class="number">1</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="comment">// 若无须交换，也就是子树满足最小堆</span></div><div class="line">        <span class="keyword">if</span> (t != i)</div><div class="line">        &#123;</div><div class="line">            swap(t, i);</div><div class="line">            i = t;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">else</span></div><div class="line">            flag = <span class="number">1</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">siftup</span><span class="params">(<span class="keyword">int</span> i)</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    <span class="keyword">int</span> flag = <span class="number">0</span>;</div><div class="line">    <span class="keyword">if</span> (i == <span class="number">1</span>) <span class="keyword">return</span>;</div><div class="line">    <span class="keyword">while</span> (i != <span class="number">1</span> &amp;&amp; flag == <span class="number">0</span>)</div><div class="line">    &#123;</div><div class="line">        <span class="comment">// 判断父节点</span></div><div class="line">        <span class="keyword">if</span> (dis[h[i]]&lt;dis[h[i / <span class="number">2</span>]])</div><div class="line">            swap(i, i / <span class="number">2</span>);</div><div class="line">        <span class="keyword">else</span></div><div class="line">            flag = <span class="number">1</span>;</div><div class="line">        i = i / <span class="number">2</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">pop</span><span class="params">()</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    <span class="keyword">int</span> t;</div><div class="line">    t = h[<span class="number">1</span>];</div><div class="line">    h[<span class="number">1</span>] = h[size];        <span class="comment">//将堆的最后一个点赋值到堆顶</span></div><div class="line">    pos[h[<span class="number">1</span>]] = <span class="number">1</span>;</div><div class="line">    size--;</div><div class="line">    siftdown(<span class="number">1</span>);</div><div class="line">    <span class="comment">//pop顶点编号出来</span></div><div class="line">    <span class="keyword">return</span> t;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    <span class="keyword">int</span> count = <span class="number">0</span>;</div><div class="line">    <span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= m; i++)</div><div class="line">        <span class="built_in">scanf</span>(<span class="string">"%d %d %d"</span>, &amp;u[i], &amp;v[i], &amp;w[i]);</div><div class="line">    <span class="comment">// 初始化dis</span></div><div class="line">    dis[<span class="number">1</span>] = <span class="number">0</span>;</div><div class="line">    <span class="keyword">for</span> (i = <span class="number">2</span>; i &lt;= n; i++)    dis[i] = inf;</div><div class="line">    <span class="comment">// 邻接表</span></div><div class="line">    <span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= n; i++) first[i] = <span class="number">-1</span>;</div><div class="line">    <span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= m; i++)</div><div class="line">    &#123;</div><div class="line">        next[i] = first[u[i]];</div><div class="line">        first[u[i]] = i;</div><div class="line">    &#125;</div><div class="line">    count++;</div><div class="line">    k = first[<span class="number">1</span>];</div><div class="line">    <span class="comment">// 遍历邻接表。找出离顶点1相邻点的权值，放入dis中</span></div><div class="line">    <span class="keyword">while</span> (k != <span class="number">-1</span>)</div><div class="line">    &#123;</div><div class="line">        dis[v[k]] = w[k];</div><div class="line">        k = next[k];</div><div class="line">    &#125;</div><div class="line">    <span class="comment">// 初始化堆</span></div><div class="line">    size = n;</div><div class="line">    <span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= size; i++)&#123; h[i] = i; pos[i] = i; &#125;</div><div class="line">    <span class="comment">//生成最小堆</span></div><div class="line">    <span class="keyword">for</span> (i = size / <span class="number">2</span>; i &gt;= <span class="number">1</span>; i--)&#123; siftdown(i); &#125;</div><div class="line">    pop();</div><div class="line">    <span class="keyword">while</span> (count &lt; n)</div><div class="line">    &#123;</div><div class="line">        j = pop();</div><div class="line">        count++;</div><div class="line">        <span class="comment">// 遍历以顶点j开头的所有边</span></div><div class="line">        <span class="comment">// k=为第n条边</span></div><div class="line">        k = first[j];</div><div class="line">        <span class="keyword">while</span> (k != <span class="number">-1</span>)</div><div class="line">        &#123;</div><div class="line">            <span class="keyword">if</span> (dis[v[k]]&gt;dis[u[k]] + w[k])</div><div class="line">            &#123;</div><div class="line">                dis[v[k]] = dis[u[k]] + w[k];</div><div class="line">                siftup(pos[v[k]]);</div><div class="line">            &#125;</div><div class="line">            k = next[k];</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= n; i++)</div><div class="line">        <span class="built_in">printf</span>(<span class="string">"%d "</span>, dis[i]);</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>输入<br>1 2 1<br>1 3 12<br>2 3 9<br>2 4 3<br>3 5 5<br>4 3 4<br>4 5 13<br>4 6 15<br>5 6 4<br>结果<br>0 1 8 4 13 17</p>
 <h1 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h1><p>h是堆，值为顶点号；pos的值对应顶点在堆中的位置。<br>h与pos配合，形成最小堆。注意，是根据各个顶点在dis中对应的离源点的距离生成最小堆。</p>
@@ -1739,429 +958,130 @@
 <p><div align="center"><br><img src="/2016/08/17/Dijkstra算法的最小堆优化/5-1-1.jpg" alt=""><br></div><br>将四号顶点出堆，size前移，根据4的出边更新dis。4号顶点变为确定值。并更新堆<br>第四次循环</p>
 <p><div align="center"><br><img src="/2016/08/17/Dijkstra算法的最小堆优化/6-1-1.jpg" alt=""><br></div><br>将三号顶点出堆，size前移，根据3的出边更新dis。3号顶点变为确定值。并更新堆<br>如此类推</p>
 
-          
-        
       
     </div>
-
     
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
+    <div class="article-info article-info-index">
       
       
-        <div class="post-eof"></div>
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Code/">Code</a>
+    </div>
+
+
       
-    </footer>
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据结构与算法/">数据结构与算法</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
   </div>
   
+</article>
+
+
+
+
+
+
+
+
+
   
   
-  </article>
-
-
-    
-  </section>
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/8/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/10/"><i class="fa fa-angle-right"></i></a>
-  </nav>
-
-
-
-          </div>
-          
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <p class="site-author-name" itemprop="name">Vincent Zhong</p>
-              <p class="site-description motion-element" itemprop="description">Share my favorite</p>
-          </div>
-
-          
-            <nav class="site-state motion-element">
-              
-                <div class="site-state-item site-state-posts">
-                
-                  <a href="/archives/">
-                
-                    <span class="site-state-item-count">111</span>
-                    <span class="site-state-item-name">posts</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-categories">
-                  <a href="/categories/index.html">
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">6</span>
-                    <span class="site-state-item-name">categories</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-tags">
-                  <a href="/tags/index.html">
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">40</span>
-                    <span class="site-state-item-name">tags</span>
-                  </a>
-                </div>
-              
-            </nav>
-          
-
-          
-
-          
-            <div class="links-of-author motion-element">
-              
-                <span class="links-of-author-item">
-                  <a href="https://github.com/wax8280" target="_blank" title="GitHub"><i class="fa fa-fw fa-globe"></i>GitHub</a>
-                  
-                </span>
-              
-            </div>
-          
-
-          
-          
-
-          
-          
-
-          
-            
-          
-          
-
-        </div>
-      </section>
-
-      
-
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
-  <span class="with-love">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Vincent Zhong</span>
-
-  
-
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/8/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/10/">Next &raquo;</a>
+    </nav>
   
 </div>
-
-
-
-
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Muse</a> v6.0.4</div>
-
-
-
-
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2019 Vincent Zhong
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
         
-
-
-
-
-
-
-
-
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
         
-      </div>
-    </footer>
-
+    </div>
+</footer>
+    </div>
     
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 2;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
     
-
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
     
-
-  </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
 </script>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=6.0.4"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=6.0.4"></script>
-
-
-
-  
-  
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.4"></script>
-
-
-
-  
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-
-  
-
-  
-
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
 </body>
 </html>

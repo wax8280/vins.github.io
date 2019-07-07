@@ -1,106 +1,21 @@
 <!DOCTYPE html>
-
-
-
-  
-
-
-<html class="theme-next muse use-motion" lang="zh">
+<html lang="zh">
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-<meta name="theme-color" content="#222">
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="Vincent Zhong" />
 
 
-
-
-
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=6.0.4" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.4">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.4">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.4">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=6.0.4" color="#222">
-
-
-
-
-
-
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Muse',
-    version: '6.0.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: false,
-    fastclick: false,
-    lazyload: false,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-  
-
-
-
-
-  
-  <meta name="keywords" content="Hexo, NexT" />
+    
+    
 
 
 <meta name="description" content="Share my favorite">
@@ -114,1166 +29,415 @@
 <meta name="twitter:title" content="Vin&#39;s Blog">
 <meta name="twitter:description" content="Share my favorite">
 
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="Vin&#39;s Blog" type="application/atom+xml">
 
 
 
-
-
-  <link rel="canonical" href="https://wax8280.github.io/"/>
+    <link rel="shortcut icon" href="/favicon.png">
 
 
 
-<script type="text/javascript" id="page.configurations">
-  CONFIG.page = {
-    sidebar: "",
-  };
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <style> .article { opacity: 0;} </style>
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>Vin&#39;s Blog</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: true,
+        isPost: false,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: false
+    }
 </script>
-  <title>Vin's Blog</title>
-  
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
 
 
 
 
 
-
-  <script type="text/javascript">
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?696e48752c03b0066c07d25947ac5dff";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-  </script>
-
-
-
-
-  <noscript>
-  <style type="text/css">
-    .use-motion .motion-element,
-    .use-motion .brand,
-    .use-motion .menu-item,
-    .sidebar-inner,
-    .use-motion .post-block,
-    .use-motion .pagination,
-    .use-motion .comments,
-    .use-motion .post-header,
-    .use-motion .post-body,
-    .use-motion .collection-title { opacity: initial; }
-
-    .use-motion .logo,
-    .use-motion .site-title,
-    .use-motion .site-subtitle {
-      opacity: initial;
-      top: initial;
-    }
-
-    .use-motion {
-      .logo-line-before i { left: initial; }
-      .logo-line-after i { right: initial; }
-    }
-  </style>
-</noscript>
 
 </head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/avatar.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">Vincent Zhong</a></h1>
+        </hgroup>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh">
+        
 
-  
-  
-    
-  
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
 
-  <div class="container sidebar-position-left 
-  page-home">
-    <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"> <div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
 
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Vin's Blog</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
-      
-        <p class="site-subtitle"></p>
-      
-  </div>
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="Vincent:wax8280@163.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" href="https://github.com/wax8280" title="GitHub"></a>
+                            
+                                <a class="fa RSS" href="/atom.xml" title="RSS"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/70s/">70s</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/80s/">80s</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/90s/">90s</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blues/">Blues</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Bossa-Nova/">Bossa Nova</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Django/">Django</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IIS/">IIS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jazz/">Jazz</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nginx/">Nginx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OpenCV/">OpenCV</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP/">PHP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Pop/">Pop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Pyspider/">Pyspider</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Rock/">Rock</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Swing/">Swing</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vocal/">Vocal</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/">Web</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WordPress/">WordPress</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/推理/">推理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/摄影/">摄影</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构与算法/">数据结构与算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/旅游/">旅游</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/每天一道编程题/">每天一道编程题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/爬虫/">爬虫</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/纪实摄影-摄影/">纪实摄影 - 摄影</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/纸媒/">纸媒</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/胶卷/">胶卷</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/胶片/">胶片</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机基础/">计算机基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机网络/">计算机网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
 
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">专注于前端</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
 </div>
-
-<nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
-        
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-user"></i> <br />About</a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />Tags</a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-th"></i> <br />Categories</a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
-        </li>
-      
-
-      
-    </ul>
-  
-
-  
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Vincent Zhong</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/avatar.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">Vincent Zhong</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="Vincent:wax8280@163.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/wax8280" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-
-
+      <div class="body-wrap">
   
+    <article id="post-贵州旅游日程" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/10/23/贵州旅游日程/" class="article-date">
+      <time datetime="2018-10-23T13:57:58.000Z" itemprop="datePublished">2018-10-23</time>
+</a>
 
 
-
- </div>
-    </header>
-
+    </div>
+  
+  <div class="article-inner">
     
-
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-  <section id="posts" class="posts-expand">
+      <input type="hidden" class="isFancy" />
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wax8280.github.io/2018/10/23/贵州旅游日程/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Vincent Zhong">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Vin's Blog">
-    </span>
-
     
-      <header class="post-header">
-
+      <header class="article-header">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/23/贵州旅游日程/" itemprop="url">贵州旅游日程</a></h1>
-        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/23/贵州旅游日程/">贵州旅游日程</a>
+    </h1>
+  
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-23T21:57:58+08:00">2018-10-23</time>
-            
-
-            
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Life/" itemprop="url" rel="index"><span itemprop="name">Life</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
       </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
       
+    
+    <div class="article-entry" itemprop="articleBody">
       
-
-      
-        
           
-            <h1 id="路线"><a href="#路线" class="headerlink" title="路线"></a>路线</h1><h2 id="我的路线"><a href="#我的路线" class="headerlink" title="我的路线"></a>我的路线</h2><p><img src="/2018/10/23/贵州旅游日程/线路图1_旋转.jpg" alt=""></p>
-<p>肇兴千户侗寨——中国七大最美徒步路线——堂安侗寨——都匀——荔波大七孔、小七孔——西江千户苗寨——镇远古镇——贵阳——黄果树瀑布</p>
-<p>本路线参考LP提供的以下两条路线</p>
-<h2 id="黔东南南线"><a href="#黔东南南线" class="headerlink" title="黔东南南线"></a>黔东南南线</h2><p>凯里（麻塘）——西江千户苗寨——雷公山——榕江（苗寨侗寨：摆贝、大利）——从江（芭莎枪手部落、小黄侗族大歌）——全国最大的侗寨肇兴——清水江——隆里——三门塘</p>
-<p><img src="/2018/10/23/贵州旅游日程/黔东南南线.png" alt=""></p>
-<p>从凯里出发，周边<strong>麻塘革家人</strong>。大的有<strong>江西千户苗寨</strong>，小的沿着巴拉河下，<strong>南华、季刀、朗德、报德、南猛苗寨</strong>等。<strong>雷山</strong>附近也有几个苗寨，<strong>排卡、掌坳、新桥苗寨</strong>。<strong>榕江</strong>是旅游热点，<strong>车江镇三宝侗寨、大利侗寨、滚仲苗寨、空申、摆贝苗寨、晚寨侗寨</strong>。<strong>从江</strong>也是苗寨侗寨的密集区，<strong>芭沙苗寨、占里侗寨、小黄侗寨</strong>，少人的有<strong>黄冈侗寨、银潭侗寨</strong>等。到达<strong>肇兴</strong>之后，往北有黎平的<strong>黄冈侗寨、地扪侗寨</strong>（仅次于肇兴的第二大侗寨），继续往北，清水江畔，锦屏与天柱之间还有多元文化集一身的三门塘侗寨。</p>
-<p>如果去到<strong>荔波</strong>，在三都周边的水族村寨——<strong>怎雷、板告、水各、梆木水寨</strong>等。</p>
-<p>贵阳附近的贵定还有号称“中华布依第一寨”的<strong>音寨</strong>。</p>
-<p>六盘水还有苗寨，<strong>大方菱角塘的六角苗</strong>、<strong>六枝梭嘎的长角苗</strong>。</p>
-<p><img src="/2018/10/23/贵州旅游日程/苗寨地图.png" alt=""></p>
-<h2 id="西南线"><a href="#西南线" class="headerlink" title="西南线"></a>西南线</h2><p>安顺——龙宫——天龙屯堡——黄果树瀑布——马岭河峡谷——万峰林——万峰湖</p>
-<p><img src="/2018/10/23/贵州旅游日程/西线.png" alt=""></p>
-<p>自驾的话，可以到<strong>北盘江大桥</strong>，长度388米，距离水面486米，为 中国 第一高桥。于2003年12月28日建成并通车。（有停车观景区，一说现在已经拆除。）</p>
-<h1 id="日程"><a href="#日程" class="headerlink" title="日程"></a>日程</h1><h2 id="D1-11-10（星期六）"><a href="#D1-11-10（星期六）" class="headerlink" title="D1 11.10（星期六）"></a>D1 11.10（星期六）</h2><h3 id="时间安排"><a href="#时间安排" class="headerlink" title="时间安排"></a>时间安排</h3><ul>
-<li>0845：起床</li>
-<li>0934：台山——广州南高铁</li>
-<li>1118：广州南——从江高铁</li>
-<li>1453：到达从江站，搭乘班车或者滴滴摩托到达肇兴侗寨</li>
-<li>1530：到达肇兴侗寨自由活动</li>
-</ul>
-<h3 id="交通"><a href="#交通" class="headerlink" title="交通"></a>交通</h3><ul>
-<li>高铁：台山——广州南：65rmb（已买票）</li>
-<li>高铁：广州南——从江：218rmb（已买票）</li>
-<li>滴滴或班车或摩托：从江高铁站——肇兴侗寨：约20rmb</li>
-</ul>
-<h3 id="宿"><a href="#宿" class="headerlink" title="宿"></a>宿</h3><h4 id="肇兴神仙堂会馆"><a href="#肇兴神仙堂会馆" class="headerlink" title="肇兴神仙堂会馆"></a>肇兴神仙堂会馆</h4><p>酒店 13822276699 有阁楼，97rmb；普通大床，130rmb</p>
-<h4 id="黎平素心忆栈"><a href="#黎平素心忆栈" class="headerlink" title="黎平素心忆栈"></a>黎平素心忆栈</h4><p>酒店 13312445696 大床90rmb</p>
-<h3 id="门票"><a href="#门票" class="headerlink" title="门票"></a>门票</h3><p>肇兴侗寨：80rmb</p>
-<h3 id="食"><a href="#食" class="headerlink" title="食"></a>食</h3><p>早餐：台山自己解决</p>
-<p>午餐：高铁餐或者干粮</p>
-<p>晚餐：在肇兴随便逛找吃的。</p>
-<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><ul>
-<li>在前一天晚上备足干粮，以便在高铁打发第二天午餐。</li>
-<li>在肇兴打听“肇兴——从江站”的班车车次，以便第二天从“堂安——肇兴——从江”的安排。</li>
-<li>记得提前问下客栈老板广州身份证买票现在是否还有半价。</li>
-</ul>
-<h2 id="D2-11-11（星期日）"><a href="#D2-11-11（星期日）" class="headerlink" title="D2 11.11（星期日）"></a>D2 11.11（星期日）</h2><h3 id="时间安排-1"><a href="#时间安排-1" class="headerlink" title="时间安排"></a>时间安排</h3><ul>
-<li>0600：起床，在肇兴自由活动</li>
-<li>1400：午饭后，徒步出发至堂安</li>
-<li>1600：到达堂安，自由活动</li>
-</ul>
-<h3 id="宿-1"><a href="#宿-1" class="headerlink" title="宿"></a>宿</h3><h4 id="黎平肇兴同福客栈"><a href="#黎平肇兴同福客栈" class="headerlink" title="黎平肇兴同福客栈"></a>黎平肇兴同福客栈</h4><p>联系电话 18212340116 普通大床房，81rmb；主题大床房，110rmb</p>
-<h3 id="食-1"><a href="#食-1" class="headerlink" title="食"></a>食</h3><p>早：肇兴解决</p>
-<p>午：肇兴解决</p>
-<p>晚：堂安客栈解决</p>
-<h3 id="其他-1"><a href="#其他-1" class="headerlink" title="其他"></a>其他</h3><ul>
-<li>徒步路线约5公里，上升500米。注意天气，若天气恶劣则放弃徒步。需准备好充足的水。</li>
-<li>向当地人打听“堂安——从江站”的消息。</li>
-</ul>
-<h2 id="D3-11-12（星期一）"><a href="#D3-11-12（星期一）" class="headerlink" title="D3 11.12（星期一）"></a>D3 11.12（星期一）</h2><h3 id="时间安排-2"><a href="#时间安排-2" class="headerlink" title="时间安排"></a>时间安排</h3><ul>
-<li>0600：起床，漫步堂安</li>
-<li>1500：返回从江站</li>
-<li>1910：高铁至都匀</li>
-<li>1958：到达都匀</li>
-</ul>
-<h3 id="交通-1"><a href="#交通-1" class="headerlink" title="交通"></a>交通</h3><ul>
-<li>班车：堂安——肇兴、堂安——从江站：30rmb</li>
-<li>高铁：从江——都匀东：59rmb（已买票）</li>
-</ul>
-<h3 id="宿-2"><a href="#宿-2" class="headerlink" title="宿"></a>宿</h3><p>7天都匀汽车总站店，自主大床房119rmb</p>
-<h3 id="食-2"><a href="#食-2" class="headerlink" title="食"></a>食</h3><p>早：堂安解决</p>
-<p>午：堂安解决</p>
-<p>晚：都匀解决</p>
-<h3 id="其他-2"><a href="#其他-2" class="headerlink" title="其他"></a>其他</h3><ul>
-<li>现在只知道堂安有车去肇兴，但是不清楚有没有车回到从江。肇兴有车回到从江的。或者直接叫客栈老板载到从江站。</li>
-<li>或者晚上到荔波住（末班车1856）</li>
-</ul>
-<h2 id="D4-11-13（星期二）"><a href="#D4-11-13（星期二）" class="headerlink" title="D4 11.13（星期二）"></a>D4 11.13（星期二）</h2><h3 id="时间安排-3"><a href="#时间安排-3" class="headerlink" title="时间安排"></a>时间安排</h3><ul>
-<li>0700：都匀——荔波班车</li>
-<li>1000：到达荔波，游玩小七孔</li>
-</ul>
-<h3 id="交通-2"><a href="#交通-2" class="headerlink" title="交通"></a>交通</h3><ul>
-<li>班车：都匀——荔波：55rmb（未买票，在公众号购买）</li>
-</ul>
-<h3 id="宿-3"><a href="#宿-3" class="headerlink" title="宿"></a>宿</h3><p>荔波有一家客栈 酒店 13322998316 大床房84rmb</p>
-<h3 id="食-3"><a href="#食-3" class="headerlink" title="食"></a>食</h3><p>早：都匀解决</p>
-<p>午：荔波解决</p>
-<p>晚：荔波解决</p>
-<h3 id="门票-1"><a href="#门票-1" class="headerlink" title="门票"></a>门票</h3><p>大小七孔：130rmb</p>
-<h3 id="其他-3"><a href="#其他-3" class="headerlink" title="其他"></a>其他</h3><ul>
-<li>在都匀补充点干粮，第二天在午餐在小七孔吃干粮或者看下有什么其他吃的。</li>
-</ul>
-<h2 id="D5-11-14（星期三）"><a href="#D5-11-14（星期三）" class="headerlink" title="D5 11.14（星期三）"></a>D5 11.14（星期三）</h2><h3 id="时间安排-4"><a href="#时间安排-4" class="headerlink" title="时间安排"></a>时间安排</h3><ul>
-<li>0600：起床，大七孔</li>
-<li>0945：荔波——凯里班车</li>
-<li>1330：到达凯里</li>
-<li>1400：到达西江千户苗寨</li>
-</ul>
-<h3 id="交通-3"><a href="#交通-3" class="headerlink" title="交通"></a>交通</h3><ul>
-<li>荔波——凯里班车：80rmb（未买票，在公众号购买）</li>
-<li>凯里——西江班车或滴滴：约30rmb</li>
-</ul>
-<h3 id="宿-4"><a href="#宿-4" class="headerlink" title="宿"></a>宿</h3><p>途窝假日庄园(西江千户苗寨观景台店) 酒店 0855-3345668 大床房169rmb</p>
-<h3 id="食-4"><a href="#食-4" class="headerlink" title="食"></a>食</h3><p>早：干粮解决</p>
-<p>午：西江解决，午饭可能要下午两点多才能吃上。</p>
-<p>晚：西江解决</p>
-<h3 id="门票-2"><a href="#门票-2" class="headerlink" title="门票"></a>门票</h3><p>西江千户苗寨：110rmb</p>
-<h3 id="其他-4"><a href="#其他-4" class="headerlink" title="其他"></a>其他</h3><h2 id="D6-11-15（星期四）"><a href="#D6-11-15（星期四）" class="headerlink" title="D6 11.15（星期四）"></a>D6 11.15（星期四）</h2><h3 id="时间安排-5"><a href="#时间安排-5" class="headerlink" title="时间安排"></a>时间安排</h3><ul>
-<li>0600：起床，在西江玩耍</li>
-<li>1600：乘坐班车到凯里站</li>
-<li>1749：末班火车到镇远</li>
-<li>1903：到达</li>
-</ul>
-<h3 id="交通-4"><a href="#交通-4" class="headerlink" title="交通"></a>交通</h3><ul>
-<li>西江——凯里站班车或滴滴：约30rmb</li>
-<li>凯里——镇远火车：15rmb（已买票）</li>
-<li>镇远站——镇远古镇：晚上有班车，最好滴滴：10rmb</li>
-</ul>
-<h3 id="宿-5"><a href="#宿-5" class="headerlink" title="宿"></a>宿</h3><p>镇远梦栖小筑客栈 酒店 13885536254 阁楼榻榻米103rmb、河景榻榻米143rmb（有阳台）</p>
-<h3 id="食-5"><a href="#食-5" class="headerlink" title="食"></a>食</h3><p>早：西江解决</p>
-<p>午：西江解决</p>
-<p>晚：镇远解决</p>
-<h3 id="其他-5"><a href="#其他-5" class="headerlink" title="其他"></a>其他</h3><ul>
-<li>到凯里可以去火车站那里买个“凯里——六个鸡”火车票。</li>
-</ul>
-<h2 id="D7-11-16（星期五）"><a href="#D7-11-16（星期五）" class="headerlink" title="D7 11.16（星期五）"></a>D7 11.16（星期五）</h2><h3 id="时间安排-6"><a href="#时间安排-6" class="headerlink" title="时间安排"></a>时间安排</h3><ul>
-<li>0600：起床，在镇远玩</li>
-<li>1830：镇远到贵阳</li>
-<li>2230：到达贵阳</li>
-</ul>
-<h3 id="交通-5"><a href="#交通-5" class="headerlink" title="交通"></a>交通</h3><ul>
-<li>镇远——贵阳火车：42rmb（已买票）</li>
-</ul>
-<h3 id="宿-6"><a href="#宿-6" class="headerlink" title="宿"></a>宿</h3><p>派酒店贵阳火车站广场店 109rmb</p>
-<h3 id="食-6"><a href="#食-6" class="headerlink" title="食"></a>食</h3><p>早：镇远解决</p>
-<p>午：镇远解决</p>
-<p>晚：贵阳宵夜解决</p>
-<h3 id="其他-6"><a href="#其他-6" class="headerlink" title="其他"></a>其他</h3><ul>
-<li>在贵阳备多点干粮，以便第二天去黄果树瀑布。</li>
-</ul>
-<h2 id="D8-11-17（星期六）"><a href="#D8-11-17（星期六）" class="headerlink" title="D8 11.17（星期六）"></a>D8 11.17（星期六）</h2><h3 id="时间安排-7"><a href="#时间安排-7" class="headerlink" title="时间安排"></a>时间安排</h3><ul>
-<li>跟本地团去黄果树瀑布</li>
-</ul>
-<h3 id="宿-7"><a href="#宿-7" class="headerlink" title="宿"></a>宿</h3><p>派酒店贵阳火车站广场店 109rmb</p>
-<h3 id="食-7"><a href="#食-7" class="headerlink" title="食"></a>食</h3><p>早：贵阳解决</p>
-<p>午：干粮</p>
-<p>晚：贵阳宵夜解决</p>
-<h3 id="其他-7"><a href="#其他-7" class="headerlink" title="其他"></a>其他</h3><h2 id="D9-11-18（星期日）"><a href="#D9-11-18（星期日）" class="headerlink" title="D9 11.18（星期日）"></a>D9 11.18（星期日）</h2><h3 id="时间安排-8"><a href="#时间安排-8" class="headerlink" title="时间安排"></a>时间安排</h3><ul>
-<li>0600：起床，在贵阳玩玩</li>
-<li>1348：贵阳——广州南</li>
-<li>1800：到达广州南</li>
-<li>2030：广州南——台山</li>
-</ul>
-<h3 id="交通-6"><a href="#交通-6" class="headerlink" title="交通"></a>交通</h3><ul>
-<li>贵阳北——广州南高铁：323rmb（已买票）</li>
-<li>广州南——台山班车、高铁：65rmb</li>
-</ul>
-<h3 id="食-8"><a href="#食-8" class="headerlink" title="食"></a>食</h3><p>早：贵阳解决</p>
-<p>午：贵阳解决</p>
-<p>晚：台山宵夜</p>
-<h3 id="其他-8"><a href="#其他-8" class="headerlink" title="其他"></a>其他</h3><h1 id="景点"><a href="#景点" class="headerlink" title="景点"></a>景点</h1><p><img src="https://p3-q.mafengwo.net/s11/M00/5C/62/wKgBEFtwPeSAUVwkAAH7x2spGBU95.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" alt="img"></p>
-<h2 id="黔东南"><a href="#黔东南" class="headerlink" title="黔东南"></a>黔东南</h2><blockquote>
-<p>从江县城坐落在都柳江边，县城所在地是丙妹镇。县城干净整洁，吃住行都方便但是没什么景点。周边的村寨有小黄、黄冈、占里、银潭、肇兴等。</p>
-<p>老城在江对岸，新城在321国道上。本地人晚上喜欢在老城区散步逛街，不过商店没有特色，都是普通的批量生成的货色。来源：LP</p>
-</blockquote>
-<h3 id="肇兴千户侗寨"><a href="#肇兴千户侗寨" class="headerlink" title="肇兴千户侗寨"></a>肇兴千户侗寨</h3><h4 id="交通-7"><a href="#交通-7" class="headerlink" title="交通"></a>交通</h4><blockquote>
-<p>从高铁站出来有个客运站有专车前往 <a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10103.html" target="_blank" rel="external">肇兴</a> 侗寨的，票价10元，冬季：8:30-18:30，夏季：8:30-20:30。还有就是可以提前联系客栈派车来接，一般50元一台7人座的，如果客栈包接车那就更好咯。</p>
-<p>来源：<a href="http://www.mafengwo.cn/i/8845314.html" target="_blank" rel="external">2018隐居•肇兴 醉美侗寨</a></p>
-</blockquote>
-<p>个人觉得有滴滴直接滴滴更好</p>
-<h4 id="食-9"><a href="#食-9" class="headerlink" title="食"></a>食</h4><blockquote>
-<p>老板是个实诚人，他说他们那里的东西都不会比我们平时吃到的东西好吃，所以也没给我们推荐。一位跟我们同时入住驿站的大哥（他应该来过几次）跟我们说不要吃当地的腊鱼腊肉，太咸。</p>
-<p>来源： <a href="http://www.mafengwo.cn/i/8126958.html" target="_blank" rel="external">在深圳，你能去哪里旅游？——贵州肇兴侗寨</a></p>
-</blockquote>
-<h4 id="住"><a href="#住" class="headerlink" title="住"></a>住</h4><h5 id="溪山行旅驿站"><a href="#溪山行旅驿站" class="headerlink" title="溪山行旅驿站"></a>溪山行旅驿站</h5><blockquote>
-<p>有关住的地方，由衷的想点个赞。我们预定的驿站在半山腰上，好像是唯一一家可以坐在阳台上欣赏整个寨子夜景的驿站，叫<strong>溪山行旅驿站</strong>。如果是第一次去这个侗寨，这个驿站是比较难找的，坐公交车的时候可以提前跟司机说坐到智团花桥驿站下，因为那里的驿站实在太多，司机记不住所有驿站的位置；但是智团花桥驿站就刚好在街边看得见的地方。这里的商业化还不是太浓厚，所以不必担心订不到驿站的情况，但是如果你一定要订到半山腰的驿站，那还是建议提前预定一下。我稍微数了一下这家驿站的房间数，应该只有10个房间左右。驿站的卫生条件还是不错的，至少看上去干净整洁，被单被套仔细检查了一下，有折叠的痕迹，说明至少有换过。整个驿站主要为木质结构，房间地面是木地板上面再加地毯，有空调，不然冬天应该会冷得受不了。我们订的房间正好有个阳台，晚上坐在阳台上，可以俯瞰整个寨子的夜景，灯光闪烁，炊烟袅袅，还是很有意境的。</p>
-<p><img src="http://n4-q.mafengwo.net/s1/M00/47/A9/wKgIC1o6chCAGGrMABxS4L1W6m062.jpeg?imageMogr2%2Fthumbnail%2F1360x%2Fstrip%2Fquality%2F90" alt="img"></p>
-<p><img src="http://b1-q.mafengwo.net/s11/M00/23/34/wKgBEFpCWwaADXmUABZ8aNOJdmg55.jpeg?imageMogr2%2Fthumbnail%2F1360x%2Fstrip%2Fquality%2F90" alt="img"></p>
-<p>来源：<a href="http://www.mafengwo.cn/i/8126958.html" target="_blank" rel="external">在深圳，你能去哪里旅游？——贵州肇兴侗寨</a></p>
-</blockquote>
-<h5 id="肇兴神仙堂会馆-1"><a href="#肇兴神仙堂会馆-1" class="headerlink" title="肇兴神仙堂会馆"></a>肇兴神仙堂会馆</h5><p>酒店 13822276699</p>
-<p><img src="https://pavo.elongstatic.com/i/tHotel800_600/nw_000d4d0B.jpg" alt="img"></p>
-<p><img src="https://pavo.elongstatic.com/i/tHotel800_600/nw_000d4d4C.jpg" alt="img"></p>
-<p>有阁楼，97rmb</p>
-<p><img src="https://pavo.elongstatic.com/i/tHotel400_300/nw_000edEYO.jpg" alt="img"></p>
-<p>普通大床，130rmb</p>
-<p><img src="https://pavo.elongstatic.com/i/tHotel800_600/nw_000edENo.jpg120_120undefined" alt="img"></p>
-<blockquote>
-<p>新店在半山上，虽说半山其实也不高，之前朋友说路没修好。也是朋友推荐他们家，我们现在过来，路已经修好了，其实也很方便。我们入住的是带阳台的观景房，送上白天和晚上的景色，景观非常好，非常值得推荐！</p>
-<p><img src="https://pavo.elongstatic.com/i/tHotel800_600/nw_000fjlen.jpg" alt="img"></p>
-<p>山坡上安静的客栈，三层小楼，房间都很新。可以俯看整个寨子夜景更美。公共区域还有投影仪，可以看想看的电影，价格也很实惠，推荐。</p>
-<p><img src="https://pavo.elongstatic.com/i/tHotel800_600/nw_000fmgib.jpg" alt="img"></p>
-<p>榻榻米的房间，地板全藤织，有特色，临河景色，就在鼓楼旁，往后走就是坐车去堂安的地方，方便，距离大街几分钟路程</p>
-</blockquote>
-<h5 id="黎平素心忆栈-1"><a href="#黎平素心忆栈-1" class="headerlink" title="黎平素心忆栈"></a>黎平素心忆栈</h5><p>酒店 13312445696</p>
-<p><img src="https://pavo.elongstatic.com/i/tHotel800_600/nw_0005B0Gk.jpg" alt="img"></p>
-<p>大床90rmb</p>
-<p><img src="https://pavo.elongstatic.com/i/tHotel800_600/0005ZF2r.jpg" alt="img"></p>
-<blockquote>
-<p>客栈没洗漱用品的，自己需要带，不在主街上，房东会发信息然后跟着走，房间的布置不错～</p>
-<p>在网上对比了好久定下的这家店，感觉确实很不错。虽然位置稍稍有些偏，但是好在侗寨不是很大，出行也比较方便，只是一开始背着重重的行李来还是有些劳累的。因为怕自己找不到来之前特意给老板打个电话，老板很贴心的给我发了一条信息告诉我们怎么到她的客栈。不得不说侗寨的民风纯朴，老板经常房门大开的出去办事儿。房间的卫生特别好，因为是一家四口出行，老板还帮忙升级了房间并调到一个楼层。特别喜欢老板家的卫浴，是日本的，淋浴头能自动增压，洗着很舒服，不过因为卫生间空间小，辛苦老板慢慢收拾了～对于各种问题都很耐心的解答，喜欢这个客栈也喜欢这个寨子，希望还能有时间再来～</p>
-</blockquote>
-<h4 id="攻略"><a href="#攻略" class="headerlink" title="攻略"></a>攻略</h4><p>LP提供了一条徒步路线，肇兴——夏格——堂安。</p>
-<blockquote>
-<p>过客居的老板“青蛙”自己也是个驴友，经常走这些路线，并有手绘地图。</p>
-<p>这条路线从肇兴宾馆楼旁的小路开始，一直上升，大约一个小时到夏格。那是一座半山腰上的寨子，寨后一片极具造型感的墓地值得一看。从夏格到堂安也是不到一个小时。</p>
-<p>轨迹图如下（底下的那条）</p>
-<p><img src="/2018/10/23/贵州旅游日程/肇兴堂安徒步.png" alt=""></p>
-<p>来源：<a href="http://www.doyouhike.net/dest/qiandongnan-zhaoxing-xiage-tangan-hiking" target="_blank" rel="external">黔东南肇兴-夏格-堂安环线徒步</a></p>
-<p><img src="http://image.foooooot.com/footprint/2018/02/26/113731_Q41H8.png-.gallery" alt="开始走上山小路"></p>
-<p><img src="http://image.foooooot.com/footprint/2018/02/26/113730_OO0V1.png-.gallery" alt="未命名"></p>
-<p>具体可参考：<a href="http://www.foooooot.com/trip/1540484/" target="_blank" rel="external">肇兴－夏格－堂安徒步</a></p>
-</blockquote>
-<h4 id="图"><a href="#图" class="headerlink" title="图"></a>图</h4><p><img src="http://b1-q.mafengwo.net/s11/M00/78/40/wKgBEFrA8bSAMT6-ABAQq7Nzj_Y69.jpeg?imageMogr2%2Fthumbnail%2F1360x%2Fstrip%2Fquality%2F90" alt="img"></p>
-<p><img src="http://n1-q.mafengwo.net/s11/M00/75/5D/wKgBEFrCHsOAeInUAA18ZPLRDoc47.jpeg?imageMogr2%2Fthumbnail%2F1360x%2Fstrip%2Fquality%2F90" alt="img"></p>
-<p><img src="http://n1-q.mafengwo.net/s11/M00/75/B2/wKgBEFrCHvaAW0IVAAyi-FPqJoA57.jpeg?imageMogr2%2Fthumbnail%2F1360x%2Fstrip%2Fquality%2F90" alt="img"><img src="http://p1-q.mafengwo.net/s11/M00/75/B9/wKgBEFrCHvqADlisAAYBe3tfXxY53.jpeg?imageMogr2%2Fthumbnail%2F1360x%2Fstrip%2Fquality%2F90" alt="img"></p>
-<p><img src="http://b4-q.mafengwo.net/s11/M00/75/C6/wKgBEFrCHwWARGmuAAwIdW2pOS011.jpeg?imageMogr2%2Fthumbnail%2F1360x%2Fstrip%2Fquality%2F90" alt="img"></p>
-<p><img src="http://n3-q.mafengwo.net/s11/M00/75/D3/wKgBEFrCHwyATwSmAAdnfN7Fn-A28.jpeg?imageMogr2%2Fthumbnail%2F1360x%2Fstrip%2Fquality%2F90" alt="img"></p>
-<p><img src="http://b2-q.mafengwo.net/s4/M00/0D/EA/wKgIDlo6cyOARHS4ACCJYWwd9GQ30.jpeg?imageMogr2%2Fthumbnail%2F1360x%2Fstrip%2Fquality%2F90" alt="img"></p>
-<p><img src="http://b4-q.mafengwo.net/s11/M00/24/B3/wKgBEFpCXI-AXZ4fACcUmMo-1nU95.jpeg?imageMogr2%2Fthumbnail%2F1360x%2Fstrip%2Fquality%2F90" alt="img"></p>
-<p><img src="http://n2-q.mafengwo.net/s11/M00/24/CF/wKgBEFpCXMCAXSAEAB8_CSsBzwg39.jpeg?imageMogr2%2Fthumbnail%2F1360x%2Fstrip%2Fquality%2F90" alt="img"></p>
-<p><img src="http://p4-q.mafengwo.net/s11/M00/BE/3C/wKgBEFsrd4mAAPb7ABA3KwM10fs34.jpeg?imageMogr2%2Fthumbnail%2F1360x%2Fstrip%2Fquality%2F90" alt="img"></p>
-<p><img src="http://b1-q.mafengwo.net/s11/M00/F4/FE/wKgBEFsroziASQViABA5kWEMq8I56.jpeg?imageMogr2%2Fthumbnail%2F1360x%2Fstrip%2Fquality%2F90" alt="img"></p>
-<p><img src="http://p3-q.mafengwo.net/s11/M00/F5/FE/wKgBEFsrpASAGI8jABCJygF1r1I54.jpeg?imageMogr2%2Fthumbnail%2F1360x%2Fstrip%2Fquality%2F90" alt="img"></p>
-<p>侗赏客栈</p>
-<p><a href="http://www.mafengwo.cn/photo/10103/scenery_6710582/191273283.html" target="_blank" rel="external"><img src="http://n1-q.mafengwo.net/s10/M00/0D/DB/wKgBZ1i1k2SABvBKAAO-OwgFXTw55.jpeg?imageMogr2%2Fthumbnail%2F1360x%2Fstrip%2Fquality%2F90" alt="img">        </a></p>
-<p><a href="http://www.mafengwo.cn/photo/10103/scenery_6710582/191273285.html" target="_blank" rel="external"><img src="http://p3-q.mafengwo.net/s10/M00/0D/DC/wKgBZ1i1k2WAPS5qAAOJ6odc3bM33.jpeg?imageMogr2%2Fthumbnail%2F1360x%2Fstrip%2Fquality%2F90" alt="img">        </a></p>
-<p><a href="http://www.mafengwo.cn/photo/10103/scenery_6710582/191273287.html" target="_blank" rel="external"><img src="http://p3-q.mafengwo.net/s10/M00/0D/DE/wKgBZ1i1k2mAVoCiAAM_Xnb-o0469.jpeg?imageMogr2%2Fthumbnail%2F1360x%2Fstrip%2Fquality%2F90" alt="img">        </a></p>
-<h3 id="堂安"><a href="#堂安" class="headerlink" title="堂安"></a>堂安</h3><p>堂安有侗寨，也有梯田。但是此次行程日期在十一月中，不知梯田景观如何。</p>
-<h4 id="交通-8"><a href="#交通-8" class="headerlink" title="交通"></a>交通</h4><p>关于肇兴到堂安的交通</p>
-<blockquote>
-<p>去 <a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/21254.html" target="_blank" rel="external">堂安</a> 梯田的车票，在商业街上到处可见售票点，因为车票买了之后，基本上都统一在一个上车点，<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10103.html" target="_blank" rel="external">肇兴</a> 侗寨的景点的指示牌，少得可怜。所以我们找上车点，也是靠猜的 <img src="http://images.mafengwo.net/images/i/face/daily_v2/86.png" alt="img"> ，最后找到了所谓的下图的上车点。</p>
-<p><img src="http://b1-q.mafengwo.net/s12/M00/EF/F0/wKgED1u8cEuASlu8AA05vwTaoXA27.jpeg?imageMogr2%2Fthumbnail%2F1360x%2Fstrip%2Fquality%2F90" alt="img"></p>
-<p><img src="http://b4-q.mafengwo.net/s12/M00/F1/46/wKgED1u8cNqAHd8MAAi6bMrl6X058.jpeg?imageMogr2%2Fthumbnail%2F1360x%2Fstrip%2Fquality%2F90" alt="img"></p>
-<p>来源： <a href="http://www.mafengwo.cn/i/10874434.html" target="_blank" rel="external">贵州 &gt;-&lt; 肇兴侗寨（2018国庆游…</a></p>
-<p><a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10103.html" target="_blank" rel="external">肇兴</a> 侗寨到 <a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/21254.html" target="_blank" rel="external">堂安</a> 侗寨，有班车，往返车票20元。车次如下：</p>
-<p><a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10103.html" target="_blank" rel="external">肇兴</a> → <a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/21254.html" target="_blank" rel="external">堂安</a> ， <a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10103.html" target="_blank" rel="external">肇兴</a> ← <a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/21254.html" target="_blank" rel="external">堂安</a><br>8:30 10:00<br>10:30 12:00<br>13:30 15:00<br>15:30 17:00</p>
-<p>来源：<a href="http://www.mafengwo.cn/i/9869522.html" target="_blank" rel="external">贵州行（11）——堂安侗寨</a></p>
-<p><img src="http://p2-q.mafengwo.net/s12/M00/D7/1D/wKgED1u8Z96Ac6M5AAhfzeeRhYA31.jpeg?imageMogr2%2Fthumbnail%2F1360x%2Fstrip%2Fquality%2F90" alt="img"></p>
-</blockquote>
-<h4 id="食-10"><a href="#食-10" class="headerlink" title="食"></a>食</h4><blockquote>
-<p>上过舌尖上的美食：1:稻花鱼，因为是野生的，所以较小，最大也只有半斤左右，最好清蒸与酸汤做法！2:土鸡绝对是！因为第一天我们点了只土鸡清蒸，全体美女吃不动🤦‍♀️叫老板用压力锅压，才勉强咬得动，可怜的城市牙或许只能吃饲料鸡了🤦‍♀️。还有基本上就地取材都是野菜，甘甜有益（例如折耳根我们俗称鱼腥草，百花菜……还有根本没见过不认识的😿）个人觉得很不错。3:油茶：放一小坨米饭，一把糯米做成的爆米花，加上茶水（这个茶水至今是个迷！）没人说得清这些象树叶的茶是来自何种树叶子🙀反正她们天天吃，60多岁的人头发都乌黑浓密，我们研究了好久觉得这个油茶起了很大作用！还有糯米饭包烤肉：糯米甘韧，烤肉甘香，值得一试！</p>
-<p>来源：<a href="http://www.mafengwo.cn/i/7028393.html" target="_blank" rel="external">古朴、纯净的堂安、肇兴侗寨</a></p>
-</blockquote>
-<h4 id="住-1"><a href="#住-1" class="headerlink" title="住"></a>住</h4><h5 id="黎平肇兴同福客栈-1"><a href="#黎平肇兴同福客栈-1" class="headerlink" title="黎平肇兴同福客栈"></a>黎平肇兴同福客栈</h5><p>联系电话 18212340116</p>
-<p><img src="https://pavo.elongstatic.com/i/tHotel800_600/nw_0005efNu.jpg" alt="img"></p>
-<p>普通大床房，81rmb 主题大床房，110rmb</p>
-<p><img src="https://pavo.elongstatic.com/i/tHotel800_600/nw_000dpg8Y.jpg" alt="img"></p>
-<blockquote>
-<p>店家可以到高铁站接站一辆车¥80晚上到的还是走高速，车技不错老板娘很勤劳，忙里忙外，做菜手艺也不错，尤其是本地腊肉做得非常好吃，价格也比较实惠，老板还亲自帮忙提行李上四楼，服务态度非常好，只是房间是木制的隔音不好。没有空调不太适应。</p>
-<p>山顶上的客栈住在梯田上看梯田的景色，很棒，住在这里体验的就是当地人的生活，老板夫妻很淳朴的当地人，很大方，吃饭零钱都免了，还送我们青菜汤，接我们上山，我们不愿意坐车去高铁站，老板就抽时间送我们去高铁站，我们说得给车费，他只收了大巴车的价钱～</p>
-<p><img src="https://pavo.elongstatic.com/i/tHotel800_600/nw_000aRLMv.jpg" alt="img"></p>
-<p><img src="https://pavo.elongstatic.com/i/tHotel800_600/nw_000aqaA9.jpg" alt="img"></p>
-<p>看了网评很久，最终选择堂安同福，一行12人，全家人对老板这家的评价一致好评！之前一不小心订错日期了，老板还能为我留房，从高铁免费接送我们直接到店，带我们去玩，还能到田里捉鱼噢，让大人小孩有了这种在城市未有过的体现！同福客栈很方便，楼下就能吃饭了，老板一家人热情招待，做的菜很好吃，重点是性价比高啊，食材新鲜美味，当场可以让自己去捉鸡捉鱼，自己挑，马上做菜，味道好好啊！</p>
-<p><img src="https://pavo.elongstatic.com/i/tHotel800_600/nw_000aa01x.jpg" alt="img"></p>
-<p>晚上如果想到肇兴寨看表演，可以联系店家找人送一下来回差不多20元一人，到侗寨旅游记住门票一定要至少提前2小时在网上预定差不多70一人，如果到门口现买，除非是优惠城市，不然100一人不太值</p>
-</blockquote>
-<h4 id="图-1"><a href="#图-1" class="headerlink" title="图"></a>图</h4><p><img src="http://n2-q.mafengwo.net/s8/M00/13/EF/wKgBpVYOOXaAJ-3UADJ6nup2_aQ89.jpeg?imageMogr2%2Fthumbnail%2F1360x%2Fstrip%2Fquality%2F90" alt="img"></p>
-<p><img src="http://b3-q.mafengwo.net/s12/M00/B7/48/wKgED1u8zZqANPJHAA3YUwGF5RM71.jpeg?imageMogr2%2Fthumbnail%2F1360x%2Fstrip%2Fquality%2F90" alt="img"></p>
-<p><img src="http://n3-q.mafengwo.net/s11/M00/75/8B/wKgBEFrCHtqAXPv6AAn-MkUVnDY07.jpeg?imageMogr2%2Fthumbnail%2F1360x%2Fstrip%2Fquality%2F90" alt="img"></p>
-<p><img src="http://b3-q.mafengwo.net/s12/M00/F7/07/wKgED1u8c1SAZ_CpAAobqJVhwcw24.jpeg?imageMogr2%2Fthumbnail%2F1360x%2Fstrip%2Fquality%2F90" alt="img"></p>
-<p><img src="http://p1-q.mafengwo.net/s11/M00/36/D9/wKgBEFsML1-APNMFABFlYEArCR019.jpeg?imageMogr2%2Fthumbnail%2F1360x%2Fstrip%2Fquality%2F90" alt="img"></p>
-<p><img src="http://p3-q.mafengwo.net/s8/M00/13/CA/wKgBpVYOOVGAZ6wAADMt7xqGXf438.jpeg?imageMogr2%2Fthumbnail%2F1360x%2Fstrip%2Fquality%2F90" alt="img"></p>
-<p><img src="http://n3-q.mafengwo.net/s8/M00/13/E9/wKgBpVYOOWmAKtBKADZ7BllAiCo53.jpeg?imageMogr2%2Fthumbnail%2F1360x%2Fstrip%2Fquality%2F90" alt="img"></p>
-<p><img src="http://p2-q.mafengwo.net/s8/M00/13/EB/wKgBpVYOOXCAIBUgAGT_68nZs1M70.jpeg?imageMogr2%2Fthumbnail%2F1360x%2Fstrip%2Fquality%2F90" alt="img"></p>
-<p><img src="http://p2-q.mafengwo.net/s8/M00/14/62/wKgBpVYOOfuAGV3HADaz-EQ8XZo62.jpeg?imageMogr2%2Fthumbnail%2F1360x%2Fstrip%2Fquality%2F90" alt="img"></p>
-<p><img src="http://p4-q.mafengwo.net/s8/M00/14/64/wKgBpVYOOgCANLewADDB2svnURw09.jpeg?imageMogr2%2Fthumbnail%2F1360x%2Fstrip%2Fquality%2F90" alt="img"></p>
-<p><img src="http://b4-q.mafengwo.net/s8/M00/16/26/wKgBpVYOPJGAcM8GAGUNEn8YAjo60.jpeg?imageMogr2%2Fthumbnail%2F1360x%2Fstrip%2Fquality%2F90" alt="img"></p>
-<p><img src="http://b1-q.mafengwo.net/s8/M00/18/0D/wKgBpVYOPxuAGDx9AGYeI0nw_x093.jpeg?imageMogr2%2Fthumbnail%2F1360x%2Fstrip%2Fquality%2F90" alt="img"></p>
-<h3 id="凯里市集"><a href="#凯里市集" class="headerlink" title="凯里市集"></a>凯里市集</h3><p>在一篇游记里面看到这个烟叶街不错，但是不知道具体方位。</p>
-<p><img src="https://b3-q.mafengwo.net/s9/M00/B1/28/wKgBs1cA2jiAHyAvAA-zYJBxkzU18.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" alt="img"></p>
-<p><img src="https://b2-q.mafengwo.net/s9/M00/B1/34/wKgBs1cA2kuAdxhfAA0gv5yssq803.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" alt="img"></p>
-<h3 id="西江千户苗寨"><a href="#西江千户苗寨" class="headerlink" title="西江千户苗寨"></a>西江千户苗寨</h3><h4 id="交通-9"><a href="#交通-9" class="headerlink" title="交通"></a>交通</h4><blockquote>
-<p>由凯里火车站或凯里火车南站抵达黔东南州州府凯里后，从凯里洗马河凯运司乘至西江的班车，24元/人，平时1小时/班，节假日有加车，车程约1小时；包3-4人车120元。也可从雷山县乘班车至西江，7元/人，约2小时，末班车在下午16:00左右。</p>
-<p>先坐高铁🚄去 <a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10474.html" target="_blank" rel="external">凯里</a> 南站，然后 <a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10474.html" target="_blank" rel="external">凯里</a> 高铁站有直通车🚌去到景区门口。， <a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/11239.html" target="_blank" rel="external">贵阳</a> 到 <a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10474.html" target="_blank" rel="external">凯里</a> 动车大概30分钟微信关注“ <a href="http://www.mafengwo.cn/poi/11166.html" target="_blank" rel="external">西江千户苗寨</a> 景区”公众号，可以网上买门票。如果还打算玩完坐回程回 <a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10474.html" target="_blank" rel="external">凯里</a> ，记得保管好车票，买回程是有优惠的。</p>
-<p>如果去 <a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/11932.html" target="_blank" rel="external">荔波</a> 大小七孔，要在公众号那个“汽车票”那里提前买苗寨去 <a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/11932.html" target="_blank" rel="external">荔波</a> 的票，好像是💰108还是💰118元/人，因为一天只有两班车，在北门上车，一班是早上8:30，一班是15:30</p>
-</blockquote>
-<h4 id="费用"><a href="#费用" class="headerlink" title="费用"></a>费用</h4><p>门票：100￥</p>
-<blockquote>
-<p>停车费跟 <a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/14753.html" target="_blank" rel="external">镇远</a> 一样，30元一晚。</p>
-</blockquote>
-<h4 id="住宿"><a href="#住宿" class="headerlink" title="住宿"></a>住宿</h4><blockquote>
-<p>关于住宿：山下：有商业街，比较热闹，有吃有喝，缺点：晚上睡觉可能比较吵，离观景台远。山腰：我就是住山腰的，观光车上车前可以跟司机说我要在哪个酒店下，他会停车，不说就直接到观景台。但离观景台也不远，就两百米的距离。</p>
-<p>来源：<a href="http://www.mafengwo.cn/i/10192266.html" target="_blank" rel="external">贵州7日6夜之旅</a></p>
-</blockquote>
-<h5 id="途窝假日庄园-西江千户苗寨观景台店"><a href="#途窝假日庄园-西江千户苗寨观景台店" class="headerlink" title="途窝假日庄园(西江千户苗寨观景台店)"></a>途窝假日庄园(西江千户苗寨观景台店)</h5><p>酒店 0855-3345668 大床房169rmb</p>
-<p><img src="https://pavo.elongstatic.com/i/tHotel800_600/000994sE.jpg" alt="img"></p>
-<p><img src="https://pavo.elongstatic.com/i/tHotel800_600/nw_000dyPvy.jpg120_120undefined" alt="img"></p>
-<h4 id="食-11"><a href="#食-11" class="headerlink" title="食"></a>食</h4><blockquote>
-<p>（苗家乐）生意火爆的：阿侬农家乐，李老师农家乐，木楼人家。来源：LP</p>
-</blockquote>
-<h4 id="攻略-1"><a href="#攻略-1" class="headerlink" title="攻略"></a>攻略</h4><blockquote>
-<p>现在来说一下如何乘观光车🚌吧，一张车票只能坐4次，坐一次打一个孔，超过4次每💰5元一次。我全程以北门为主<br>第1️⃣次：北门—商业街口<br>第2️⃣次：一号风雨桥到酒店放行李<br>第3️⃣次：逛完商业街在一号风雨桥到观景台<br>第4️⃣次：商业街口—北门然后出景点<br>简单来说，只有上坡路乘车，下坡路走路，4次刚刚好</p>
-<p>来源：<a href="http://www.mafengwo.cn/i/10192266.html" target="_blank" rel="external">贵州7日6夜之旅</a></p>
-<p>苗寨还有博物馆可以免费参观的，17:30关闭。来源：LP</p>
-</blockquote>
-<p><img src="http://n3-q.mafengwo.net/s7/M00/BA/D4/wKgB6lPOLBmABCXmACsjUssdemE99.jpeg?imageMogr2%2Fthumbnail%2F%21690x370r%2Fgravity%2FCenter%2Fcrop%2F%21690x370%2Fquality%2F100" alt="img"></p>
-<p><img src="https://b4-q.mafengwo.net/s11/M00/53/0F/wKgBEFtlXaeAWBAhAA1sQNeIi0k52.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" alt="img"></p>
-<p><img src="https://n1-q.mafengwo.net/s11/M00/53/C3/wKgBEFtlXe-AZ-K3AA2UVtyiYSc09.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" alt="img"></p>
-<p><img src="http://p2-q.mafengwo.net/s11/M00/AA/A0/wKgBEFt6YN6AT1brABK1hOYJWJk29.jpeg?imageMogr2%2Fthumbnail%2F%21690x450r%2Fgravity%2FCenter%2Fcrop%2F%21690x450%2Fquality%2F90%7Cwatermark%2F1%2Fimage%2FaHR0cDovL2I0LXEubWFmZW5nd28ubmV0L3MxMS9NMDAvNDQvOUIvd0tnQkVGc1A1UnlBRHY3cEFBQUhaWlVQUmxROTkwLnBuZw%3D%3D%2Fgravity%2FSouthEast%2Fdx%2F10%2Fdy%2F11" alt="img"></p>
-<p><img src="http://b1-q.mafengwo.net/s10/M00/29/C8/wKgBZ1ozPnWAeSS4AAHq_bqTlo052.jpeg?imageView2%2F2%2Fw%2F600%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" alt="img"></p>
-<p><img src="http://p4-q.mafengwo.net/s10/M00/29/CA/wKgBZ1ozPnWAQEFOAAG5eoZlgBE72.jpeg?imageView2%2F2%2Fw%2F600%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" alt="img"></p>
-<p><img src="http://b2-q.mafengwo.net/s8/M00/7A/42/wKgBpVWWEA6AOZenAAmlz3BLQNs76.jpeg?imageMogr2%2Fthumbnail%2F%21690x450r%2Fgravity%2FCenter%2Fcrop%2F%21690x450%2Fquality%2F90%7Cwatermark%2F1%2Fimage%2FaHR0cDovL2I0LXEubWFmZW5nd28ubmV0L3MxMS9NMDAvNDQvOUIvd0tnQkVGc1A1UnlBRHY3cEFBQUhaWlVQUmxROTkwLnBuZw%3D%3D%2Fgravity%2FSouthEast%2Fdx%2F10%2Fdy%2F11" alt="img"></p>
-<p><img src="http://b2-q.mafengwo.net/s4/M00/5A/BD/wKgIDlt8xxGATRVSAAsd4R0ImjM22.jpeg?imageMogr2%2Fthumbnail%2F%21690x450r%2Fgravity%2FCenter%2Fcrop%2F%21690x450%2Fquality%2F90%7Cwatermark%2F1%2Fimage%2FaHR0cDovL2I0LXEubWFmZW5nd28ubmV0L3MxMS9NMDAvNDQvOUIvd0tnQkVGc1A1UnlBRHY3cEFBQUhaWlVQUmxROTkwLnBuZw%3D%3D%2Fgravity%2FSouthEast%2Fdx%2F10%2Fdy%2F11" alt="img"></p>
-<p><img src="http://p3-q.mafengwo.net/s11/M00/06/B6/wKgBEFsnu-mAMzcwACGCGGyU4Tw39.jpeg?imageMogr2%2Fthumbnail%2F%21690x450r%2Fgravity%2FCenter%2Fcrop%2F%21690x450%2Fquality%2F90%7Cwatermark%2F1%2Fimage%2FaHR0cDovL2I0LXEubWFmZW5nd28ubmV0L3MxMS9NMDAvNDQvOUIvd0tnQkVGc1A1UnlBRHY3cEFBQUhaWlVQUmxROTkwLnBuZw%3D%3D%2Fgravity%2FSouthEast%2Fdx%2F10%2Fdy%2F11" alt="img"></p>
-<p><img src="http://n1-q.mafengwo.net/s11/M00/D4/92/wKgBEFsnln6AQXQRADjLR5ueoxE73.jpeg?imageMogr2%2Fthumbnail%2F%21690x450r%2Fgravity%2FCenter%2Fcrop%2F%21690x450%2Fquality%2F90%7Cwatermark%2F1%2Fimage%2FaHR0cDovL2I0LXEubWFmZW5nd28ubmV0L3MxMS9NMDAvNDQvOUIvd0tnQkVGc1A1UnlBRHY3cEFBQUhaWlVQUmxROTkwLnBuZw%3D%3D%2Fgravity%2FSouthEast%2Fdx%2F10%2Fdy%2F11" alt="img"></p>
-<p><img src="http://b1-q.mafengwo.net/s11/M00/D4/86/wKgBEFsnlnSAWyo0ABUIcJCfTtc19.jpeg?imageMogr2%2Fthumbnail%2F%21311x450r%2Fgravity%2FCenter%2Fcrop%2F%21311x450%2Fquality%2F90%7Cwatermark%2F1%2Fimage%2FaHR0cDovL2I0LXEubWFmZW5nd28ubmV0L3MxMS9NMDAvNDQvOUIvd0tnQkVGc1A1UnlBRHY3cEFBQUhaWlVQUmxROTkwLnBuZw%3D%3D%2Fgravity%2FSouthEast%2Fdx%2F10%2Fdy%2F11" alt="img"></p>
-<h3 id="都匀"><a href="#都匀" class="headerlink" title="都匀"></a>都匀</h3><p>由于此次都匀只是中转地，没什么时间浏览。建议可以浏览下*西山大桥、百子桥</p>
-<p><a href="http://www.mafengwo.cn/photo/17915/scenery_7426685/236032129.html" target="_blank" rel="external"><img src="http://p3-q.mafengwo.net/s10/M00/E6/6D/wKgBZ1mVl0iABYWEAAxZi2O9bpc66.jpeg?imageMogr2%2Fthumbnail%2F1360x%2Fstrip%2Fquality%2F90" alt="img"></a></p>
-<p><em>石板街</em></p>
-<p><a href="http://www.mafengwo.cn/photo/17915/scenery_7426685/236032020.html" target="_blank" rel="external"><img src="http://p3-q.mafengwo.net/s10/M00/E5/DC/wKgBZ1mVlzOAGXZRAAuspUKbvyg64.jpeg?imageMogr2%2Fthumbnail%2F1360x%2Fstrip%2Fquality%2F90" alt="img"></a></p>
-<p><a href="http://www.mafengwo.cn/photo/17915/scenery_7426685/236032040.html" target="_blank" rel="external"><img src="http://b2-q.mafengwo.net/s10/M00/E6/01/wKgBZ1mVlziAIEhDAAusdUZhWQo79.jpeg?imageMogr2%2Fthumbnail%2F1360x%2Fstrip%2Fquality%2F90" alt="img"></a></p>
-<p><a href="http://www.mafengwo.cn/photo/17915/scenery_7426685/236032088.html" target="_blank" rel="external"><img src="http://p4-q.mafengwo.net/s10/M00/E6/42/wKgBZ1mVl0GARZ2cAAwa_qEgwnY76.jpeg?imageMogr2%2Fthumbnail%2F1360x%2Fstrip%2Fquality%2F90" alt="img"></a></p>
-<h2 id="荔波"><a href="#荔波" class="headerlink" title="荔波"></a>荔波</h2><blockquote>
-<p>（从西江）如果坐景点直通车🚌去 <a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/11932.html" target="_blank" rel="external">荔波</a> 要预早下山，因为商业街到北门一段需要坐观光车，如果走路大概1-2公里，坐车就两分钟，但是会很多人排队，因为大家都赶着下山。</p>
-<p>如果坐景点车，不知道是直接到大小七景区还是到 <a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/11932.html" target="_blank" rel="external">荔波</a> 县城，可以咨询一下客服，如果直接到景区就很方便，如果到的是 <a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/11932.html" target="_blank" rel="external">荔波</a> 客运站也不用担心，客运站有直通车到达景区门口，几分钟一班车，车程大概20分钟。</p>
-<p>车程3.5小时左右。</p>
-<p>来源：<a href="http://www.mafengwo.cn/i/10192266.html" target="_blank" rel="external">贵州7日6夜之旅</a></p>
-</blockquote>
-<h3 id="大小七孔"><a href="#大小七孔" class="headerlink" title="大小七孔"></a>大小七孔</h3><h4 id="住宿-1"><a href="#住宿-1" class="headerlink" title="住宿"></a>住宿</h4><h5 id="荔波有一家客栈"><a href="#荔波有一家客栈" class="headerlink" title="荔波有一家客栈"></a>荔波有一家客栈</h5><p>酒店 13322998316</p>
-<p>大床房84rmb</p>
-<p><img src="https://pavo.elongstatic.com/i/tHotel800_600/nw_000es0JP.jpg120_120undefined" alt="img"></p>
-<blockquote>
-<p>地理位置不错，出门就是集散中心，房间设施齐全</p>
-<p>客栈干净卫生，位置很好，在荔波小七孔景区入口对面的小镇上，离门口不算远。安静。客栈一家人很好，喊我一起吃饭。还有他家的金毛，不乱叫，但很懂事</p>
-</blockquote>
-<h4 id="门票-3"><a href="#门票-3" class="headerlink" title="门票"></a>门票</h4><blockquote>
-<p>关于门票：大七孔的门票包含在小七孔里，门票有一日制和两日制的，一日制是不需要实名登记的，两日制是需要身份证登记，因为第二天刷身份证进去，门票价格一样。我没有在网上买票不清楚，如果现场买票跟工作人员说买两日的，给他身份证登记就可以了。</p>
-<p>130￥/人</p>
-<p>来源：<a href="http://www.mafengwo.cn/i/10192266.html" target="_blank" rel="external">贵州7日6夜之旅</a></p>
-</blockquote>
-<h4 id="攻略-2"><a href="#攻略-2" class="headerlink" title="攻略"></a>攻略</h4><blockquote>
-<p>如果逗留两天，建议第一天去小七孔，因为小七孔不限时间关门，只要有旅客在就不会关门，可以玩到很晚，但观光车可能就下班了，里面也有酒店，不过可能要提前订。</p>
-<p>小七孔有两个门，一个东门，一个西门，建议东门进，东门出。因为住宿集中在东门，东门虽然走上坡路，会辛苦一点，但感受到的风景会比走下坡路美,逛完任何一个景点都有观光车回东门，很方便，不用担心交通的问题，这就是我为什么一直称赞小七孔的原因。</p>
-<p>景区东大门—铜鼓桥—小七孔古桥—拉雅瀑布—68级跌水瀑布—响水飞瀑—石上森林—水上森林—翠谷瀑布—拉关瀑布—小七孔综合服务中心—天钟洞—鸳鸯湖—卧龙潭—景区西大门。</p>
-<p><img src="https://p1-q.mafengwo.net/s11/M00/F1/4B/wKgBEFtxBwGAGJE1AAlEekyN2Lw48.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" alt="img"></p>
-<p>小七孔大概需要花费5-6小时玩，大七孔大概花费2小时玩。</p>
-<p>大七孔没有观光车，但有游船🛶大七孔是后来才开发的，很小，大约2公里左右吧，1-2小时就可以游完，可坐船可不坐。如果坐船，建议去的时候走路，返回的时候坐船，回程坐船的地方有售票处，所以可以回再考虑坐不坐船。因为坐船所享受的风景不一样，所以我们选择了回程的时候坐船回去，船票💰40元/人</p>
-<p>来源：<a href="http://www.mafengwo.cn/i/10192266.html" target="_blank" rel="external">贵州7日6夜之旅</a></p>
-</blockquote>
-<h4 id="图-2"><a href="#图-2" class="headerlink" title="图"></a>图</h4><p><img src="http://b1-q.mafengwo.net/s6/M00/DD/4A/wKgB4lJVLLKAPcHyAA8oelyFQxk13.jpeg?imageView2%2F2%2Fw%2F600%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" alt="img"></p>
-<p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1540309690638&amp;di=4980bb1459e942fa9b0ba111e9e88463&amp;imgtype=0&amp;src=http%3A%2F%2Fs3.lvjs.com.cn%2Fuploads%2Fpc%2Fplace2%2F2016-06-16%2F2d493d3e-9999-42f0-9b27-2a002ec8530e.jpg" alt="点击查看源网页"></p>
-<p><img src="http://p3-q.mafengwo.net/s6/M00/DD/75/wKgB4lJVLOOAdv2fAArbTYe2EwE07.jpeg?imageView2%2F2%2Fw%2F600%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" alt="img"></p>
-<p><img src="http://p4-q.mafengwo.net/s6/M00/DD/DF/wKgB4lJVLVeAVtC0AArHyINIKhU76.jpeg?imageView2%2F2%2Fw%2F600%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" alt="img"></p>
-<h2 id="镇远"><a href="#镇远" class="headerlink" title="镇远"></a>镇远</h2><h3 id="石屏山"><a href="#石屏山" class="headerlink" title="石屏山"></a>石屏山</h3><blockquote>
-<p>上 <a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/63575.html" target="_blank" rel="external">石屏</a> 山俯看 <a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/14753.html" target="_blank" rel="external">镇远</a> 城，可以逃票上山，不用从祝圣桥边的入口处上，从新大桥这边的山上也能上，我原来只知道早上7点前，没人收票，可以自入口处逃票上山。</p>
-<p>来源：<a href="http://www.mafengwo.cn/i/7184276.html" target="_blank" rel="external">我有黔东南，隔在远远乡(一)</a></p>
-<p>登石 <a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/144528.html" target="_blank" rel="external">屏山</a> 有两条路，一是走古巷道穿行至上山道，二是从祝圣桥头的登山道上去。</p>
-<p>来源：<a href="http://www.mafengwo.cn/i/8245674.html" target="_blank" rel="external">十一城记 | 石屏巨镇 镇远</a></p>
-</blockquote>
-<p>####图</p>
-<p><img src="https://p2-q.mafengwo.net/s10/M00/35/91/wKgBZ1lORs2AR-a7AANdhJSQGug50.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" alt="img"></p>
-<p><img src="http://b2-q.mafengwo.net/s11/M00/F5/9F/wKgBEFpa9L6AXeUxAAsDJ-iMdyw09.jpeg?imageMogr2%2Fthumbnail%2F1360x%2Fstrip%2Fquality%2F90" alt="img"></p>
-<h3 id="镇远古镇"><a href="#镇远古镇" class="headerlink" title="镇远古镇"></a>镇远古镇</h3><blockquote>
-<p><a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/14753.html" target="_blank" rel="external">镇远</a> 隶属 <a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10381.html" target="_blank" rel="external">黔东南</a> 州，是 <a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/14103.html" target="_blank" rel="external">贵州</a> 省的东大门，素有“滇楚锁钥、黔东门户”之称。四周皆山， <a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/143803.html" target="_blank" rel="external">舞阳</a> 河以“S”形穿城而过，“欲据滇楚，必占 <a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/14753.html" target="_blank" rel="external">镇远</a> ；欲通云贵，先守 <a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/14753.html" target="_blank" rel="external">镇远</a> ”，自古以来就是通往西南边陲的必经之路。</p>
-<p>追本溯源， <a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/14753.html" target="_blank" rel="external">镇远</a> 春秋时期即有建置，宋朝始称 <a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/14753.html" target="_blank" rel="external">镇远</a> ，延续至今。元代设置 <a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/14753.html" target="_blank" rel="external">镇远</a> 沿边溪招讨司， <a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/14753.html" target="_blank" rel="external">镇远</a>开始成为军事重地，以军兴商。到了明代，一时间 <a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/14753.html" target="_blank" rel="external">镇远</a> <a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/143803.html" target="_blank" rel="external">舞阳</a> 河上舳舻千里，两岸码头林立，发展成为多元文化交融的西南重镇。</p>
-<p>朝代的更迭，战火的洗礼，现在的 <a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/14753.html" target="_blank" rel="external">镇远</a> 古城为明代所建。古城背靠石 <a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/144528.html" target="_blank" rel="external">屏山</a> ， <a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/143803.html" target="_blank" rel="external">舞阳</a> 河从城中蜿蜒而过，北岸为旧府城，南岸为旧卫城，因为远观似太极图，所以 <a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/14753.html" target="_blank" rel="external">镇远</a> 又称太极古镇。其实我是没看出怎么像太极图的，可能要用抽象的眼光看，也可能是发展到今天太极图已经“走形”了。</p>
-<p>山上存有府城垣遗址，府城垣原长2030米，建有指挥堡、城楼、烽火炮台等建筑，古称： <a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/144528.html" target="_blank" rel="external">屏山</a> 为城，舞水为池，金汤之固，其无逾斯乎。字里行间，恢弘之势一览无余。 <a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/14753.html" target="_blank" rel="external">镇远</a> 能极大的保留原样，也多亏了这独特的地势，处在群山之间，河流两畔能扩张发展的土地实在有限，只能说是因缘巧妙。</p>
-<p><img src="http://b2-q.mafengwo.net/s11/M00/F3/A3/wKgBEFpa8N-AKwNFAAWJDti-xCw15.jpeg?imageMogr2%2Fthumbnail%2F1360x%2Fstrip%2Fquality%2F90" alt="img"></p>
-<p>来源： <a href="http://www.mafengwo.cn/i/8245674.html" target="_blank" rel="external">十一城记 | 石屏巨镇 镇远</a></p>
-</blockquote>
-<h4 id="交通-10"><a href="#交通-10" class="headerlink" title="交通"></a>交通</h4><blockquote>
-<p><a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10474.html" target="_blank" rel="external">凯里</a> 客运司到火车站，打车只需起步价，不过大部分司机一般不打表，收个10元，算是约定俗成的规矩。 <a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10474.html" target="_blank" rel="external">凯里</a> 到 <a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/14753.html" target="_blank" rel="external">镇远</a> 坐火车需要1小时20分钟，票价14.5元，方便省事。来源： <a href="http://www.mafengwo.cn/i/8245674.html" target="_blank" rel="external">十一城记 | 石屏巨镇 镇远</a></p>
-</blockquote>
-<h4 id="住宿-2"><a href="#住宿-2" class="headerlink" title="住宿"></a>住宿</h4><h5 id="镇远梦栖小筑客栈"><a href="#镇远梦栖小筑客栈" class="headerlink" title="镇远梦栖小筑客栈"></a>镇远梦栖小筑客栈</h5><p>酒店 13885536254 阁楼榻榻米103rmb、河景榻榻米143rmb（有阳台）</p>
-<p><img src="https://pavo.elongstatic.com/i/tHotel800_600/nw_000cKUiq.jpg" alt="img"></p>
-<h4 id="图-3"><a href="#图-3" class="headerlink" title="图"></a>图</h4><p><img src="https://b2-q.mafengwo.net/s11/M00/3C/CA/wKgBEFsRByiAMl_yAAe549n8sm422.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" alt="img"></p>
-<p><img src="https://b3-q.mafengwo.net/s11/M00/3C/D8/wKgBEFsRBzWARa6rAAuaqGVxuz041.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" alt="img"></p>
-<p><img src="https://n1-q.mafengwo.net/s11/M00/3D/7F/wKgBEFsRB66AJ7mZAArOdf601JI37.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" alt="img"></p>
-<p><img src="https://n1-q.mafengwo.net/s11/M00/3D/65/wKgBEFsRB5qACVaGAAqZKN3G12Q87.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" alt="img"></p>
-<p><img src="https://n4-q.mafengwo.net/s11/M00/3D/55/wKgBEFsRB42AamxZAAnjGsh6ygs12.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" alt="img"></p>
-<h2 id="安顺"><a href="#安顺" class="headerlink" title="安顺"></a>安顺</h2><h3 id="黄果树瀑布"><a href="#黄果树瀑布" class="headerlink" title="黄果树瀑布"></a>黄果树瀑布</h3><blockquote>
-<p> 黄果树大瀑布景区分三个部分：1黄果树大瀑布 。2 陡坡塘瀑布。 3天星桥景区。</p>
-<p> <a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10085.html" target="_blank" rel="external">黄果树瀑布</a> ，即黄果树大瀑布。古称 <a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/64066.html" target="_blank" rel="external">白水</a> 河瀑布，亦名“黄葛墅”瀑布或“黄桷树”瀑布，因本地广泛分布着“黄葛榕”而得名。瀑布位于 <a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/21536.html" target="_blank" rel="external">中国</a> <a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/14103.html" target="_blank" rel="external">贵州</a> 省 <a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/13868.html" target="_blank" rel="external">安顺</a> 市 <a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/31110.html" target="_blank" rel="external">镇宁</a> 布依族苗族自治县，属珠江水系 <a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/14484.html" target="_blank" rel="external">西江</a> 干流南盘江支流北盘江支流打帮河的支流可布河下游 <a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/64066.html" target="_blank" rel="external">白水</a> 河段水系，为 <a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10085.html" target="_blank" rel="external">黄果树瀑布</a> 群中规模最大的一级瀑布，是世界著名大瀑布之一。以水势浩大著称。瀑布高度为77.8米，其中主瀑高67米；瀑布宽101米，其中主瀑顶宽83.3米。 <a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10085.html" target="_blank" rel="external">黄果树瀑布</a> 属喀斯特地貌中的侵蚀裂典型瀑布。</p>
-<p> 来源：<a href="http://www.mafengwo.cn/i/8215526.html" target="_blank" rel="external">【黄果树瀑布】无限风光在险峰。</a></p>
-</blockquote>
-<p>水帘洞</p>
-<blockquote>
-<p>水帘洞位于 <a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10085.html" target="_blank" rel="external">黄果树瀑布</a> 四十米至四十七米的高度上，全长一百三十四米，共有六个洞窗、五个洞厅、三股洞泉和六个 <a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/18875.html" target="_blank" rel="external">通道</a> 。走进大瀑布本身就已惊心动魄，神移魂飞了，而要在大瀑布里面遨游，确感不免神悚，但到了 <a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10085.html" target="_blank" rel="external">黄果树瀑布</a> ，而不进水帘洞，就不会真正领略到 <a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10085.html" target="_blank" rel="external">黄果树瀑布</a> 的雄奇和壮观，那将是人生一大憾事。</p>
-<p>来源：<a href="http://www.mafengwo.cn/i/8215526.html" target="_blank" rel="external">【黄果树瀑布】无限风光在险峰。</a></p>
-</blockquote>
-<h4 id="图-4"><a href="#图-4" class="headerlink" title="图"></a>图</h4><p><img src="http://b3-q.mafengwo.net/s11/M00/E3/00/wKgBEFpSZ2mAXDQ0AAvTwfNemBk17.jpeg?imageMogr2%2Fthumbnail%2F1360x%2Fstrip%2Fquality%2F90" alt="img"></p>
-<p><img src="http://n2-q.mafengwo.net/s11/M00/C7/D0/wKgBEFpURSSAF_vCAAeFFAV13bE61.jpeg?imageMogr2%2Fthumbnail%2F1360x%2Fstrip%2Fquality%2F90" alt="img"></p>
-<p><img src="http://b2-q.mafengwo.net/s11/M00/08/44/wKgBEFsa__SAMcrjAAkq8P4KGxk05.jpeg?imageMogr2%2Fthumbnail%2F1360x%2Fstrip%2Fquality%2F90" alt="img"></p>
-<p><img src="http://n1-q.mafengwo.net/s11/M00/08/3E/wKgBEFsa_-GAe5w-ABwOLErOVFc18.jpeg?imageMogr2%2Fthumbnail%2F1360x%2Fstrip%2Fquality%2F90" alt="img"></p>
-<p><img src="http://b1-q.mafengwo.net/s11/M00/E2/A3/wKgBEFpSZfSAYrjeAA2gjDAOTN032.jpeg?imageMogr2%2Fthumbnail%2F1360x%2Fstrip%2Fquality%2F90" alt="img"></p>
-<p><img src="http://b2-q.mafengwo.net/s11/M00/65/A2/wKgBEFpTW7mAaaxKAA004SV91Ts90.jpeg?imageMogr2%2Fthumbnail%2F1360x%2Fstrip%2Fquality%2F90" alt="img"></p>
-<h2 id="本次因时间关系不游览的景点"><a href="#本次因时间关系不游览的景点" class="headerlink" title="本次因时间关系不游览的景点"></a>本次因时间关系不游览的景点</h2><h3 id="黔灵山、黔灵公园"><a href="#黔灵山、黔灵公园" class="headerlink" title="黔灵山、黔灵公园"></a>黔灵山、黔灵公园</h3><p>有野生猕猴，在公园里面有<strong>弘福寺</strong>以及<strong>麒麟洞</strong>。交通方便，在市内乘坐公交即可。</p>
-<p><img src="http://b4-q.mafengwo.net/s12/M00/B7/8C/wKgED1uaJkSAMWYjAA-b6MrQTOI80.jpeg?imageMogr2%2Fthumbnail%2F1360x%2Fstrip%2Fquality%2F90" alt="img"></p>
-<h3 id="白宫"><a href="#白宫" class="headerlink" title="白宫"></a>白宫</h3><p>“抖音上很红的白宫”</p>
-<p><img src="https://b1-q.mafengwo.net/s11/M00/80/4A/wKgBEFtwT7SAJZxhAA1EE0tUBHk57.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" alt="img"></p>
-<h3 id="甲秀楼"><a href="#甲秀楼" class="headerlink" title="甲秀楼"></a>甲秀楼</h3><p><img src="https://b3-q.mafengwo.net/s11/M00/89/A3/wKgBEFtwVj2AGVWzAAf0NjPrdtY66.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" alt="img"></p>
-<h3 id="花溪公园"><a href="#花溪公园" class="headerlink" title="花溪公园"></a>花溪公园</h3><p>贵阳市区乘坐公交即可到达。</p>
-<p><img src="http://b2-q.mafengwo.net/s7/M00/B4/44/wKgB6lPOJyyAYrNeACmBo6QJLt834.jpeg?imageMogr2%2Fthumbnail%2F%21690x450r%2Fgravity%2FCenter%2Fcrop%2F%21690x450%2Fquality%2F90%7Cwatermark%2F1%2Fimage%2FaHR0cDovL2I0LXEubWFmZW5nd28ubmV0L3MxMS9NMDAvNDQvOUIvd0tnQkVGc1A1UnlBRHY3cEFBQUhaWlVQUmxROTkwLnBuZw%3D%3D%2Fgravity%2FSouthEast%2Fdx%2F10%2Fdy%2F11" alt="img"></p>
-<h3 id="青岩古镇"><a href="#青岩古镇" class="headerlink" title="青岩古镇"></a>青岩古镇</h3><p>古镇东门一侧有个箱子直通镇内，可逃票。古镇不大，2~3小时可以走完。</p>
-<h4 id="交通-11"><a href="#交通-11" class="headerlink" title="交通"></a>交通</h4><blockquote>
-<p>从花溪转车前往青岩，有公交车（0.5小时）。青岩镇的客车站位于古镇东门外，从东门一直往外走到国道路口就可以看到指示，有很多回花溪的面包车。</p>
-</blockquote>
-<p><img src="https://n2-q.mafengwo.net/s10/M00/4A/D3/wKgBZ1i61jOASCAdAAj9pF155SM89.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" alt="img"></p>
-<p><img src="https://b1-q.mafengwo.net/s12/M00/F7/2C/wKgED1ubguuAeqQwAA1vi8Tvc_Y94.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" alt="img"></p>
-<p><img src="https://b3-q.mafengwo.net/s8/M00/52/21/wKgBpVXkD7KAJDVeAADSt9zcyFc97.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" alt="img"></p>
-<h3 id="郎德苗寨"><a href="#郎德苗寨" class="headerlink" title="郎德苗寨"></a>郎德苗寨</h3><blockquote>
-<p><a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/22024.html" target="_blank" rel="external">郎德</a>苗寨分为<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/22024.html" target="_blank" rel="external">郎德</a>上寨和<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/22024.html" target="_blank" rel="external">郎德</a>下寨，紧靠省道的是<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/22024.html" target="_blank" rel="external">郎德</a>下寨，大家最常去的还是<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/22024.html" target="_blank" rel="external">郎德</a>上寨，<del>现在游览<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/22024.html" target="_blank" rel="external">郎德</a>上寨或下寨都无需门票</del>，门票￥60。</p>
-</blockquote>
-<h4 id="交通-12"><a href="#交通-12" class="headerlink" title="交通"></a>交通</h4><blockquote>
-<p>景区出口对面的桥上，有回 <a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10474.html" target="_blank" rel="external">凯里</a> 市区的中巴车，票价￥10/人，晃啊晃啊约1个小时左右回到市区。</p>
-<p>来源：<a href="http://www.mafengwo.cn/i/9417373.html" target="_blank" rel="external">凯里往东，镇远不远。</a></p>
-</blockquote>
-<p><img src="http://n3-q.mafengwo.net/s10/M00/29/A2/wKgBZ1ozPlCAbNMYAAJULuTyZKQ20.jpeg?imageView2%2F2%2Fw%2F600%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" alt="img"></p>
-<p><img src="http://b2-q.mafengwo.net/s10/M00/29/A7/wKgBZ1ozPlWAJl6xAAFmvEqD7kI62.jpeg?imageView2%2F2%2Fw%2F600%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" alt="img"></p>
-<p><img src="https://n4-q.mafengwo.net/s11/M00/20/F8/wKgBEFsQ7x6AcfaIAAo4JyV9JRs18.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" alt="img"></p>
-<p><img src="https://b4-q.mafengwo.net/s11/M00/F1/1A/wKgBEFsQu76AD3QCAA1JXBKKbpE32.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" alt="img"></p>
-<p><img src="https://b3-q.mafengwo.net/s11/M00/F1/67/wKgBEFsQu-qAWAAUAAzJZKjehBA91.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" alt="img"></p>
-<p><img src="https://p2-q.mafengwo.net/s11/M00/F1/1C/wKgBEFsQu8CASfagAAvPXkEFcCg23.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" alt="img"></p>
-<p><img src="https://b2-q.mafengwo.net/s11/M00/F0/D9/wKgBEFsQu5SABGu-AAudbuyRO8071.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" alt="img"></p>
-<p><img src="https://n4-q.mafengwo.net/s11/M00/F0/DE/wKgBEFsQu5iAJ0mzAAwzSlCDSGw93.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" alt="img"></p>
-<p><img src="https://n2-q.mafengwo.net/s11/M00/21/0C/wKgBEFsQ7yuAUIRZAAuvHWM8JhU29.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" alt="img"></p>
-<p><img src="https://b3-q.mafengwo.net/s11/M00/1D/59/wKgBEFsQ7FOAFeroAAynek_FRjk67.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" alt="img"></p>
-<h3 id="雷公坪徒步"><a href="#雷公坪徒步" class="headerlink" title="雷公坪徒步"></a>雷公坪徒步</h3><blockquote>
-<p>徒步路线全程27公里，前20公里基本都是上行路线。来源：LP</p>
-</blockquote>
-<h3 id="乌冬寨"><a href="#乌冬寨" class="headerlink" title="乌冬寨"></a>乌冬寨</h3><blockquote>
-<p>乌冬寨是一个干净的不像话、美丽得让人受不了的寨子。小小的寨子当中，三条清澈的溪流穿寨而过。水车，风雨桥点缀其中。爬上汕头就可以眺望到雷公山主峰。来源：LP</p>
-<p>乌东苗寨苗民属于苗族中的“黑苗长裙苗”支系，拥有自己独特的民族风情风俗。</p>
-</blockquote>
-<h4 id="交通-13"><a href="#交通-13" class="headerlink" title="交通"></a>交通</h4><blockquote>
-<p>乌东苗寨目前尚无专门的旅游直达车辆，外省旅客最好先到<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/14103.html" target="_blank" rel="external">贵州</a>省城<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/11239.html" target="_blank" rel="external">贵阳</a>，然后到到<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/11239.html" target="_blank" rel="external">贵阳</a>汽车东站坐“<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/11239.html" target="_blank" rel="external">贵阳</a>—<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/22068.html" target="_blank" rel="external">雷山</a>”班车，到<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/14484.html" target="_blank" rel="external">西江</a>镇的“黄里高速出口站”下车，联系乌东农家乐接待车辆接车，20分钟左右可到乌东苗寨。也可以到<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10381.html" target="_blank" rel="external">黔东南</a>州首府<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10474.html" target="_blank" rel="external">凯里</a>，一样到<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10474.html" target="_blank" rel="external">凯里</a>汽车东站坐“<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10474.html" target="_blank" rel="external">凯里</a>—<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/22068.html" target="_blank" rel="external">雷山</a>”班车，到<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/14484.html" target="_blank" rel="external">西江</a>镇的“黄里高速出口站”下车，联系乌东农家乐接待车辆接车。接车价格在50—100元/车次。也可以到达<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/22068.html" target="_blank" rel="external">雷山</a>县城以后包车直达，价格80—120元/车次。或到<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/22068.html" target="_blank" rel="external">雷山</a>县城后到<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/22068.html" target="_blank" rel="external">雷山</a>汽车站搭乘“<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/22068.html" target="_blank" rel="external">雷山</a>—方祥”班车，每天2趟，上午10点和下午1点发车，40分钟左右可到乌东路口，往里走1公里左右即到。</p>
-<p>还可以在<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10474.html" target="_blank" rel="external">凯里</a>乘坐从<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10474.html" target="_blank" rel="external">凯里</a>发往<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/28346.html" target="_blank" rel="external">榕江</a>县<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/64690.html" target="_blank" rel="external">平阳</a>、乐里、两汪、朗洞、育洞、<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/63082.html" target="_blank" rel="external">黎平</a>尚重等地班车，可直达乌<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/145659.html" target="_blank" rel="external">东村</a>。</p>
-<p>如果您是在<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10381.html" target="_blank" rel="external">黔东南</a>州的<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/28346.html" target="_blank" rel="external">榕江</a>、<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/140607.html" target="_blank" rel="external">剑河</a>、<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/63082.html" target="_blank" rel="external">黎平</a>、<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/63085.html" target="_blank" rel="external">从江</a>，那么坐经过<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/64690.html" target="_blank" rel="external">平阳</a>、乐里、两汪、朗洞、育洞、<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/63082.html" target="_blank" rel="external">黎平</a>尚重等地班车，翻过雷公山就到乌<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/145659.html" target="_blank" rel="external">东村</a>。</p>
-<p>来源：<a href="http://www.mafengwo.cn/i/10264870.html" target="_blank" rel="external">乌东苗寨旅游全攻略</a></p>
-</blockquote>
-<h4 id="住宿-3"><a href="#住宿-3" class="headerlink" title="住宿"></a>住宿</h4><blockquote>
-<p>乌东苗寨到目前为止，已经有了8家农家乐，还有几家尚未开业但也能临时接待客人了的农家，总床位将近300床，基本能满足目前到乌东苗寨的客流量。但夏季，随着孩子们的放假，客流量可能会增加，最好先咨询。</p>
-<p>来源：<a href="http://www.mafengwo.cn/i/10264870.html" target="_blank" rel="external">乌东苗寨旅游全攻略</a></p>
-</blockquote>
-<p><img src="http://n1-q.mafengwo.net/s9/M00/96/08/wKgBs1g6h8aAcMJMAA4CAsd2Yik63.jpeg?imageMogr2%2Fthumbnail%2F1360x%2Fstrip%2Fquality%2F90" alt="img"></p>
-<p><img src="http://p3-q.mafengwo.net/s9/M00/96/0A/wKgBs1g6h8qAKA5EAA89O3rdqn821.jpeg?imageMogr2%2Fthumbnail%2F1360x%2Fstrip%2Fquality%2F90" alt="img"></p>
-<h3 id="新桥苗寨"><a href="#新桥苗寨" class="headerlink" title="新桥苗寨"></a>新桥苗寨</h3><blockquote>
-<p>位于<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/14103.html" target="_blank" rel="external">贵州</a><a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/22068.html" target="_blank" rel="external">雷山</a>的大塘乡的新桥村，既是短裙苗第一村，又有着历经岁月考验凝结苗族人智慧结晶的水上粮仓，全村近200户，以苗族人居住为主，三在环山又有河流经过，水上粮仓40多座， 主要集中在寨子中内的低洼处，分布在全村的5个水塘之上，有很多小道穿插其间，质朴的苗家人生活气息，水上粮仓这一整合了伟大智慧的杰作继续走过岁月，走向未来。</p>
-</blockquote>
-<p>有观景台</p>
-<blockquote>
-<p>问客欲何往，遥问观景台何在，却但笑不语，只向近处一指，我和L提心吊胆从大狗身边借过，一看所指之处原来是一块稻田，稻田边一小块杂草丛生靠山崖的空地，刚刚能站人，便是观景台了。</p>
-</blockquote>
-<p><img src="http://b1-q.mafengwo.net/s10/M00/29/D9/wKgBZ1ozPoWALZB3AAGVIEfM7_k26.jpeg?imageView2%2F2%2Fw%2F600%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" alt="img"></p>
-<p><img src="http://b4-q.mafengwo.net/s10/M00/29/D8/wKgBZ1ozPoKAAXY7AAGSW0WBOT474.jpeg?imageView2%2F2%2Fw%2F600%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" alt="img"></p>
-<p><img src="http://b3-q.mafengwo.net/s10/M00/29/DA/wKgBZ1ozPoaAAq0cAAGIKgnYHq878.jpeg?imageView2%2F2%2Fw%2F600%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" alt="img"></p>
-<p><img src="http://n4-q.mafengwo.net/s10/M00/29/DB/wKgBZ1ozPoeAT5pBAAGvGfaAM-M14.jpeg?imageView2%2F2%2Fw%2F600%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" alt="img"></p>
-<p><img src="http://p4-q.mafengwo.net/s10/M00/29/E0/wKgBZ1ozPo2AC3KyAAHc6ZiDvqI27.jpeg?imageView2%2F2%2Fw%2F600%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" alt="img"></p>
-<p><img src="http://p4-q.mafengwo.net/s10/M00/29/E0/wKgBZ1ozPo6AVwX8AAGbkrvja3868.jpeg?imageView2%2F2%2Fw%2F600%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" alt="img"></p>
-<h3 id="北盘江大桥"><a href="#北盘江大桥" class="headerlink" title="北盘江大桥"></a>北盘江大桥</h3><p><img src="https://ss2.meipian.me/users/437728/b817e1c1186044f8b814156f259a6009.jpg-mobile" alt="img"></p>
-<p><img src="http://n.sinaimg.cn/sinacn12/351/w690h461/20180716/4cee-hfkffak4631988.jpg" alt="北盘江大峡谷：贵州最壮观的峡谷，但是并没有开发为景区"></p>
-<p><img src="http://n.sinaimg.cn/sinacn12/320/w640h480/20180716/1bb3-hfkffak4632548.jpg" alt="北盘江大峡谷：贵州最壮观的峡谷，但是并没有开发为景区"></p>
-<p><img src="https://youimg1.c-ctrip.com/target/100o0v000000jl5zw7B68.jpg" alt="img"></p>
-<p>董菁水电站旁渔村坐船，80元一人。</p>
-<h3 id="岜沙"><a href="#岜沙" class="headerlink" title="岜沙"></a>岜沙</h3><blockquote>
-<p><a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10221.html" target="_blank" rel="external">岜沙</a>，是苗语中“草木繁多”的意思。属黑苖的一个支系，据说是蚩尤第三子的后代。初见<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10221.html" target="_blank" rel="external">岜沙</a>，觉得这里的生态环境真的好，山头山谷里树木繁多，郁郁葱葱，几百年以上的珍惜树种，随处可见。可见<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10221.html" target="_blank" rel="external">岜沙</a>人对树木的珍惜视作生命。当年<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10221.html" target="_blank" rel="external">岜沙</a>人的先祖在逃避追杀的危急关头，是遮天蔽日的原始森林拯救了他们。因此<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10221.html" target="_blank" rel="external">岜沙</a>人认为，人类离不开树林；树能给人们带来果实，使人得以裹腹，能供人烧火取暖煮食，能用于造房栖息的建筑材料；满山的森树可以使许多动物  得以繁衍生息，供<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10221.html" target="_blank" rel="external">岜沙</a>人得以食物，能滋养水土供人们解渴和耕种。所以自古以来，<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10221.html" target="_blank" rel="external">岜沙</a>人对树的砍伐用材就立有严格的条款，并把这些条款列入<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10221.html" target="_blank" rel="external">岜沙</a>的古理寨规，违者重罚，代代相传，不得更改。</p>
-<p>这里的男人们发型都与树木崇拜有关，头顶挽有发髻，四周头发剃光，只保留头顶部分，象征着茂盛的树木，也代表着<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10221.html" target="_blank" rel="external">岜沙</a>人不屈不挠的顽强生命力。穿着自织的青布衣，直筒大裤管青布裤，身挎腰刀，肩扛火药枪，乍看这些持枪的汉子们，觉得颇有<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10183.html" target="_blank" rel="external">日本</a>武士风貌，威武极了。</p>
-<p><a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10221.html" target="_blank" rel="external">岜沙</a>人崇<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/112594.html" target="_blank" rel="external">拜林</a>木，认为祖先的灵魂就附在树上，每一个<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10221.html" target="_blank" rel="external">岜沙</a>人出生后，他的父母都会为他种一棵树，举行祭拜树神的仪式，寓意他生命的开始会像这棵树一样茁壮成长，经历人生的酸甜苦辣，一直到他走到生命的尽头。如果这棵树被风刮倒或是被人砍掉，他们会认为这是不祥的预兆。人死之后，家人会用这棵生命之树为其制作棺材，而且棺材只能在人死后制作，生前不可以提前制作，埋葬的时候不是立一个墓碑，而是在为死者鸣枪之后，放入棺木，之后在埋葬他的地方种一棵树，表示他的生命以另一种形式得到了再生和延续。以树为葬，生命在树木的生长中延续，生生不息。</p>
-<p>丧葬礼仪十分简朴，凡是寨上有人正常死亡，最晚12个小时之内一定要将死者放入棺木下葬。鸣枪通告亲朋好友后，亲属都要来吊唁，每家都要带上大米或钱送给死者家属以寄托自己的哀思。商议安葬死者要到寨门外的古树下进行，表示远离死者，让他安心上路去阴间投胎转世。 死者的头必须朝着东方，让其找到祖先。对于意外死亡的人，不进行土葬，而是要火葬的方式，希望其来世有个好的命运。</p>
-<p>安葬死者前，由家人和亲戚们去看好入土地，同时，由几名中青年将穿上新衣服的死者遗体从脚跟、膝关节、臀部、胸部、头部用五道竹蔑绑在一根禾晾架上，然后由两名小伙抬着，走至墓地。死者身前常用的烟包、草鞋、头帕也需要随着一起入土供其在阴间可以继续使用。如果是成年男子，还要将其生前的猎枪置其身侧。</p>
-<p>生命与树同在，让四季常青百年不枯的树木来延续人类的生命。<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10221.html" target="_blank" rel="external">岜沙</a>人对大自然的崇拜与敬畏、和谐相处的态度是值得我们学习的。</p>
-<p>来源：<a href="http://www.mafengwo.cn/i/5649305.html" target="_blank" rel="external">岜沙 | 树木崇拜与树葬文化</a></p>
-<p>我凭着从网上得知的一点了解，问他:“听说 <a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10221.html" target="_blank" rel="external">岜沙</a> 崇拜自然神，十分看重树木，每一个 <a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10221.html" target="_blank" rel="external">岜沙</a> 人出生时会种一棵树，死时则将这棵树当作棺材，是这样的吗？”</p>
-<p>校长先生回我，“确实如此。但因为树的生长比较慢，有时是由祖父或者父亲种给他的子孙。每一个 <a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10221.html" target="_blank" rel="external">岜沙</a> 人当天临终，当天下葬。下葬时会将这棵树砍下，劈成两半，放在找好的洞旁（没有风水之说，小树林里喜欢哪里就挖在哪里）。临终的 <a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10221.html" target="_blank" rel="external">岜沙</a> 人则与禾晾杠中的第三根，必须是第三根，绑在一起，抬到洞边同自己的树下葬。这里也没有墓碑，没有清明节，家属也不需要上山去祭拜他。”</p>
-<p>来源：<a href="http://www.mafengwo.cn/i/7293317.html" target="_blank" rel="external">岜沙苗寨:“最后一个枪手部落”的背后</a></p>
-</blockquote>
-<h4 id="交通-14"><a href="#交通-14" class="headerlink" title="交通"></a>交通</h4><blockquote>
-<p><a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/63085.html" target="_blank" rel="external">从江</a>到<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10221.html" target="_blank" rel="external">岜沙</a>：出车站后左转过桥，桥头处等待前往的<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10221.html" target="_blank" rel="external">岜沙</a>的面包车，每人5元，但车比较少。如果比较赶时间的话，就在桥头坐摩托车上去吧，15元。当然也可以在车站门口包个车上去，往返50元，司机会在寨子里等你看完节目。给个侗族包车师傅电话吧：潘师傅：18685556287，小伙子，比较好说话，新车，正常能坐6个人，能挤下7个。</p>
-<p>来源：<a href="http://www.mafengwo.cn/i/877621.html" target="_blank" rel="external">美不胜收黔东南3-岜沙 JOJO出品</a></p>
-</blockquote>
-<h4 id="图-5"><a href="#图-5" class="headerlink" title="图"></a>图</h4><p><img src="http://n4-q.mafengwo.net/s9/M00/F3/AB/wKgBs1fHyjyAMAlAAACrFhRkMCA82.jpeg?imageView2%2F2%2Fw%2F600%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" alt="img"></p>
-<p><img src="http://p2-q.mafengwo.net/s11/M00/DA/E5/wKgBEFs0gDmAHmiNACdjWV_LEIs14.jpeg?imageMogr2%2Fthumbnail%2F1360x%2Fstrip%2Fquality%2F90" alt="img"></p>
-<p><img src="http://p3-q.mafengwo.net/s12/M00/BA/3C/wKgED1u8zw6ANPVeAAzr1ojjvQs82.jpeg?imageMogr2%2Fthumbnail%2F1360x%2Fstrip%2Fquality%2F90" alt="img"></p>
-<p><img src="http://b2-q.mafengwo.net/s12/M00/A2/65/wKgED1u5D3OANtHtABDLf_36fqU24.jpeg?imageMogr2%2Fthumbnail%2F1360x%2Fstrip%2Fquality%2F90" alt="img"></p>
-<p><img src="http://b3-q.mafengwo.net/s9/M00/F3/AC/wKgBs1fHyjyANMzuAACRx5ezr6g21.jpeg?imageView2%2F2%2Fw%2F600%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" alt="img"></p>
-<h3 id="大利"><a href="#大利" class="headerlink" title="大利"></a>大利</h3><h4 id="食宿"><a href="#食宿" class="headerlink" title="食宿"></a>食宿</h4><p>黔东南侗天山居民宿</p>
-<p>水木清华客栈</p>
-<blockquote>
-<p>我住的水木清华客栈，老板人特别好可以在他家吃饭25一餐每餐都很丰富，住宿40一天房间很干净</p>
-<p>来源：<a href="http://www.mafengwo.cn/i/7928449.html" target="_blank" rel="external">大利侗寨</a></p>
-</blockquote>
-<h4 id="交通-15"><a href="#交通-15" class="headerlink" title="交通"></a>交通</h4><p>貌似没有直达车，看下到时候高铁站有没有车。</p>
-<blockquote>
-<p><a href="http://www.mafengwo.cn/poi/11534.html" target="_blank" rel="external">大利侗寨</a> 位于 <a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/28346.html" target="_blank" rel="external">榕江</a> 县栽麻乡，没有直达的班车，需从 <a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/28346.html" target="_blank" rel="external">榕江</a> 汽车站乘至 <a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/63082.html" target="_blank" rel="external">黎平</a> 的班车，告诉司机在 <a href="http://www.mafengwo.cn/poi/11534.html" target="_blank" rel="external">大利侗寨</a> 的路口下，约40分钟。 <a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/28346.html" target="_blank" rel="external">榕江</a> 和 <a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/63082.html" target="_blank" rel="external">黎平</a> 每天都有很多班车对开， <a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/28346.html" target="_blank" rel="external">榕江</a> 发车时间为6:30-17:20，平均40分钟一班。</p>
-<p>返回时也是在 <a href="http://www.mafengwo.cn/poi/11534.html" target="_blank" rel="external">大利侗寨</a> 的路口拦过往的车辆，可以去往 <a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/63082.html" target="_blank" rel="external">黎平</a> ，也可以去往 <a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/28346.html" target="_blank" rel="external">榕江</a> ，去 <a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/28346.html" target="_blank" rel="external">榕江</a> 8元/人，不一定非得拦班车，有时私家的小面包也会主动让你上车。</p>
-<p><a href="http://www.mafengwo.cn/poi/11534.html" target="_blank" rel="external">大利侗寨</a> 的路口只有一条路，便是通往 <a href="http://www.mafengwo.cn/poi/11534.html" target="_blank" rel="external">大利侗寨</a> 的，约有5km，去时上坡多，慢慢走要2个小时。路上过往车辆不是很多，如果有车路过，都会主动停下，搭人进寨。</p>
-<p>来源：<a href="http://www.mafengwo.cn/i/1320377.html" target="_blank" rel="external">【黔东南】大利侗寨</a></p>
-<p>高铁站在大利和 <a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/28346.html" target="_blank" rel="external">榕江</a> 县城之间，如果去县城坐到大利车会比较绕远，高铁站有时会有回大利的车，乘客不满时，会去高铁站接人，出高铁站左手等车，高铁站后面一条路通向大利，也是出高铁站往左，可以伸手拦车，面包车，私家车都可以问一下是不是去大利，如果是，直接到寨子，不是到大利，到栽麻的也行，做到丰登坳下车，就是大利村的路口了，10元，离寨子4.2公里，可以搭进寨子的车，人非常好，会主动带你的，挺感动的。如果 <a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/28346.html" target="_blank" rel="external">榕江</a> 客运站，可以在一桥站，也就是 <a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/28346.html" target="_blank" rel="external">榕江</a> 大桥南有个亭子等车，有面包车，问问是不是到大利或者栽麻的，到九潮镇的，也路过大利的。也可以到湘榕商贸城， <a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/176822.html" target="_blank" rel="external">红星</a> 宾馆那做车，去大利车都在那等乘客，一般都是面包车，也要自己问，车没有挂牌。这里有巧巧爸的电话，可以联系他。18685587728</p>
-<p>来源：<a href="http://www.mafengwo.cn/i/8288326.html" target="_blank" rel="external">大利侗寨的出行，住宿选择，我的大利30天</a></p>
-<p>不需要从售票处买票，直接找<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/28346.html" target="_blank" rel="external">榕江</a>至<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/63082.html" target="_blank" rel="external">黎平</a>的车，然后告诉他要去大利侗寨，每人8元，到丰登坳下车。半点发车，车很方便。</p>
-<p>来源：<a href="http://www.mafengwo.cn/i/2907359.html" target="_blank" rel="external">黔东南——深山里的大利侗寨</a></p>
-</blockquote>
-<h4 id="图-6"><a href="#图-6" class="headerlink" title="图"></a>图</h4><p><img src="http://p3-q.mafengwo.net/s10/M00/82/8E/wKgBZ1l58m6Ad8ECAAtC61eQLgg30.jpeg?imageMogr2%2Fthumbnail%2F1360x%2Fstrip%2Fquality%2F90" alt="img"></p>
-<p><img src="http://b4-q.mafengwo.net/s10/M00/F8/C2/wKgBZ1nedEKAeGORAAq-F-9beBA91.jpeg?imageMogr2%2Fthumbnail%2F1360x%2Fstrip%2Fquality%2F90" alt="img"></p>
-<p><img src="http://n4-q.mafengwo.net/s9/M00/97/0A/wKgBs1aXxkWACjhAABESfpuA-9060.jpeg?imageView2%2F2%2Fw%2F600%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" alt="img"></p>
-<p><img src="http://n1-q.mafengwo.net/s10/M00/28/28/wKgBZ1neeYSAJnQ1AA8CwGseTkM27.jpeg?imageMogr2%2Fthumbnail%2F1360x%2Fstrip%2Fquality%2F90" alt="img"></p>
-<h1 id="美食"><a href="#美食" class="headerlink" title="美食"></a>美食</h1><h2 id="都匀-1"><a href="#都匀-1" class="headerlink" title="都匀"></a>都匀</h2><h3 id="金沙牛羊肉粉"><a href="#金沙牛羊肉粉" class="headerlink" title="金沙牛羊肉粉"></a>金沙牛羊肉粉</h3><blockquote>
-<p>这家与州委坡脚那家是一个店主开的，在当地十多年了，麻辣的独特风格，劲味十足，外地人吃过一次会忘不了。店主如今只做【牛肉粉】了，有清汤和麻辣两种，但食客几乎都是冲着麻辣味来的。麻得一般，以呛辣为主，十分浓烈过瘾，桌上有小菜随意取食拌之，正好解辣。冬天被“辣”一碗，整个早上都是暖的。</p>
-<p><img src="http://b1-q.mafengwo.net/s10/M00/75/45/wKgBZ1lfPv2AZ65ZAALRaufLbX028.jpeg?imageMogr2%2Fthumbnail%2F1360x%2Fstrip%2Fquality%2F90" alt="img">        地址：都匀【附中】附近，【大西门】坡顶</p>
-</blockquote>
-<h3 id="杠上花米粉"><a href="#杠上花米粉" class="headerlink" title="杠上花米粉"></a>杠上花米粉</h3><blockquote>
-<p>店家开业多年来，非常受欢迎。她家的粉，酸得相当带感觉，店主说带有一点凯里的风格，但是又不是，自成一派。由于不放味精，当地很多孕妇喜欢来吃。她家是小锅煮粉，所以酸汤味道更佳浓烈，由于不放味精，酸汤主要靠糟辣椒提味，酸得浓烈却又自然。酸汤【牛肉粉】和【猪肉粉】都受欢迎，上桌前放折耳根和葱，桌上有糊辣椒，想酸辣味更重，就多加辣。</p>
-<p><img src="http://b1-q.mafengwo.net/s10/M00/75/62/wKgBZ1lfPyyAKQWAAANs9jO_hyA02.jpeg?imageMogr2%2Fthumbnail%2F1360x%2Fstrip%2Fquality%2F90" alt="img"></p>
-<p>地址：都匀【兴亚培育小区】        </p>
-</blockquote>
-<h3 id="肖姨妈百味传统小吃店"><a href="#肖姨妈百味传统小吃店" class="headerlink" title="肖姨妈百味传统小吃店"></a>肖姨妈百味传统小吃店</h3><blockquote>
-<p>这家十八年老字号，吃货呼声相当高，她家绿豆汤风格是古法的手法，一入嘴就觉得岁月有在眼前晃过，据说夏天基本上进店者都会来上一碗。店内大小小吃的挺丰富，基本上能够满足你的各种所需。但是熟客都知道，有样东西必须点——【炒糯米饭】，那是一绝啊！有【叉烧、香肠、软哨、怪卤】等口味，既做到了有嚼劲，又做到了入味飘香，夏天店家要日卖200斤糯米。而他家的【八宝饭】也很古早，尤其是花生仁的处理，一看就知道是传统的调调。</p>
-<p><img src="http://n1-q.mafengwo.net/s10/M00/75/85/wKgBZ1lfP16ARfAUAAOn9rk4ZQM14.jpeg?imageMogr2%2Fthumbnail%2F1360x%2Fstrip%2Fquality%2F90" alt="img">        </p>
-<p>地址：【石板街】旁【新华东巷】</p>
-<p>(肖姨妈就别去了，不值得去。 在州委坡脚的那家金沙边上，999豆花面也是一绝。在库当街，农行边上的小巷子进去，有一家肠旺面，也是绝味。肖姨妈小吃店斜对面有一家“杨氏辣鸡粉”的店，也是10多年的老汤，不去后悔。)</p>
-</blockquote>
-<h3 id="周扒皮螺蛳"><a href="#周扒皮螺蛳" class="headerlink" title="周扒皮螺蛳"></a>周扒皮螺蛳</h3><blockquote>
-<p>店主的爱人就是 广西 的，在当地做餐饮多年，10年前来到 都匀 做了这家店。炒螺蛳和 贵阳 的口感明显不一样，因为里面有酸笋。喜欢“ 广西 味”的吃货，在他家一定会吃得很过瘾。他家整体偏辣，经常有人说辣欢天！【螺蛳汤粉】和【螺蛳炒粉】是招牌，都好吃，同样是过瘾的酸笋味，炒粉像是 贵州 和 广西 的结合版，别是一番滋味。【饺子】虽然不像锅贴那样只煎一面，但炸得整体酥脆金黄，一口咬下去，满口都是香！</p>
-<p>地址：【一中】附近</p>
-</blockquote>
-<h3 id="罗记烧饼"><a href="#罗记烧饼" class="headerlink" title="罗记烧饼"></a>罗记烧饼</h3><blockquote>
-<p> 从清早卖到中午，围圈等饼的人非常多，不少人都是一次买10个，很难等到。一般的烧饼是甜的或咸的，他家的主打是又甜又咸，面是甜的，调味是咸的，松软度非常特别，和别家都不一样。</p>
-<p><a href="http://www.mafengwo.cn/photo/17915/scenery_7215395/223226531.html" target="_blank" rel="external"><img src="http://n1-q.mafengwo.net/s10/M00/76/54/wKgBZ1lfQGyAG7G1AAPzH3ZN83w17.jpeg?imageMogr2%2Fthumbnail%2F1360x%2Fstrip%2Fquality%2F90" alt="img"></a></p>
-<p>地址：【小围寨】加油站旁</p>
-</blockquote>
-<h3 id="兵哥第一家贝壳粉"><a href="#兵哥第一家贝壳粉" class="headerlink" title="兵哥第一家贝壳粉"></a>兵哥第一家贝壳粉</h3><blockquote>
-<p>店主以前是炒贝壳的，无意间把粉和他炒的贝壳放在了一起，大家都觉得好吃。于是他就经过一番调整，创了这款【贝壳粉】，它比“开心花甲”的这种汤的做法，更要给力和过瘾，香辣十足。</p>
-<p><a href="http://www.mafengwo.cn/photo/17915/scenery_7215395/223226902.html" target="_blank" rel="external"><img src="http://n2-q.mafengwo.net/s10/M00/76/77/wKgBZ1lfQIyAe-RFAAO6SmOKaC412.jpeg?imageMogr2%2Fthumbnail%2F1360x%2Fstrip%2Fquality%2F90" alt="img"></a></p>
-</blockquote>
-<h1 id="费用预算"><a href="#费用预算" class="headerlink" title="费用预算"></a>费用预算</h1><h2 id="D1"><a href="#D1" class="headerlink" title="D1"></a>D1</h2><ul>
-<li>高铁：台山——广州南：65rmb</li>
-<li>高铁：广州南——从江：218rmb</li>
-<li>滴滴或班车：从江高铁站——肇兴侗寨：20rmb</li>
-<li>住宿：约100rmb</li>
-<li>餐费：约100rmb</li>
-<li>肇兴门票：80rmb</li>
-</ul>
-<p>总计：583rmb</p>
-<h2 id="D2"><a href="#D2" class="headerlink" title="D2"></a>D2</h2><ul>
-<li>住宿：约100rmb</li>
-<li>餐费：约150rmb</li>
-</ul>
-<p>总计：250rmb</p>
-<h2 id="D3"><a href="#D3" class="headerlink" title="D3"></a>D3</h2><ul>
-<li>班车：堂安——肇兴、堂安——从江站：最多50rmb</li>
-<li>高铁：从江——都匀东：59rmb</li>
-<li>餐费：约150rmb</li>
-<li>住宿：约100rmb</li>
-</ul>
-<p>总计：409rmb</p>
-<h2 id="D4"><a href="#D4" class="headerlink" title="D4"></a>D4</h2><ul>
-<li>班车：都匀——荔波：55rmb</li>
-<li>荔波门票：130rmb</li>
-<li>住宿：约100rmb</li>
-<li>餐费：约150rmb</li>
-</ul>
-<p>总计：435rmb</p>
-<h2 id="D5"><a href="#D5" class="headerlink" title="D5"></a>D5</h2><ul>
-<li>荔波——凯里班车：80rmb</li>
-<li>凯里——西江：约30rmb</li>
-<li>西江门票：110rmb</li>
-<li>住宿：约120rmb</li>
-<li>餐费：约100rmb</li>
-</ul>
-<p>总计：440rmb</p>
-<h2 id="D6"><a href="#D6" class="headerlink" title="D6"></a>D6</h2><ul>
-<li>西江——凯里站班车或滴滴：约30rmb</li>
-<li>凯里——镇远火车：约15rmb</li>
-<li>住宿：约100rmb</li>
-<li>餐费：约100rmb</li>
-</ul>
-<p>总计：245rmb</p>
-<h2 id="D7"><a href="#D7" class="headerlink" title="D7"></a>D7</h2><ul>
-<li>镇远——贵阳高铁：42rmb</li>
-<li>住宿：120rmb</li>
-<li>餐费：150rmb</li>
-</ul>
-<p>总计：312rmb</p>
-<h2 id="D8"><a href="#D8" class="headerlink" title="D8"></a>D8</h2><ul>
-<li>跟团费：300rmb</li>
-<li>餐费：100rmb</li>
-<li>住宿：120rmb</li>
-</ul>
-<p>总计：520rmb</p>
-<h2 id="D9"><a href="#D9" class="headerlink" title="D9"></a>D9</h2><ul>
-<li>贵阳北——广州南高铁：323rmb</li>
-<li>广州南——台山班车、高铁：65rmb</li>
-<li>餐费：100rmb</li>
-</ul>
-<p>总计：488rmb</p>
-<h2 id="总"><a href="#总" class="headerlink" title="总"></a>总</h2><p>总计：583+250+409+435+440+245+312+520+488=3682</p>
-<p>此次预算都是偏大预算，所以实际可能并不会有这么多。</p>
-<h1 id="准备物资"><a href="#准备物资" class="headerlink" title="准备物资"></a>准备物资</h1><h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><ul>
-<li>身份证</li>
-<li>1000rmb现金</li>
-<li>零钱</li>
-<li>LP贵州</li>
-</ul>
-<h2 id="电子设备"><a href="#电子设备" class="headerlink" title="电子设备"></a>电子设备</h2><ul>
-<li>手机、手机充电器</li>
-<li>数码相机、数码相机充电器、内存卡、读卡器、备用电池</li>
-<li>平板电脑</li>
-<li>移动硬盘</li>
-<li>胶卷相机、胶卷（12卷）、黑白滤镜</li>
-<li>镜头：尼康35mm、三阳12mm、狗头</li>
-<li>苹果耳机</li>
-<li>移动电源</li>
-<li>三脚架</li>
-</ul>
-<h2 id="日用"><a href="#日用" class="headerlink" title="日用"></a>日用</h2><ul>
-<li>三套贴身衣服</li>
-<li>三套内裤袜子、一次性内裤</li>
-<li>雨具</li>
-<li>纸巾</li>
-<li>保济丸腹可安</li>
-<li>驱蚊驱虫</li>
-<li>防噪音耳塞（民俗隔音不好）</li>
-<li>登山杖</li>
-</ul>
-<h1 id="天气"><a href="#天气" class="headerlink" title="天气"></a>天气</h1><p>以多云为主，期间可能会有小雨。气温在8℃~15℃之间。需要带毛衣，防寒内衣等。备雨具。</p>
-
+              <p>此为本人18年年假时9日贵州之旅的攻略，供大家参考。<br></p>
           
-        
       
     </div>
-
     
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
+    <div class="article-info article-info-index">
       
       
-        <div class="post-eof"></div>
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Life/">Life</a>
+    </div>
+
+
       
-    </footer>
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/旅游/">旅游</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2018/10/23/贵州旅游日程/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
   </div>
   
-  
-  
-  </article>
+</article>
 
 
+
+
+
+
+
+
+
+  
+    <article id="post-胶卷与纸媒" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/03/15/胶卷与纸媒/" class="article-date">
+      <time datetime="2018-03-15T12:14:23.000Z" itemprop="datePublished">2018-03-15</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wax8280.github.io/2018/03/15/胶卷与纸媒/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Vincent Zhong">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Vin's Blog">
-    </span>
-
+      <input type="hidden" class="isFancy" />
     
-      <header class="post-header">
-
+    
+      <header class="article-header">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/15/胶卷与纸媒/" itemprop="url">胶卷与纸媒</a></h1>
-        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/15/胶卷与纸媒/">胶卷与纸媒</a>
+    </h1>
+  
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-15T20:14:23+08:00">2018-03-15</time>
-            
-
-            
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Life/" itemprop="url" rel="index"><span itemprop="name">Life</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
       </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
       
+    
+    <div class="article-entry" itemprop="articleBody">
       
-
-      
-        
           
-            <p>胶卷界最近有些事情要发生：很好用的Agfa Vista 400/200都要停产了。这两款Fuji代工的胶卷传出停产的消息我一点也不奇怪，因为Fuji每年按照惯例都会停产几款卖得挺火的胶卷。2017说是胶卷复兴元年，Kodak复产了Ektarchrome E100，还有一大票黑白卷冒了出来，可是Fuji逆势而行却停产了Natura 1600和provia 400x。大势所趋是没办法，这个世界永远都是利益驱动而不是情怀。胶卷确实已经是过时的产物，大概再往后就没有玩胶卷的人了，我们大概是最后一代玩胶卷的孩子了。</p>
+        <p>胶卷界最近有些事情要发生：很好用的Agfa Vista 400/200都要停产了。这两款Fuji代工的胶卷传出停产的消息我一点也不奇怪，因为Fuji每年按照惯例都会停产几款卖得挺火的胶卷。2017说是胶卷复兴元年，Kodak复产了Ektarchrome E100，还有一大票黑白卷冒了出来，可是Fuji逆势而行却停产了Natura 1600和provia 400x。大势所趋是没办法，这个世界永远都是利益驱动而不是情怀。胶卷确实已经是过时的产物，大概再往后就没有玩胶卷的人了，我们大概是最后一代玩胶卷的孩子了。</p>
 <p>前阵子在微信公众号里面发现《大众软件》还活着，遂好奇在网上搜索了一下这个十多年前很风光的游戏杂志的现状。《大众软件》在16年停刊之后曾经出过一次众筹，说要“让每个人都有一本大软”，但是最后众筹做出来的效果确实不如人意。</p>
 <p>胶卷和纸媒这两样在以前看似没有关联的东西，在如今已经被冠以“过时”的称呼。胶卷大概在千禧年前后最为火热，之后就一直走下坡路了。而纸媒，我记得小学初中的时候经常买的杂志《数码时代》、《大众软件》、《电脑迷》等，早已经在几年前没有踪影了。看来这两样东西已经被时代远远抛在后头了。</p>
 <p>Kodak发明了数码相机，最后自己却被数码相机干死；《数码时代》杂志整天讲数码产品，最后自己被互联网干死。这个虚拟的数字时代到来之后，一切都便利了很多：我不用花钱买胶卷，花时间等洗胶卷；我不用花钱买一个月才出一期的杂志。但是我总觉得我不属于这个数码时代，我可是一个有情怀的人。</p>
 <p><img src="/2018/03/15/胶卷与纸媒/afga_vista.jpg" alt="Agfa Vista"></p>
 
-          
-        
       
     </div>
-
     
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
+    <div class="article-info article-info-index">
       
       
-        <div class="post-eof"></div>
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Life/">Life</a>
+    </div>
+
+
       
-    </footer>
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/纸媒/">纸媒</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/胶卷/">胶卷</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
   </div>
   
-  
-  
-  </article>
+</article>
 
 
+
+
+
+
+
+
+
+  
+    <article id="post-关于三年来摄影之路的思考" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/10/08/关于三年来摄影之路的思考/" class="article-date">
+      <time datetime="2017-10-08T12:20:33.000Z" itemprop="datePublished">2017-10-08</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wax8280.github.io/2017/10/08/关于三年来摄影之路的思考/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Vincent Zhong">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Vin's Blog">
-    </span>
-
+      <input type="hidden" class="isFancy" />
     
-      <header class="post-header">
-
+    
+      <header class="article-header">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/08/关于三年来摄影之路的思考/" itemprop="url">关于三年来摄影之路的思考</a></h1>
-        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/08/关于三年来摄影之路的思考/">关于三年来摄影之路的思考</a>
+    </h1>
+  
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-08T20:20:33+08:00">2017-10-08</time>
-            
-
-            
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Photograph/" itemprop="url" rel="index"><span itemprop="name">Photograph</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
       </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
       
+    
+    <div class="article-entry" itemprop="articleBody">
       
-
-      
-        
           
-            <p>三年前的九月，我用自己的零花钱买了人生中第一台相机——索尼 nex-6。三年之后，回望着三年来的摄影之路感慨良多，总结下来，这三年来的我对摄影的看法可以分为三个阶段。</p>
+        <p>三年前的九月，我用自己的零花钱买了人生中第一台相机——索尼 nex-6。三年之后，回望着三年来的摄影之路感慨良多，总结下来，这三年来的我对摄影的看法可以分为三个阶段。</p>
 <h2 id="第一阶段：胡乱拍"><a href="#第一阶段：胡乱拍" class="headerlink" title="第一阶段：胡乱拍"></a>第一阶段：胡乱拍</h2><p>这是我刚买相机的阶段，那时候因为没钱，所以只给配了一个国产的大光圈镜头。即使这样，也算体验了做一个“虚化狗”的感觉。在这个阶段我什么都拍，可能看到一个消防喉都觉得很有趣要想着去虚化一下。烂片率高，但也因为拍得多，所以也有一些出片。</p>
 <h2 id="第二阶段：珍惜每一次快门"><a href="#第二阶段：珍惜每一次快门" class="headerlink" title="第二阶段：珍惜每一次快门"></a>第二阶段：珍惜每一次快门</h2><p>这个阶段应该是买相机的第二年，我记得第二年一年我仅仅拍了3000张照片。在这一阶段里面，我心里一直有一个观念既是“想好了再拍”。所以我很经常举起相机通过取景器去思考这样拍下的照片是否好看，如果发现不完美，我就放弃拍摄。</p>
 <h2 id="第三阶段：胡乱拍"><a href="#第三阶段：胡乱拍" class="headerlink" title="第三阶段：胡乱拍"></a>第三阶段：胡乱拍</h2><p>话说进入第三阶段，这是我也不能想象的。到了第二阶段的末期，我开始接触胶片，从此我更加珍惜每一次快门。但是我压根没想到我还会进入到第三阶段。缘起于我一次夜晚的街拍。在那次的街拍中，我竭尽所能地耗尽我的快门，甚至对着同一个对象连拍三四张，这是我以前压根不敢想象的。我盲拍，我还没对上焦就拍，我边走边拍从不停下，我把ISO调到3200。我不会像以前那样，想好光圈快门构图再去拍，我也不会放大去对焦直到完全对上才拍。我直接把ISO设置在3200，不再去管这样会有多大的噪点；我更不会在意什么焦点清晰，焦外奶化。我看见了，我拍了，我管他妈的。</p>
@@ -1293,147 +457,69 @@
 <p><img src="/2017/10/08/关于三年来摄影之路的思考/DSC07293.jpg" alt=""></p>
 <p><img src="/2017/10/08/关于三年来摄影之路的思考/DSC07295.jpg" alt=""></p>
 
-          
-        
       
     </div>
-
     
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
+    <div class="article-info article-info-index">
       
       
-        <div class="post-eof"></div>
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Photograph/">Photograph</a>
+    </div>
+
+
       
-    </footer>
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/摄影/">摄影</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
   </div>
   
-  
-  
-  </article>
+</article>
 
 
+
+
+
+
+
+
+
+  
+    <article id="post-阅读aiosplite源码笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/09/28/阅读aiosplite源码笔记/" class="article-date">
+      <time datetime="2017-09-28T09:35:20.000Z" itemprop="datePublished">2017-09-28</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wax8280.github.io/2017/09/28/阅读aiosplite源码笔记/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Vincent Zhong">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Vin's Blog">
-    </span>
-
+      <input type="hidden" class="isFancy" />
     
-      <header class="post-header">
-
+    
+      <header class="article-header">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/28/阅读aiosplite源码笔记/" itemprop="url">阅读aiosplite源码笔记</a></h1>
-        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/28/阅读aiosplite源码笔记/">阅读aiosplite源码笔记</a>
+    </h1>
+  
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-28T17:35:20+08:00">2017-09-28</time>
-            
-
-            
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Code/" itemprop="url" rel="index"><span itemprop="name">Code</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
       </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
       
+    
+    <div class="article-entry" itemprop="articleBody">
       
-
-      
-        
           
-            <p>在GIthub是看到这样一个<a href="https://github.com/jreese/aiosqlite" target="_blank" rel="external"><code>aiospilte</code></a>的库，具体是将sqlite改成异步的。发现源码体积挺小的，遂看一下，看完后发现作者脑路新奇。<br>作者主要使用了代理模式，代理了<code>Connection</code>和<code>Cursor</code>这两个<code>sqlite3</code>的类。但是作者新奇就在于，其实这是一个披着异步外衣的多线程。作者对于每一个连接都新建一个独立线程。仅仅使用异步作为询问，而实际费IO的操作是在独立的线程中。</p>
+        <p>在GIthub是看到这样一个<a href="https://github.com/jreese/aiosqlite" target="_blank" rel="external"><code>aiospilte</code></a>的库，具体是将sqlite改成异步的。发现源码体积挺小的，遂看一下，看完后发现作者脑路新奇。<br>作者主要使用了代理模式，代理了<code>Connection</code>和<code>Cursor</code>这两个<code>sqlite3</code>的类。但是作者新奇就在于，其实这是一个披着异步外衣的多线程。作者对于每一个连接都新建一个独立线程。仅仅使用异步作为询问，而实际费IO的操作是在独立的线程中。</p>
 <p>作者的<code>Connection</code>类继承自<code>threading.Thread</code>。</p>
 <p>使用Python的上下文管理器：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">def</span> <span class="title">__aenter__</span><span class="params">(self)</span> -&gt; 'Connection':</span></div><div class="line">    self.start()</div><div class="line">    <span class="keyword">await</span> self._connect()</div><div class="line">    <span class="keyword">return</span> self</div><div class="line"></div><div class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">def</span> <span class="title">__aexit__</span><span class="params">(self, exc_type, exc_val, exc_tb)</span> -&gt; <span class="keyword">None</span>:</span></div><div class="line">    <span class="keyword">await</span> self.close()</div><div class="line">    self._conn = <span class="keyword">None</span></div></pre></td></tr></table></figure>
@@ -1443,293 +529,137 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">def</span> <span class="title">_execute</span><span class="params">(self, fn, *args, **kwargs)</span>:</span></div><div class="line">    <span class="string">"""Queue a function with the given arguments for execution."""</span></div><div class="line">    <span class="keyword">await</span> self._lock.acquire()</div><div class="line"></div><div class="line">    pt = partial(fn, *args, **kwargs)</div><div class="line">    self._tx.put_nowait(pt)</div><div class="line"></div><div class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</div><div class="line">        <span class="keyword">try</span>:</div><div class="line">            result = self._rx.get_nowait()</div><div class="line">            <span class="keyword">break</span></div><div class="line"></div><div class="line">        <span class="keyword">except</span> Empty:</div><div class="line">            <span class="keyword">await</span> asyncio.sleep(<span class="number">0.1</span>)</div><div class="line">            <span class="keyword">continue</span></div><div class="line"></div><div class="line">    self._lock.release()</div><div class="line"></div><div class="line">    <span class="keyword">if</span> isinstance(result, Exception):</div><div class="line">        <span class="keyword">raise</span> result</div><div class="line"></div><div class="line">    <span class="keyword">return</span> result</div></pre></td></tr></table></figure>
 <p>作者还在这里加了锁。作者这样做是为了防止结果的混乱。举个例子，如下代码，可能因为<code>await asyncio.sleep(0.1)</code>，而造成<code>cursor2</code>拿到的是<code>table1</code>的结果。值得注意的是，如果同一EventLoop里面有其他需要获得锁的协程，可能会导致Bug的出现。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">async</span> <span class="keyword">with</span> aiosqlite.connect(...) <span class="keyword">as</span> db:</div><div class="line">    cursor1 = <span class="keyword">await</span> db.execute(<span class="string">'SELECT * FROM table1'</span>)</div><div class="line">    cursor2 = <span class="keyword">await</span> db.execute(<span class="string">'SELECT * FROM table2'</span>)</div></pre></td></tr></table></figure>
-          
-        
       
     </div>
-
     
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
+    <div class="article-info article-info-index">
       
       
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wax8280.github.io/2017/09/24/纪实摄影（1）/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Vincent Zhong">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Vin's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/24/纪实摄影（1）/" itemprop="url">纪实摄影（1）</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-24T11:36:58+08:00">2017-09-24</time>
-            
-
-            
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Photograph/" itemprop="url" rel="index"><span itemprop="name">Photograph</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="何为纪实摄影"><a href="#何为纪实摄影" class="headerlink" title="何为纪实摄影"></a>何为纪实摄影</h2><p>1910年，在布鲁塞尔举行的第五届国际摄影大会期间，有人为纪实摄影提出了一个中性的、有弹性的界定：“纪实摄影必须用作对各种各样问题的研究，因此，作为这方面的需要，纪实摄影要对所研究的主题尽可能地提供详尽的细节。任何照片都可以作为一个特别的瞬间用作研究。不存在可以被忽视的东西。美成了纪实摄影第二重要的因素，对图像所有的要求是要清晰、细节丰富，而且为了尽可能长时间地保存，要细心处理之。”</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/09/24/纪实摄影（1）/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Code/">Code</a>
     </div>
 
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
 
       
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+    </div>
 
       
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
+      <div class="clearfix"></div>
+    </div>
+    
   </div>
   
-  
-  
-  </article>
+</article>
 
 
+
+
+
+
+
+
+
+  
+    <article id="post-纪实摄影（1）" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/09/24/纪实摄影（1）/" class="article-date">
+      <time datetime="2017-09-24T03:36:58.000Z" itemprop="datePublished">2017-09-24</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wax8280.github.io/2017/09/22/关于底片的冲洗/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Vincent Zhong">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Vin's Blog">
-    </span>
-
+      <input type="hidden" class="isFancy" />
     
-      <header class="post-header">
-
+    
+      <header class="article-header">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/22/关于底片的冲洗/" itemprop="url">关于底片的冲洗</a></h1>
-        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/24/纪实摄影（1）/">纪实摄影（1）</a>
+    </h1>
+  
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-22T23:21:58+08:00">2017-09-22</time>
-            
-
-            
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Photograph/" itemprop="url" rel="index"><span itemprop="name">Photograph</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
       </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
       
+    
+    <div class="article-entry" itemprop="articleBody">
       
-
-      
-        
           
-            <h3 id="显影"><a href="#显影" class="headerlink" title="显影"></a>显影</h3><p>显影液是最重要的冲洗化学药品，因为它形成影像，将已曝光的胶片转变为底片。再次过程中，显影液与胶片感光乳剂中的感光晶体发生反应，并将它们转变为黑色的金属银。胶片曝光越充分，已显影的银团越厚。在底片上，接受大量曝光的胶片区域（明亮的被摄物体区域）变得最黑暗。</p>
+              <h2 id="何为纪实摄影"><a href="#何为纪实摄影" class="headerlink" title="何为纪实摄影"></a>何为纪实摄影</h2><p>1910年，在布鲁塞尔举行的第五届国际摄影大会期间，有人为纪实摄影提出了一个中性的、有弹性的界定：“纪实摄影必须用作对各种各样问题的研究，因此，作为这方面的需要，纪实摄影要对所研究的主题尽可能地提供详尽的细节。任何照片都可以作为一个特别的瞬间用作研究。不存在可以被忽视的东西。美成了纪实摄影第二重要的因素，对图像所有的要求是要清晰、细节丰富，而且为了尽可能长时间地保存，要细心处理之。”</p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Photograph/">Photograph</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/纪实摄影-摄影/">纪实摄影 - 摄影</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2017/09/24/纪实摄影（1）/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-关于底片的冲洗" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/09/22/关于底片的冲洗/" class="article-date">
+      <time datetime="2017-09-22T15:21:58.000Z" itemprop="datePublished">2017-09-22</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/22/关于底片的冲洗/">关于底片的冲洗</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h3 id="显影"><a href="#显影" class="headerlink" title="显影"></a>显影</h3><p>显影液是最重要的冲洗化学药品，因为它形成影像，将已曝光的胶片转变为底片。再次过程中，显影液与胶片感光乳剂中的感光晶体发生反应，并将它们转变为黑色的金属银。胶片曝光越充分，已显影的银团越厚。在底片上，接受大量曝光的胶片区域（明亮的被摄物体区域）变得最黑暗。</p>
 <h3 id="停影"><a href="#停影" class="headerlink" title="停影"></a>停影</h3><p>停影液通常是很稀的乙酸组成的。你也可以使用普通水的漂洗来终止显影处理。</p>
 <h3 id="定影"><a href="#定影" class="headerlink" title="定影"></a>定影</h3><p>经过显影液的处理后，在照相机中曝光的所有银微粒都已变黑形成了影像。不过，胶片还含有未在照相机中曝光的银微粒。</p>
 <p>定影液，也称为海波（硫代硫酸钠），是一种去除未曝光的银的化学药品。如果不定影，那么未曝光的区域也会因为暴露在光线下而最终变黑。</p>
@@ -1770,147 +700,69 @@
 <h3 id="冲洗问题"><a href="#冲洗问题" class="headerlink" title="冲洗问题"></a>冲洗问题</h3><p><img src="/2017/09/22/关于底片的冲洗/923.JPG" alt=""></p>
 <p><img src="/2017/09/22/关于底片的冲洗/924.JPG" alt=""></p>
 
-          
-        
       
     </div>
-
     
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
+    <div class="article-info article-info-index">
       
       
-        <div class="post-eof"></div>
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Photograph/">Photograph</a>
+    </div>
+
+
       
-    </footer>
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/摄影/">摄影</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/胶片/">胶片</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
   </div>
   
-  
-  
-  </article>
+</article>
 
 
+
+
+
+
+
+
+
+  
+    <article id="post-近况1562476390.3416936" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/09/22/近况1562476390.3416936/" class="article-date">
+      <time datetime="2017-09-22T08:40:56.000Z" itemprop="datePublished">2017-09-22</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wax8280.github.io/2017/09/22/近况1562476390.3416936/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Vincent Zhong">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Vin's Blog">
-    </span>
-
+      <input type="hidden" class="isFancy" />
     
-      <header class="post-header">
-
+    
+      <header class="article-header">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/22/近况1562476390.3416936/" itemprop="url">近况</a></h1>
-        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/22/近况1562476390.3416936/">近况</a>
+    </h1>
+  
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-22T16:40:56+08:00">2017-09-22</time>
-            
-
-            
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Life/" itemprop="url" rel="index"><span itemprop="name">Life</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
       </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
       
+    
+    <div class="article-entry" itemprop="articleBody">
       
-
-      
-        
           
-            <p>发现已经有半年之久没有更过博客了。最近突然想起还有博客这个玩意，心血来潮在坏掉又返修回来的Surface上部署好环境。终于写下这半年来的第一篇博文。</p>
+        <p>发现已经有半年之久没有更过博客了。最近突然想起还有博客这个玩意，心血来潮在坏掉又返修回来的Surface上部署好环境。终于写下这半年来的第一篇博文。</p>
 <h1 id="关于工作"><a href="#关于工作" class="headerlink" title="关于工作"></a>关于工作</h1><p>自从辞职了忙完毕业设计之后，我就再也没有碰过代码了。迷迷糊糊地来了南方电网，现在在梅州培训基地做起了农民工，经过两个月的暴晒，黑了5个EV。</p>
 <p><img src="/2017/09/22/近况1562476390.3416936/922-2.jpg" alt="梅州培训基地的黄昏"></p>
 <p>现实跟理想还是有差距的，原本打算可以去到江门的信息中心做自己本行的工作。但是分配结果出来大失所望，还是没能如愿以偿。最后搞到了配电的培训，不知道培训过后是要做苦逼的配电工作还是别的更苦逼的工作。</p>
@@ -1922,293 +774,129 @@
 <h1 id="关于摄影"><a href="#关于摄影" class="headerlink" title="关于摄影"></a>关于摄影</h1><p>前阵子在闲鱼上收了一个成色极新的Rollei 35T，虽然测光烂了。但还是觉得很值得。手感远比图片好，非常精致。已经喂了一卷廉价的Fuji C200胶卷，期待出片。</p>
 <p><img src="/2017/09/22/近况1562476390.3416936/922-1.jpg" alt="Rollei 35T"></p>
 
-          
-        
       
     </div>
-
     
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
+    <div class="article-info article-info-index">
       
-
       
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Life/">Life</a>
+    </div>
 
-      
 
       
       
-        <div class="post-eof"></div>
-      
-    </footer>
+      <div class="clearfix"></div>
+    </div>
+    
   </div>
   
-  
-  
-  </article>
+</article>
 
 
+
+
+
+
+
+
+
+  
+    <article id="post-近况1562476390.3372014" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/03/30/近况1562476390.3372014/" class="article-date">
+      <time datetime="2017-03-30T12:54:15.000Z" itemprop="datePublished">2017-03-30</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wax8280.github.io/2017/03/30/近况1562476390.3372014/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Vincent Zhong">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Vin's Blog">
-    </span>
-
+      <input type="hidden" class="isFancy" />
     
-      <header class="post-header">
-
+    
+      <header class="article-header">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/03/30/近况1562476390.3372014/" itemprop="url">近况</a></h1>
-        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/30/近况1562476390.3372014/">近况</a>
+    </h1>
+  
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-30T20:54:15+08:00">2017-03-30</time>
-            
-
-            
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Life/" itemprop="url" rel="index"><span itemprop="name">Life</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
       </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
       
+    
+    <div class="article-entry" itemprop="articleBody">
       
-
-      
-        
           
-            <h2 id="近况"><a href="#近况" class="headerlink" title="近况"></a>近况</h2><h3 id="要走了"><a href="#要走了" class="headerlink" title="要走了"></a>要走了</h3><p>整天嚷嚷着说要不上班了，结果现在真的不上班了。做完明天，大概我也就是一个“失业”的人了。临走的时候还是要请下组长吃一顿，毕竟我从十月到现在三月这五个月来，组长已经请我们吃了无数次饭，这么好的，技术又牛逼的组长哪里找？！</p>
+        <h2 id="近况"><a href="#近况" class="headerlink" title="近况"></a>近况</h2><h3 id="要走了"><a href="#要走了" class="headerlink" title="要走了"></a>要走了</h3><p>整天嚷嚷着说要不上班了，结果现在真的不上班了。做完明天，大概我也就是一个“失业”的人了。临走的时候还是要请下组长吃一顿，毕竟我从十月到现在三月这五个月来，组长已经请我们吃了无数次饭，这么好的，技术又牛逼的组长哪里找？！</p>
 <h3 id="关于胶卷"><a href="#关于胶卷" class="headerlink" title="关于胶卷"></a>关于胶卷</h3><p>很久之前就想要入胶卷的坑了，可是一直都无所行动（主要是因为穷），因为一直想着等大法的a7降价。可是去年一年里，a7 不仅不降价反而还升了几百，这样的垃圾还买来干什么。赶紧入个胶卷机投入全幅的怀抱吧。数码全幅一边去，不等到a72降到6000我是不会入的。</p>
 <p>其实仔细算了一下，如果用最屌丝的富士C200，一卷14，冲扫一卷25，算40一卷吧，一个月两卷。80￥/month，其实也不是很贵啦。后期投入是很大，但是想到每一次快门都是钱，拍照应该会认真了很多了。</p>
 <p>发觉我是一个不折不扣的器材党，其实自己出片率最高的时候是刚开始买相机的时候。</p>
 <h3 id="关于毕设"><a href="#关于毕设" class="headerlink" title="关于毕设"></a>关于毕设</h3><p>在忙忙碌碌中，毕设已经完成了40%了。也就是最核心的部分已经完成，可以跑起来了。但是效率还是不高，而且要怎么才能让一帮计算机知识不怎么在行的老师看明白我的东西，这才是关键。</p>
 
-          
-        
       
     </div>
-
     
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
+    <div class="article-info article-info-index">
       
-
       
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Life/">Life</a>
+    </div>
 
-      
 
       
       
-        <div class="post-eof"></div>
-      
-    </footer>
+      <div class="clearfix"></div>
+    </div>
+    
   </div>
   
-  
-  
-  </article>
+</article>
 
 
+
+
+
+
+
+
+
+  
+    <article id="post-近况1562476390.3327115" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/03/07/近况1562476390.3327115/" class="article-date">
+      <time datetime="2017-03-07T14:22:03.000Z" itemprop="datePublished">2017-03-07</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wax8280.github.io/2017/03/07/近况1562476390.3327115/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Vincent Zhong">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Vin's Blog">
-    </span>
-
+      <input type="hidden" class="isFancy" />
     
-      <header class="post-header">
-
+    
+      <header class="article-header">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/03/07/近况1562476390.3327115/" itemprop="url">近况</a></h1>
-        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/07/近况1562476390.3327115/">近况</a>
+    </h1>
+  
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-07T22:22:03+08:00">2017-03-07</time>
-            
-
-            
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Life/" itemprop="url" rel="index"><span itemprop="name">Life</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
       </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
       
+    
+    <div class="article-entry" itemprop="articleBody">
       
-
-      
-        
           
-            <h2 id="无精打采"><a href="#无精打采" class="headerlink" title="无精打采"></a>无精打采</h2><p>​    我说人生就像广州的天气——你不知道它什么时候变好，什么时候变坏。昨天还是短袖都嫌热，而今天就穿羽绒都嫌冷。大概是由于气温的飘忽不定，我的精神似乎也因此飘忽不定起来。最近是感觉每天都睡不够，每天都起不来，每天上班都有心无力，大概这是所谓的“辞职前不想工作综合征”？</p>
+        <h2 id="无精打采"><a href="#无精打采" class="headerlink" title="无精打采"></a>无精打采</h2><p>​    我说人生就像广州的天气——你不知道它什么时候变好，什么时候变坏。昨天还是短袖都嫌热，而今天就穿羽绒都嫌冷。大概是由于气温的飘忽不定，我的精神似乎也因此飘忽不定起来。最近是感觉每天都睡不够，每天都起不来，每天上班都有心无力，大概这是所谓的“辞职前不想工作综合征”？</p>
 <p>​    每天回来洗完澡就滚上床了，感觉累但是不想睡觉。要不看看书？做下毕业设计？似乎都没心情，只会在那按下手机，也不知道到底干了什么。最后，每天都一两点睡觉，简直不知所谓。</p>
 <h2 id="工作"><a href="#工作" class="headerlink" title="工作"></a>工作</h2><p>​    很多人问我，为什么不在广州或者深圳工作。每当遇到这样的问题，我都回答“我觉得以我的能力是不能够在广州（深圳）买房。“。说老实，我自己也不知道什么样的工作才是好工作。有前景，福利好，工资高，上班时间短，不累，离家近，决定一份工作是否是”好工作“有太多太多的因素了，而我也就选择了我现在看来的最优解而已。仅仅是在现在。</p>
 <h2 id="生活"><a href="#生活" class="headerlink" title="生活"></a>生活</h2><p>​    工作很忙，毕设很忙，生活还是老样子。</p>
@@ -2216,574 +904,193 @@
 <p>​    。。。</p>
 <p>​        </p>
 
-          
-        
       
     </div>
-
     
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
+    <div class="article-info article-info-index">
       
-
       
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Life/">Life</a>
+    </div>
 
-      
 
       
       
-        <div class="post-eof"></div>
-      
-    </footer>
+      <div class="clearfix"></div>
+    </div>
+    
   </div>
   
-  
-  
-  </article>
+</article>
 
 
+
+
+
+
+
+
+
+  
+    <article id="post-Hexo博客搭建" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/02/26/Hexo博客搭建/" class="article-date">
+      <time datetime="2017-02-26T12:57:40.000Z" itemprop="datePublished">2017-02-26</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wax8280.github.io/2017/02/26/Hexo博客搭建/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Vincent Zhong">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Vin's Blog">
-    </span>
-
+      <input type="hidden" class="isFancy" />
     
-      <header class="post-header">
-
+    
+      <header class="article-header">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/02/26/Hexo博客搭建/" itemprop="url">Hexo博客搭建</a></h1>
-        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/26/Hexo博客搭建/">Hexo博客搭建</a>
+    </h1>
+  
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-26T20:57:40+08:00">2017-02-26</time>
-            
-
-            
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Code/" itemprop="url" rel="index"><span itemprop="name">Code</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
       </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
       
+    
+    <div class="article-entry" itemprop="articleBody">
       
-
-      
-        
           
-            <h2 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">// 使用淘宝npm源</div><div class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</div><div class="line">// 安装</div><div class="line">cnpm install -g hexo</div><div class="line">// 切换到你认为合适的路径，创建博客</div><div class="line">hexo init</div><div class="line">// 运行</div><div class="line">hexo s -p 4040</div></pre></td></tr></table></figure>
+        <h2 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">// 使用淘宝npm源</div><div class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</div><div class="line">// 安装</div><div class="line">cnpm install -g hexo</div><div class="line">// 切换到你认为合适的路径，创建博客</div><div class="line">hexo init</div><div class="line">// 运行</div><div class="line">hexo s -p 4040</div></pre></td></tr></table></figure>
 <h2 id="进阶"><a href="#进阶" class="headerlink" title="进阶"></a>进阶</h2><h4 id="使用七牛云插件"><a href="#使用七牛云插件" class="headerlink" title="使用七牛云插件"></a>使用七牛云插件</h4><p>如何配置，<a href="https://github.com/gyk001/hexo-qiniu-sync" target="_blank" rel="external">hexo-qiniu-sync</a>写得很清楚<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cnpm install hexo-qiniu-sync --save</div></pre></td></tr></table></figure></p>
 <h4 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h4><p>直接在把主题clone到hexo的themes文件夹，然后在<code>_config.yml</code>里面指定theme即可。</p>
 <h4 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h4><p>现在Github上面创建一个以你用户名命名的repository。<code>yourname.github.io</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">cnpm install hexo-deployer-git --save</div><div class="line">// 部署</div><div class="line">hexo g</div><div class="line">hexo d -g</div><div class="line"></div><div class="line">// 可能会遇到错误，建议先清理一下再generate</div><div class="line">hexo clean</div></pre></td></tr></table></figure></p>
 
-          
-        
       
     </div>
-
     
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
+    <div class="article-info article-info-index">
       
       
-        <div class="post-eof"></div>
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Code/">Code</a>
+    </div>
+
+
       
-    </footer>
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
   </div>
   
+</article>
+
+
+
+
+
+
+
+
+
   
   
-  </article>
-
-
-    
-  </section>
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
-
-
-
-          </div>
-          
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <p class="site-author-name" itemprop="name">Vincent Zhong</p>
-              <p class="site-description motion-element" itemprop="description">Share my favorite</p>
-          </div>
-
-          
-            <nav class="site-state motion-element">
-              
-                <div class="site-state-item site-state-posts">
-                
-                  <a href="/archives/">
-                
-                    <span class="site-state-item-count">111</span>
-                    <span class="site-state-item-name">posts</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-categories">
-                  <a href="/categories/index.html">
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">6</span>
-                    <span class="site-state-item-name">categories</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-tags">
-                  <a href="/tags/index.html">
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">40</span>
-                    <span class="site-state-item-name">tags</span>
-                  </a>
-                </div>
-              
-            </nav>
-          
-
-          
-
-          
-            <div class="links-of-author motion-element">
-              
-                <span class="links-of-author-item">
-                  <a href="https://github.com/wax8280" target="_blank" title="GitHub"><i class="fa fa-fw fa-globe"></i>GitHub</a>
-                  
-                </span>
-              
-            </div>
-          
-
-          
-          
-
-          
-          
-
-          
-            
-          
-          
-
-        </div>
-      </section>
-
-      
-
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
-  <span class="with-love">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Vincent Zhong</span>
-
-  
-
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
   
 </div>
-
-
-
-
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Muse</a> v6.0.4</div>
-
-
-
-
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2019 Vincent Zhong
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
         
-
-
-
-
-
-
-
-
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
         
-      </div>
-    </footer>
-
+    </div>
+</footer>
+    </div>
     
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 2;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
     
-
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
     
-
-  </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
 </script>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=6.0.4"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=6.0.4"></script>
-
-
-
-  
-  
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.4"></script>
-
-
-
-  
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-
-  
-
-  
-
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
 </body>
 </html>

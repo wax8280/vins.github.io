@@ -1,106 +1,21 @@
 <!DOCTYPE html>
-
-
-
-  
-
-
-<html class="theme-next muse use-motion" lang="zh">
+<html lang="zh">
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-<meta name="theme-color" content="#222">
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="Vincent Zhong" />
 
 
-
-
-
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=6.0.4" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.4">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.4">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.4">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=6.0.4" color="#222">
-
-
-
-
-
-
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Muse',
-    version: '6.0.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: false,
-    fastclick: false,
-    lazyload: false,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-  
-
-
-
-
-  
-  <meta name="keywords" content="Hexo, NexT" />
+    
+    
 
 
 <meta name="description" content="Share my favorite">
@@ -114,273 +29,279 @@
 <meta name="twitter:title" content="Vin&#39;s Blog">
 <meta name="twitter:description" content="Share my favorite">
 
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="Vin&#39;s Blog" type="application/atom+xml">
 
 
 
-
-
-  <link rel="canonical" href="https://wax8280.github.io/page/10/"/>
+    <link rel="shortcut icon" href="/favicon.png">
 
 
 
-<script type="text/javascript" id="page.configurations">
-  CONFIG.page = {
-    sidebar: "",
-  };
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <style> .article { opacity: 0;} </style>
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>Vin&#39;s Blog</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: true,
+        isPost: false,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: false
+    }
 </script>
-  <title>Vin's Blog</title>
-  
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
 
 
 
 
 
-
-  <script type="text/javascript">
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?696e48752c03b0066c07d25947ac5dff";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-  </script>
-
-
-
-
-  <noscript>
-  <style type="text/css">
-    .use-motion .motion-element,
-    .use-motion .brand,
-    .use-motion .menu-item,
-    .sidebar-inner,
-    .use-motion .post-block,
-    .use-motion .pagination,
-    .use-motion .comments,
-    .use-motion .post-header,
-    .use-motion .post-body,
-    .use-motion .collection-title { opacity: initial; }
-
-    .use-motion .logo,
-    .use-motion .site-title,
-    .use-motion .site-subtitle {
-      opacity: initial;
-      top: initial;
-    }
-
-    .use-motion {
-      .logo-line-before i { left: initial; }
-      .logo-line-after i { right: initial; }
-    }
-  </style>
-</noscript>
 
 </head>
-
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left 
-  page-home">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"> <div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Vin's Blog</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
-      
-        <p class="site-subtitle"></p>
-      
-  </div>
-
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
-</div>
-
-<nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
-        
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-user"></i> <br />About</a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />Tags</a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-th"></i> <br />Categories</a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
-        </li>
-      
-
-      
-    </ul>
-  
-
-  
-</nav>
-
-
-  
-
-
-
- </div>
-    </header>
-
-    
-
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-  <section id="posts" class="posts-expand">
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wax8280.github.io/2016/08/16/关于最短路径的几个算法/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Vincent Zhong">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Vin's Blog">
-    </span>
-
-    
-      <header class="post-header">
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/avatar.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">Vincent Zhong</a></h1>
+        </hgroup>
 
         
+
         
-          <h1 class="post-title" itemprop="name headline">
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="Vincent:wax8280@163.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" href="https://github.com/wax8280" title="GitHub"></a>
+                            
+                                <a class="fa RSS" href="/atom.xml" title="RSS"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
                 
-                <a class="post-title-link" href="/2016/08/16/关于最短路径的几个算法/" itemprop="url">关于最短路径的几个算法</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-08-16T12:25:36+08:00">2016-08-16</time>
-            
-
-            
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Code/" itemprop="url" rel="index"><span itemprop="name">Code</span></a></span>
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/70s/">70s</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/80s/">80s</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/90s/">90s</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blues/">Blues</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Bossa-Nova/">Bossa Nova</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Django/">Django</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IIS/">IIS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jazz/">Jazz</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nginx/">Nginx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OpenCV/">OpenCV</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP/">PHP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Pop/">Pop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Pyspider/">Pyspider</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Rock/">Rock</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Swing/">Swing</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vocal/">Vocal</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/">Web</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WordPress/">WordPress</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/推理/">推理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/摄影/">摄影</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构与算法/">数据结构与算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/旅游/">旅游</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/每天一道编程题/">每天一道编程题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/爬虫/">爬虫</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/纪实摄影-摄影/">纪实摄影 - 摄影</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/纸媒/">纸媒</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/胶卷/">胶卷</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/胶片/">胶片</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机基础/">计算机基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机网络/">计算机网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
 
                 
                 
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">专注于前端</div>
+                </section>
+                
+            </div>
         </div>
-      </header>
-    
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Vincent Zhong</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/avatar.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">Vincent Zhong</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="Vincent:wax8280@163.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/wax8280" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap">
+  
+    <article id="post-关于最短路径的几个算法" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/08/16/关于最短路径的几个算法/" class="article-date">
+      <time datetime="2016-08-16T04:25:36.000Z" itemprop="datePublished">2016-08-16</time>
+</a>
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
 
-      
-      
-
-      
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
         
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/16/关于最短路径的几个算法/">关于最短路径的几个算法</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
           
-            <h1 id="Flody-Warshall算法"><a href="#Flody-Warshall算法" class="headerlink" title="Flody-Warshall算法"></a>Flody-Warshall算法</h1><div align="center"><br><img src="/2016/08/16/关于最短路径的几个算法/1.png" alt=""><br></div><br>求任意两点之间的最短路径。称为“多源最短路径”<br>## 分析<br>如果要让任意两点（a到b）之间的路径变短，只能引入第三个点（k），有时候甚至不止一个k<br>若只允许经过1号顶点。只需判断e[i][1]+e[1][j]是否比e[i][j]要小即可。e[i][j]表示从i号顶点到j号顶点之间的路程。<br>只允许经过<strong>1号</strong>顶点<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</div><div class="line">    <span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=n;j++)</div><div class="line">        <span class="keyword">if</span>(e[i][j]&gt;e[i][<span class="number">1</span>]+e[<span class="number">1</span>][j])</div><div class="line">            e[i][j]=e[i][<span class="number">1</span>]+e[<span class="number">1</span>][j];</div></pre></td></tr></table></figure><br><br><div align="center"><br><img src="/2016/08/16/关于最短路径的几个算法/2.png" alt=""><br></div><br>只允许经过<strong>1号和2号</strong>顶点<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</div><div class="line">    <span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=n;j++)</div><div class="line">        <span class="keyword">if</span>(e[i][j]&gt;e[i][<span class="number">1</span>]+e[<span class="number">1</span>][j])</div><div class="line">            e[i][j]=e[i][<span class="number">1</span>]+e[<span class="number">1</span>][j];</div><div class="line"><span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</div><div class="line">    <span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=n;j++)</div><div class="line">        <span class="keyword">if</span>(e[i][j]&gt;e[i][<span class="number">2</span>]+e[<span class="number">2</span>][j])</div><div class="line">            e[i][j]=e[i][<span class="number">2</span>]+e[<span class="number">2</span>][j];</div></pre></td></tr></table></figure><br><br><div align="center"><br><img src="/2016/08/16/关于最短路径的几个算法/3.png" alt=""><br></div><br>只允许经过<strong>1号2号3号</strong>顶点<br><div align="center"><br><img src="/2016/08/16/关于最短路径的几个算法/4.png" alt=""><br></div><br>最终<br><div align="center"><br><img src="/2016/08/16/关于最短路径的几个算法/5.png" alt=""><br></div>
+        <h1 id="Flody-Warshall算法"><a href="#Flody-Warshall算法" class="headerlink" title="Flody-Warshall算法"></a>Flody-Warshall算法</h1><div align="center"><br><img src="/2016/08/16/关于最短路径的几个算法/1.png" alt=""><br></div><br>求任意两点之间的最短路径。称为“多源最短路径”<br>## 分析<br>如果要让任意两点（a到b）之间的路径变短，只能引入第三个点（k），有时候甚至不止一个k<br>若只允许经过1号顶点。只需判断e[i][1]+e[1][j]是否比e[i][j]要小即可。e[i][j]表示从i号顶点到j号顶点之间的路程。<br>只允许经过<strong>1号</strong>顶点<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</div><div class="line">    <span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=n;j++)</div><div class="line">        <span class="keyword">if</span>(e[i][j]&gt;e[i][<span class="number">1</span>]+e[<span class="number">1</span>][j])</div><div class="line">            e[i][j]=e[i][<span class="number">1</span>]+e[<span class="number">1</span>][j];</div></pre></td></tr></table></figure><br><br><div align="center"><br><img src="/2016/08/16/关于最短路径的几个算法/2.png" alt=""><br></div><br>只允许经过<strong>1号和2号</strong>顶点<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</div><div class="line">    <span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=n;j++)</div><div class="line">        <span class="keyword">if</span>(e[i][j]&gt;e[i][<span class="number">1</span>]+e[<span class="number">1</span>][j])</div><div class="line">            e[i][j]=e[i][<span class="number">1</span>]+e[<span class="number">1</span>][j];</div><div class="line"><span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</div><div class="line">    <span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=n;j++)</div><div class="line">        <span class="keyword">if</span>(e[i][j]&gt;e[i][<span class="number">2</span>]+e[<span class="number">2</span>][j])</div><div class="line">            e[i][j]=e[i][<span class="number">2</span>]+e[<span class="number">2</span>][j];</div></pre></td></tr></table></figure><br><br><div align="center"><br><img src="/2016/08/16/关于最短路径的几个算法/3.png" alt=""><br></div><br>只允许经过<strong>1号2号3号</strong>顶点<br><div align="center"><br><img src="/2016/08/16/关于最短路径的几个算法/4.png" alt=""><br></div><br>最终<br><div align="center"><br><img src="/2016/08/16/关于最短路径的几个算法/5.png" alt=""><br></div>
 
 <h2 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(k=<span class="number">1</span>;k&lt;=n;k++)</div><div class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</div><div class="line">        <span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=n;j++)</div><div class="line">            <span class="keyword">if</span>(e[i][j]&gt;e[i][K]+e[K][j])</div><div class="line">                e[i][j]=e[i][K]+e[K][j];</div></pre></td></tr></table></figure>
 <h2 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h2><p>时间复杂度：O(N^3)<br>空间复杂度：O(N^2)</p>
@@ -452,147 +373,69 @@
 <p><div align="center"><br><img src="/2016/08/16/关于最短路径的几个算法/23.png" alt=""><br></div><br>实现代码<br>本例使用邻接表存储<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// n为顶点数，m为边数</span></div><div class="line"><span class="keyword">int</span> n,m,i;</div><div class="line"><span class="comment">// u为开始点，v为结束点，w为权值</span></div><div class="line"><span class="keyword">int</span> u[<span class="number">6</span>],v[<span class="number">6</span>],w[<span class="number">6</span>];</div><div class="line"><span class="keyword">int</span> first[<span class="number">5</span>],next[<span class="number">5</span>];</div><div class="line"><span class="comment">// book数组用于记录那些顶点已经在队列中</span></div><div class="line"><span class="keyword">int</span> dis[<span class="number">6</span>],book[<span class="number">6</span>]=&#123;<span class="number">0</span>&#125;;</div><div class="line"><span class="keyword">int</span> que[<span class="number">101</span>]=&#123;<span class="number">0</span>&#125;,head=<span class="number">1</span>,tail=<span class="number">1</span>;</div><div class="line"><span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;=n; i++)</div><div class="line">&#123;</div><div class="line">    dis[i]=inf;</div><div class="line">&#125;</div><div class="line">dis[<span class="number">1</span>]=<span class="number">0</span>;</div><div class="line"><span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= n; i++) book[i]=<span class="number">0</span>;</div><div class="line"><span class="comment">// 初始化first</span></div><div class="line"><span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= n; i++)</div><div class="line">&#123;</div><div class="line">    first[i]=<span class="number">-1</span></div><div class="line">&#125;</div><div class="line"><span class="comment">// 输入</span></div><div class="line"><span class="comment">// 1 4 9</span></div><div class="line"><span class="comment">// 2 4 6</span></div><div class="line"><span class="comment">// 1 2 5</span></div><div class="line"><span class="comment">// 4 3 8</span></div><div class="line"><span class="comment">// 1 3 7</span></div><div class="line"><span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=m;i++)</div><div class="line">&#123;</div><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%d %d %d"</span>,&amp;u[i],&amp;v[i],&amp;w[i]);</div><div class="line">    next[i]=first[u[i]];</div><div class="line">    first[u[i]]=i;</div><div class="line">&#125;</div><div class="line">que[tail]=<span class="number">1</span>;tail++;        <span class="comment">//入队</span></div><div class="line">book[<span class="number">1</span>]=<span class="number">1</span>;                <span class="comment">//标记</span></div><div class="line"><span class="keyword">while</span>(head&lt;tail)</div><div class="line">&#123;</div><div class="line">    k=first[que[head]];</div><div class="line">    <span class="keyword">while</span>(k!=<span class="number">-1</span>)        <span class="comment">//扫描当前顶点所有的边</span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">if</span>(dis[v[k]]&gt;dis[u[k]]+w[k])</div><div class="line">        &#123;</div><div class="line">            dis[v[k]]=dis[u[k]]+w[k];</div><div class="line">            <span class="comment">// 去重</span></div><div class="line">            <span class="keyword">if</span>(book[v[k]]==<span class="number">0</span>)</div><div class="line">            &#123;</div><div class="line">                que[tail]=v[k];</div><div class="line">                tail++;</div><div class="line">                book[v[k]]=<span class="number">1</span>;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        k=next[k];</div><div class="line">    &#125;</div><div class="line">    <span class="comment">// 出队</span></div><div class="line">    book[que[head]]=<span class="number">0</span>;</div><div class="line">     head++;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>队列优化的Bellman-Ford算法：其实上就是只处理那些在前一遍松弛中改变了最短路径估计值的顶点（因为只有这样才可能引起它们的邻接点最短路径估计值发生改变。）<br>使用队列优化的Bellman-Ford算法在形式上和广度优先搜索非常类似，不同的是在广度优先搜索的时候一个顶点出队后通常就不会再重新进入队列。<br>当一个顶点的最短路径估值变小后，需要重新进行松弛。<br>如果某个点进入队列的次数超过n次，则这个图有负环。<br>复杂度<br>最坏的情况下为O(NM)</p>
 
-          
-        
       
     </div>
-
     
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
+    <div class="article-info article-info-index">
       
       
-        <div class="post-eof"></div>
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Code/">Code</a>
+    </div>
+
+
       
-    </footer>
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据结构与算法/">数据结构与算法</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
   </div>
   
-  
-  
-  </article>
+</article>
 
 
+
+
+
+
+
+
+
+  
+    <article id="post-JavaScript——Ajax与Comet" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/07/31/JavaScript——Ajax与Comet/" class="article-date">
+      <time datetime="2016-07-31T06:13:15.000Z" itemprop="datePublished">2016-07-31</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wax8280.github.io/2016/07/31/JavaScript——Ajax与Comet/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Vincent Zhong">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Vin's Blog">
-    </span>
-
+      <input type="hidden" class="isFancy" />
     
-      <header class="post-header">
-
+    
+      <header class="article-header">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/07/31/JavaScript——Ajax与Comet/" itemprop="url">JavaScript——Ajax与Comet</a></h1>
-        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/31/JavaScript——Ajax与Comet/">JavaScript——Ajax与Comet</a>
+    </h1>
+  
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-07-31T14:13:15+08:00">2016-07-31</time>
-            
-
-            
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Code/" itemprop="url" rel="index"><span itemprop="name">Code</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
       </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
       
+    
+    <div class="article-entry" itemprop="articleBody">
       
-
-      
-        
           
-            <h1 id="XMLHttpRequest对象"><a href="#XMLHttpRequest对象" class="headerlink" title="XMLHttpRequest对象"></a>XMLHttpRequest对象</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">createXHR</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> XMLHttpRequest != <span class="string">"undefined"</span>)&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">new</span> XMLHttpRequest();</div><div class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">typeof</span> ActiveXObject != <span class="string">"undefined"</span>)&#123;</div><div class="line">        <span class="keyword">if</span> (<span class="keyword">typeof</span> <span class="built_in">arguments</span>.callee.activeXString != <span class="string">"string"</span>)&#123;</div><div class="line">		<span class="comment">//在早期的IE中，XHR对象是通过MSXML库中一个ActiveX对象实现的。</span></div><div class="line">		<span class="comment">//对于IE早期的版本IE7-，可能会遇到三种不同版本的XHR对象。</span></div><div class="line">            <span class="keyword">var</span> versions = [<span class="string">"MSXML2.XMLHttp.6.0"</span>, <span class="string">"MSXML2.XMLHttp.3.0"</span>,</div><div class="line">                            <span class="string">"MSXML2.XMLHttp"</span>],</div><div class="line">                i, len;</div><div class="line">            <span class="keyword">for</span> (i=<span class="number">0</span>,len=versions.length; i &lt; len; i++)&#123;</div><div class="line">                <span class="keyword">try</span> &#123;</div><div class="line">                    <span class="keyword">new</span> ActiveXObject(versions[i]);</div><div class="line">                    <span class="built_in">arguments</span>.callee.activeXString = versions[i];</div><div class="line">                    <span class="keyword">break</span>;</div><div class="line">                &#125; <span class="keyword">catch</span> (ex)&#123;</div><div class="line">                    <span class="comment">//跳过</span></div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">new</span> ActiveXObject(<span class="built_in">arguments</span>.callee.activeXString);</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">"No XHR object available."</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        <h1 id="XMLHttpRequest对象"><a href="#XMLHttpRequest对象" class="headerlink" title="XMLHttpRequest对象"></a>XMLHttpRequest对象</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">createXHR</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> XMLHttpRequest != <span class="string">"undefined"</span>)&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">new</span> XMLHttpRequest();</div><div class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">typeof</span> ActiveXObject != <span class="string">"undefined"</span>)&#123;</div><div class="line">        <span class="keyword">if</span> (<span class="keyword">typeof</span> <span class="built_in">arguments</span>.callee.activeXString != <span class="string">"string"</span>)&#123;</div><div class="line">		<span class="comment">//在早期的IE中，XHR对象是通过MSXML库中一个ActiveX对象实现的。</span></div><div class="line">		<span class="comment">//对于IE早期的版本IE7-，可能会遇到三种不同版本的XHR对象。</span></div><div class="line">            <span class="keyword">var</span> versions = [<span class="string">"MSXML2.XMLHttp.6.0"</span>, <span class="string">"MSXML2.XMLHttp.3.0"</span>,</div><div class="line">                            <span class="string">"MSXML2.XMLHttp"</span>],</div><div class="line">                i, len;</div><div class="line">            <span class="keyword">for</span> (i=<span class="number">0</span>,len=versions.length; i &lt; len; i++)&#123;</div><div class="line">                <span class="keyword">try</span> &#123;</div><div class="line">                    <span class="keyword">new</span> ActiveXObject(versions[i]);</div><div class="line">                    <span class="built_in">arguments</span>.callee.activeXString = versions[i];</div><div class="line">                    <span class="keyword">break</span>;</div><div class="line">                &#125; <span class="keyword">catch</span> (ex)&#123;</div><div class="line">                    <span class="comment">//跳过</span></div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">new</span> ActiveXObject(<span class="built_in">arguments</span>.callee.activeXString);</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">"No XHR object available."</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><strong>响应数据</strong><br>responseText：作为响应主体被返回的文本。<br>responseXML：如果响应的内容类型是就”text/xml”或”application/xml”，这个属性中将保存包含着响应数据的XML DOM文档<br>status：响应的HTTP状态。<br>statusText：HTTP状态的说明。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> xhr = createXHR();</div><div class="line">xhr.open(<span class="string">"get"</span>, <span class="string">"example.txt"</span>, <span class="literal">false</span>);</div><div class="line">xhr.send(<span class="literal">null</span>);</div><div class="line"><span class="keyword">if</span> ((xhr.status &gt;= <span class="number">200</span> &amp;&amp; xhr.status &lt; <span class="number">300</span>) || xhr.status == <span class="number">304</span>) &#123;</div><div class="line">    alert(xhr.statusText);</div><div class="line">    alert(xhr.responseText);</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">    alert(<span class="string">"Request was unsuccessful: "</span> + xhr.status);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p><strong>readyState 属性</strong><br>0：未初始化。尚未调用open()方法<br>1：启动。已经调用oepn()方法，但尚未调用send()方法。<br>2：发送。已经调用send()方法，但尚未接收到响应。<br>3：接收。已经接收到部分响应数据。<br>4：完成。已经接收到全部响应数据，而且已经可以在客户端使用了。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> xhr = createXHR();</div><div class="line"><span class="comment">//这里不使用this的原因。因为onreadystatechange</span></div></pre></td></tr></table></figure></p>
 <p>是哪吃力程序的作用域问题。如果使用this对象，在有的浏览器中会导致函数执行错误<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">xhr.onreadystatechange = <span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (xhr.readyState == <span class="number">4</span>) &#123;</div><div class="line">        <span class="keyword">if</span> ((xhr.status &gt;= <span class="number">200</span> &amp;&amp; xhr.status &lt; <span class="number">300</span>) || xhr.status == <span class="number">304</span>) &#123;</div><div class="line">            alert(xhr.responseText);</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            alert(<span class="string">"Request was unsuccessful: "</span> + xhr.status);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line">xhr.open(<span class="string">"get"</span>, <span class="string">"example.txt"</span>, <span class="literal">true</span>);</div><div class="line">xhr.send(<span class="literal">null</span>);</div></pre></td></tr></table></figure></p>
@@ -683,289 +526,133 @@
 <li>close：在连接关团时触发<br>WebSocket不支持DOM2级事件侦听器。</li>
 </ul>
 
-          
-        
       
     </div>
-
     
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
+    <div class="article-info article-info-index">
       
       
-        <div class="post-eof"></div>
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Code/">Code</a>
+    </div>
+
+
       
-    </footer>
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
   </div>
   
-  
-  
-  </article>
+</article>
 
 
+
+
+
+
+
+
+
+  
+    <article id="post-Mona Lisa" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/07/06/Mona Lisa/" class="article-date">
+      <time datetime="2016-07-06T12:08:52.000Z" itemprop="datePublished">2016-07-06</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wax8280.github.io/2016/07/06/Mona Lisa/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Vincent Zhong">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Vin's Blog">
-    </span>
-
+      <input type="hidden" class="isFancy" />
     
-      <header class="post-header">
-
+    
+      <header class="article-header">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/07/06/Mona Lisa/" itemprop="url">Mona Lisa</a></h1>
-        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/06/Mona Lisa/">Mona Lisa</a>
+    </h1>
+  
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-07-06T20:08:52+08:00">2016-07-06</time>
-            
-
-            
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Music/" itemprop="url" rel="index"><span itemprop="name">Music</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
       </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
       
+    
+    <div class="article-entry" itemprop="articleBody">
       
-
-      
-        
           
-            <p><div align="center"><br><img src="/2016/07/06/Mona Lisa/thumb.jpg" alt=""><br></div><br>Erupean jazz trio是我个人挺喜欢的一支小众爵士乐队。网上对他的介绍也少得可怜，在维基百科上仅仅是“European Jazz Trio, a jazz group co-founded by Marc van Roon。其实严格来说，不算是一支爵士风格的乐队，因为这个乐队曲目融合了古典流行爵士等风格。比如这张《Mona Lisa》，里面的最后一曲《The Londonderry Air》，跟弦乐的mix在一起，更像是仲夏晴朗午后一杯加了奶的咖啡。</p>
+        <p><div align="center"><br><img src="/2016/07/06/Mona Lisa/thumb.jpg" alt=""><br></div><br>Erupean jazz trio是我个人挺喜欢的一支小众爵士乐队。网上对他的介绍也少得可怜，在维基百科上仅仅是“European Jazz Trio, a jazz group co-founded by Marc van Roon。其实严格来说，不算是一支爵士风格的乐队，因为这个乐队曲目融合了古典流行爵士等风格。比如这张《Mona Lisa》，里面的最后一曲《The Londonderry Air》，跟弦乐的mix在一起，更像是仲夏晴朗午后一杯加了奶的咖啡。</p>
 <embed src="http://www.xiami.com/widget/0_1770043130/singlePlayer.swf" type="application/x-shockwave-flash" width="257" height="33" wmode="transparent">
-          
-        
       
     </div>
-
     
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
+    <div class="article-info article-info-index">
       
       
-        <div class="post-eof"></div>
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Music/">Music</a>
+    </div>
+
+
       
-    </footer>
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Jazz/">Jazz</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
   </div>
   
-  
-  
-  </article>
+</article>
 
 
+
+
+
+
+
+
+
+  
+    <article id="post-一个简单的Web服务器" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/06/30/一个简单的Web服务器/" class="article-date">
+      <time datetime="2016-06-30T06:44:47.000Z" itemprop="datePublished">2016-06-30</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wax8280.github.io/2016/06/30/一个简单的Web服务器/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Vincent Zhong">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Vin's Blog">
-    </span>
-
+      <input type="hidden" class="isFancy" />
     
-      <header class="post-header">
-
+    
+      <header class="article-header">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/06/30/一个简单的Web服务器/" itemprop="url">一个简单的Web服务器</a></h1>
-        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/30/一个简单的Web服务器/">一个简单的Web服务器</a>
+    </h1>
+  
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-06-30T14:44:47+08:00">2016-06-30</time>
-            
-
-            
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Code/" itemprop="url" rel="index"><span itemprop="name">Code</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
       </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
       
+    
+    <div class="article-entry" itemprop="articleBody">
       
-
-      
-        
           
-            <h1 id="Hello-Web"><a href="#Hello-Web" class="headerlink" title="Hello, Web"></a>Hello, Web</h1><p>现在，我们开始编写一个简单的Web服务器，基本思路如下：</p>
+        <h1 id="Hello-Web"><a href="#Hello-Web" class="headerlink" title="Hello, Web"></a>Hello, Web</h1><p>现在，我们开始编写一个简单的Web服务器，基本思路如下：</p>
 <ol>
 <li>等到别人连接到我们的服务器并发送HTTP请求</li>
 <li>分析请求</li>
@@ -1010,147 +697,69 @@
 <p>一个完整的CGI协议肯定比这复杂。比如，它要处理URL里面的参数。。。<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">run_cgi</span><span class="params">(self, full_path)</span>:</span></div><div class="line">    cmd = <span class="string">"python "</span> + full_path</div><div class="line">    child_stdin, child_stdout = os.popen2(cmd)</div><div class="line">    child_stdin.close()</div><div class="line">    data = child_stdout.read()</div><div class="line">    child_stdout.close()</div><div class="line">    self.send_content(data)</div></pre></td></tr></table></figure></p>
 <p>最后，我们把case handler类重写。所有case handler都继承base_case这个case handler基类<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">base_case</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">handle_file</span><span class="params">(self, handler, full_path)</span>:</span></div><div class="line">        <span class="keyword">try</span>:</div><div class="line">            <span class="keyword">with</span> open(full_path, <span class="string">'rb'</span>) <span class="keyword">as</span> reader:</div><div class="line">                content = reader.read()</div><div class="line">            handler.send_content(content)</div><div class="line">        <span class="keyword">except</span> IOError <span class="keyword">as</span> msg:</div><div class="line">            msg = <span class="string">"'&#123;0&#125;' cannot be read: &#123;1&#125;"</span>.format(full_path, msg)</div><div class="line">            handler.handle_error(msg)</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">index_path</span><span class="params">(self, handler)</span>:</span></div><div class="line">        <span class="keyword">return</span> os.path.join(handler.full_path, <span class="string">'index.html'</span>)</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">(self, handler)</span>:</span></div><div class="line">        <span class="keyword">assert</span> <span class="keyword">False</span>, <span class="string">'Not implemented.'</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">act</span><span class="params">(self, handler)</span>:</span></div><div class="line">        <span class="keyword">assert</span> <span class="keyword">False</span>, <span class="string">'Not implemented.'</span></div><div class="line">case handler</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">case_no_file</span><span class="params">(base_case)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">(self, handler)</span>:</span></div><div class="line">        <span class="keyword">return</span> <span class="keyword">not</span> os.path.exists(handler.full_path)</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">act</span><span class="params">(self, handler)</span>:</span></div><div class="line">        <span class="keyword">raise</span> ServerException(<span class="string">"'&#123;0&#125;' not found"</span>.format(handler.path))</div><div class="line"><span class="comment">#-------------------------------------------------------------------------------</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">case_cgi_file</span><span class="params">(base_case)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">run_cgi</span><span class="params">(self, handler)</span>:</span></div><div class="line">        cmd = <span class="string">"python "</span> + handler.full_path</div><div class="line">        child_stdin, child_stdout = os.popen2(cmd)</div><div class="line">        child_stdin.close()</div><div class="line">        data = child_stdout.read()</div><div class="line">        child_stdout.close()</div><div class="line">        handler.send_content(data)</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">(self, handler)</span>:</span></div><div class="line">        <span class="keyword">return</span> os.path.isfile(handler.full_path) <span class="keyword">and</span> \</div><div class="line">                  handler.full_path.endswith(<span class="string">'.py'</span>)</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">act</span><span class="params">(self, handler)</span>:</span></div><div class="line">        self.run_cgi(handler)</div><div class="line"><span class="comment">#-------------------------------------------------------------------------------</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">case_existing_file</span><span class="params">(base_case)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">(self, handler)</span>:</span></div><div class="line">        <span class="keyword">return</span> os.path.isfile(handler.full_path)</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">act</span><span class="params">(self, handler)</span>:</span></div><div class="line">        self.handle_file(handler, handler.full_path)</div><div class="line"><span class="comment">#-------------------------------------------------------------------------------</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">case_directory_index_file</span><span class="params">(base_case)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">(self, handler)</span>:</span></div><div class="line">        <span class="keyword">return</span> os.path.isdir(handler.full_path) <span class="keyword">and</span> \</div><div class="line">                  os.path.isfile(self.index_path(handler))</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">act</span><span class="params">(self, handler)</span>:</span></div><div class="line">        self.handle_file(handler, self.index_path(handler))</div><div class="line"><span class="comment">#-------------------------------------------------------------------------------</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">case_directory_no_index_file</span><span class="params">(base_case)</span>:</span></div><div class="line">      Listing_Page = <span class="string">'''\</span></div><div class="line"><span class="string">    &lt;html&gt;</span></div><div class="line"><span class="string">    &lt;body&gt;</span></div><div class="line"><span class="string">    &lt;ul&gt;</span></div><div class="line"><span class="string">    &#123;0&#125;</span></div><div class="line"><span class="string">    &lt;/ul&gt;</span></div><div class="line"><span class="string">    &lt;/body&gt;</span></div><div class="line"><span class="string">    &lt;/html&gt;</span></div><div class="line"><span class="string">    '''</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">list_dir</span><span class="params">(self, handler, full_path)</span>:</span></div><div class="line">        <span class="keyword">try</span>:</div><div class="line">            entries = os.listdir(full_path)</div><div class="line">            bullets = [<span class="string">'&lt;li&gt;&#123;0&#125;&lt;/li&gt;'</span>.format(e) <span class="keyword">for</span> e <span class="keyword">in</span> entries <span class="keyword">if</span> <span class="keyword">not</span> e.startswith(<span class="string">'.'</span>)]</div><div class="line">            page = self.Listing_Page.format(<span class="string">'\n'</span>.join(bullets))</div><div class="line">            handler.send_content(page)</div><div class="line">        <span class="keyword">except</span> OSError <span class="keyword">as</span> msg:</div><div class="line">            msg = <span class="string">"'&#123;0&#125;' cannot be listed: &#123;1&#125;"</span>.format(self.path, msg)</div><div class="line">            handler.handle_error(msg)</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">(self, handler)</span>:</span></div><div class="line">        <span class="keyword">return</span> os.path.isdir(handler.full_path) <span class="keyword">and</span> \</div><div class="line">                  <span class="keyword">not</span> os.path.isfile(self.index_path(handler))</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">act</span><span class="params">(self, handler)</span>:</span></div><div class="line">        self.list_dir(handler, handler.full_path)</div><div class="line"><span class="comment">#-------------------------------------------------------------------------------</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">case_always_fail</span><span class="params">(base_case)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">(self, handler)</span>:</span></div><div class="line">        <span class="keyword">return</span> <span class="keyword">True</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">act</span><span class="params">(self, handler)</span>:</span></div><div class="line">        <span class="keyword">raise</span> ServerException(<span class="string">"Unknown object '&#123;0&#125;'"</span>.format(handler.path))</div></pre></td></tr></table></figure></p>
 
-          
-        
       
     </div>
-
     
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
+    <div class="article-info article-info-index">
       
       
-        <div class="post-eof"></div>
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Code/">Code</a>
+    </div>
+
+
       
-    </footer>
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Web/">Web</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
   </div>
   
-  
-  
-  </article>
+</article>
 
 
+
+
+
+
+
+
+
+  
+    <article id="post-编写一个简单的模板引擎" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/06/24/编写一个简单的模板引擎/" class="article-date">
+      <time datetime="2016-06-24T03:24:15.000Z" itemprop="datePublished">2016-06-24</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wax8280.github.io/2016/06/24/编写一个简单的模板引擎/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Vincent Zhong">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Vin's Blog">
-    </span>
-
+      <input type="hidden" class="isFancy" />
     
-      <header class="post-header">
-
+    
+      <header class="article-header">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/06/24/编写一个简单的模板引擎/" itemprop="url">编写一个简单的模板引擎</a></h1>
-        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/24/编写一个简单的模板引擎/">编写一个简单的模板引擎</a>
+    </h1>
+  
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-06-24T11:24:15+08:00">2016-06-24</time>
-            
-
-            
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Code/" itemprop="url" rel="index"><span itemprop="name">Code</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
       </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
       
+    
+    <div class="article-entry" itemprop="articleBody">
       
-
-      
-        
           
-            <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>我们知道，互联网上的HTML页面极少是完全静态的。它们都或多或少掺入一些动态数据（比如，用户名），通常一个网页会含有大量的动态数据：展示的商品，或好友的动态等等。</p>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>我们知道，互联网上的HTML页面极少是完全静态的。它们都或多或少掺入一些动态数据（比如，用户名），通常一个网页会含有大量的动态数据：展示的商品，或好友的动态等等。</p>
 <p>怎么用一种简单的方法将动态数据插入到完全静态的页面中？要解决这个问题，我们必须设计出一种前端人员熟悉的类似于HTML标记语言的方式，将动态数据插入到静态的HTML页面中。<br>举个例子<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Welcome, Vincent!<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Products:<span class="tag">&lt;/<span class="name">p</span>&gt;</span> </div><div class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>Apple: $1.00<span class="tag">&lt;/<span class="name">li</span>&gt;</span> </div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>Fig: $1.50<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>Pomegranate: $3.25<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div></pre></td></tr></table></figure></p>
 <p>我们知道，用户名是要动态的，因为页面根据不同的用户呈现出不同的效果；水果的列表也要是动态的，因为水果的价格不能一成不变，它需要从数据库中获取数据，动态改变价格或种类。</p>
 <p>为了让HTML文档在我们代码中以字符串形式显示，我们必须将需要动态处理的数据单独标记出来，以便程序进行处理。<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">PAGE_HTML = <span class="string">"""</span></div><div class="line"><span class="string">    &lt;p&gt;Welcome, &#123;name&#125;!&lt;/p&gt;</span></div><div class="line"><span class="string">    &lt;p&gt;Products:&lt;/p&gt;</span></div><div class="line"><span class="string">    &lt;ul&gt;</span></div><div class="line"><span class="string">    &#123;products&#125;</span></div><div class="line"><span class="string">    &lt;/ul&gt;</span></div><div class="line"><span class="string">"""</span></div><div class="line">PRODUCT_HTML = <span class="string">"&lt;li&gt;&#123;prodname&#125;: &#123;price&#125;&lt;/li&gt;\n"</span></div></pre></td></tr></table></figure></p>
@@ -1257,439 +866,205 @@
 <li>空格控制</li>
 </ul>
 
-          
-        
       
     </div>
-
     
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
+    <div class="article-info article-info-index">
       
       
-        <div class="post-eof"></div>
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Code/">Code</a>
+    </div>
+
+
       
-    </footer>
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Web/">Web</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
   </div>
   
-  
-  
-  </article>
+</article>
 
 
+
+
+
+
+
+
+
+  
+    <article id="post-Stardust" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/06/21/Stardust/" class="article-date">
+      <time datetime="2016-06-21T13:29:44.000Z" itemprop="datePublished">2016-06-21</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wax8280.github.io/2016/06/21/Stardust/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Vincent Zhong">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Vin's Blog">
-    </span>
-
+      <input type="hidden" class="isFancy" />
     
-      <header class="post-header">
-
+    
+      <header class="article-header">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/06/21/Stardust/" itemprop="url">Stardust</a></h1>
-        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/21/Stardust/">Stardust</a>
+    </h1>
+  
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-06-21T21:29:44+08:00">2016-06-21</time>
-            
-
-            
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Music/" itemprop="url" rel="index"><span itemprop="name">Music</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
       </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
       
+    
+    <div class="article-entry" itemprop="articleBody">
       
-
-      
-        
           
-            <p><div align="center"><br><img src="/2016/06/21/Stardust/thumb-2.jpg" alt=""><br></div><br>去年冬天的最后一天65岁的Natalie Cole因病离世。</p>
+        <p><div align="center"><br><img src="/2016/06/21/Stardust/thumb-2.jpg" alt=""><br></div><br>去年冬天的最后一天65岁的Natalie Cole因病离世。</p>
 <p>每逢冬天听起她跟她父亲Nat King Cole“合唱”的《When I Fall In Love》，心里总会泛起一股温暖。1965年，在Natalie Cole 9岁的时候，他父亲Nat King Cole因肺癌去世。31年后的1996年，Natalie Cole跟她的父亲的“合唱”第一次出现在这张唱片中。当然，这是通过音频技术将她父亲1956年的一张唱片的声音提取出来与她形成“合唱”的效果。我不知道相隔31年，跟自己的父亲合唱是一种什么样的感受。但我每次听这首歌的时候，总有一种时空交错的感觉，仿佛虽然时间会流逝，但总有一些东西会永远不变，是他们的歌声？还是他们歌声中的爱？</p>
 <hr>
 <blockquote>
 <p>When I fall in love it will be forever or I I never fall in love，<br>In a restless world like this is<br>Love is ended before it begun<br>And too many moonlight kisses<br>Seem to cool in the warmth of the sun<br>When I give my heart，it will be completely or I never give my heart<br>And the moment I can feel that you feel that way too<br>is when I fall in love with you<br>when I fall in love<br>And the moment I can feel that you feel that way too<br>is when I fall in love with you</p>
 </blockquote>
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="298" height="52" src="http://music.163.com/outchain/player?type=2&id=21265141&auto=0&height=32"></iframe>
-          
-        
       
     </div>
-
     
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
+    <div class="article-info article-info-index">
       
       
-        <div class="post-eof"></div>
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Music/">Music</a>
+    </div>
+
+
       
-    </footer>
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/90s/">90s</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vocal/">Vocal</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
   </div>
   
-  
-  
-  </article>
+</article>
 
 
+
+
+
+
+
+
+
+  
+    <article id="post-Nothing&#39;s Gonna Change" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/06/17/Nothing's Gonna Change/" class="article-date">
+      <time datetime="2016-06-17T10:44:27.000Z" itemprop="datePublished">2016-06-17</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wax8280.github.io/2016/06/17/Nothing's Gonna Change/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Vincent Zhong">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Vin's Blog">
-    </span>
-
+      <input type="hidden" class="isFancy" />
     
-      <header class="post-header">
-
+    
+      <header class="article-header">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/06/17/Nothing's Gonna Change/" itemprop="url">Nothing's Gonna Change</a></h1>
-        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/17/Nothing's Gonna Change/">Nothing&#39;s Gonna Change</a>
+    </h1>
+  
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-06-17T18:44:27+08:00">2016-06-17</time>
-            
-
-            
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Music/" itemprop="url" rel="index"><span itemprop="name">Music</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
       </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
       
+    
+    <div class="article-entry" itemprop="articleBody">
       
-
-      
-        
           
-            <p><div align="center"><br><img src="/2016/06/17/Nothing's Gonna Change/s6992974.jpg" alt=""><br></div><br>一般人叫我推荐爵士的时候，我会推荐Simone </p>
+        <p><div align="center"><br><img src="/2016/06/17/Nothing's Gonna Change/s6992974.jpg" alt=""><br></div><br>一般人叫我推荐爵士的时候，我会推荐Simone </p>
 <p>Kopmajer的这张专辑。Simone Kopmajer这张专辑里收录的都是经典的欧美流行歌曲。经过重新编曲后，这些耳熟能详的欧美流行歌曲居然真的有点“爵士味”起来。全张专辑配器简单精致，只用钢琴，贝斯，鼓，和少许的萨克斯，让人平静且舒服。《Nothing’s gonna change my love for you》这既是专辑名字，也是一首歌的名字，是经典爱情片《廊桥遗梦》主题曲。这首歌演唱版本众多（可能大家听过最多的版本是方大同翻唱的版本了），原唱是黑人爵士乐手George Benson。Simone Kopmajer演唱的这首歌，全曲仅有一架钢琴作伴奏，没有花俏的和弦，简单平和但触动人心。</p>
 <p>来自奥地利的Simone Kopmajer, 于1981年出生与音乐世家，双亲都是音乐老师，父亲还是音乐学校的校长，因此Simone八岁就开始接受钢琴训练，十二岁就开始在父亲领导的大乐团中担任歌手。</p>
 <p>这张专辑的发行公司，是泰国一家小爵士唱片公司Hitman Jazz。</p>
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="298" height="52" src="http://music.163.com/outchain/player?type=1&id=1751475&auto=0&height=32"></iframe>
-          
-        
       
     </div>
-
     
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
+    <div class="article-info article-info-index">
       
       
-        <div class="post-eof"></div>
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Music/">Music</a>
+    </div>
+
+
       
-    </footer>
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Jazz/">Jazz</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Pop/">Pop</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
   </div>
   
-  
-  
-  </article>
+</article>
 
 
+
+
+
+
+
+
+
+  
+    <article id="post-关于WP Slimstat Analytics插件拖慢网站解析" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/06/17/关于WP Slimstat Analytics插件拖慢网站解析/" class="article-date">
+      <time datetime="2016-06-17T06:29:11.000Z" itemprop="datePublished">2016-06-17</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wax8280.github.io/2016/06/17/关于WP Slimstat Analytics插件拖慢网站解析/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Vincent Zhong">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Vin's Blog">
-    </span>
-
+      <input type="hidden" class="isFancy" />
     
-      <header class="post-header">
-
+    
+      <header class="article-header">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/06/17/关于WP Slimstat Analytics插件拖慢网站解析/" itemprop="url">关于WP Slimstat Analytics插件拖慢网站解析</a></h1>
-        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/17/关于WP Slimstat Analytics插件拖慢网站解析/">关于WP Slimstat Analytics插件拖慢网站解析</a>
+    </h1>
+  
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-06-17T14:29:11+08:00">2016-06-17</time>
-            
-
-            
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Code/" itemprop="url" rel="index"><span itemprop="name">Code</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
       </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
       
+    
+    <div class="article-entry" itemprop="articleBody">
       
-
-      
-        
           
-            <p>前几天网站速度很慢，开瀑布图发现时间都花在等在php解析html上。后来分析错误，发现问题出在<strong>WP Slimstat Analytics</strong>上面。<br><strong>WP Slimstat Analytics</strong>是一款功能强大的流量分析软件，可是对网站解析的速度的拖慢也很“强大”</p>
+        <p>前几天网站速度很慢，开瀑布图发现时间都花在等在php解析html上。后来分析错误，发现问题出在<strong>WP Slimstat Analytics</strong>上面。<br><strong>WP Slimstat Analytics</strong>是一款功能强大的流量分析软件，可是对网站解析的速度的拖慢也很“强大”</p>
 <hr>
 <p>使用<strong>WP Slimstat Analytics</strong>之前</p>
 <div align="center"><br><img src="/2016/06/17/关于WP Slimstat Analytics插件拖慢网站解析/before.jpg" alt=""><br></div>
@@ -1697,289 +1072,133 @@
 <p>使用<strong>WP Slimstat Analytics</strong>之后</p>
 <p><div align="center"><br><img src="/2016/06/17/关于WP Slimstat Analytics插件拖慢网站解析/after.jpg" alt=""><br></div><br>居然达到惊人的2秒多。</p>
 
-          
-        
       
     </div>
-
     
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
+    <div class="article-info article-info-index">
       
       
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wax8280.github.io/2016/06/17/IIS显示404找不到该文件错误解决方法/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Vincent Zhong">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Vin's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/06/17/IIS显示404找不到该文件错误解决方法/" itemprop="url">IIS显示404找不到该文件错误解决方法</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-06-17T14:20:20+08:00">2016-06-17</time>
-            
-
-            
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Code/" itemprop="url" rel="index"><span itemprop="name">Code</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>今天测试的时候发现服务器上一个后缀名为.woff2的文件出现404 Not Found。确认路径，文件名，后缀名无误后还是依然404。这有点吊诡。后来查资料发现，IIS只能识别MIME 中注册过的文件类型，所以如果需要识别自己定义的某些类型请自行添加到MIME中。泪。</p>
-
-          
-        
-      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Code/">Code</a>
     </div>
 
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
 
       
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WordPress/">WordPress</a></li></ul>
+    </div>
 
       
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
+      <div class="clearfix"></div>
+    </div>
+    
   </div>
   
-  
-  
-  </article>
+</article>
 
 
+
+
+
+
+
+
+
+  
+    <article id="post-IIS显示404找不到该文件错误解决方法" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/06/17/IIS显示404找不到该文件错误解决方法/" class="article-date">
+      <time datetime="2016-06-17T06:20:20.000Z" itemprop="datePublished">2016-06-17</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wax8280.github.io/2016/06/13/Just One Night/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Vincent Zhong">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Vin's Blog">
-    </span>
-
+      <input type="hidden" class="isFancy" />
     
-      <header class="post-header">
-
+    
+      <header class="article-header">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/06/13/Just One Night/" itemprop="url">Just One Night</a></h1>
-        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/17/IIS显示404找不到该文件错误解决方法/">IIS显示404找不到该文件错误解决方法</a>
+    </h1>
+  
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-06-13T23:09:27+08:00">2016-06-13</time>
-            
-
-            
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Music/" itemprop="url" rel="index"><span itemprop="name">Music</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
       </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
       
+    
+    <div class="article-entry" itemprop="articleBody">
       
-
-      
-        
           
-            <p><div align="center"><br><img src="/2016/06/13/Just One Night/thumb-00.jpg" alt=""><br></div><br>1980年，Eric Clapton在日本东京Budokan Theatre举办了一场个人演出。《Just One Night》这张专辑记录当晚蓝调之夜的盛况。Eric Clapton在演出中演唱了很多经典的作品，无论是Blues味十足《Double Trouble》亦或是脍炙人口的《Wonderful Tonight》。个人很喜欢这个Live版的《Double Trouble》，Eric Clapton在70年代渐渐转向流行乐，可是这场演出可是货真价实的Night Of Blues。</p>
+        <p>今天测试的时候发现服务器上一个后缀名为.woff2的文件出现404 Not Found。确认路径，文件名，后缀名无误后还是依然404。这有点吊诡。后来查资料发现，IIS只能识别MIME 中注册过的文件类型，所以如果需要识别自己定义的某些类型请自行添加到MIME中。泪。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Code/">Code</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/IIS/">IIS</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-Just One Night" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/06/13/Just One Night/" class="article-date">
+      <time datetime="2016-06-13T15:09:27.000Z" itemprop="datePublished">2016-06-13</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/13/Just One Night/">Just One Night</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><div align="center"><br><img src="/2016/06/13/Just One Night/thumb-00.jpg" alt=""><br></div><br>1980年，Eric Clapton在日本东京Budokan Theatre举办了一场个人演出。《Just One Night》这张专辑记录当晚蓝调之夜的盛况。Eric Clapton在演出中演唱了很多经典的作品，无论是Blues味十足《Double Trouble》亦或是脍炙人口的《Wonderful Tonight》。个人很喜欢这个Live版的《Double Trouble》，Eric Clapton在70年代渐渐转向流行乐，可是这场演出可是货真价实的Night Of Blues。</p>
 <p>Eric Clapton算是个人很喜欢的乐手之一。他1945年出生于英国小镇Ripley，从小就对Blues感兴趣的他15岁就开始学习吉他。1962年，年仅17岁的Eric Clapton从金斯顿艺术大学(Kingston College of Art)辍学，开始凭借自己的吉他演奏技术在英国当地的大小酒馆里演出养活自己。成名之后他回忆道，“当时只要能看到Bo Diddley与Chuck Berry一眼，我就高兴的昏了头。所以当我发现Muddy Walters与Robert Johnson时，对我的影响力都很大。”</p>
 <p>早期的Eric Clapton玩的是比较传统的Blues或者Blues Rock。Eric Clapton的伟大不在于玩Blues玩得溜，而是在于他把Blues这种黑人音乐加入个人特色，进行扩展，使其大众化，也形成了个人风格。</p>
 <p>如今71岁的Eric Clapton依然活跃在舞台上面，Eric Clapton除了坚持每隔几年出一张新唱片外，还每三年举办一次Crossroads演唱会，邀请朋友们一起上台Jam。</p>
@@ -1989,429 +1208,130 @@
 <p>“我是如何来到世间？什么时候我所有的愿望可以实现？…当我看到我父亲的眼睛。”<br>（How did I get here? When will all my hopes arrive?…When I look in my father’s eyes.）</p>
 <p>一个多伦多的叫麦克尔的旅行者，开始着手揭开谜团。他调查了加拿大军队的服役档案，并寻找所有名字为爱德华·弗赖尔的人，终于找到了真相。他父亲全名为爱德华·瓦特·弗赖尔，于1920年3月21日在蒙特利尔出生，于1985年5月15日在北约克逝世。弗赖尔是一个音乐家（钢琴和萨克斯），他终生流浪，几度结婚，并育有几个孩子。显而易见，他从来不知道自己是埃里克·克莱普顿的父亲。</p>
 <embed src="http://www.xiami.com/widget/0_1768911263/singlePlayer.swf" type="application/x-shockwave-flash" width="257" height="33">
-          
-        
       
     </div>
-
     
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
+    <div class="article-info article-info-index">
       
       
-        <div class="post-eof"></div>
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Music/">Music</a>
+    </div>
+
+
       
-    </footer>
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/80s/">80s</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blues/">Blues</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
   </div>
   
+</article>
+
+
+
+
+
+
+
+
+
   
   
-  </article>
-
-
-    
-  </section>
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/9/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/11/"><i class="fa fa-angle-right"></i></a>
-  </nav>
-
-
-
-          </div>
-          
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <p class="site-author-name" itemprop="name">Vincent Zhong</p>
-              <p class="site-description motion-element" itemprop="description">Share my favorite</p>
-          </div>
-
-          
-            <nav class="site-state motion-element">
-              
-                <div class="site-state-item site-state-posts">
-                
-                  <a href="/archives/">
-                
-                    <span class="site-state-item-count">111</span>
-                    <span class="site-state-item-name">posts</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-categories">
-                  <a href="/categories/index.html">
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">6</span>
-                    <span class="site-state-item-name">categories</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-tags">
-                  <a href="/tags/index.html">
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">40</span>
-                    <span class="site-state-item-name">tags</span>
-                  </a>
-                </div>
-              
-            </nav>
-          
-
-          
-
-          
-            <div class="links-of-author motion-element">
-              
-                <span class="links-of-author-item">
-                  <a href="https://github.com/wax8280" target="_blank" title="GitHub"><i class="fa fa-fw fa-globe"></i>GitHub</a>
-                  
-                </span>
-              
-            </div>
-          
-
-          
-          
-
-          
-          
-
-          
-            
-          
-          
-
-        </div>
-      </section>
-
-      
-
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
-  <span class="with-love">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Vincent Zhong</span>
-
-  
-
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/9/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/11/">Next &raquo;</a>
+    </nav>
   
 </div>
-
-
-
-
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Muse</a> v6.0.4</div>
-
-
-
-
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2019 Vincent Zhong
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
         
-
-
-
-
-
-
-
-
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
         
-      </div>
-    </footer>
-
+    </div>
+</footer>
+    </div>
     
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 2;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
     
-
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
     
-
-  </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
 </script>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=6.0.4"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=6.0.4"></script>
-
-
-
-  
-  
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.4"></script>
-
-
-
-  
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-
-  
-
-  
-
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
 </body>
 </html>

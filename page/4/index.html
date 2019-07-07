@@ -1,106 +1,21 @@
 <!DOCTYPE html>
-
-
-
-  
-
-
-<html class="theme-next muse use-motion" lang="zh">
+<html lang="zh">
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-<meta name="theme-color" content="#222">
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="Vincent Zhong" />
 
 
-
-
-
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=6.0.4" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.4">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.4">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.4">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=6.0.4" color="#222">
-
-
-
-
-
-
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Muse',
-    version: '6.0.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: false,
-    fastclick: false,
-    lazyload: false,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-  
-
-
-
-
-  
-  <meta name="keywords" content="Hexo, NexT" />
+    
+    
 
 
 <meta name="description" content="Share my favorite">
@@ -114,273 +29,279 @@
 <meta name="twitter:title" content="Vin&#39;s Blog">
 <meta name="twitter:description" content="Share my favorite">
 
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="Vin&#39;s Blog" type="application/atom+xml">
 
 
 
-
-
-  <link rel="canonical" href="https://wax8280.github.io/page/4/"/>
+    <link rel="shortcut icon" href="/favicon.png">
 
 
 
-<script type="text/javascript" id="page.configurations">
-  CONFIG.page = {
-    sidebar: "",
-  };
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <style> .article { opacity: 0;} </style>
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>Vin&#39;s Blog</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: true,
+        isPost: false,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: false
+    }
 </script>
-  <title>Vin's Blog</title>
-  
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
 
 
 
 
 
-
-  <script type="text/javascript">
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?696e48752c03b0066c07d25947ac5dff";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-  </script>
-
-
-
-
-  <noscript>
-  <style type="text/css">
-    .use-motion .motion-element,
-    .use-motion .brand,
-    .use-motion .menu-item,
-    .sidebar-inner,
-    .use-motion .post-block,
-    .use-motion .pagination,
-    .use-motion .comments,
-    .use-motion .post-header,
-    .use-motion .post-body,
-    .use-motion .collection-title { opacity: initial; }
-
-    .use-motion .logo,
-    .use-motion .site-title,
-    .use-motion .site-subtitle {
-      opacity: initial;
-      top: initial;
-    }
-
-    .use-motion {
-      .logo-line-before i { left: initial; }
-      .logo-line-after i { right: initial; }
-    }
-  </style>
-</noscript>
 
 </head>
-
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left 
-  page-home">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"> <div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Vin's Blog</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
-      
-        <p class="site-subtitle"></p>
-      
-  </div>
-
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
-</div>
-
-<nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
-        
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-user"></i> <br />About</a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />Tags</a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-th"></i> <br />Categories</a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
-        </li>
-      
-
-      
-    </ul>
-  
-
-  
-</nav>
-
-
-  
-
-
-
- </div>
-    </header>
-
-    
-
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-  <section id="posts" class="posts-expand">
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wax8280.github.io/2016/10/13/Python设计模式——单例模式/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Vincent Zhong">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Vin's Blog">
-    </span>
-
-    
-      <header class="post-header">
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/avatar.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">Vincent Zhong</a></h1>
+        </hgroup>
 
         
+
         
-          <h1 class="post-title" itemprop="name headline">
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="Vincent:wax8280@163.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" href="https://github.com/wax8280" title="GitHub"></a>
+                            
+                                <a class="fa RSS" href="/atom.xml" title="RSS"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
                 
-                <a class="post-title-link" href="/2016/10/13/Python设计模式——单例模式/" itemprop="url">Python设计模式——单例模式</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-10-13T18:40:13+08:00">2016-10-13</time>
-            
-
-            
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Code/" itemprop="url" rel="index"><span itemprop="name">Code</span></a></span>
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/70s/">70s</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/80s/">80s</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/90s/">90s</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blues/">Blues</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Bossa-Nova/">Bossa Nova</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Django/">Django</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IIS/">IIS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jazz/">Jazz</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nginx/">Nginx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OpenCV/">OpenCV</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP/">PHP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Pop/">Pop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Pyspider/">Pyspider</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Rock/">Rock</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Swing/">Swing</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vocal/">Vocal</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/">Web</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WordPress/">WordPress</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/推理/">推理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/摄影/">摄影</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构与算法/">数据结构与算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/旅游/">旅游</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/每天一道编程题/">每天一道编程题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/爬虫/">爬虫</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/纪实摄影-摄影/">纪实摄影 - 摄影</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/纸媒/">纸媒</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/胶卷/">胶卷</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/胶片/">胶片</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机基础/">计算机基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机网络/">计算机网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
 
                 
                 
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">专注于前端</div>
+                </section>
+                
+            </div>
         </div>
-      </header>
-    
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Vincent Zhong</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/avatar.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">Vincent Zhong</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="Vincent:wax8280@163.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/wax8280" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap">
+  
+    <article id="post-Python设计模式——单例模式" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/10/13/Python设计模式——单例模式/" class="article-date">
+      <time datetime="2016-10-13T10:40:13.000Z" itemprop="datePublished">2016-10-13</time>
+</a>
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
 
-      
-      
-
-      
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
         
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/13/Python设计模式——单例模式/">Python设计模式——单例模式</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
           
-            <h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>Singleton provides you with a mechanism to have one, and only one, object of a given type and provides a global point of access.<br>单例模式常用与logging或者database operations等。他们都只需要一个实例来操作从而避免冲突</p>
+        <h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>Singleton provides you with a mechanism to have one, and only one, object of a given type and provides a global point of access.<br>单例模式常用与logging或者database operations等。他们都只需要一个实例来操作从而避免冲突</p>
 <h3 id="UML"><a href="#UML" class="headerlink" title="UML"></a>UML</h3><div align="center"><br><img src="/2016/10/13/Python设计模式——单例模式/Singleton-800x513.png" alt=""><br></div>
 
 <h3 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h3><h4 id="普通版"><a href="#普通版" class="headerlink" title="普通版"></a>普通版</h4><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># coding:utf-8</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Singleton</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__new__</span><span class="params">(cls)</span>:</span></div><div class="line">        <span class="keyword">if</span> <span class="keyword">not</span> hasattr(cls, <span class="string">'instance'</span>):</div><div class="line">            cls.instance = super(Singleton, cls).__new__(cls)</div><div class="line">        <span class="keyword">return</span> cls.instance</div><div class="line">s = Singleton()</div><div class="line">print(<span class="string">"Object created"</span>, s)</div><div class="line">s1 = Singleton()</div><div class="line">print(<span class="string">"Object created"</span>, s1)</div><div class="line">Object created &lt;__main__.Singleton object at <span class="number">0x000001B2A199A630</span>&gt;</div><div class="line">Object created &lt;__main__.Singleton object at <span class="number">0x000001B2A199A630</span>&gt;</div><div class="line"><span class="comment">#### Lazy instantiation版</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Singleton</span>:</span></div><div class="line">    __instance = <span class="keyword">None</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="keyword">if</span> <span class="keyword">not</span> Singleton.__instance:</div><div class="line">            print(<span class="string">" __init__ method called.."</span>)</div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            print(<span class="string">"Instance already created:"</span>, self.getInstance())</div><div class="line"><span class="meta">    @classmethod</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">getInstance</span><span class="params">(cls)</span>:</span></div><div class="line">        <span class="keyword">if</span> <span class="keyword">not</span> cls.__instance:</div><div class="line">            cls.__instance = Singleton()</div><div class="line">        <span class="keyword">return</span> cls.__instance</div><div class="line"><span class="comment"># s = Singleton.getInstance()</span></div><div class="line"><span class="comment"># print("Object created", s)</span></div><div class="line"><span class="comment"># s1 = Singleton.getInstance()</span></div><div class="line"><span class="comment"># print("Object created", s1)</span></div></pre></td></tr></table></figure>
@@ -412,147 +333,69 @@
 </li>
 </ul>
 
-          
-        
       
     </div>
-
     
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
+    <div class="article-info article-info-index">
       
       
-        <div class="post-eof"></div>
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Code/">Code</a>
+    </div>
+
+
       
-    </footer>
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/设计模式/">设计模式</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
   </div>
   
-  
-  
-  </article>
+</article>
 
 
+
+
+
+
+
+
+
+  
+    <article id="post-2-3树（Python实现）" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/10/12/2-3树（Python实现）/" class="article-date">
+      <time datetime="2016-10-12T11:58:56.000Z" itemprop="datePublished">2016-10-12</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wax8280.github.io/2016/10/12/2-3树（Python实现）/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Vincent Zhong">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Vin's Blog">
-    </span>
-
+      <input type="hidden" class="isFancy" />
     
-      <header class="post-header">
-
+    
+      <header class="article-header">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/10/12/2-3树（Python实现）/" itemprop="url">2-3树（Python实现）</a></h1>
-        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/12/2-3树（Python实现）/">2-3树（Python实现）</a>
+    </h1>
+  
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-10-12T19:58:56+08:00">2016-10-12</time>
-            
-
-            
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Code/" itemprop="url" rel="index"><span itemprop="name">Code</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
       </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
       
+    
+    <div class="article-entry" itemprop="articleBody">
       
-
-      
-        
           
-            <p>我们希望该树的高度能够维持在 lgN 左右，这样我们就能保证只需要lgN次比较操作就可以查找到想要的值。不幸的是，每次插入元素之后维持树的平衡状态太昂贵。</p>
+        <p>我们希望该树的高度能够维持在 lgN 左右，这样我们就能保证只需要lgN次比较操作就可以查找到想要的值。不幸的是，每次插入元素之后维持树的平衡状态太昂贵。</p>
 <p><div align="center"><br><img src="/2016/10/12/2-3树（Python实现）/2-31-800x308.png" alt=""><br></div><br>其中的每一个结点都具有一个或两个key，两个孩子或三个孩子<br>一个2结点包含一个key和两个孩子（或没有孩子）。要么就有两个，不能只有一个孩子。左子树包含小于较小元素的元素，右子树包含大于较大元素的元素<br>一个3结点包含一小一大两个key和三个孩子（或没有孩子）。要么就有三个，如果某个3结点有孩子的话，左子树包含小于较小元素的元素，右子树包含大于较大元素的元素，中间子树包含介于两元素之间的元素</p>
 <p><div align="center"><br><img src="/2016/10/12/2-3树（Python实现）/2-32.png" alt=""><br></div></p>
 <h2 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h2><p><div align="center"><br><img src="/2016/10/12/2-3树（Python实现）/2-33-800x326.png" alt=""><br></div></p>
@@ -569,719 +412,329 @@
 <p><div align="center"><br><img src="/2016/10/12/2-3树（Python实现）/2-3011.jpg" alt=""><br></div><br>2-3树的查找效率与树的高度是息息相关的。<br>•在最坏的情况下，也就是所有的节点都是2-node节点，查找效率为lgN<br>•在最好的情况下，所有的节点都是3-node节点，查找效率为log3N约等于0.631lgN<br>­<br>距离来说，对于1百万个节点的2-3树，树的高度为12-20之间，对于10亿个节点的2-3树，树的高度为18-30之间。<br>对于插入来说，只需要常数次操作即可完成，因为他只需要修改与该节点关联的节点即可，不需要检查其他节点，所以效率和查找类似。下面是2-3查找树的效率：</p>
 <p><div align="center"><br><img src="/2016/10/12/2-3树（Python实现）/2-3012.jpg" alt=""><br></div></p>
 <h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># coding:utf-8</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Node</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, key)</span>:</span></div><div class="line">        self.key1 = key</div><div class="line">        self.key2 = <span class="keyword">None</span></div><div class="line">        self.left = <span class="keyword">None</span></div><div class="line">        self.middle = <span class="keyword">None</span></div><div class="line">        self.right = <span class="keyword">None</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">isLeaf</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="keyword">return</span> self.left <span class="keyword">is</span> <span class="keyword">None</span> <span class="keyword">and</span> self.middle <span class="keyword">is</span> <span class="keyword">None</span> <span class="keyword">and</span> self.right <span class="keyword">is</span> <span class="keyword">None</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">isFull</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="keyword">return</span> self.key2 <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">None</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">hasKey</span><span class="params">(self, key)</span>:</span></div><div class="line">        <span class="keyword">if</span> (self.key1 == key) <span class="keyword">or</span> (self.key2 <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">None</span> <span class="keyword">and</span> self.key2 == key):</div><div class="line">            <span class="keyword">return</span> <span class="keyword">True</span></div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            <span class="keyword">return</span> <span class="keyword">False</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">getChild</span><span class="params">(self, key)</span>:</span></div><div class="line">        <span class="keyword">if</span> key &lt; self.key1:</div><div class="line">            <span class="keyword">return</span> self.left</div><div class="line">        <span class="keyword">elif</span> self.key2 <span class="keyword">is</span> <span class="keyword">None</span>:</div><div class="line">            <span class="keyword">return</span> self.middle</div><div class="line">        <span class="keyword">elif</span> key &lt; self.key2:</div><div class="line">            <span class="keyword">return</span> self.middle</div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            <span class="keyword">return</span> self.right</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">two_three_Tree</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></div><div class="line">        self.root = <span class="keyword">None</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get</span><span class="params">(self, key)</span>:</span></div><div class="line">        <span class="keyword">if</span> self.root <span class="keyword">is</span> <span class="keyword">None</span>:</div><div class="line">            <span class="keyword">return</span> <span class="keyword">None</span></div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            <span class="keyword">return</span> self._get(self.root, key)</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">_get</span><span class="params">(self, node, key)</span>:</span></div><div class="line">        <span class="keyword">if</span> node <span class="keyword">is</span> <span class="keyword">None</span>:</div><div class="line">            <span class="keyword">return</span> <span class="keyword">None</span></div><div class="line">        <span class="keyword">elif</span> node.hasKey(key):</div><div class="line">            <span class="keyword">return</span> node</div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            child = node.getChild(key)</div><div class="line">            <span class="keyword">return</span> self._get(child, key)</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">put</span><span class="params">(self, key)</span>:</span></div><div class="line">        <span class="keyword">if</span> self.root <span class="keyword">is</span> <span class="keyword">None</span>:</div><div class="line">            self.root = Node(key)</div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            pKey, pRef = self._put(self.root, key)</div><div class="line">            <span class="keyword">if</span> pKey <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">None</span>:</div><div class="line">                newnode = Node(pKey)</div><div class="line">                newnode.left = self.root</div><div class="line">                newnode.middle = pRef</div><div class="line">                self.root = newnode</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">_put</span><span class="params">(self, node, key)</span>:</span></div><div class="line">        <span class="comment"># 不重复的key</span></div><div class="line">        <span class="keyword">if</span> node.hasKey(key):</div><div class="line">            <span class="keyword">return</span> <span class="keyword">None</span>, <span class="keyword">None</span></div><div class="line">        <span class="comment"># 叶节点，直接插入</span></div><div class="line">        <span class="keyword">elif</span> node.isLeaf():</div><div class="line">            <span class="keyword">return</span> self._addtoNode(node, key, <span class="keyword">None</span>)</div><div class="line">        <span class="comment"># 遍历子树，直到遇到叶节点</span></div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            child = node.getChild(key)</div><div class="line">            pKey, pRef = self._put(child, key)</div><div class="line">            <span class="comment"># 有 pKey, pRef 表示进行了分割</span></div><div class="line">            <span class="comment"># pKey 表示往上移的key</span></div><div class="line">            <span class="comment"># pRef 表示newnode</span></div><div class="line">            <span class="comment"># 每次 _addtoNode 到一个 3-Node的时候,肯定会有pKey和pRef(因为需要分割上移)</span></div><div class="line">            <span class="keyword">if</span> pKey <span class="keyword">is</span> <span class="keyword">None</span>:</div><div class="line">                <span class="keyword">return</span> <span class="keyword">None</span>, <span class="keyword">None</span></div><div class="line">            <span class="keyword">else</span>:</div><div class="line">                <span class="keyword">return</span> self._addtoNode(node, pKey, pRef)</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">_addtoNode</span><span class="params">(self, node, key, pRef)</span>:</span></div><div class="line">        <span class="comment"># 3-Node，分割</span></div><div class="line">        <span class="keyword">if</span> node.isFull():</div><div class="line">            <span class="keyword">return</span> self._splitNode(node, key, pRef)</div><div class="line">        <span class="comment"># 2-Node</span></div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            <span class="comment"># 放入该node的左边</span></div><div class="line">            <span class="keyword">if</span> key &lt; node.key1:</div><div class="line">                node.key2 = node.key1</div><div class="line">                node.key1 = key</div><div class="line">                <span class="comment"># 如果该node有子树</span></div><div class="line">                <span class="keyword">if</span> pRef <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">None</span>:</div><div class="line">                    node.right = node.middle</div><div class="line">                    node.middle = pRef</div><div class="line">            <span class="keyword">else</span>:</div><div class="line">                node.key2 = key</div><div class="line">                <span class="keyword">if</span> pRef <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">None</span>:</div><div class="line">                    node.right = pRef</div><div class="line">            <span class="comment"># pKey, pRef</span></div><div class="line">            <span class="keyword">return</span> <span class="keyword">None</span>, <span class="keyword">None</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">_splitNode</span><span class="params">(self, node, key, pRef)</span>:</span></div><div class="line">        <span class="comment"># 这是难点,请对照插入的图例,认真学习</span></div><div class="line">        newnode = Node(<span class="keyword">None</span>)</div><div class="line">        <span class="keyword">if</span> key &lt; node.key1:</div><div class="line">            <span class="comment"># x是最小的key，把key1移上去</span></div><div class="line">            pKey = node.key1</div><div class="line">            node.key1 = key</div><div class="line">            newnode.key1 = node.key2</div><div class="line">            <span class="keyword">if</span> pRef <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">None</span>:</div><div class="line">                newnode.left = node.middle</div><div class="line">                newnode.middle = node.right</div><div class="line">                node.middle = pRef</div><div class="line">        <span class="keyword">elif</span> key &lt; node.key2:</div><div class="line">            <span class="comment"># x是中间的key,把自己移上去</span></div><div class="line">            pKey = key</div><div class="line">            newnode.key1 = node.key2</div><div class="line">            <span class="keyword">if</span> pRef <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">None</span>:</div><div class="line">                newnode.left = pRef</div><div class="line">                newnode.middle = node.right</div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            <span class="comment"># x是最大的key,把key2</span></div><div class="line">            pKey = node.key2</div><div class="line">            newnode.key1 = key</div><div class="line">            <span class="keyword">if</span> pRef <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">None</span>:</div><div class="line">                newnode.left = node.right</div><div class="line">                newnode.middle = pRef</div><div class="line">        node.key2 = <span class="keyword">None</span></div><div class="line">        <span class="keyword">return</span> pKey, newnode</div></pre></td></tr></table></figure>
-          
-        
       
     </div>
-
     
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
+    <div class="article-info article-info-index">
       
       
-        <div class="post-eof"></div>
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Code/">Code</a>
+    </div>
+
+
       
-    </footer>
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据结构与算法/">数据结构与算法</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
   </div>
   
-  
-  
-  </article>
+</article>
 
 
+
+
+
+
+
+
+
+  
+    <article id="post-每天一道编程题——换钱的最少货币数" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/10/12/每天一道编程题——换钱的最少货币数/" class="article-date">
+      <time datetime="2016-10-12T05:02:23.000Z" itemprop="datePublished">2016-10-12</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wax8280.github.io/2016/10/12/每天一道编程题——换钱的最少货币数/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Vincent Zhong">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Vin's Blog">
-    </span>
-
+      <input type="hidden" class="isFancy" />
     
-      <header class="post-header">
-
+    
+      <header class="article-header">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/10/12/每天一道编程题——换钱的最少货币数/" itemprop="url">每天一道编程题——换钱的最少货币数</a></h1>
-        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/12/每天一道编程题——换钱的最少货币数/">每天一道编程题——换钱的最少货币数</a>
+    </h1>
+  
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-10-12T13:02:23+08:00">2016-10-12</time>
-            
-
-            
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Code/" itemprop="url" rel="index"><span itemprop="name">Code</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
       </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
       
+    
+    <div class="article-entry" itemprop="articleBody">
       
-
-      
-        
           
-            <h3 id="换钱的最少货币数"><a href="#换钱的最少货币数" class="headerlink" title="换钱的最少货币数"></a>换钱的最少货币数</h3><p>问题1：<br>使用数组arr中的值代表一种面值的货币，每种面值的货币可以使用任意张，组成aim值，求使用货币素的最小张数</p>
+        <h3 id="换钱的最少货币数"><a href="#换钱的最少货币数" class="headerlink" title="换钱的最少货币数"></a>换钱的最少货币数</h3><p>问题1：<br>使用数组arr中的值代表一种面值的货币，每种面值的货币可以使用任意张，组成aim值，求使用货币素的最小张数</p>
 <p>问题2:<br>问题1的基础上，数组arr中的货币不是无限使用的，用完就没有。<br>arr = [2, 3, 5]<br>aim = 20<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div></pre></td><td class="code"><pre><div class="line"><span class="string">'''</span></div><div class="line"><span class="string">问题1:</span></div><div class="line"><span class="string">dp[i][j]的含义，在可以任意使用arr[0...i]货币的情况下，组成j所需的最小张数</span></div><div class="line"><span class="string">假设计算到位置(i,j),dp[i][j]的值可能来自下面的情况</span></div><div class="line"><span class="string">1.完全不使用当前货币arr[i]的情况下的最少张数,即dp[i-1][j]</span></div><div class="line"><span class="string">2.使用1张货币arr[i]的情况下的最少张数,即dp[i-1][j-arr[i]]+1</span></div><div class="line"><span class="string">3.使用2张货币arr[i]的情况下的最少张数,即dp[i-1][j-2*arr[i]]+2</span></div><div class="line"><span class="string">4.使用3张货币arr[i]的情况下的最少张数,即dp[i-1][j-3*arr[i]]+3</span></div><div class="line"><span class="string">dp[i][j] = min(dp[i-1][j], dp[i][j-arr[i]]+1)</span></div><div class="line"><span class="string">位置i,j依赖位置(i-1,j)，即往上跳一下的位置，也依赖位置(i,j-arr[i])，即往左跳一下的位置</span></div><div class="line"><span class="string">时间复杂度，空间复杂度O(N*aim)</span></div><div class="line"><span class="string">'''</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">minCoins1</span><span class="params">(arr, aim)</span>:</span></div><div class="line">    n = len(arr)</div><div class="line">    inf = float(<span class="string">'inf'</span>)</div><div class="line">    dp = [[<span class="number">0</span>] * (aim + <span class="number">1</span>) <span class="keyword">for</span> i <span class="keyword">in</span> range(n)]</div><div class="line">    <span class="comment"># 初始化第一行</span></div><div class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">1</span>, aim + <span class="number">1</span>):</div><div class="line">        dp[<span class="number">0</span>][j] = inf</div><div class="line">        <span class="keyword">if</span> j - arr[<span class="number">0</span>] &gt;= <span class="number">0</span> <span class="keyword">and</span> dp[<span class="number">0</span>][j - arr[<span class="number">0</span>]] != inf:</div><div class="line">            dp[<span class="number">0</span>][j] = dp[<span class="number">0</span>][j - arr[<span class="number">0</span>]] + <span class="number">1</span></div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, n):</div><div class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">1</span>, aim + <span class="number">1</span>):</div><div class="line">            <span class="comment"># j = (j - arr[i]) + arr[i]</span></div><div class="line">            <span class="comment"># 注意到j - arr[i]位置上(j - arr[i]元)，必须不为inf（即，可以用arr[0~i]货币找开)</span></div><div class="line">            left = dp[i][j - arr[i]] + <span class="number">1</span> \</div><div class="line">                <span class="keyword">if</span> j - arr[i] &gt;= <span class="number">0</span> <span class="keyword">and</span> dp[i][j - arr[i]] != inf \</div><div class="line">                <span class="keyword">else</span> inf</div><div class="line">            <span class="comment"># 左边跟上边(用arr[0~i-1]货币找开)比</span></div><div class="line">            dp[i][j] = min(left, dp[i - <span class="number">1</span>][j])</div><div class="line">    <span class="keyword">return</span> dp[n - <span class="number">1</span>][aim] <span class="keyword">if</span> dp[n - <span class="number">1</span>][aim] != inf <span class="keyword">else</span> <span class="number">-1</span></div><div class="line"><span class="comment"># 空间压缩</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">minCoins2</span><span class="params">(arr, aim)</span>:</span></div><div class="line">    n = len(arr)</div><div class="line">    inf = float(<span class="string">'inf'</span>)</div><div class="line">    dp = [<span class="number">0</span>] * (aim + <span class="number">1</span>)</div><div class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">1</span>, aim + <span class="number">1</span>):</div><div class="line">        dp[j] = inf</div><div class="line">        <span class="keyword">if</span> j - arr[<span class="number">0</span>] &gt;= <span class="number">0</span> <span class="keyword">and</span> dp[j - arr[<span class="number">0</span>]] != inf:</div><div class="line">            dp[j] = dp[j - arr[<span class="number">0</span>]] + <span class="number">1</span></div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, n):</div><div class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">1</span>, aim + <span class="number">1</span>):</div><div class="line">            left = dp[j - arr[i]] + <span class="number">1</span> \</div><div class="line">                <span class="keyword">if</span> j - arr[i] &gt;= <span class="number">0</span> <span class="keyword">and</span> dp[j - arr[i]] != inf \</div><div class="line">                <span class="keyword">else</span> inf</div><div class="line">            <span class="comment"># (i,j)的左边(j-arr[i])跟上面(i-1,j)比较</span></div><div class="line">            dp[j] = min(left, dp[j])</div><div class="line">    <span class="keyword">return</span> dp[aim] <span class="keyword">if</span> dp[aim] != inf <span class="keyword">else</span> <span class="number">-1</span></div><div class="line"><span class="string">'''</span></div><div class="line"><span class="string">问题2</span></div><div class="line"><span class="string">dp[i][j]的含义，在可以任意使用arr[0...i]货币的情况下（每个值权代表一张货币），组成j所需的最小张数</span></div><div class="line"><span class="string">如，dp[0][0...aim]，表示只能使用一张arr[0]货币的情况下，找某个钱数的最小张数。</span></div><div class="line"><span class="string">假设计算到位置(i,j),dp[i][j]的值可能来自下面的情况</span></div><div class="line"><span class="string">1.上边，对于dp[i-1][j]表示，任意使用arr[0...i-1]货币的情况下，组成j所需的最小张数，dp[i][j]可能与其相等</span></div><div class="line"><span class="string">2.左上边，因为arr[i]只有一张不能重复，我们考虑dp[i-1][j-arr[i]],表示在可以任意使用arr[0...i-1]货币的情况下，组成j-arr[i]所需的最小张数。</span></div><div class="line"><span class="string">所以dp[i][j]=dp[i-1][j-arr[i]]+1</span></div><div class="line"><span class="string">注意，本题不能像minCoins2那样使用空间压缩。</span></div><div class="line"><span class="string">因为在dp[j - arr[i]]的使用，可能已经使用了当前的货币i</span></div><div class="line"><span class="string">如，本题的例子</span></div><div class="line"><span class="string">在i=2,j=6的时候 dp[6]，其dp[j - arr[i]]=dp[3]=1，已经使用过了货币3。所以无法重复使用。</span></div><div class="line"><span class="string">'''</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">minCoins3</span><span class="params">(arr, aim)</span>:</span></div><div class="line">    n = len(arr)</div><div class="line">    inf = float(<span class="string">'inf'</span>)</div><div class="line">    dp = [[<span class="number">0</span>] * (aim + <span class="number">1</span>) <span class="keyword">for</span> i <span class="keyword">in</span> range(n)]</div><div class="line">    <span class="comment"># 第0行的初始化，除了使用货币自身(arr[0])，其他都为inf</span></div><div class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">1</span>, aim + <span class="number">1</span>):</div><div class="line">        dp[<span class="number">0</span>][j] = inf</div><div class="line">    <span class="keyword">if</span> arr[<span class="number">0</span>] &lt;= aim:</div><div class="line">        dp[<span class="number">0</span>][arr[<span class="number">0</span>]] = <span class="number">1</span></div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, n):</div><div class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">1</span>, aim + <span class="number">1</span>):</div><div class="line">            leftup = dp[i - <span class="number">1</span>][j - arr[i]] + <span class="number">1</span> \</div><div class="line">                <span class="keyword">if</span> j - arr[i] &gt;= <span class="number">0</span> <span class="keyword">and</span> dp[i - <span class="number">1</span>][j - arr[i]] != inf \</div><div class="line">                <span class="keyword">else</span> inf</div><div class="line">            dp[i][j] = min(leftup, dp[i - <span class="number">1</span>][j])</div><div class="line">    <span class="keyword">return</span> dp[n - <span class="number">1</span>][aim] <span class="keyword">if</span> dp[n - <span class="number">1</span>][aim] != inf <span class="keyword">else</span> <span class="number">-1</span></div></pre></td></tr></table></figure></p>
 
-          
-        
       
     </div>
-
     
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
+    <div class="article-info article-info-index">
       
       
-        <div class="post-eof"></div>
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Code/">Code</a>
+    </div>
+
+
       
-    </footer>
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据结构与算法/">数据结构与算法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/每天一道编程题/">每天一道编程题</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
   </div>
   
-  
-  
-  </article>
+</article>
 
 
+
+
+
+
+
+
+
+  
+    <article id="post-每天一道编程题——年终奖（旧题新做）" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/10/11/每天一道编程题——年终奖（旧题新做）/" class="article-date">
+      <time datetime="2016-10-11T13:50:09.000Z" itemprop="datePublished">2016-10-11</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wax8280.github.io/2016/10/11/每天一道编程题——年终奖（旧题新做）/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Vincent Zhong">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Vin's Blog">
-    </span>
-
+      <input type="hidden" class="isFancy" />
     
-      <header class="post-header">
-
+    
+      <header class="article-header">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/10/11/每天一道编程题——年终奖（旧题新做）/" itemprop="url">每天一道编程题——年终奖（旧题新做）</a></h1>
-        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/11/每天一道编程题——年终奖（旧题新做）/">每天一道编程题——年终奖（旧题新做）</a>
+    </h1>
+  
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-10-11T21:50:09+08:00">2016-10-11</time>
-            
-
-            
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Code/" itemprop="url" rel="index"><span itemprop="name">Code</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
       </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
       
+    
+    <div class="article-entry" itemprop="articleBody">
       
-
-      
-        
           
-            <p>小东所在公司要发年终奖，而小东恰好获得了最高福利，他要在公司年会上参与一个抽奖游戏，游戏在一个6*6的棋盘上进行，上面放着36个价值不等的礼物，每个小的棋盘上面放置着一个礼物，他需要从左上角开始游戏，每次只能向下或者向右移动一步，到达右下角停止，一路上的格子里的礼物小东都能拿到，请设计一个算法使小东拿到价值最高的礼物。<br>给定一个6*6的矩阵board，其中每个元素为对应格子的礼物价值,左上角为[0,0],请返回能获得的最大价值，保证每个礼物价值大于100小于1000。<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># coding:utf-8</span></div><div class="line">test = [</div><div class="line">    [<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">9</span>],</div><div class="line">    [<span class="number">8</span>, <span class="number">1</span>, <span class="number">3</span>, <span class="number">4</span>],</div><div class="line">    [<span class="number">5</span>, <span class="number">0</span>, <span class="number">6</span>, <span class="number">1</span>],</div><div class="line">    [<span class="number">8</span>, <span class="number">8</span>, <span class="number">4</span>, <span class="number">0</span>]</div><div class="line">]</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">getMost</span><span class="params">(border)</span>:</span></div><div class="line">    each_path = []</div><div class="line">    col = len(border[<span class="number">0</span>])</div><div class="line">    row = len(border)</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">most_momey</span><span class="params">(i=<span class="number">0</span>, j=<span class="number">0</span>, the_sum=<span class="number">0</span>)</span>:</span></div><div class="line">        <span class="comment"># 向右走</span></div><div class="line">        <span class="keyword">if</span> j &lt; col - <span class="number">1</span>:</div><div class="line">            most_momey(i, j + <span class="number">1</span>, border[i][j] + the_sum)</div><div class="line">        <span class="comment"># 向左走</span></div><div class="line">        <span class="keyword">if</span> i &lt; row - <span class="number">1</span>:</div><div class="line">            most_momey(i + <span class="number">1</span>, j, border[i][j] + the_sum)</div><div class="line">        <span class="comment"># 到达右下角</span></div><div class="line">        <span class="keyword">if</span> i == row - <span class="number">1</span> <span class="keyword">and</span> j == col - <span class="number">1</span>:</div><div class="line">            each_path.append(the_sum + border[i][j])</div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            <span class="keyword">return</span></div><div class="line">    most_momey()</div><div class="line">    <span class="keyword">return</span> max(each_path)</div></pre></td></tr></table></figure></p>
+        <p>小东所在公司要发年终奖，而小东恰好获得了最高福利，他要在公司年会上参与一个抽奖游戏，游戏在一个6*6的棋盘上进行，上面放着36个价值不等的礼物，每个小的棋盘上面放置着一个礼物，他需要从左上角开始游戏，每次只能向下或者向右移动一步，到达右下角停止，一路上的格子里的礼物小东都能拿到，请设计一个算法使小东拿到价值最高的礼物。<br>给定一个6*6的矩阵board，其中每个元素为对应格子的礼物价值,左上角为[0,0],请返回能获得的最大价值，保证每个礼物价值大于100小于1000。<br><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># coding:utf-8</span></div><div class="line">test = [</div><div class="line">    [<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">9</span>],</div><div class="line">    [<span class="number">8</span>, <span class="number">1</span>, <span class="number">3</span>, <span class="number">4</span>],</div><div class="line">    [<span class="number">5</span>, <span class="number">0</span>, <span class="number">6</span>, <span class="number">1</span>],</div><div class="line">    [<span class="number">8</span>, <span class="number">8</span>, <span class="number">4</span>, <span class="number">0</span>]</div><div class="line">]</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">getMost</span><span class="params">(border)</span>:</span></div><div class="line">    each_path = []</div><div class="line">    col = len(border[<span class="number">0</span>])</div><div class="line">    row = len(border)</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">most_momey</span><span class="params">(i=<span class="number">0</span>, j=<span class="number">0</span>, the_sum=<span class="number">0</span>)</span>:</span></div><div class="line">        <span class="comment"># 向右走</span></div><div class="line">        <span class="keyword">if</span> j &lt; col - <span class="number">1</span>:</div><div class="line">            most_momey(i, j + <span class="number">1</span>, border[i][j] + the_sum)</div><div class="line">        <span class="comment"># 向左走</span></div><div class="line">        <span class="keyword">if</span> i &lt; row - <span class="number">1</span>:</div><div class="line">            most_momey(i + <span class="number">1</span>, j, border[i][j] + the_sum)</div><div class="line">        <span class="comment"># 到达右下角</span></div><div class="line">        <span class="keyword">if</span> i == row - <span class="number">1</span> <span class="keyword">and</span> j == col - <span class="number">1</span>:</div><div class="line">            each_path.append(the_sum + border[i][j])</div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            <span class="keyword">return</span></div><div class="line">    most_momey()</div><div class="line">    <span class="keyword">return</span> max(each_path)</div></pre></td></tr></table></figure></p>
 <h3 id="动态规划求解"><a href="#动态规划求解" class="headerlink" title="动态规划求解"></a>动态规划求解</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div></pre></td><td class="code"><pre><div class="line"><span class="string">'''</span></div><div class="line"><span class="string">根据题意，从(0,0)到(i,j)的路径必然经过位置(i-1,j)或(i,j-1)。</span></div><div class="line"><span class="string">dp[n][m] = max(dp[n - 1][m], dp[n][m - 1]) + border[n][m]</span></div><div class="line"><span class="string">的含义也就是比较从(0,0)位置开始，经过(i-1,j)位置最终到达(i,j)的最大路径和经过(i,j-1)位置最终到达(i,j)的最大路径之间，哪条路径的路径和最大</span></div><div class="line"><span class="string">就题目中的例子，我们先生成第一行和第一列的dp，也就是</span></div><div class="line"><span class="string">1   4   9   18</span></div><div class="line"><span class="string">9</span></div><div class="line"><span class="string">14</span></div><div class="line"><span class="string">22</span></div><div class="line"><span class="string">然后从(1,1)开始，计算从(0,0)到自己的最大路径和，计算的时候只是比较上边和左边哪个最大。</span></div><div class="line"><span class="string">时间复杂度O(M*N)，空间复杂度O(M*N)</span></div><div class="line"><span class="string">'''</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">getMost_dp</span><span class="params">(border)</span>:</span></div><div class="line">    col = len(border[<span class="number">0</span>])</div><div class="line">    row = len(border)</div><div class="line">    <span class="comment"># dp标识走到(i,j)位置的最大路径和</span></div><div class="line">    dp = [[<span class="number">0</span>] * col <span class="keyword">for</span> i <span class="keyword">in</span> range(row)]</div><div class="line">    dp[<span class="number">0</span>][<span class="number">0</span>] = border[<span class="number">0</span>][<span class="number">0</span>]</div><div class="line">    <span class="comment"># 求出dp[0][1]-dp[0][col]</span></div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, col):</div><div class="line">        dp[<span class="number">0</span>][i] = dp[<span class="number">0</span>][i - <span class="number">1</span>] + border[<span class="number">0</span>][i]</div><div class="line">    <span class="comment"># 求出dp[1][0]-dp[row][0]</span></div><div class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">1</span>, row):</div><div class="line">        dp[j][<span class="number">0</span>] = dp[j - <span class="number">1</span>][<span class="number">0</span>] + border[j][<span class="number">0</span>]</div><div class="line">    <span class="keyword">for</span> n <span class="keyword">in</span> range(<span class="number">1</span>, row):</div><div class="line">        <span class="keyword">for</span> m <span class="keyword">in</span> range(<span class="number">1</span>, col):</div><div class="line">            dp[n][m] = max(dp[n - <span class="number">1</span>][m], dp[n][m - <span class="number">1</span>]) + border[n][m]</div><div class="line">    <span class="keyword">return</span> dp[row - <span class="number">1</span>][col - <span class="number">1</span>]</div><div class="line"><span class="comment"># print getMost_dp(test)</span></div><div class="line"></div><div class="line"><span class="string">'''</span></div><div class="line"><span class="string">空间压缩</span></div><div class="line"><span class="string">上述的代码，空间复杂度为O(M*N)，我们还可以对其进行空间压缩，使复杂度降到O(min&#123;M,N&#125;)</span></div><div class="line"><span class="string">就上面的例子，我们先生成一个arr[min(rol,row)]数组。在这个例子里面是arr[4]</span></div><div class="line"><span class="string">我们根据row和col的数量进行滚动，row多的话，向下滚动；否则向右滚动。</span></div><div class="line"><span class="string">我们这里向下滚动。</span></div><div class="line"><span class="string">所以求出arr[i] = arr[i - 1] + border[0][i] = [1,4,9,18]</span></div><div class="line"><span class="string">然后我们向下滚动i=1。</span></div><div class="line"><span class="string">arr[0] = arr[0] + border[i][0] = 9</span></div><div class="line"><span class="string">arr[1] = max(arr[1 - 1], arr[1]) + border[i][1]    </span></div><div class="line"><span class="string"># arr[1 - 1], arr[1]分别代表border[i][1]的左边和上边</span></div><div class="line"><span class="string">arr[2] = max(arr[2 - 1], arr[1]) + border[i][2]</span></div><div class="line"><span class="string">....</span></div><div class="line"><span class="string">arr[j] = max(arr[j - 1], arr[j]) + border[i][j]</span></div><div class="line"><span class="string">没有优化之前，取得某个位置动态规划值的过程是在矩阵中进行两次寻址，优化后，这一过程只需要一次寻址。</span></div><div class="line"><span class="string">'''</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">getMost_dp2</span><span class="params">(border)</span>:</span></div><div class="line">    col = len(border[<span class="number">0</span>])</div><div class="line">    row = len(border)</div><div class="line">    more = max(col, row)</div><div class="line">    less = min(col, row)</div><div class="line">    rowmore = bool(more == len(border))</div><div class="line">    arr = [<span class="number">0</span>] * less</div><div class="line">    arr[<span class="number">0</span>] = border[<span class="number">0</span>][<span class="number">0</span>]</div><div class="line">    <span class="comment"># row多的话，向下滚动；否则向右滚动</span></div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, less):</div><div class="line">        arr[i] = arr[i - <span class="number">1</span>] + border[<span class="number">0</span>][i] <span class="keyword">if</span> rowmore <span class="keyword">else</span> border[i][<span class="number">0</span>]</div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, more):</div><div class="line">        arr[<span class="number">0</span>] = arr[<span class="number">0</span>] + border[i][<span class="number">0</span>] <span class="keyword">if</span> rowmore <span class="keyword">else</span> border[<span class="number">0</span>][i]</div><div class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">1</span>, less):</div><div class="line">            arr[j] = max(arr[j - <span class="number">1</span>], arr[j]) + border[i][j] <span class="keyword">if</span> rowmore <span class="keyword">else</span> border[j][i]</div><div class="line">    <span class="keyword">return</span> arr[less<span class="number">-1</span>]</div></pre></td></tr></table></figure>
-          
-        
       
     </div>
-
     
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
+    <div class="article-info article-info-index">
       
       
-        <div class="post-eof"></div>
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Code/">Code</a>
+    </div>
+
+
       
-    </footer>
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据结构与算法/">数据结构与算法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/每天一道编程题/">每天一道编程题</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
   </div>
   
-  
-  
-  </article>
+</article>
 
 
+
+
+
+
+
+
+
+  
+    <article id="post-BST树（Python实现）" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/10/10/BST树（Python实现）/" class="article-date">
+      <time datetime="2016-10-10T15:48:53.000Z" itemprop="datePublished">2016-10-10</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wax8280.github.io/2016/10/10/BST树（Python实现）/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Vincent Zhong">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Vin's Blog">
-    </span>
-
+      <input type="hidden" class="isFancy" />
     
-      <header class="post-header">
-
+    
+      <header class="article-header">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/10/10/BST树（Python实现）/" itemprop="url">BST树（Python实现）</a></h1>
-        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/10/BST树（Python实现）/">BST树（Python实现）</a>
+    </h1>
+  
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-10-10T23:48:53+08:00">2016-10-10</time>
-            
-
-            
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Code/" itemprop="url" rel="index"><span itemprop="name">Code</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
       </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
       
+    
+    <div class="article-entry" itemprop="articleBody">
       
-
-      
-        
           
-            <p>BST树，又称为二叉排序树Binart Sort Tree<br>○ 若左子树不空，则左子树上所有结点的值均小于它的根结点的值<br>○ 若右子树不空，则右子树上所有结点的值均大于它的根结点的值<br>○ 它的左右子树也为二叉排序树</p>
+        <p>BST树，又称为二叉排序树Binart Sort Tree<br>○ 若左子树不空，则左子树上所有结点的值均小于它的根结点的值<br>○ 若右子树不空，则右子树上所有结点的值均大于它的根结点的值<br>○ 它的左右子树也为二叉排序树</p>
 <h3 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># coding:utf-8</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">BinarySearchTree</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></div><div class="line">        self.root = <span class="keyword">None</span></div><div class="line">        self.size = <span class="number">0</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">length</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="keyword">return</span> self.size</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__len__</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="keyword">return</span> self.size</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__setitem__</span><span class="params">(self, k, v)</span>:</span></div><div class="line">        self.put(k, v)</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__getitem__</span><span class="params">(self, key)</span>:</span></div><div class="line">        <span class="keyword">return</span> self.get(key)</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__contains__</span><span class="params">(self, key)</span>:</span></div><div class="line">        <span class="keyword">if</span> self._get(key, self.root):</div><div class="line">            <span class="keyword">return</span> <span class="keyword">True</span></div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            <span class="keyword">return</span> <span class="keyword">False</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">put</span><span class="params">(self, key, val)</span>:</span></div><div class="line">        <span class="keyword">if</span> self.root:</div><div class="line">            self._put(key, val, self.root)</div><div class="line">        <span class="comment"># 空树</span></div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            self.root = TreeNode(key, val)</div><div class="line">        self.size = self.size + <span class="number">1</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">_put</span><span class="params">(self, key, val, currentNode)</span>:</span></div><div class="line">        <span class="comment"># 左子树</span></div><div class="line">        <span class="keyword">if</span> key &lt; currentNode.key:</div><div class="line">            <span class="keyword">if</span> currentNode.hasLeftChild():</div><div class="line">                self._put(key, val, currentNode.leftChild)</div><div class="line">            <span class="keyword">else</span>:</div><div class="line">                currentNode.leftChild = TreeNode(key, val, parent=currentNode)</div><div class="line">        <span class="comment"># 右子树</span></div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            <span class="keyword">if</span> currentNode.hasRightChild():</div><div class="line">                self._put(key, val, currentNode.rightChild)</div><div class="line">            <span class="keyword">else</span>:</div><div class="line">                currentNode.rightChild = TreeNode(key, val, parent=currentNode)</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get</span><span class="params">(self, key)</span>:</span></div><div class="line">        <span class="keyword">if</span> self.root:</div><div class="line">            res = self._get(key, self.root)</div><div class="line">            <span class="keyword">if</span> res:</div><div class="line">                <span class="keyword">return</span> res.payload</div><div class="line">            <span class="keyword">else</span>:</div><div class="line">                <span class="keyword">return</span> <span class="keyword">None</span></div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            <span class="keyword">return</span> <span class="keyword">None</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">_get</span><span class="params">(self, key, currentNode)</span>:</span></div><div class="line">        <span class="keyword">if</span> <span class="keyword">not</span> currentNode:</div><div class="line">            <span class="keyword">return</span> <span class="keyword">None</span></div><div class="line">        <span class="keyword">elif</span> currentNode.key == key:</div><div class="line">            <span class="keyword">return</span> currentNode</div><div class="line">        <span class="keyword">elif</span> key &lt; currentNode.key:</div><div class="line">            <span class="keyword">return</span> self._get(key, currentNode.leftChild)</div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            <span class="keyword">return</span> self._get(key, currentNode.rightChild)</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">TreeNode</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, key, val, left=None, right=None,</span></span></div><div class="line"><span class="function"><span class="params">                 parent=None)</span>:</span></div><div class="line">        self.key = key</div><div class="line">        self.payload = val</div><div class="line">        self.leftChild = left</div><div class="line">        self.rightChild = right</div><div class="line">        self.parent = parent</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">hasLeftChild</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="keyword">return</span> self.leftChild</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">hasRightChild</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="keyword">return</span> self.rightChild</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">isLeftChild</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="keyword">return</span> self.parent <span class="keyword">and</span> self.parent.leftChild == self</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">isRightChild</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="keyword">return</span> self.parent <span class="keyword">and</span> self.parent.rightChild == self</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">isRoot</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="keyword">return</span> <span class="keyword">not</span> self.parent</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">isLeaf</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="keyword">return</span> <span class="keyword">not</span> (self.rightChild <span class="keyword">or</span> self.leftChild)</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">hasAnyChildren</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="keyword">return</span> self.rightChild <span class="keyword">or</span> self.leftChild</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">hasBothChildren</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="keyword">return</span> self.rightChild <span class="keyword">and</span> self.leftChild</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">replaceNodeData</span><span class="params">(self, key, value, lc, rc)</span>:</span></div><div class="line">        self.key = key</div><div class="line">        self.payload = value</div><div class="line">        self.leftChild = lc</div><div class="line">        self.rightChild = rc</div><div class="line">        <span class="keyword">if</span> self.hasLeftChild():</div><div class="line">            self.leftChild.parent = self</div><div class="line">        <span class="keyword">if</span> self.hasRightChild():</div><div class="line">            self.rightChild.parent = self</div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    tree = BinarySearchTree()</div><div class="line">    <span class="keyword">for</span> k, v <span class="keyword">in</span> zip(range(ord(<span class="string">'a'</span>), ord(<span class="string">'a'</span>) + <span class="number">10</span>), [<span class="number">62</span>, <span class="number">58</span>, <span class="number">88</span>, <span class="number">47</span>, <span class="number">73</span>, <span class="number">99</span>, <span class="number">35</span>, <span class="number">51</span>, <span class="number">93</span>, <span class="number">37</span>]):</div><div class="line">        tree.put(v, chr(k))</div><div class="line">    <span class="keyword">print</span> tree[<span class="number">88</span>]</div></pre></td></tr></table></figure>
 <h3 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h3><p>最坏复杂度为O(n),最好为O(1)</p>
 
-          
-        
       
     </div>
-
     
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
+    <div class="article-info article-info-index">
       
       
-        <div class="post-eof"></div>
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Code/">Code</a>
+    </div>
+
+
       
-    </footer>
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据结构与算法/">数据结构与算法</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
   </div>
   
-  
-  
-  </article>
+</article>
 
 
+
+
+
+
+
+
+
+  
+    <article id="post-拓扑排序" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/10/10/拓扑排序/" class="article-date">
+      <time datetime="2016-10-10T13:20:01.000Z" itemprop="datePublished">2016-10-10</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wax8280.github.io/2016/10/10/拓扑排序/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Vincent Zhong">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Vin's Blog">
-    </span>
-
+      <input type="hidden" class="isFancy" />
     
-      <header class="post-header">
-
+    
+      <header class="article-header">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/10/10/拓扑排序/" itemprop="url">拓扑排序</a></h1>
-        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/10/拓扑排序/">拓扑排序</a>
+    </h1>
+  
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-10-10T21:20:01+08:00">2016-10-10</time>
-            
-
-            
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Code/" itemprop="url" rel="index"><span itemprop="name">Code</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
       </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
       
+    
+    <div class="article-entry" itemprop="articleBody">
       
-
-      
-        
           
-            <h3 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line">a, b, c, d, e, f, g, h = (<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>, <span class="string">'f'</span>, <span class="string">'g'</span>, <span class="string">'h'</span>)</div><div class="line">G = &#123;</div><div class="line">    a: [b, f],</div><div class="line">    b: [c, d, f],</div><div class="line">    c: [d],</div><div class="line">    d: [e, f],</div><div class="line">    e: [f],</div><div class="line">    f: []</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">res_topsort</span><span class="params">(G, S=None)</span>:</span></div><div class="line">    <span class="comment"># S是当前规模各个点的集合</span></div><div class="line">    <span class="keyword">if</span> S <span class="keyword">is</span> <span class="keyword">None</span>: S = set(G)</div><div class="line">    <span class="keyword">if</span> len(S) == <span class="number">1</span>: <span class="keyword">return</span> list(S)</div><div class="line">    <span class="comment"># 随意出一点</span></div><div class="line">    v = S.pop()</div><div class="line">    seq = res_topsort(G, S)</div><div class="line">    min_i = <span class="number">0</span></div><div class="line">    <span class="comment"># 找出以v点为出边的是哪一元素，将其插入该元素后，如无，插入开头</span></div><div class="line">    <span class="comment"># 规模从小到大，每一次return 的 seq都是一个DAG</span></div><div class="line">    <span class="keyword">for</span> i, u <span class="keyword">in</span> enumerate(seq):</div><div class="line">        <span class="keyword">if</span> v <span class="keyword">in</span> G[u]: min_i = i + <span class="number">1</span></div><div class="line">    seq.insert(min_i, v)</div><div class="line">    <span class="keyword">return</span> seq</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">topsort</span><span class="params">(G)</span>:</span></div><div class="line">    count = dict((u, <span class="number">0</span>) <span class="keyword">for</span> u <span class="keyword">in</span> G)</div><div class="line">    <span class="keyword">for</span> u <span class="keyword">in</span> G:</div><div class="line">        <span class="keyword">for</span> v <span class="keyword">in</span> G[u]:</div><div class="line">            count[v] += <span class="number">1</span></div><div class="line">    Q = [u <span class="keyword">for</span> u <span class="keyword">in</span> G <span class="keyword">if</span> count[u] == <span class="number">0</span>]</div><div class="line">    S = []</div><div class="line">    <span class="keyword">while</span> Q:</div><div class="line">        u = Q.pop()</div><div class="line">        <span class="comment"># 将没有入边的节点插入</span></div><div class="line">        S.append(u)</div><div class="line">        <span class="comment"># 每出一条边 减少 该没有入边的节点指向的节点 的入边</span></div><div class="line">        <span class="keyword">for</span> v <span class="keyword">in</span> G[u]:</div><div class="line">            count[v] -= <span class="number">1</span></div><div class="line">            <span class="keyword">if</span> count[v] == <span class="number">0</span>:</div><div class="line">                Q.append(v)</div><div class="line">    <span class="keyword">return</span> S</div><div class="line"><span class="keyword">print</span> res_topsort(G)</div><div class="line"><span class="comment"># ['a', 'b', 'c', 'd', 'e', 'f']</span></div></pre></td></tr></table></figure>
+        <h3 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line">a, b, c, d, e, f, g, h = (<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>, <span class="string">'f'</span>, <span class="string">'g'</span>, <span class="string">'h'</span>)</div><div class="line">G = &#123;</div><div class="line">    a: [b, f],</div><div class="line">    b: [c, d, f],</div><div class="line">    c: [d],</div><div class="line">    d: [e, f],</div><div class="line">    e: [f],</div><div class="line">    f: []</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">res_topsort</span><span class="params">(G, S=None)</span>:</span></div><div class="line">    <span class="comment"># S是当前规模各个点的集合</span></div><div class="line">    <span class="keyword">if</span> S <span class="keyword">is</span> <span class="keyword">None</span>: S = set(G)</div><div class="line">    <span class="keyword">if</span> len(S) == <span class="number">1</span>: <span class="keyword">return</span> list(S)</div><div class="line">    <span class="comment"># 随意出一点</span></div><div class="line">    v = S.pop()</div><div class="line">    seq = res_topsort(G, S)</div><div class="line">    min_i = <span class="number">0</span></div><div class="line">    <span class="comment"># 找出以v点为出边的是哪一元素，将其插入该元素后，如无，插入开头</span></div><div class="line">    <span class="comment"># 规模从小到大，每一次return 的 seq都是一个DAG</span></div><div class="line">    <span class="keyword">for</span> i, u <span class="keyword">in</span> enumerate(seq):</div><div class="line">        <span class="keyword">if</span> v <span class="keyword">in</span> G[u]: min_i = i + <span class="number">1</span></div><div class="line">    seq.insert(min_i, v)</div><div class="line">    <span class="keyword">return</span> seq</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">topsort</span><span class="params">(G)</span>:</span></div><div class="line">    count = dict((u, <span class="number">0</span>) <span class="keyword">for</span> u <span class="keyword">in</span> G)</div><div class="line">    <span class="keyword">for</span> u <span class="keyword">in</span> G:</div><div class="line">        <span class="keyword">for</span> v <span class="keyword">in</span> G[u]:</div><div class="line">            count[v] += <span class="number">1</span></div><div class="line">    Q = [u <span class="keyword">for</span> u <span class="keyword">in</span> G <span class="keyword">if</span> count[u] == <span class="number">0</span>]</div><div class="line">    S = []</div><div class="line">    <span class="keyword">while</span> Q:</div><div class="line">        u = Q.pop()</div><div class="line">        <span class="comment"># 将没有入边的节点插入</span></div><div class="line">        S.append(u)</div><div class="line">        <span class="comment"># 每出一条边 减少 该没有入边的节点指向的节点 的入边</span></div><div class="line">        <span class="keyword">for</span> v <span class="keyword">in</span> G[u]:</div><div class="line">            count[v] -= <span class="number">1</span></div><div class="line">            <span class="keyword">if</span> count[v] == <span class="number">0</span>:</div><div class="line">                Q.append(v)</div><div class="line">    <span class="keyword">return</span> S</div><div class="line"><span class="keyword">print</span> res_topsort(G)</div><div class="line"><span class="comment"># ['a', 'b', 'c', 'd', 'e', 'f']</span></div></pre></td></tr></table></figure>
 <h3 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h3><p>求各顶点入度的时间复杂度是O(e)，即边的个数。<br>建零入度顶点栈的时间复杂度是O(n)，即顶点的个数。<br>每个顶点都需要进一次栈，出一次栈，然后把入度减一。执行的总次数也是边的个数。<br>所以时间复杂度是O(n+e)。</p>
 
-          
-        
       
     </div>
-
     
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
+    <div class="article-info article-info-index">
       
       
-        <div class="post-eof"></div>
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Code/">Code</a>
+    </div>
+
+
       
-    </footer>
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据结构与算法/">数据结构与算法</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
   </div>
   
-  
-  
-  </article>
+</article>
 
 
+
+
+
+
+
+
+
+  
+    <article id="post-谈谈Kruskal与Prim这两种最小生成树算法（Python实现）" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/10/10/谈谈Kruskal与Prim这两种最小生成树算法（Python实现）/" class="article-date">
+      <time datetime="2016-10-10T05:52:08.000Z" itemprop="datePublished">2016-10-10</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wax8280.github.io/2016/10/10/谈谈Kruskal与Prim这两种最小生成树算法（Python实现）/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Vincent Zhong">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Vin's Blog">
-    </span>
-
+      <input type="hidden" class="isFancy" />
     
-      <header class="post-header">
-
+    
+      <header class="article-header">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/10/10/谈谈Kruskal与Prim这两种最小生成树算法（Python实现）/" itemprop="url">谈谈Kruskal与Prim这两种最小生成树算法（Python实现）</a></h1>
-        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/10/谈谈Kruskal与Prim这两种最小生成树算法（Python实现）/">谈谈Kruskal与Prim这两种最小生成树算法（Python实现）</a>
+    </h1>
+  
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-10-10T13:52:08+08:00">2016-10-10</time>
-            
-
-            
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Code/" itemprop="url" rel="index"><span itemprop="name">Code</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
       </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
       
+    
+    <div class="article-entry" itemprop="articleBody">
       
-
-      
-        
           
-            <h2 id="何为最小生成树"><a href="#何为最小生成树" class="headerlink" title="何为最小生成树"></a>何为最小生成树</h2><div align="center"><br><img src="/2016/10/10/谈谈Kruskal与Prim这两种最小生成树算法（Python实现）/zxscs1.png" alt=""><br></div><br>建立无导向图，使得这些点可以相互连通，并使得总权值最小。<br>如：<br><div align="center"><br><img src="/2016/10/10/谈谈Kruskal与Prim这两种最小生成树算法（Python实现）/zxscs2.png" alt=""><br></div>
+        <h2 id="何为最小生成树"><a href="#何为最小生成树" class="headerlink" title="何为最小生成树"></a>何为最小生成树</h2><div align="center"><br><img src="/2016/10/10/谈谈Kruskal与Prim这两种最小生成树算法（Python实现）/zxscs1.png" alt=""><br></div><br>建立无导向图，使得这些点可以相互连通，并使得总权值最小。<br>如：<br><div align="center"><br><img src="/2016/10/10/谈谈Kruskal与Prim这两种最小生成树算法（Python实现）/zxscs2.png" alt=""><br></div>
 
 <h2 id="Kruskal"><a href="#Kruskal" class="headerlink" title="Kruskal"></a>Kruskal</h2><h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>定理：任何不包含最短边的数结构都还可以被做得更小，最小生成树中一定会包含最短边。<br>先对图中的边进行排序，然后着手选取。<br>对于每一条边，我们都会通过遍历来确定其对应的树结构上是否存在着从u到v的路径。<br>如果存在，我们就将其丢弃。<br>然后每次选取最小的边。直到无边可选。<br>根据权值排序</p>
 <table>
@@ -1380,866 +833,333 @@
 <li>然后更新生成树<h3 id="Kruskal算法与prim算法的结果相反的原因"><a href="#Kruskal算法与prim算法的结果相反的原因" class="headerlink" title="Kruskal算法与prim算法的结果相反的原因"></a>Kruskal算法与prim算法的结果相反的原因</h3>Kruskal算法：[(1, 2), (1, 3), (3, 4), (5, 6), (4, 6)]<br>prim算法：{1: None, 2: 1, 3: 1, 4: 3, 5: 6, 6: 4}<br>Kruskal算法记录的是从开始点到结束点的路径，1-2,1-3-4-6,5-6       关键代码：T.add((u,v))<br>prim算法记录的是从结束点到开始点的路径，5-6-4-3-1,2-1             关键代码：P[u]=p</li>
 </ul>
 
-          
-        
       
     </div>
-
     
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
+    <div class="article-info article-info-index">
       
       
-        <div class="post-eof"></div>
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Code/">Code</a>
+    </div>
+
+
       
-    </footer>
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据结构与算法/">数据结构与算法</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
   </div>
   
-  
-  
-  </article>
+</article>
 
 
+
+
+
+
+
+
+
+  
+    <article id="post-select与epoll" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/10/09/select与epoll/" class="article-date">
+      <time datetime="2016-10-09T11:51:59.000Z" itemprop="datePublished">2016-10-09</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wax8280.github.io/2016/10/09/select与epoll/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Vincent Zhong">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Vin's Blog">
-    </span>
-
+      <input type="hidden" class="isFancy" />
     
-      <header class="post-header">
-
+    
+      <header class="article-header">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/10/09/select与epoll/" itemprop="url">select与epoll</a></h1>
-        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/09/select与epoll/">select与epoll</a>
+    </h1>
+  
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-10-09T19:51:59+08:00">2016-10-09</time>
-            
-
-            
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Code/" itemprop="url" rel="index"><span itemprop="name">Code</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
       </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
       
+    
+    <div class="article-entry" itemprop="articleBody">
       
-
-      
-        
           
-            <p>select和epoll这两个机制都是多路I/O机制的解决方案，select为POSIX标准中的，而epoll为Linux所特有的。<br>epoll的最大好处是不会随着FD的数目增长而降低效率，在select中采用轮询处理，其中的数据结构类似一个数组的数据结构，而epoll是维护一个队列，直接看队列是不是空就可以了。<br>nginx就是使用epoll来实现I/O复用支持高并发，目前在高并 发的场景下，nginx越来越收到欢迎。<br>select的一 个缺点在于单个进程能够监视的文件描述符的数量存在最大限制</p>
+        <p>select和epoll这两个机制都是多路I/O机制的解决方案，select为POSIX标准中的，而epoll为Linux所特有的。<br>epoll的最大好处是不会随着FD的数目增长而降低效率，在select中采用轮询处理，其中的数据结构类似一个数组的数据结构，而epoll是维护一个队列，直接看队列是不是空就可以了。<br>nginx就是使用epoll来实现I/O复用支持高并发，目前在高并 发的场景下，nginx越来越收到欢迎。<br>select的一 个缺点在于单个进程能够监视的文件描述符的数量存在最大限制</p>
 <h3 id="epoll"><a href="#epoll" class="headerlink" title="epoll:"></a>epoll:</h3><p>(1)IO的效率不会随着监视fd的数量的增长而下降。epoll不同于select和poll轮询的方式，而是通过每个fd定义的回调函数来实现的。只有就绪的fd才会执行回调函数;<br>(2)支持电平触发和边沿触发（只告诉进程哪些文件描述符刚刚变为就绪状态，它只说一遍，如果我们没有采取行动，那么它将不会再次告知，这种方式称为边缘触发）两种方式，理论上边缘触发的性能要更高一些，但是代码实现相当复杂。<br>(3)有着良好的就绪事件通知机制</p>
 <h3 id="select"><a href="#select" class="headerlink" title="select:"></a>select:</h3><p>(1)单个进程可监视的fd数量受到了限制，在32位机器上，他所能管理的fd数量最大为1024;<br>(2)对socket进行扫描时是线性扫描，当socket文件描述符数量变多时，大量的时间是被白白浪费掉的。</p>
 
-          
-        
       
     </div>
-
     
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
+    <div class="article-info article-info-index">
       
       
-        <div class="post-eof"></div>
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Code/">Code</a>
+    </div>
+
+
       
-    </footer>
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/操作系统/">操作系统</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/计算机网络/">计算机网络</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
   </div>
   
-  
-  
-  </article>
+</article>
 
 
+
+
+
+
+
+
+
+  
+    <article id="post-每天一道编程题——树上最长单色路径" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/10/08/每天一道编程题——树上最长单色路径/" class="article-date">
+      <time datetime="2016-10-08T15:22:48.000Z" itemprop="datePublished">2016-10-08</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wax8280.github.io/2016/10/08/每天一道编程题——树上最长单色路径/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Vincent Zhong">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Vin's Blog">
-    </span>
-
+      <input type="hidden" class="isFancy" />
     
-      <header class="post-header">
-
+    
+      <header class="article-header">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/10/08/每天一道编程题——树上最长单色路径/" itemprop="url">每天一道编程题——树上最长单色路径</a></h1>
-        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/08/每天一道编程题——树上最长单色路径/">每天一道编程题——树上最长单色路径</a>
+    </h1>
+  
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-10-08T23:22:48+08:00">2016-10-08</time>
-            
-
-            
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Code/" itemprop="url" rel="index"><span itemprop="name">Code</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
       </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
       
+    
+    <div class="article-entry" itemprop="articleBody">
       
-
-      
-        
           
-            <p>对于一棵由黑白点组成的二叉树，我们需要找到其中最长的单色简单路径，其中简单路径的定义是从树上的某点开始沿树边走不重复的点到树上的另一点结束而形成的路径，而路径的长度就是经过的点的数量(包括起点和终点)。而这里我们所说的单色路径自然就是只经过一种颜色的点的路径。你需要找到这棵树上最长的单色路径。</p>
+        <p>对于一棵由黑白点组成的二叉树，我们需要找到其中最长的单色简单路径，其中简单路径的定义是从树上的某点开始沿树边走不重复的点到树上的另一点结束而形成的路径，而路径的长度就是经过的点的数量(包括起点和终点)。而这里我们所说的单色路径自然就是只经过一种颜色的点的路径。你需要找到这棵树上最长的单色路径。</p>
 <p>给定一棵二叉树的根节点(树的点数小于等于300，请做到O(n)的复杂度)，请返回最长单色路径的长度。这里的节点颜色由点上的权值表示，权值为1的是黑点，为0的是白点。</p>
 <figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Node</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, value=None, left=None, right=None)</span>:</span></div><div class="line">        self.val = value</div><div class="line">        self.left = left</div><div class="line">        self.right = right</div><div class="line"><span class="comment"># TREE = Node(0,</span></div><div class="line"><span class="comment">#             Node(1, Node(1), Node(0)),</span></div><div class="line"><span class="comment">#             Node(0, Node(0), Node(1))</span></div><div class="line"><span class="comment">#             )</span></div><div class="line">TREE = Node(<span class="number">0</span>,</div><div class="line">            Node(<span class="number">1</span>, Node(<span class="number">0</span>, Node(<span class="number">1</span>, Node(<span class="number">1</span>))), Node(<span class="number">0</span>)),</div><div class="line">            Node(<span class="number">1</span>, Node(<span class="number">0</span>), Node(<span class="number">0</span>))</div><div class="line">            )</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(root)</span>:</span></div><div class="line">    B_res, W_res = [], []</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">res</span><span class="params">(root, W, B)</span>:</span></div><div class="line">        <span class="keyword">if</span> root == <span class="keyword">None</span>:</div><div class="line">            B_res.append(B)</div><div class="line">            W_res.append(W)</div><div class="line">            <span class="keyword">return</span></div><div class="line">        <span class="keyword">if</span> root.val == <span class="number">0</span>:</div><div class="line">            W += <span class="number">1</span></div><div class="line">            B_res.append(B)</div><div class="line">            B = <span class="number">0</span></div><div class="line">        <span class="keyword">elif</span> root.val == <span class="number">1</span>:</div><div class="line">            B += <span class="number">1</span></div><div class="line">            W_res.append(W)</div><div class="line">            W = <span class="number">0</span></div><div class="line">        res(root.left, W, B)</div><div class="line">        res(root.right, W, B)</div><div class="line">    res(root, <span class="number">0</span>, <span class="number">0</span>)</div><div class="line">    <span class="keyword">return</span> max(max(B_res), max(W_res))</div></pre></td></tr></table></figure>
 <hr>
 <p>来自<em>“一战通offer”互联网实习季编程挑战</em></p>
 
-          
-        
       
     </div>
-
     
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
+    <div class="article-info article-info-index">
       
       
-        <div class="post-eof"></div>
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Code/">Code</a>
+    </div>
+
+
       
-    </footer>
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据结构与算法/">数据结构与算法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/每天一道编程题/">每天一道编程题</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
   </div>
   
-  
-  
-  </article>
+</article>
 
 
+
+
+
+
+
+
+
+  
+    <article id="post-每天一道编程题——地域划分" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/10/08/每天一道编程题——地域划分/" class="article-date">
+      <time datetime="2016-10-08T15:21:22.000Z" itemprop="datePublished">2016-10-08</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wax8280.github.io/2016/10/08/每天一道编程题——地域划分/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Vincent Zhong">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Vin's Blog">
-    </span>
-
+      <input type="hidden" class="isFancy" />
     
-      <header class="post-header">
-
+    
+      <header class="article-header">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/10/08/每天一道编程题——地域划分/" itemprop="url">每天一道编程题——地域划分</a></h1>
-        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/08/每天一道编程题——地域划分/">每天一道编程题——地域划分</a>
+    </h1>
+  
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-10-08T23:21:22+08:00">2016-10-08</time>
-            
-
-            
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Code/" itemprop="url" rel="index"><span itemprop="name">Code</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
       </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
       
+    
+    <div class="article-entry" itemprop="articleBody">
       
-
-      
-        
           
-            <p>现在有一块长条形的土地，这个土地我们可以看成是由n块小方格连接而成的(这些小方格我们可以将之编号为1到n)。而我们需要将其划分成两个部分，分别种上不同的作物(即作物A和B)，划分必须在某两个小方格之间进行，或者在土地的最左端或最右端，若划分在第i块到第i+1块间进行，则划分后，第1至第i块地种A，剩下的地种B。现在有一些专家对土地进行了检测，他们每个人评估了每块土地适合种的作物。请你找到一个合适的划分，使得其与所有专家的评估最吻合，也就是说，你划分到A而专家评估为B的次数和你划分到B而专家评估为A的次数之和最小。</p>
+        <p>现在有一块长条形的土地，这个土地我们可以看成是由n块小方格连接而成的(这些小方格我们可以将之编号为1到n)。而我们需要将其划分成两个部分，分别种上不同的作物(即作物A和B)，划分必须在某两个小方格之间进行，或者在土地的最左端或最右端，若划分在第i块到第i+1块间进行，则划分后，第1至第i块地种A，剩下的地种B。现在有一些专家对土地进行了检测，他们每个人评估了每块土地适合种的作物。请你找到一个合适的划分，使得其与所有专家的评估最吻合，也就是说，你划分到A而专家评估为B的次数和你划分到B而专家评估为A的次数之和最小。</p>
 <p>输入描述:<br>每组数据给定一个专家评估表land(其中0为评估A，1为评估B)，以及小块数量n(1≤n≤300)，专家评估次数m(1≤m≤300)<br>输出描述:<br>请返回你的划分,即i和i+1。若在最左端，则输出0，1；在最右端则输出n,n+1。若有多解输出最靠左的划分。</p>
 <p>输入例子:<br>[[1,1,1,1],[0,0,0,0],[1,0,1,1]],4,3<br>输出例子:<br>[0,1]</p>
 <figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(land, n, m)</span>:</span></div><div class="line">    l = [<span class="number">0</span>] * n</div><div class="line">    <span class="comment"># 求权值</span></div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(n):</div><div class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(m):</div><div class="line">            l[i] += <span class="number">1</span> <span class="keyword">if</span> land[j][i] == <span class="number">1</span> <span class="keyword">else</span> <span class="number">-1</span></div><div class="line">    result = [sum(l[i:]) - sum(l[:i]) <span class="keyword">for</span> i <span class="keyword">in</span> range(n + <span class="number">1</span>)]</div><div class="line">    <span class="keyword">return</span> result.index(max(result)), result.index(max(result)) + <span class="number">1</span></div></pre></td></tr></table></figure>
 <hr>
 <p>来自<em>“一战通offer”互联网实习季编程挑战</em></p>
 
-          
-        
       
     </div>
-
     
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
+    <div class="article-info article-info-index">
       
       
-        <div class="post-eof"></div>
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Code/">Code</a>
+    </div>
+
+
       
-    </footer>
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据结构与算法/">数据结构与算法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/每天一道编程题/">每天一道编程题</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
   </div>
   
+</article>
+
+
+
+
+
+
+
+
+
   
   
-  </article>
-
-
-    
-  </section>
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right"></i></a>
-  </nav>
-
-
-
-          </div>
-          
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <p class="site-author-name" itemprop="name">Vincent Zhong</p>
-              <p class="site-description motion-element" itemprop="description">Share my favorite</p>
-          </div>
-
-          
-            <nav class="site-state motion-element">
-              
-                <div class="site-state-item site-state-posts">
-                
-                  <a href="/archives/">
-                
-                    <span class="site-state-item-count">111</span>
-                    <span class="site-state-item-name">posts</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-categories">
-                  <a href="/categories/index.html">
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">6</span>
-                    <span class="site-state-item-name">categories</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-tags">
-                  <a href="/tags/index.html">
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">40</span>
-                    <span class="site-state-item-name">tags</span>
-                  </a>
-                </div>
-              
-            </nav>
-          
-
-          
-
-          
-            <div class="links-of-author motion-element">
-              
-                <span class="links-of-author-item">
-                  <a href="https://github.com/wax8280" target="_blank" title="GitHub"><i class="fa fa-fw fa-globe"></i>GitHub</a>
-                  
-                </span>
-              
-            </div>
-          
-
-          
-          
-
-          
-          
-
-          
-            
-          
-          
-
-        </div>
-      </section>
-
-      
-
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
-  <span class="with-love">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Vincent Zhong</span>
-
-  
-
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
+    </nav>
   
 </div>
-
-
-
-
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Muse</a> v6.0.4</div>
-
-
-
-
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2019 Vincent Zhong
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
         
-
-
-
-
-
-
-
-
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
         
-      </div>
-    </footer>
-
+    </div>
+</footer>
+    </div>
     
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 2;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
     
-
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
     
-
-  </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
 </script>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=6.0.4"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=6.0.4"></script>
-
-
-
-  
-  
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.4"></script>
-
-
-
-  
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-
-  
-
-  
-
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
 </body>
 </html>
