@@ -272,6 +272,76 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-前缀、中缀、后缀表达式" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/09/08/前缀、中缀、后缀表达式/" class="article-date">
+      <time datetime="2016-09-08T09:56:50.000Z" itemprop="datePublished">2016-09-08</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/08/前缀、中缀、后缀表达式/">前缀、中缀、后缀表达式</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h3 id="举例："><a href="#举例：" class="headerlink" title="举例："></a>举例：</h3><pre><code>(3 + 4) × 5 - 6 就是中缀表达式
+- × + 3 4 5 6 前缀表达式
+3 4 + 5 × 6 - 后缀表达式
+</code></pre><h3 id="栗子："><a href="#栗子：" class="headerlink" title="栗子："></a>栗子：</h3><p>中缀表达式 a+b<em>c-(d+e) 转化为前缀 与 后缀<br>第一步：按照运算符的优先级对所有的运算单位加括号~<br>式子变成拉：((a+(b</em>c))-(d+e))<br>第二步：转换前缀与后缀表达式<br>前缀：把运算符号移动到对应的括号前面<br>则变成拉：-( +(a <em>(bc)) +(de))<br>把括号去掉：-+a</em>bc+de  前缀式子出现<br>后缀：把运算符号移动到对应的括号后面<br>则变成拉：((a(bc)<em> )+ (de)+ )-<br>把括号去掉：abc</em>+de+-  后缀式子出现</p>
+<h3 id="习题："><a href="#习题：" class="headerlink" title="习题："></a>习题：</h3><p>某表达式的前缀形式为”+-*^ABCD/E/F+GH”,它的中缀形式为()</p>
+<p>从右至左扫描表达式，遇到数字时，将数字压入堆栈，遇到运算符时，弹出栈顶的两个数，用运算符对它们做相应的计算（栈顶元素 op 次顶元素），并将结果入栈；重复上述过程直到表达式最左端，最后运算得出的值即为表达式的结果。<br>根据从右至左扫描计算过程如下: </p>
+<p>题目中的前缀形式为：+-<em>^ABCD/E/F+GH<br>1) 首先扫描 H,是数字 入栈 ，栈中为: H<br>2) 扫描 G 为数字 入栈 ,栈中为:G,H<br>3)扫描+ 为运算符 ,依次弹出G ,H ,得到 G+H 的结果 入栈，栈中为： G+H(在这里方便讲解 标记为  G+H)<br>4)扫描 F 为数字 ,入栈 ，栈中为  F, G+H<br>5)扫描 / 为运算符, 依次弹出 F,G+H ，计算F/(G+H) 的结果入栈 ，栈中为 F/(G+H)<br>6)扫描 E 为数字,入栈，栈中为 E,  F/(G+H)<br>7) 扫描 / 为运算符, 依次弹出E, F/(G+H) ，计算 E/(F/(G+H))<br>8)扫描 D 为数字,入栈 栈中为:D, E/(F/(G+H))<br>9) 扫描 C 为数字,入栈 栈中为:C,D, E/(F/(G+H))<br>10) 扫描 B 为数字,入栈 栈中为:B,C,D, E/(F/(G+H))<br>11) 扫描 A 为数字,入栈 栈中为:A,B,C,D, E/(F/(G+H))<br>12) 扫描^ 为数字,依次弹出 A,B 计算 A^B的结果入栈, 栈中为：A^B ,C,D, E/(F/(G+H))<br>13) 扫描</em>为数字,依次弹出 A^B,C 计算 A^B<em>C的结果入栈, 栈中为：A^B</em> C,D, E/(F/(G+H))<br>14) 扫描-为数字,依次弹出 A^B<em>C,D 计算 A^B</em>C-D的结果入栈, 栈中为：A^B<em> C-D, E/(F/(G+H))<br>15) 扫描+为数字,依次弹出 A^B</em>C-D, E/(F/(G+H))   计算 A^B<em>C-D+  E/(F/(G+H)) 的到结果<br>最后得到的表达式为：  A^B</em> C-D+ E/(F/(G+H)) </p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Code/">Code</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据结构与算法/">数据结构与算法</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-每天一道编程题——洗牌" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -924,70 +994,6 @@
 
 
   
-    <article id="post-Git拾遗" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/08/30/Git拾遗/" class="article-date">
-      <time datetime="2016-08-29T17:06:24.000Z" itemprop="datePublished">2016-08-30</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/30/Git拾遗/">Git拾遗</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>把Git Bash要记忆的东西整理了下<br>设置用户名邮箱<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div></pre></td><td class="code"><pre><div class="line">$ git config --global user.name </div><div class="line">&quot;Your Name&quot;</div><div class="line">$ git config --global user.email </div><div class="line">&quot;email@example.com&quot;</div><div class="line">创建版本库</div><div class="line">$ git init</div><div class="line">把文件添加到版本库</div><div class="line">$ git add readme.txt</div><div class="line">$ git commit -m </div><div class="line">&quot;wrote a readme file&quot;</div><div class="line">查看不同</div><div class="line">$ git diff readme.txt </div><div class="line">当前状态</div><div class="line">$ git status</div><div class="line">查看commit</div><div class="line">$ git log</div><div class="line">回退上一个版本</div><div class="line">$ git reset --hard HEAD^</div><div class="line">退回上上一个版本</div><div class="line">$ git reset --hard HEAD^^</div><div class="line">退回上一百个版本</div><div class="line">$ git reset --hard HEAD~100</div><div class="line">使用版本号（只需要前几位）</div><div class="line">$ git reset --hard 3628164</div><div class="line">记录你的每一次命令</div><div class="line">$ git reflog</div><div class="line">丢弃工作区的修改让这个文件回到最近一次git commit或git add时的状态</div><div class="line">$ git checkout -- file </div><div class="line">把暂存区的修改撤销掉（unstage），重新放回工作区</div><div class="line">$ git reset HEAD file</div><div class="line">从版本库中删除该文件</div><div class="line">$ git rm </div><div class="line">$ git commit</div><div class="line">创建SSH Key。</div><div class="line">$ ssh-keygen -t rsa -C &quot;youremail@example.com&quot;</div><div class="line">把本地仓库的内容推送到GitHub仓库</div><div class="line">$ git remote add origin https://github.com/username/project.git</div><div class="line">推送到远程</div><div class="line">$ git push origin master</div><div class="line">从远程库克隆</div><div class="line">$ git clone https://github.com/username/project.git</div><div class="line">创建dev分支，然后切换到dev分支：</div><div class="line">$ git checkout -b dev</div><div class="line">相当于</div><div class="line">$ git branch dev</div><div class="line">$ git checkout dev</div><div class="line">列出所有分支</div><div class="line">$ git branch</div><div class="line">我们把dev分支的工作成果合并到当前分支上</div><div class="line">$ git merge dev</div><div class="line">删除dev分支</div><div class="line">$ git branch -d dev</div><div class="line">禁用Fast forward的合并</div><div class="line">$ git merge --no-ff -m &quot;merge with no-ff&quot; dev</div><div class="line">把当前工作现场“储藏”起来</div><div class="line">$ git stash</div><div class="line">查看</div><div class="line">$ git stash list</div><div class="line">打标签</div><div class="line">$ git tag v.xxxx</div><div class="line">查看标签</div><div class="line">$ git show v.xxxx</div><div class="line">创建带有说明的标签，用-a指定标签名，-m指定说明文字：</div><div class="line">$ git tag -a v0.1 -m &quot;version 0.1 released&quot; 3628164</div><div class="line">删除</div><div class="line">$ git tag -d v0.1</div></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Code/">Code</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/7/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/9/">Next &raquo;</a>
@@ -999,7 +1005,7 @@
         <div id="footer-info">
             <div class="footer-left">
                 <i class="fa fa-copyright"></i> 
-                2016-2019 Vincent Zhong
+                2016-2020 Vincent Zhong
             </div>
             <div class="footer-right">
                 <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
